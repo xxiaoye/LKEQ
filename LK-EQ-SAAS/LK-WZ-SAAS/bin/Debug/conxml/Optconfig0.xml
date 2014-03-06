@@ -1,0 +1,1064 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<opts>
+  <Opt id="SELTABLE_List">
+    <sql>
+      <![CDATA[ 
+		   select * from His.用户表  
+	     ]]>
+    </sql>
+    　　
+  </Opt>
+  <!--物资库房管理-->
+  <Opt id="FindWZWares">
+    <!--<sql>select kindcode,supercode,kindname,choscode from LKWZ.DICTWZKIND where choscode = ? [Condition] </sql>-->
+    <sql>
+      <![CDATA[
+      select a.*,PRICENAME,名称 as DEPTName from LKWZ.DICTWZWARE a ,LKWZ.DICTWZPRICE b , HIS.科室表 ks where a.choscode =? [Condition] and  a.PRICEID=b.PRICEID and a.DEPTID=ks.ID order by warecode asc]]>
+    </sql>
+    <Pa name="choscode"/>
+  </Opt>
+  <Opt id="FindWZWare">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.DICTWZWARE
+      ]]>
+    </sql>
+    <Pa name="choscode"/>
+  </Opt>
+  <Opt id="GetKSName">
+    <sql>
+      select 名称 from HIS.科室表 t where ID=?
+    </sql>
+  </Opt>
+  <Opt id="Ware_GetDepID">
+    <sql>
+      select DEPTID from LKWZ.DICTWZWARE where choscode=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="FindKSID">
+    <sql>select 名称,ID,类别,上级科室,级别,农合名称 from HIS.科室表 where choscode= ? and (ID like ? or 名称 like ?)  </sql>
+  </Opt>
+  <Opt id="Getpriceid">
+    <sql>select PRICENAME,PRICEID,PYCODE,WBCODE,RATE,IFALL from LKWZ.DICTWZPRICE where choscode=? and IFUSE=1 and (PRICEID like ? or PRICENAME like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?)) order by PRICEID</sql>
+    <Pa name="choscode"/>
+  </Opt>
+  <Opt id="GetPriceName">
+    <sql>
+      select PRICENAME from LKWZ.DICTWZPRICE where PRICEID=?
+    </sql>
+  </Opt>
+  <Opt id="Ware_GetPriceID">
+    <sql>
+      select PRICEID from LKWZ.DICTWZWARE where choscode=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="Getchoscode">
+    <sql>select choscode, chosname, hosaddress, helpcode, managername, telphone, registdate, isineffect, parenthoscode, iswsj, licence, zlxjlb, ykms, areacode, supercode ,corpaccount, nhhospcode, xcode, zcode, ccode, jdcode, note, attributevalue, jgkind  from HIS.SYSDICTHOSPITAL</sql>
+  </Opt>
+
+  <Opt id="WZIsManagall">
+    <sql>select ifall from LKWZ.DICTWZWARE where choscode=? and warecode=?</sql>
+    <Pa name="choscode"/>
+    <Pa name ="warecode"/>
+  </Opt>
+  <Opt id="Getkindcode">
+    <sql>select KINDNAME,KINDCODE,PYCODE,WBCODE,IFEND,MEMO from LKWZ.DICTWZKIND where choscode=? and (KINDCODE like ? or KINDNAME like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))</sql>
+    <Pa name="choscode"/>
+  </Opt>
+  <Opt id="IsHavekindcode">
+    <sql>
+      select count(*) from LKWZ.DICTWZWAREDETAIL where warecode=? and choscode=?
+    </sql>
+    <Pa name="warecode"/>
+    <Pa name="choscode"/>
+  </Opt>
+  <Opt id="MannageWZKind">
+    <sql>
+      <![CDATA[
+        select a.KINDCODE,a.SUPERCODE,KINDNAME,a.MEMO,a.CHOSCODE from LKWZ.DICTWZKIND a ,LKWZ.DICTWZWAREDETAIL b where a.CHOSCODE=b.CHOSCODE and a.KINDCODE=b.KINDCODE  and b.CHOSCODE=? and b.WARECODE=?
+      ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="SaveWZInfo" key="choscode,warecode" table="LKWZ.DICTWZWARE">
+    <Pa name="warecode" update="false"/>
+    <Pa name="choscode" update="false" />
+    <Pa name="warename" />
+    <Pa name="pycode"/>
+    <Pa name="wbcode" />
+    <Pa name="ifstware"/>
+    <Pa name="ifndware" />
+    <Pa name="ifrdware"/>
+    <Pa name="deptid" />
+    <Pa name="priceid"/>
+    <Pa name="outorder" />
+    <Pa name="ifall"/>
+    <Pa name="ifuse" />
+    <Pa name="memo"/>
+    <Pa name="userid" update="false"/>
+    <Pa name="username" update="false"/>
+    <Pa name="recdate" />
+  </Opt>
+
+  <Opt id="SaveSetWZDetail" key="WARECODE,CHOSCODE,KINDCODE" table="LKWZ.DICTWZWAREDETAIL">
+    <!--<sql>insert into LKWZ.DICTWZWAREDETAIL (WARECODE,CHOSCODE,KINDCODE) values (?,?,?)</sql>-->
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="KINDCODE"/>
+  </Opt>
+  <Opt id="DelWZKind">
+    <sql>
+      delete from LKWZ.DICTWZWAREDETAIL where WARECODE=? and CHOSCODE=? and KINDCODE=?
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="KINDCODE"/>
+  </Opt>
+  <Opt id="IsUseKindeCode">
+    <sql>
+      <![CDATA[
+        select count(a.*) from LKWZ.WZSTOCK a,LKWZ.DICTWZ b where a.WZID=b.WZID and a.NUM >0 and b.KINDCODE like concat(?,'%') and a.WARECODE=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="ModifyWzDetailInfoIsRepeat">
+    <sql>
+      select count(*) from LKWZ.DICTWZWAREDETAIL where warecode=? and choscode=? and kindcode=?
+    </sql>
+    <Pa name="warecode"/>
+    <Pa name="choscode"/>
+    <Pa name="kindcode" />
+  </Opt>
+  <Opt id="AddWzInfoIsRepeat">
+    <sql>select count(*) from LKWZ.DICTWZWARE where choscode=? and warename=?</sql>
+    <Pa name="choscode"/>
+    <Pa name="warename"/>
+  </Opt>
+  <Opt id="ModifyWzInfoIsRepeat">
+    <sql>select count(*) from LKWZ.DICTWZWARE where choscode=? and warecode!=? and warename=?</sql>
+    <Pa name="choscode"/>
+    <Pa name="warecode"/>
+    <Pa name="warename"/>
+  </Opt>
+  <Opt id="SaveWzInfo_seq">
+    <sql>select max(to_number(warecode)) from LKWZ.DICTWZWARE where choscode=?</sql>
+    <Pa name="choscode"/>
+  </Opt>
+
+  <!--<Opt id="WZIsUse">
+    <sql>select ifuse from LKWZ.DICTWZWARE where choscode=? and warecode=? </sql>
+    <Pa name="choscode"/>
+    <Pa name ="warecode"/>
+  </Opt>
+  -->
+  <Opt id="DelWZInfo" sucMsg="成功删除物资信息！">
+    <sql>delete from LKWZ.DICTWZWARE where choscode=? and warecode=?</sql>
+    <Pa name="choscode"/>
+    <Pa name ="warecode"/>
+  </Opt>
+  <Opt id="DisableWZInfo" key="warecode" table="LKWZ.DICTWZWARE">
+    <Pa name="ifuse"/>
+  </Opt>
+
+  <!--物资计价体系-->
+  <Opt id="FindWZPrice">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.DICTWZPRICE where CHOSCODE=? [Condition] order by PRICEID asc
+      ]]>
+      <Pa name="CHOSCODE"/>
+    </sql>
+
+  </Opt>
+  <Opt id="SaveWZPriceInfo" key="PRICEID" table="LKWZ.DICTWZPRICE">
+    <!--<sql>
+      insert into LKWZ.DICTWZPRICE (PRICEID,PRICENAME,pycode ,wbcode ,rate, IFALL,ifuse ,memo ,USERID,USERNAME,recdate,CHOSCODE) values('010101011',?,?,?,?,?,?,?,?,?,?,?)
+    </sql>-->
+    <Pa name="PRICEID" update="false"/>
+    <Pa name="PRICENAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="RATE"/>
+    <Pa name="IFALL"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE" update="false"/>
+  </Opt>
+  <Opt id="WZAddIsRepeat">
+    <sql>select count(*) from LKWZ.DICTWZPRICE where CHOSCODE=? and PRICENAME=?</sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PRICENAME"/>
+  </Opt>
+  <Opt id="WZModifyIsRepeat">
+    <sql>select count(*) from LKWZ.DICTWZPRICE where PRICENAME=? and PRICEID !=? </sql>
+    <Pa name="PRICENAME"/>
+    <Pa name="PRICEID"/>
+  </Opt>
+  <!--
+  <Opt id="WZPriceIsUse">
+    <sql>select FIXED from LKWZ.DICTWZPRICE where PRICEID=?</sql>
+    <Pa name="PRICEID"/>
+  </Opt>
+-->
+  <Opt id="DelWZPriceInfo" sucMsg="成功删除计价体系信息！">
+    <sql>delete from LKWZ.DICTWZPRICE where PRICEID=?</sql>
+    <Pa name="PRICEID"/>
+  </Opt>
+
+  <!--物资单位管理-->
+  <Opt id="FindWZUnit">
+    <sql>
+      <![CDATA[
+        select * from HIS.字典表 where DICGRPID=301 [Condition] order by DICID 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="FindWZUnits">
+    <sql>
+      <![CDATA[
+        select * from HIS.字典表 where DICGRPID=301 order by DICID 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="SaveWZUnitInfo" key="DICGRPID,DICID" table="HIS.字典表">
+    <Pa name="DICGRPID" update="false" />
+    <Pa name="DICID" update="false"/>
+    <Pa name="DICDESC"/>
+    <Pa name="PYCODE"/>
+    <Pa name="FIXED"/>
+    <Pa name="DEFVALUE"/>
+  </Opt>
+  <Opt id="ModifyWZPriceIsRepeat">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DICDESC =? and DICID !=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICDESC"/>
+    <Pa name="DICID"/>
+  </Opt>
+  <Opt id="AddWZPriceIsRepeat">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DICDESC =? </sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICDESC"/>
+  </Opt>
+  <Opt id="SaveWzUnitInfo_seq">
+    <sql>select max(to_number(DICID)) from HIS.字典表 where DICGRPID=301 </sql>
+  </Opt>
+  <!--<Opt id="WZUnitIsUse">
+    <sql>select FIXED from HIS.字典表 where DICGRPID=? and DICID=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICID"/>
+  </Opt>
+  -->
+  <Opt id="WZUnitIsUse2">
+    <sql>select count(*) from LKWZ.DICTWZ where UNITCODE=? or LSUNITCODE=?</sql>
+    <Pa name="UNITCODE"/>
+    <Pa name="LSUNITCODE"/>
+  </Opt>
+  <Opt id="DelWZUnitInfo">
+    <sql>delete from HIS.字典表 where DICGRPID=? and DICID=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICID"/>
+  </Opt>
+  <Opt id="DefaultWZUnit">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DEFVALUE=1</sql>
+    <Pa name="DICGRPID"/>
+  </Opt>
+
+  <Opt id="SetDefaultWZUnit" >
+    <sql>UPDATE HIS.字典表 set DEFVALUE=0 where DICGRPID=? and DICID!=?</sql>
+  </Opt>
+
+  <!--采购计划管理-->
+  <Opt id="WZPlanMainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.WZPLANMAIN where IFPLAN=1 and cHosCode=? and WARECODE=? and PLANDATE >= ? and PLANDATE <= ? order by PLANID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="WZPlanDetailSearch">
+    <sql>
+      <![CDATA[
+      select a.*,wz.WZNAME,wz.PRICE as wzPRICE,wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,wz.VALIDE,zd.DICDESC from LKWZ.WZPLANDETAIL a, LKWZ.DICTWZ wz,HIS.字典表 zd where a.planid=? and a.choscode=? and (a.wzid=wz.wzid) and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by rowno
+    ]]>
+      <!-- <![CDATA[
+      select a.planid ,a.rowno ,a.wzid ,b.WZNAME,a.unitcode ,a.num ,a.price ,a.money ,a.lsprice ,a.lsmoney ,a.scs ,a.gys ,a.txm ,a.choscode from LKWZ.WZPLANDETAIL a ,LKWZ.DICTWZ b where planid=? and choscode=? order by rowno
+    ]]>-->
+    </sql>
+
+  </Opt>
+  <Opt id="GetHistroyPlan">
+    <sql>
+      select a.WZID,a.UNITCODE,a.NUM,a.PRICE,a.MONEY,a.LSPRICE,a.LSMONEY,a.MEMO,a.TXM ,wz.WZNAME,wz.PRICE as wzPRICE,
+      wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,zd.DICDESC 
+      from LKWZ.WZPLANDETAIL a, LKWZ.DICTWZ wz,HIS.字典表 zd where  a.choscode=? and (a.wzid=wz.wzid) and
+      (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by rowno
+    </sql>
+  </Opt>
+  <Opt id="GetNumXxPlan">
+    <sql>
+      <![CDATA[
+       select distinct stock.WZID,wz.LSUNITCODE as UNITCODE,(stock.NUMXX-stock.NUM) as num,wz.WZNAME,wz.PRICE as PRICE,wz.PRICE as wzPRICE,wz.TXM,
+      wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM
+      from LKWZ.WZSTOCK stock, LKWZ.DICTWZ wz
+      where stock.CHOSCODE=? and stock.WARECODE=? and stock.NUM<stock.NUMXX and wz.WZID=stock.WZID
+      ]]>
+      
+    </sql>
+  </Opt>
+  <Opt id="GetWareCodeId">
+    <sql>
+      select WARECODE,WARENAME from LKWZ.DICTWZWARE where IFSTWARE=1 and CHOSCODE=? and (WARECODE like ? or WARENAME like ? )
+    </sql>
+  </Opt>
+  <Opt id="SaveWZPlanMainInfo" key="PLANID" table="LKWZ.WZPLANMAIN">
+    <Pa name="PLANID" update="false"/>
+    <Pa name="WARECODE"/>
+    <Pa name ="TARGETWARECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="LSTOTALMONEY"/>
+    <Pa name="PLANDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="IFPLAN"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHINDATE"/>
+    <Pa name="SHINUSERID"/>
+    <Pa name="SHINUSERNAME"/>
+    <Pa name="SHOUTDATE"/>
+    <Pa name="SHOUTUSERID"/>
+    <Pa name="SHOUTUSERNAME"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="UpdateWZPlanMain" key="PLANID" table="LKWZ.WZPLANMAIN">
+    <Pa name="PLANID" update="false"/>
+    <Pa name="TOTALMONEY" update="true"/>
+    <Pa name="LSTOTALMONEY" update="true"/>
+  </Opt>
+  <Opt id="IsHavePlanDetail">
+    <sql>
+      <![CDATA[
+        select count(*) n from LKWZ.WZPLANDETAIL where PLANID=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="WZPlanCkeck">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.WZPLANMAIN where IFPLAN=1 and STATUS=1 and cHosCode=? and PLANDATE >= ? and PLANDATE <= ? order by PLANID
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="CheckWZPlanMain" key="PLANID" table="LKWZ.WZPLANMAIN">
+
+    <Pa name="PLANID" update="false"/>
+    <Pa name="STATUS" update="true"/>
+    <Pa name="SHDATE" update="true"/>
+    <Pa name="SHUSERID" update="true"/>
+    <Pa name="SHUSERNAME" update="true"/>
+  </Opt>
+  <Opt id="GetWZId">
+    <sql>
+      select * from LKWZ.DICTWZ where CHOSCODE=? and IFUSE=1 and (WZID like ? or WZNAME like ?)
+    </sql>
+  </Opt>
+  <Opt id="WZPlanGetSys">
+    <sql>
+      select   SUPPLYNAME,SUPPLYID  from LKWZ.DICTWZDETAIL where WZID=? and(SUPPLYNAME like ? or SUPPLYID like ?)
+    </sql>
+  </Opt>
+
+  <Opt id="GetWZUNITCODE2">
+    <sql>
+      select UNITCODE from LKWZ.DICTWZ where wzid=?
+    </sql>
+  </Opt>
+  <Opt id="GetWZUNITCODEName">
+    <sql>
+      select dicdesc from HIS.字典表 where dicid=? and DICGRPID=301
+    </sql>
+  </Opt>
+  <Opt id="GetWZLSUNITCODE">
+    <sql>
+      select LSUNITCODE from LKWZ.DICTWZ where wzid=?
+    </sql>
+  </Opt>
+  <Opt id="GetWZTXM">
+    <sql>
+      select TXM from LKWZ.DICTWZ where wzid=?
+    </sql>
+  </Opt>
+
+  <Opt id="GetPrice">
+    <sql>
+      select PRICE from LKWZ.DICTWZ where CHOSCODE=? and wzid=?
+    </sql>
+
+  </Opt>
+  <Opt id="GetCHANGERATE">
+    <sql>
+      select CHANGERATE from LKWZ.DICTWZ where CHOSCODE=? and wzid=?
+    </sql>
+
+  </Opt>
+  <Opt id="IsAllRate">
+    <sql>
+      select a.IFALL from LKWZ.DICTWZPRICE a,LKWZ.DICTWZWARE b where (a.PRICEID=b.PRICEID and b.WARECODE=? and b.CHOSCODE=?)
+    </sql>
+  </Opt>
+  <Opt id="GetRATE">
+    <sql>
+      select RATE from LKWZ.DICTWZ where CHOSCODE=? and wzid=?
+    </sql>
+  </Opt>
+  <Opt id="GetAllRate">
+    <sql>
+      select a.RATE from LKWZ.DICTWZPRICE a,LKWZ.DICTWZWARE b where a.PRICEID=b.PRICEID and (b.CHOSCODE =? and b.WARECODE=?)
+    </sql>
+  </Opt>
+  <Opt id="GetROWNO">
+    <sql>
+      select ROWNO from LKWZ.WZPLANDETAIL where PLANID=? order by ROWNO desc
+    </sql>
+  </Opt>
+  <Opt id="GetMoney">
+    <sql>
+      select sum(MONEY) from LKWZ.WZPLANDETAIL where PLANID=?
+    </sql>
+  </Opt>
+  <Opt id="SaveWZPlanDetailInfo" key="PLANID,ROWNO" table="LKWZ.WZPLANDETAIL">
+    <Pa name="PLANID" update="false"/>
+    <Pa name="ROWNO" update="false"/>
+    <Pa name="WZID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="LSMONEY"/>
+    <Pa name="SCS"/>
+    <Pa name="GYS"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+  </Opt>
+  <Opt id="GetWZUNITCODE">
+    <sql>
+      <![CDATA[
+        select DICDESC,DICID from HIS.字典表  where DICID=(select UNITCODE from LKWZ.WZPLANDETAIL where PLANID=? and ROWNO=?) and DICGRPID=301
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="DeleteWZPlanDetailInfo">
+    <sql>
+      delete from LKWZ.WZPLANDETAIL  where PLANID=? and ROWNO=?
+    </sql>
+    <Pa name="PLANID"/>
+    <Pa name="ROWNO" />
+  </Opt>
+
+  <!--物资入库管理-->
+  <Opt id="WZInMainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.WZINMAIN where OPFLAG=0 and cHosCode=? and STATUS =?  and WARECODE =? and INDATE >= ? and INDATE <= ? order by INID
+      ]]>
+    </sql>
+  </Opt>
+  <!--<Opt id="WZInDetailSearch">
+    <sql>
+      <![CDATA[
+        select a.*,wz.WZNAME,wz.PRICE as wzPRICE,wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,zd.DICDESC from LKWZ.WZINDETAIL a,LKWZ.DICTWZ wz,HIS.字典表 zd where a.INID=? and a.cHosCode=? and a.WZID=wz.WZID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by INID
+      ]]>
+    </sql>
+  </Opt>
+  -->
+  <Opt id="WZInDetailSearch">
+    <sql>
+      select a.*,wz.WZNAME,wz.PRICE as wzPRICE,wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,zd.DICDESC from LKWZ.WZINDETAIL a,LKWZ.DICTWZ wz,HIS.字典表 zd where a.INID=? and a.CHOSCODE=? and a.WZID=wz.WZID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by INID
+    </sql>
+    <Pa name="INID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="GetInWareWay">
+    <sql>
+      select IONAME as 入库方式,IOID as 入库方式编码 from LKWZ.DICTWZINOUT where IFUSE=1 and IOFLAG=0 and USEST=1 and OPFLAG=0 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="GetInWare">
+    <sql>
+      select WARENAME as 入库库房,WARECODE as 入库库房编码 from LKWZ.DICTWZWARE where IFUSE=1 and IFSTWARE=1  and CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?) )order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="GetInWareWayName">
+    <sql>
+      select IONAME,IOID from LKWZ.DICTWZINOUT where IFUSE=1 and IOFLAG=0 and USEST=1 and OPFLAG=0 and CHOSCODE=? and IOID=? order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="GetInWareName">
+    <sql>
+      select WARENAME,WARECODE from LKWZ.DICTWZWARE where IFUSE=1 and IFSTWARE=1  and CHOSCODE=? and  WARECODE=? order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="GetGYS">
+    <sql>
+      select SUPPLYNAME,SUPPLYID from LKWZ.DICTWZSUPPLY where IFUSE=1 and (SUPPLYNAME like ? or SUPPLYID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?)) order by SUPPLYNAME
+    </sql>
+  </Opt>
+  <Opt id="GetPlanNo">
+    <sql>
+      <![CDATA[
+        select a.PLANID from LKWZ.WZPLANMAIN a,LKWZ.WZINMAIN b where a.WARECODE=b.WARECODE and a.STATUS=2 and b.CHOSCODE=? and b.WARECODE=?
+      ]]>
+    </sql>
+  </Opt>
+  <!--<Opt id="GetHistroyPlan">
+    <sql>
+      select a.WZID,a.UNITCODE,a.NUM,a.PRICE,a.MONEY,a.LSPRICE,a.LSMONEY,a.MEMO,a.TXM ,wz.WZNAME,wz.PRICE as wzPRICE,
+      wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,zd.DICDESC 
+      from LKWZ.WZPLANDETAIL a, LKWZ.DICTWZ wz,HIS.字典表 zd where  a.choscode=? and (a.wzid=wz.wzid) and
+      (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by rowno
+    </sql>
+  </Opt>-->
+  <Opt id="GetPlan">
+    <sql>
+      <![CDATA[
+        select  a.WZID,a.UNITCODE,a.NUM,a.PRICE,a.MONEY,a.LSPRICE,a.LSMONEY,a.MEMO,a.TXM ,a.PLANID,wz.WZNAME,wz.PRICE as wzPRICE,
+      wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,zd.DICDESC 
+      from LKWZ.WZPLANDETAIL a, LKWZ.DICTWZ wz,HIS.字典表 zd from LKWZ.WZPLANDETAIL a,LKWZ.WZPLANMAIN b where a.PLANID=b.PLANID and b.CHOSCODE=? and b.WARECODE=? and b.STATUS=2 
+      and (a.wzid=wz.wzid) and (a.UNITCODE=zd.DICID and zd.DICGRPID=301)
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetWZPlan">
+    <sql>
+      (select * from LKWZ.WZPLANMAIN  where CHOSCODE=? and WARECODE=? and status=2 ) minus (select a.* from LKWZ.WZPLANMAIN a,LKWZ.WZINMAIN b where a.PLANID=b.PLANNO)
+
+    </sql>
+  </Opt>
+  <Opt id="GetWZPlanDetail">
+    <sql>
+      select * from LKWZ.WZPLANDETAIL where PLANID=?
+    </sql>
+  </Opt>
+  <Opt id="SaveWZInMainInfo" key="INID" table="LKWZ.WZINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="LSTOTALMONEY"/>
+    <Pa name="INDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDH"/>
+    <Pa name="INVOICECODE"/>
+    <Pa name="INVOICEDATE"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHINDATE"/>
+    <Pa name="SHINUSERID"/>
+    <Pa name="SHINUSERNAME"/>
+    <Pa name="PLANNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="UpdateWZInMain" key="INID" table="LKWZ.WZINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="TOTALMONEY" update="true"/>
+    <Pa name="LSTOTALMONEY" update="true"/>
+  </Opt>
+  <Opt id="IsHaveInDetail">
+    <sql>
+      select count(*) n from LKWZ.WZINDETAIL where INID=?
+    </sql>
+  </Opt>
+  <Opt id="GetOpFlag">
+    <sql>
+      select OPFLAG from LKWZ.DICTWZINOUT where IOID=?
+    </sql>
+  </Opt>
+  <Opt id="SearchDicWZInOut">
+    <sql>
+      select * from LKWZ.DICTWZINOUT where IOID=?
+    </sql>
+  </Opt>
+  <Opt id="GetRecipeNo">
+    <sql>
+      select count(RECIPECODE) from LKWZ.WZINMAIN where RECIPECODE like ?
+    </sql>
+  </Opt>
+  <Opt id="GetOutRecipeNo">
+    <sql>
+      select count(RECIPECODE) from LKWZ.WZOUTMAIN where RECIPECODE like ?
+    </sql>
+  </Opt>
+  <Opt id="WZWareIfall">
+    <sql>
+      select IFALL from lkwz.dictwzware where WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetInWZ0">
+    <sql>
+      <![CDATA[
+        select a.WZNAME as 物资 ,a.WZID as 物资ID,a.UNITCODE as 单位编码,a.PRICE as 采购单价0,a.LSUNITCODE as 最小单位编码,a.CHANGERATE as 换算系数,a.LOWNUM as 最低库存量,a.HIGHNUM as 最高库存量,a.VALIDE as 有效期0,a.RATE as 加价率,a.TXM as 条形码,c.DICDESC as 单位0 from LKWZ.DICTWZ a,LKWZ.DICTWZWARE b,HIS.字典表 c
+        where a.CHOSCODE=? and (a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and b.IFALL=1)  and (a.WZNAME like ? or a.WZID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) and (c.DICGRPID=301 and c.DICID=a.UNITCODE )
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetInWZ">
+    <sql>
+      <![CDATA[
+        select distinct a.WZNAME as 物资 ,a.WZID as 物资ID,a.UNITCODE as 单位编码,c.DICDESC as 单位0,a.PRICE as 采购单价0,a.LSUNITCODE as 最小单位编码,a.CHANGERATE as 换算系数,a.LOWNUM as 最低库存量,a.HIGHNUM as 最高库存量,a.VALIDE as 有效期0,a.RATE as 加价率,a.TXM as 条形码 from LKWZ.DICTWZ a,LKWZ.DICTWZWAREDETAIL b,HIS.字典表 c
+        where a.CHOSCODE=? and a.KINDCODE like concat(b.kindcode,'%') and a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and (a.WZNAME like ? or a.WZID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) and (c.DICGRPID=301 and c.DICID=a.UNITCODE )
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetWZName">
+    <sql>
+      select WZNAME from LKWZ.DICTWZ where WZID=?
+    </sql>
+  </Opt>
+  <Opt id="GetWZUnit">
+    <sql>
+      <![CDATA[
+        select a.DICDESC as 单位,a.DICID as 单位编码 from HIS.字典表 a,LKWZ.DICTWZ b
+        where a.DICGRPID=301 and (a.DICID=b.UNITCODE or a.DICID=b.LSUNITCODE) and b.CHOSCODE=? and b.WZID=? and (a.DICID like ? or a.DICDESC like ?  or upper(a.PYCODE) like upper(?) )
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetWZUnit2">
+    <sql>
+      <![CDATA[
+        select distinct a.DICID,a.DICDESC from HIS.字典表 a,LKWZ.DICTWZ b
+        where a.DICGRPID=301
+      ]]>
+
+    </sql>
+  </Opt>
+  <!--库房的计价体系是否统一浮动-->
+  <Opt id="PriceIfAll">
+    <sql>
+      select b.IFALL from LKWZ.DICTWZWARE a,LKWZ.DICTWZPRICE b where a.PRICEID=b.PRICEID and a.CHOSCODE=? and a.WARECODE=?
+    </sql>
+  </Opt>
+  <!--获取计价体系加价率-->
+  <Opt id="GetPriceRate">
+    <sql>
+      select RATE from LKWZ.DICTWZPRICE where PRICEID=?
+    </sql>
+  </Opt>
+  
+  <Opt id="IsLSUNITCODE">
+    <sql>
+      select LSUNITCODE from LKWZ.DICTWZ where CHOSCODE=? and WZID=?
+    </sql>
+  </Opt>
+  <Opt id="GetSupply">
+    <sql>
+      select SUPPLYID as 生产厂家ID,SUPPLYNAME as 生产厂家 from LKWZ.DICTWZSUPPLY where IFFACTORY=1 and  (CHOSCODE = 0 or CHOSCODE = ?)
+    </sql>
+  </Opt>
+  <Opt id="SaveWZInDetailInfo" key="DETAILNO" table="LKWZ.WZINDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="WZID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="LSMONEY"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+  <Opt id="DeleteWZInDetailInfo">
+    <sql>
+      delete from LKWZ.WZINDETAIL  where DETAILNO=?
+    </sql>
+    <Pa name ="DETAILNO"/>
+  </Opt>
+  <Opt id="GetInWareId">
+    <sql>
+      select INID from LKWZ.WZINDETAIL  where DETAILNO=?
+    </sql>
+  </Opt>
+  <Opt id="SearchDICTWZ">
+    <sql>
+      select * from LKWZ.DICTWZ where CHOSCODE = ? and WZID=?
+    </sql>
+  </Opt>
+  <Opt id="GetValidate">
+    <sql>
+      select VALIDE from LKWZ.DICTWZ where  CHOSCODE = ? and WZID=?
+    </sql>
+  </Opt>
+  <Opt id="GetLSUNITCODE">
+    <sql>
+      select * from LKWZ.DICTWZ where  CHOSCODE = ? and WZID=?
+    </sql>
+  </Opt>
+  <Opt id="SaveWZStockInfo" key="STOCKID" table="LKWZ.WZSTOCK">
+    <Pa name="STOCKID" update="false"/>
+    <Pa name="WARECODE" />
+    <Pa name="WZID"/>
+    <Pa name="NUM"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="NUMSX"/>
+    <Pa name="NUMXX"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SearchWZStock">
+    <sql>
+      select * from LKWZ.WZSTOCK where STOCKID=? and WZID=?
+    </sql>
+  </Opt>
+  <Opt id="GetSTOCKTable">
+    <sql>
+      select * from LKWZ.WZSTOCK where CHOSCODE=? and WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetSTOCKId">
+    <sql>
+      select STOCKID from LKWZ.WZSTOCK where CHOSCODE=? and WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetNUM">
+    <sql>
+      select NUM from LKWZ.WZSTOCK where CHOSCODE=? and WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetNUMSX">
+    <sql>
+      select NUMSX from LKWZ.WZSTOCK where CHOSCODE=? and WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetOutNUM">
+    <sql>
+      select OUTNUM from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="IsInWZStock">
+    <sql>
+      select * from LKWZ.WZSTOCK where CHOSCODE =? and WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="SearchWZInDetail">
+    <sql>
+      select * from LKWZ.WZINDETAIL where DETAILNO=?
+    </sql>
+  </Opt>
+  <Opt id="SaveWZStockDetailInfo" key="FLOWNO" table="LKWZ.WZSTOCKDETAIL">
+    <Pa name="FLOWNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="WZID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="STOCKID"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="BEFORENUM"/>
+    <Pa name="OUTNUM"/>
+    <Pa name="CHANGERATE"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID2"/>
+    <Pa name="SUPPLYNAME2"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INDATE"/>
+  </Opt>
+  <Opt id="SearchWZStockDetail">
+    <sql>
+      select * from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+
+  <!--物资出库管理-->
+  <Opt id="WZOutMainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKWZ.WZOUTMAIN where OPFLAG=0 and cHosCode=? and STATUS =? and WARECODE =? and OUTDATE >= ? and OUTDATE <= ? order by OUTID
+      ]]>
+    </sql>
+  </Opt>
+  <!--
+   <Opt id="WZInDetailSearch">
+    <sql>
+      select a.*,wz.WZNAME,wz.PRICE as wzPRICE,wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE,wz.LOWNUM,wz.HIGHNUM,zd.DICDESC from LKWZ.WZINDETAIL a,LKWZ.DICTWZ wz,HIS.字典表 zd where a.INID=? and a.CHOSCODE=? and a.WZID=wz.WZID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by INID
+    </sql>
+    <Pa name="INID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  -->
+  <Opt id="WZOutDetailSearch">
+    <sql>
+      <![CDATA[
+        select a.* ,wz.WZNAME, wz.UNITCODE as wzUNITCODE,wz.LSUNITCODE,wz.CHANGERATE,wz.RATE ,(s.NUM-s.OUTNUM) as flnum,s.PRICE as PRICE0,s.LSPRICE from LKWZ.WZOUTDETAIL a,LKWZ.DICTWZ wz,LKWZ.WZSTOCKDETAIL s where OUTID=? and a.cHosCode=? and a.WZID=wz.WZID and a.STOCKFLOWNO=s.FLOWNO order by OUTID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetOutWareWay">
+    <sql>
+      select IONAME as 出库方式,IOID as 出库方式编码 from LKWZ.DICTWZINOUT where IFUSE=1 and IOFLAG=1 and USEST=1 and OPFLAG=0 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="GetOutWare">
+    <sql>
+      select WARENAME as 出库库房,WARECODE as 出库库房编码 from LKWZ.DICTWZWARE where IFUSE=1  and CHOSCODE=?  and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?) )order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="GetOutWareWayName">
+    <sql>
+      select IONAME,IOID from LKWZ.DICTWZINOUT where IFUSE=1 and IOFLAG=1 and USEST=1 and OPFLAG=0 and CHOSCODE=? and IOID=? order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="SaveWZOutMainInfo" key="OUTID" table="LKWZ.WZOUTMAIN">
+    <Pa name="OUTID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="LSTOTALMONEY"/>
+    <Pa name="OUTDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="INID"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHOUTDATE"/>
+    <Pa name="SHOUTUSERID"/>
+    <Pa name="SHOUTUSERNAME"/>
+    <Pa name="PLANNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="UpdateWZOutMain" key="OUTID" table="LKWZ.WZOUTMAIN">
+    <Pa name="OUTID" update="false"/>
+    <Pa name="TOTALMONEY" update="true"/>
+    <Pa name="LSTOTALMONEY" update="true"/>
+  </Opt>
+  <Opt id="GetHisPra">
+    <sql>
+      select SYSVALUE from HIS.系统参数 where id=2103
+    </sql>
+  </Opt>
+  <Opt id="IsHaveOutDetail">
+    <sql>
+      <![CDATA[
+        select count(*) n from LKWZ.WZOUTDETAIL where OUTID=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetOutWZ1">
+    <sql>
+      <![CDATA[
+        select  a.WZNAME as 物资, a.WZID as 物资ID,b.LSUNITCODE as 单位,a.UNITCODE as 物资单位 ,a.LSUNITCODE as 最小单位 from LKWZ.DICTWZ a,LKWZ.WZSTOCK b,HIS.字典表 zd
+        where (a.WZID= b.WZID and a.CHOSCODE=b.CHOSCODE and b.CHOSCODE=? and b.WARECODE=? and b.NUM>0) and (a.WZNAME like ? or a.WZID like ? or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by a.WZNAME
+        
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetOutWZ2">
+    <sql>
+      <![CDATA[
+        select  a.WZNAME as 物资, a.WZID as 物资ID ,a.UNITCODE as 物资单位 ,a.LSUNITCODE as 最小单位 from LKWZ.DICTWZ a,LKWZ.WZSTOCK b，HIS.字典表 zd
+        where (a.WZID=b.WZID and a.CHOSCODE=b.CHOSCODE and b.CHOSCODE=? and b.WARECODE=? ) and (a.WZNAME like ? or a.WZID like ? or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by a.WZNAME
+        
+      ]]>
+    </sql>
+  </Opt>
+  <!--
+  <Opt id="GetWZSTOCK">
+    <sql>
+      select s.FLOWNO as 库存流水号,(s.NUM-s.OUTNUM) as 数量,(s.NUM-s.OUTNUM)*PRICE as 入库金额,(s.NUM-s.OUTNUM)*s.LSPRICE as 出库金额, s.CHANGERATE as 换算系数,s.PRICE as 入库单价,s.LSPRICE as 出库单价,s.PH as s.生产批号,
+      s.PZWH as 批准文号,s.SUPPLYID as 生产厂家ID,s.SUPPLYNAME as 生产厂家名称,s.PRODUCTDATE as 生产日期,s.VALIDDATE as 有效期,s.WSXKZH as 卫生许可证号,
+      s.MEMO as 备注,s.TXM as 条形码
+      from LKWZ.WZSTOCKDETAIL s,LKWZ.WZINDETAIL inxb where WZID=? and WARECODE=?
+    </sql>
+  </Opt>
+  -->
+  <Opt id="GetWZSTOCK">
+    <sql>
+      <![CDATA[
+      (select s.FLOWNO as 库存流水号,(s.NUM-s.OUTNUM) as 数量,(s.NUM-s.OUTNUM) as 流水表数量,s.CHANGERATE as 换算系数,s.LSUNITCODE as 单位,(s.NUM-s.OUTNUM)*s.PRICE as 入库金额,(s.NUM-s.OUTNUM)*s.LSPRICE as 出库金额, s.PRICE as 入库单价,s.PRICE as 入库单价0,s.LSPRICE as 出库单价,s.LSPRICE as 出库单价0,s.PH as 生产批号,
+      s.PZWH as 批准文号,s.SUPPLYID as 生产厂家ID,s.SUPPLYNAME as 生产厂家名称,s.PRODUCTDATE as 生产日期,s.VALIDDATE as 有效期,s.WSXKZH as 卫生许可证号,
+      s.MEMO as 备注,s.TXM as 条形码
+      from LKWZ.WZSTOCKDETAIL s where s.WZID=? and s.WARECODE=? and (s.NUM-s.OUTNUM)>0 ) minus
+      (select s.FLOWNO as 库存流水号,(s.NUM-s.OUTNUM) as 数量,(s.NUM-s.OUTNUM) as 流水表数量,s.CHANGERATE as 换算系数,s.LSUNITCODE as 单位,(s.NUM-s.OUTNUM)*s.PRICE as 入库金额,(s.NUM-s.OUTNUM)*s.LSPRICE as 出库金额, s.PRICE as 入库单价,s.PRICE as 入库单价0,s.LSPRICE as 出库单价,s.LSPRICE as 出库单价0,s.PH as 生产批号,
+      s.PZWH as 批准文号,s.SUPPLYID as 生产厂家ID,s.SUPPLYNAME as 生产厂家名称,s.PRODUCTDATE as 生产日期,s.VALIDDATE as 有效期,s.WSXKZH as 卫生许可证号,
+      s.MEMO as 备注,s.TXM as 条形码
+      from LKWZ.WZSTOCKDETAIL s,LKWZ.WZOUTMAIN t,LKWZ.WZOUTDETAIL z where s.WZID=? and s.WARECODE=? and (s.NUM-s.OUTNUM)>0 and (t.OUTID=z.OUTID and (t.STATUS=1 or t.STATUS=2) and z.STOCKFLOWNO=s.FLOWNO))
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetOutWareId">
+    <sql>
+      select OUTID from LKWZ.WZOUTDETAIL  where DETAILNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetFLOWNO">
+    <sql>
+      <![CDATA[
+        select  b.FLOWNO, a.WZNAME, b.num ,b.OUTNUM,b.lsunitcode  ,b.changerate ,b.price  ,b.lsprice ,b.ph ,b.pzwh ,
+        b.supplyid ,b.supplyname,b.productdate ,b.validdate,b.wsxkzh ,b.memo,b.txm,b.recipecode,b.indate ,b.choscode 
+        from LKWZ.DICTWZ a,LKWZ.WZSTOCKDETAIL b
+        where (a.WZID= b.WZID and a.CHOSCODE=b.CHOSCODE and b.STOCKID=? and b.WARECODE=? and (b.num-b.OUTNUM)>0 ) and (b.FLOWNO like ? or b.supplyname like ?)order by a.WZNAME
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetInPrice">
+    <sql>
+      select PRICE from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetLsPrice">
+    <sql>
+      select LSPRICE from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetMemo">
+    <sql>
+      select MEMO from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetCRate">
+    <sql>
+      select CHANGERATE from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetInnum">
+    <sql>
+      select NUM from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+  <Opt id="GetOutnum">
+    <sql>
+      select OUTNUM from LKWZ.WZSTOCKDETAIL where FLOWNO=?
+    </sql>
+  </Opt>
+
+  <Opt id="SaveWZOutDetailInfo" key="DETAILNO" table="LKWZ.WZOUTDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="OUTID" />
+    <Pa name="WZID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="INPRICE"/>
+    <Pa name="INMONEY"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+  <Opt id="DeleteWZOutDetailInfo">
+    <sql>
+      delete from LKWZ.WZOUTDETAIL  where DETAILNO=?
+    </sql>
+    <Pa name ="DETAILNO"/>
+  </Opt>
+  <!--统计查询-->
+  <!--入库查询-->
+  <Opt id="StatQuery_GetInWare">
+    <sql>
+      select WARENAME as 库房名称,WARECODE as 库房编码 from LKWZ.DICTWZWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_GetInWareWay">
+    <sql>
+      select IONAME as 入库方式,IOID 入库方式ID from LKWZ.DICTWZINOUT where IFUSE=1 and IOFlag=0 and CHOSCODE=? and (IONAME like ? or IOID like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_WZInMainSearch">
+    <sql>
+      <![CDATA[
+        select a.*,b.IONAME,c.WARENAME from LKWZ.WZINMAIN a,LKWZ.DICTWZINOUT b,LKWZ.DICTWZWARE c where (a.cHosCode=? and a.WARECODE=?  and a.STATUS=6 and a.INDATE >= ? and a.INDATE <= ? )  and a.IOID=b.IOID and a.WARECODE=c.WARECODE [Condition] order by INID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_WZInDetailSearch">
+    <sql>
+      <![CDATA[
+        select a.* ,wz.WZNAME,zd.DICDESC from LKWZ.WZINDETAIL a, LKWZ.DICTWZ wz, HIS.字典表 zd where a.INID=? and a.cHosCode=? and a.WZID=wz.WZID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by INID
+      ]]>
+    </sql>
+  </Opt>
+
+  <!--出库查询-->
+  <Opt id="StatQuery_GetOutWare">
+    <sql>
+      select WARENAME as 出库库房,WARECODE as 出库库房编码 from LKWZ.DICTWZWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_GetOutWareWay">
+    <sql>
+      select IONAME as 出库方式,IOID as 出库方式编码 from LKWZ.DICTWZINOUT where IFUSE=1 and IOFlag=1 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_WZOutMainSearch">
+    <sql>
+      <![CDATA[
+        select a.* ,b.IONAME,c.WARENAME,d.WARENAME as TARGETWARENAME from LKWZ.WZOUTMAIN a ,LKWZ.DICTWZINOUT b,LKWZ.DICTWZWARE c ,LKWZ.DICTWZWARE d where (a.cHosCode=? and a.WARECODE=?  and a.STATUS=6 and a.OUTDATE >= ? and a.OUTDATE <= ? ) and a.IOID=b.IOID and a.WARECODE=c.WARECODE and a.TARGETWARECODE=d.WARECODE [Condition] order by OUTID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="StatQuery_WZOutDetailSearch">
+    <sql>
+      <![CDATA[
+        select a.* ,wz.WZNAME,zd.DICDESC from LKWZ.WZOUTDETAIL a , LKWZ.DICTWZ wz, HIS.字典表 zd where a.OUTID=? and a.cHosCode=? and a.WZID=wz.WZID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by OUTID
+      ]]>
+    </sql>
+  </Opt>
+
+</opts>
+

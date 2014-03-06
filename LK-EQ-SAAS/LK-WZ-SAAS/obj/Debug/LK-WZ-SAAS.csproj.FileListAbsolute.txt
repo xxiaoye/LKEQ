@@ -1,0 +1,786 @@
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZ.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZ.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+F:\lkwzCombine\lkwzCombine(7_17)\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\chaoge.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\LKWZConfig.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\OptConfig.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\conxml\Optconfig0.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\Check.png
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\edit_blue.GIF
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\exit.png
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\green_arrow.gif
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\login.jpg
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.ICO
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\main.jpg
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t1.png
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\t2.png
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbg.jpg
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\titbgo.jpg
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Ico\top.jpg
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\office.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Interop.IWshRuntimeLibrary.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\IBM.Data.DB2.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\ChSys.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtWinContrl.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LKWZSVR.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtDict.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\StatQuery.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtService.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\DevComponents.DotNetBar2.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtUtil.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\JiChuDict.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\BusinessManag.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtSys.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtPlugin.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtClient.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YiTian.xml
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YTMain.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\YtJsEngine.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK_WZ_SAAS.Properties.Resources.resources
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.csproj.GenerateResource.Cache
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目3\LK-WZ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\叶翔斌\项目3\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目3\LK-WZ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\bin\Debug\LK-WZ-SAAS.exe.config
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.exe
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\obj\Debug\LK-WZ-SAAS.pdb

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<opts>
+  <Opt id="SELTABLE_List">
+    <sql>
+      <![CDATA[ 
+		   select * from His.用户表  
+	     ]]>
+    </sql>
+    　　
+  </Opt>
+</opts>
+

@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31779BD9-0B6B-412A-AB0B-C68C3F78793D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JiChuDictionary</RootNamespace>
+    <AssemblyName>JiChuDictionary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\LK-WZ-SAAS\plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YiTian, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YiTian.dll</HintPath>
+    </Reference>
+    <Reference Include="YtClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtClient.dll</HintPath>
+    </Reference>
+    <Reference Include="YtPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="YtUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="YtWinContrl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtWinContrl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DictManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictManag.designer.cs">
+      <DependentUpon>DictManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQCountKindManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQCountKindManag.designer.cs">
+      <DependentUpon>EQCountKindManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQInOutManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQInOutManag.designer.cs">
+      <DependentUpon>EQInOutManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQStatusManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQStatusManag.designer.cs">
+      <DependentUpon>EQStatusManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQWareManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQWareManager.designer.cs">
+      <DependentUpon>EQWareManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddEQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddEQ.designer.cs">
+      <DependentUpon>AddEQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddEQCountKind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddEQCountKind.designer.cs">
+      <DependentUpon>AddEQCountKind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddEQInOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddEQInOut.designer.cs">
+      <DependentUpon>AddEQInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddEQStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddEQStatus.designer.cs">
+      <DependentUpon>AddEQStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQUnit_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQUnit_Add.Designer.cs">
+      <DependentUpon>EQUnit_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Producters_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Producters_Add.designer.cs">
+      <DependentUpon>Producters_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQDict_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQDict_Add.designer.cs">
+      <DependentUpon>EQDict_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\FixKind_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\FixKind_Add.designer.cs">
+      <DependentUpon>FixKind_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\DateDivide_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\DateDivide_Add.designer.cs">
+      <DependentUpon>DateDivide_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\SetEQDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\SetEQDetail.Designer.cs">
+      <DependentUpon>SetEQDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KindManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KindManag.Designer.cs">
+      <DependentUpon>KindManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\Kind_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\Kind_Add.Designer.cs">
+      <DependentUpon>Kind_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectUnitManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectUnitManag.Designer.cs">
+      <DependentUpon>ProjectUnitManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProducterManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProducterManag.designer.cs">
+      <DependentUpon>ProducterManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SysValueManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SysValueManag.designer.cs">
+      <DependentUpon>SysValueManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FixKindManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FixKindManag.designer.cs">
+      <DependentUpon>FixKindManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateDivideManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DateDivideManag.designer.cs">
+      <DependentUpon>DateDivideManag.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DictManag.resx">
+      <DependentUpon>DictManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQCountKindManag.resx">
+      <DependentUpon>EQCountKindManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQInOutManag.resx">
+      <DependentUpon>EQInOutManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQStatusManag.resx">
+      <DependentUpon>EQStatusManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQWareManager.resx">
+      <DependentUpon>EQWareManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddEQ.resx">
+      <DependentUpon>AddEQ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddEQCountKind.resx">
+      <DependentUpon>AddEQCountKind.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddEQInOut.resx">
+      <DependentUpon>AddEQInOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddEQStatus.resx">
+      <DependentUpon>AddEQStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQUnit_Add.resx">
+      <DependentUpon>EQUnit_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Producters_Add.resx">
+      <DependentUpon>Producters_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQDict_Add.resx">
+      <DependentUpon>EQDict_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\FixKind_Add.resx">
+      <DependentUpon>FixKind_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\DateDivide_Add.resx">
+      <DependentUpon>DateDivide_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\SetEQDetail.resx">
+      <DependentUpon>SetEQDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KindManag.resx">
+      <DependentUpon>KindManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\Kind_Add.resx">
+      <DependentUpon>Kind_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProducterManag.resx">
+      <DependentUpon>ProducterManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectUnitManag.resx">
+      <DependentUpon>ProjectUnitManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysValueManag.resx">
+      <DependentUpon>SysValueManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixKindManag.resx">
+      <DependentUpon>FixKindManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateDivideManag.resx">
+      <DependentUpon>DateDivideManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChSys\ChSys.csproj">
+      <Project>{2B41A68B-2591-4363-885C-43BBF0542ABA}</Project>
+      <Name>ChSys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

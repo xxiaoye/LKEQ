@@ -1,0 +1,2881 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<opts>
+  <Opt id="testsql">
+    <sql>select * from dictwzkind t</sql>
+  </Opt>
+  <Opt id="FindMenuRightDict" sql="select RIGHTID,RNAME,RIGHTKIND,Descript from T_HIS_RIGHT ORDER BY RIGHTID ASC "/>
+  <Opt id="FindDict" sql="select DICID,DICDESC from 字典表 where DICGRPID = ?  order by pycode"/>
+
+  <Opt id="medicaltypeDict" sql="select DICID,DICDESC from (select DICID,DICDESC,pycode from 字典表 where DICGRPID = 6 and fixed=1 union select a.DICID,a.DICDESC,a.pycode from 字典表 a,医保设置表 b where a.DICGRPID = 6 and a.fixed=0 and a.dicid=b.hismedicaltype and b.ifuse=1 and b.choscode in (?,?)) t order by pycode"/>
+  
+  <Opt id="FindDictSEL" sql="select DICDESC,DICID,PYCODE from 字典表 where DICGRPID = ? AND (DICDESC LIKE ? OR PYCODE LIKE ?) order by PYCODE"/>
+  <Opt id="LoginFindUser" sql="select CHosName as 机构名称,CHosCode as 编码,helpcode,parentHoscode,AreaCode from SysDictHospital where IsInEffect=1 and (helpcode like ? or CHosName like ?)"/>
+  <Opt id="LoginFindUser">
+    <sql>
+      <![CDATA[
+         select a.Name as 名称,replace(a.Useraccount,a.cHosCode,'') 账户名称, b.名称 as 科室,a.userid as 用户ID
+       from His.用户表 a left join His.科室表 b  on a.choscode=b.choscode 
+     where a.efficet='0' and a.cHosCode =‘010702’ and (a.Useraccount like ? or a.Name like ?)
+ ]]>
+    </sql>
+  </Opt>
+   
+  <!--科室信息管理-->
+  <Opt id="FindKsInfo" sql="select ID,名称,类别,上级科室,级别,代码,农合名称,农合编码,cHosCode,USEPLACE from 科室表 where cHosCode=? order by 级别 "/>
+  <Opt id="SysWH_FindKSDict" sql="select DICDESC as 科室名称,DICID as ID ,pycode as 拼音码 from 字典表 where (DICDESC like ? or pycode like ?) and DICGRPID = '26'"/>
+  <Opt id="SysWH_FindNHKSDict">
+    <sql>select 农合名称,农合编码,农合简写 from 农合科室表 where 农合编码 like ? or 农合名称 like ? or 农合简写 like ?</sql>
+  </Opt>
+
+  <Opt id="ReportSEL_UserID">
+    <sql>
+      <![CDATA[select Name AS 姓名,UserID from 用户表 where cHosCode=? and Name like ?]]>
+    </sql>
+  </Opt>
+  
+  <Opt id="SaveKsInfo" key="ID" table="科室表">
+    <Pa name="代码"/>
+    <Pa name="农合编码"/>
+    <Pa name="农合名称"/>
+    <Pa name="USEPLACE"/>
+    <Pa name="上级科室" update="false"/>
+    <Pa name="级别" update="false"/>
+    <Pa name="名称"/>
+    <Pa name="cHosCode"/>
+    <Pa name="ID" insert="false" update="false"/>
+  </Opt>
+  <Opt id="DelKsInfo" sucMsg="成功删除科室信息！" >
+    <sql>DELETE FROM 科室表 WHERE ID= ?</sql>
+    <Pa name="ID"/>
+  </Opt>
+ <!--医生信息管理-->
+  <Opt id="FindKsInfoDict" sql="select ID,名称 from 科室表 where cHosCode=? order by 级别 "/>
+  <Opt id="FindKsInfoDictSel" sql="select 名称,ID from 科室表 where cHosCode=? and  (名称 like ? or 代码 like ? ) order by 级别 "/>
+  <Opt id="FindZwInfoDict" sql="select id,名称 from 职务表 where cHosCode='0' or cHosCode like ? order by 名称 "/>
+  <Opt id="FindYiShengList">
+       <sql>select ID,姓名,拼音码,trim(性别) as 性别,出生年月,科室,职务,IfOperator,UserAccount,cHosCode,ifuse,IfDoctor,IfHead from 医生表 where cHosCode=? [Condition] order by 科室</sql>
+  </Opt>
+  <Opt id="SaveYiShengInfo" key="ID" table="医生表">
+    <Pa name="性别"/>
+    <Pa name="科室"/>
+    <Pa name="姓名"/>
+    <Pa name="拼音码"/>
+    <Pa name="职务"/>
+    <Pa name="cHosCode"/>
+    <Pa name="IfOperator"/>
+    <Pa name="IfUse"/>
+    <Pa name="IfDoctor"/>
+    <Pa name="IfHead"/>
+    <Pa name="出生年月"/>
+    <Pa name="ID" insert="false" update="false"/>
+  </Opt>
+  <Opt id="DelYiShengInfo" sucMsg="成功删除医生信息！" >
+    <sql>DELETE FROM 医生表 WHERE ID= ?</sql>
+    <Pa name="ID"/>
+  </Opt>
+  <!--病房信息管理-->
+  <Opt id="FindBingFInfoDict" sql="select ID,病房名称,所属科室,cHosCode from 病房表 where cHosCode = ? order by 所属科室"/>
+  <Opt id="FindBingFSelList" sql="select ID,病房名称 from 病房表 where cHosCode = ? order by 所属科室"/>
+  <Opt id="FindChuangWInfoDict" sql="select ID,床位名称,所在病房,状态,住院号,cHosCode from 床位表 where 所在病房=? and cHosCode = ? order by ID"/>
+  <Opt id="SaveBFInfo" key="ID" table="病房表">
+    <Pa name="所属科室"/>
+    <Pa name="病房名称"/>
+    <Pa name="cHosCode"/>
+    <Pa name="ID" insert="false" update="false"/>
+  </Opt>
+  <Opt id="DelBingFInfo" sucMsg="成功删除病房信息！" >
+    <sql>DELETE FROM 病房表 WHERE ID= ?</sql>
+    <Pa name="ID"/>
+  </Opt>
+  <Opt id="SaveCwInfo" key="ID" table="床位表">
+    <Pa name="床位名称"/>
+    <Pa name="所在病房" update="false"/>
+    <Pa name="cHosCode" update="false"/>
+    <Pa name="ID" insert="false" update="false"/>
+  </Opt>
+  <Opt id="DelCwFInfo" sucMsg="成功删除床位信息！" >
+    <sql>DELETE FROM 床位表 WHERE ID= ?</sql>
+    <Pa name="ID"/>
+  </Opt>
+  <!---诊疗项目管理-->
+  <Opt id="FindZLXmList">
+    <sql>
+      select * from (
+      select 项目编码,拼音码,项目名称,项目单位,项目价格,费用类别,备注,上级,项目级别,农合编码,农合名称,核算科室,
+      cHosCode,有效标志,费用汇总类别,保内外,县级保内外,财务编码,县价,乡价,村价,县级农合编码,flag,医保编码11,医保名称11
+      from 项目表 where cHosCode = ?
+      union all
+      select 项目编码,拼音码,项目名称,项目单位,(case ? when '1' then 县价 when '2' then 乡价 else 村价 end) as 项目价格,
+      费用类别,备注,上级,项目级别,case when ?=1 then 县级农合编码 else 农合编码 end 农合编码,农合名称,核算科室,cHosCode,有效标志,费用汇总类别,
+      case when ?=1 then 县级保内外 else 保内外 end 保内外,县级保内外,财务编码,县价,乡价,村价,县级农合编码,flag,医保编码11,医保名称11
+      from 项目表 where cHosCode = ? order by cHosCode desc) where 1=1 [Condition]
+    </sql>
+  </Opt>
+
+  <Opt id="WsjFindZLXmList">
+    <sql>
+      select * from (
+      select 项目编码,拼音码,项目名称,项目单位,项目价格,费用类别,备注,上级,项目级别,农合编码,农合名称,核算科室,
+      cHosCode,有效标志,费用汇总类别,保内外,县级保内外,财务编码,县价,乡价,村价,县级农合编码,flag,医保编码11,医保名称11
+      from 项目表 where cHosCode = ?) where 1=1 [Condition]
+    </sql>
+  </Opt>  
+      
+  <Opt id="FindFyLbList">
+    <sql>
+      select ID,类别名称 from 费用类别表 where (cHosCode='0') or (cHosCode like ?) or (cHosCode=?) order by 类别名称
+    </sql>
+  </Opt>
+  <Opt id="FindFyLbListSEL">
+    <sql>
+      select 类别名称,ID from 费用类别表 where ((cHosCode='0') or (cHosCode like ?) or (cHosCode=?)) AND (类别名称 like ? or pycode like ?) order by 类别名称
+    </sql>
+  </Opt>
+  <Opt id="FindXmDwList">
+    <sql>
+      select 编号,名称 from 项目单位表 where 1=1 or (cHosCode like ?) or (cHosCode=?)
+    </sql>
+  </Opt>
+  <Opt id="FindXmDwListSEL"> 
+    <sql>
+      select 名称,编号,PYCODE AS 拼音码 from 项目单位表 where (1=1 or (cHosCode like ?) or (cHosCode=?) ) AND (名称 like ? or PYCODE like ?) order by PYCODE asc
+    </sql>
+  </Opt>
+  <Opt id="FindCwFlList">
+    <sql>
+      select itemcode,itemname from 财务分类表
+    </sql>
+  </Opt>
+  <Opt id="FindNhXmList">
+    <sql>
+      select 农合编码,农合名称,农合简写,保内外 from 农合项目表 where choscode=? and RANK=? and (农合编码 like ? or 农合名称 like ? or 农合简写 like ?)
+    </sql>
+  </Opt> 
+
+  <Opt id="SaveXmInfo" key="项目编码" table="项目表">
+    <Pa name="上级"/>
+    <Pa name="项目价格"/>
+    <Pa name="项目名称"/>
+    <Pa name="拼音码"/>
+    <Pa name="农合编码"/>
+    <Pa name="核算科室"/>
+    <Pa name="财务编码"/>
+    <Pa name="保内外"/>
+    <Pa name="备注"/>
+    <Pa name="有效标志"/>
+    <Pa name="费用类别"/>
+    <Pa name="项目单位"/>
+    <Pa name="农合名称"/>
+    <Pa name="费用汇总类别"/>
+    <Pa name="县价"/>
+    <Pa name="乡价"/>
+    <Pa name="村价"/>
+    <Pa name="县级农合编码"/>
+    <Pa name="县级保内外"/>
+    <Pa name="医保编码11"/>
+    <Pa name="医保名称11"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="项目编码" update="false"/>
+  </Opt>
+
+  <Opt id="UpdateZYCFMXInfo">
+    <sql>update 住院处方明细表 set 农合编码=?, 农合名称=?, 费用类别=? where 编码=? and 标志=1 and choscode=?</sql>
+    <Pa name="农合编码"/>
+    <Pa name="农合名称"/>
+    <Pa name="费用类别"/>
+    <Pa name="项目编码"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="UpdateMZCFMXInfo">
+    <sql>update 门诊处方明细表 set 农合编码=?, 农合名称=?, 费用类别=? where 编码=? and 标志=1 and choscode=?</sql>
+    <Pa name="农合编码"/>
+    <Pa name="农合名称"/>
+    <Pa name="费用类别"/>
+    <Pa name="项目编码"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="XmiInfo_seq">
+    <sql>
+      select max(to_number(项目编码))  from 项目表
+    </sql>
+  </Opt>
+  <Opt id="XmIsSy">
+    <sql>
+      select (select count(*) num  from 门诊处方明细表  where cHosCode=? and 标志='1' and 编码 = ?) +  (select count(*) num  from 住院处方明细表  where cHosCode=? and 标志='1' and 编码 = ?) as num from dual
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="项目编码"/>
+    <Pa name="cHosCode"/>
+    <Pa name="项目编码"/>
+  </Opt>
+  <Opt id="DelXmInfo" sucMsg="成功删除项目信息！" >
+    <sql>DELETE FROM 项目表 WHERE cHosCode= ? and 项目编码= ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="项目编码"/>
+  </Opt>
+ <!-- 药品字典管理-->
+  <Opt id="FindFyYfLbList">
+    <sql>
+      select ID,类别名称 from 费用类别表
+      where ((cHosCode='0') or (cHosCode like ?) or (cHosCode=?) ) and (flag='0' or flag='2') order by 类别名称 
+    </sql>
+  </Opt>
+  <Opt id="FindYaoPingList">
+    <sql>
+      select ID,药品编码,拼音码,药品名称,药品规格,辅助单位,计价单位,换算关系,药品分类,费用归类,最低库存,含量系数,
+      含量单位,剂型,农合编号,农合名称,存贮条件,性状,进口,贵重,毒麻,OTC,内服,适用对象,允许欠费,批准文号,
+      有效期,备注,零售价格,最近成本,cHosCode,禁用标志,生产厂家,供应商,保内外,基药ID,医保编码11,医保名称11,
+      (case when 基药ID>0 then '基药' else '' end) as 基药
+      from 药品字典表 where cHosCode=? [Condition] order by ID desc
+    </sql>
+   </Opt>
+  <Opt id="FindZBYaoPingList">
+    <sql>
+      select 通用名,SNO,商品名,质量层次,剂型,规格包装,单位,包装材质,供应价,临时零售价,生产企业,投标企业, pycode, UnitID,JXID,JYID
+      from 招标药品表 where 通用名 like ? or 商品名 like ? or pycode like ? order by pycode
+    </sql>
+  </Opt>
+  <Opt id="FindNHYaoPingList">
+    <sql>
+      select 农合名称,农合编码,农合简写,剂型,保内外,基药标志 from 农合药品表 where choscode=? and RANK=? and (农合编码 like ? or 农合名称 like ? or 农合简写 like ?)
+    </sql>
+  </Opt>
+  <Opt id="FindJBYaoPingList">
+    <sql>
+      select 品种名称,ID,英文名称,剂型,分类编号,拼音码
+      from 基本药物表 where 拼音码 like ? or 品种名称 like ? order by 拼音码
+    </sql>
+  </Opt>
+  <Opt id="SaveYPDictInfo" key="ID" table="药品字典表">
+    <Pa name="药品名称"/>
+    <Pa name="药品规格"/>
+    <Pa name="计价单位"/>
+    <Pa name="最近成本"/>
+    <Pa name="零售价格"/>
+    <Pa name="拼音码"/>    
+    <Pa name="保内外"/>
+    <Pa name="OTC"/>
+    <Pa name="批准文号"/>
+    <Pa name="进口"/>
+    <Pa name="毒麻"/>
+    <Pa name="生产厂家"/>
+    <Pa name="费用归类"/>
+    <Pa name="含量系数"/>
+    <Pa name="换算关系"/>
+    <Pa name="性状"/>
+    <Pa name="备注"/>
+    <Pa name="最低库存"/>
+    <Pa name="含量单位"/>
+    <Pa name="辅助单位"/>
+    <Pa name="药品分类"/>
+    <Pa name="贵重"/>
+    <Pa name="适用对象"/>
+    <Pa name="内服"/>
+    <Pa name="基药ID"/>
+    <Pa name="禁用标志"/>
+    <Pa name="剂型"/>
+    <Pa name="供应商"/>
+    <Pa name="存贮条件"/>
+    <Pa name="农合编号"/>
+    <Pa name="农合名称"/>
+    <Pa name="医保编码11"/>
+    <Pa name="医保名称11"/>
+    <Pa name="药品编码" update="false"/>
+    <Pa name="cHosCode" update="false"/>
+    <Pa name="ID" insert="false" update="false"/>
+  </Opt>
+  <Opt id="SaveYPDictInfo_seq">
+    <sql>
+      select max(to_number(药品编码))  from 药品字典表 where cHosCode=?
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="YaoPingIsSy">
+    <sql>select count(*) as num from 库存药品 where cHosCode = ? and 药品编号=?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="药品编码"/>
+  </Opt>
+  <Opt id="DelYaoPingInfo" sucMsg="成功删除药品信息！" >
+    <sql>DELETE FROM 药品字典表 WHERE ID= ?</sql>
+    <Pa name="ID"/>
+  </Opt>
+  <!---药品供应商-->
+  <Opt id="FindYPGYSList">
+    <sql> select 编号,客商类型,名称,信誉额度,法人代表,联系人,移动电话,五笔简码,拼音简码,联系地址,邮政编码,电话,传真,营业执照,税号,开户银行,银行帐号,机构代码,证书编号,执行许可证,生产许可证,经营许可证,经营范围,备注,编码,应付金额,许可证有效期,有效状态,期初应付,分类码,同步序号,cHosCode from 供货单位 where cHosCode = ? order by 编号</sql>
+  </Opt>
+  <Opt id="GetYPGYSList">
+    <sql> select 编号,客商类型,名称,信誉额度,法人代表,联系人,移动电话,五笔简码,拼音简码,联系地址,邮政编码,电话,传真,营业执照,税号,开户银行,银行帐号,机构代码,证书编号,执行许可证,生产许可证,经营许可证,经营范围,备注,编码,应付金额,许可证有效期,有效状态,期初应付,分类码,同步序号,cHosCode from 供货单位 where cHosCode = ? and 编号=?</sql>
+  </Opt>
+  <Opt id="SaveYPGYSInfo" key="编号" table="供货单位">
+    <Pa name="电话"/>
+    <Pa name="有效状态"/>
+    <Pa name="许可证有效期"/>
+    <Pa name="生产许可证"/>
+    <Pa name="邮政编码"/>
+    <Pa name="执行许可证"/>
+    <Pa name="营业执照"/>
+    <Pa name="传真"/>
+    <Pa name="备注"/>
+    <Pa name="联系人"/>
+    <Pa name="联系地址"/>
+    <Pa name="名称"/>
+    <Pa name="开户银行"/>
+    <Pa name="经营许可证"/>
+    <Pa name="拼音简码"/>
+    <Pa name="证书编号"/>
+    <Pa name="信誉额度"/>
+    <Pa name="机构代码"/>
+    <Pa name="移动电话"/>
+    <Pa name="法人代表"/>
+    <Pa name="客商类型"/>
+    <Pa name="银行帐号"/>
+    <Pa name="税号"/>
+    <Pa name="编码"/>
+    <Pa name="经营范围"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="编号" update="false"/>
+  </Opt>
+  <Opt id="HaveGhDwInfo" sucMsg="是否存在供货单位！" >
+    <sql>select count(*) c from 供货单位 where cHosCode=? and 编号=?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="编号"/>
+  </Opt>
+  <Opt id="DelGhDwInfo" sucMsg="删除成功！" >
+    <sql>DELETE FROM 供货单位 WHERE cHosCode= ? and 编号= ? </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="编号"/>
+  </Opt>
+  <!---打包项目管理-->
+  <Opt id="DaBaoItemList">
+    <sql>select rkey,大诊疗项目名,recvdept,cHosCode from 大诊疗项目表 where cHosCode = ?</sql>
+  </Opt>
+  <Opt id="SaveDaBaoItem" key="rkey" table="大诊疗项目表">
+    <Pa name="大诊疗项目名"/>
+    <Pa name="pycode"/>
+    <Pa name="recvdept"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="rkey" update="false"/>
+  </Opt>
+  <Opt id="HaveDaBaoItem"  eq="大于:0" faiMsg="当前打包项目已经绑定诊疗项目，不能删除！" type="S">
+    <sql> select count(*) num from 大诊疗项目明细表 where 大诊疗项目id=?</sql>
+    <Pa name="rkey"/>
+  </Opt>
+  <Opt id="DelaBaoItem" qzac="HaveDaBaoItem" sucMsg="项目信息已删除！">
+    <sql>DELETE FROM 大诊疗项目表 WHERE cHosCode= ? and rkey= ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="rkey"/>
+  </Opt>
+  <Opt id="FindDaBaoMx">
+    <sql>
+      select a.大诊疗项目id,a.项目编码,b.拼音码,b.项目名称,b.项目价格,
+      b.费用类别,b.核算科室,b.项目单位,农合编码,农合名称,b.保内外,a.数量
+      from 大诊疗项目明细表 a,项目表 b
+      where a.大诊疗项目id=? and b.cHosCode=? and a.项目编码=b.项目编码
+      union
+      select a.大诊疗项目id,a.项目编码,b.拼音码,b.项目名称,(case when c.zlxjlb=1
+      then b.县价 when c.zlxjlb=2 then b.乡价 else b.村价 end) 项目价格,
+      b.费用类别,b.核算科室,b.项目单位,农合编码,农合名称,b.保内外,a.数量
+      from 大诊疗项目明细表 a,项目表 b,SysDictHospital c
+      where a.大诊疗项目id=? and a.项目编码=b.项目编码 and c.cHosCode=? and b.cHosCode=?
+    </sql>
+  </Opt>
+  <Opt id="FindDaBaoSel">
+    <sql>
+      select * from (
+      select 项目名称,项目编码,拼音码,项目单位,项目价格,费用类别,备注,上级,项目级别,农合编码, 农合名称,核算科室,保内外,cHosCode
+      from 项目表 where 有效标志='1' and cHosCode = ?
+      union
+      select a.项目名称,a.项目编码,a.拼音码,a.项目单位,(case when b.zlxjlb=1 then a.县价
+      when b.zlxjlb=2 then a.乡价 else 村价 end) 项目价格,a.费用类别,a.备注,a.上级,
+      a.项目级别, a.农合编码,a.农合名称,a.核算科室,a.保内外,a.cHosCode
+      from 项目表 a,SysDictHospital b where a.有效标志='1' and b.choscode=? and a.cHoscode=? )
+      where  (拼音码 like ? or 项目名称 like ?)
+    </sql>
+  </Opt>
+  <Opt id="SaveDaBaoItemMX" key="项目编码,大诊疗项目id" table="大诊疗项目明细表">
+    <Pa name="项目编码" update="false" fkey="true"/>    
+    <Pa name="大诊疗项目id" update="false" fkey="true"/>
+    <Pa name="数量" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="DelDaBaoItemMX" sucMsg="成功删除项目信息！" >
+    <sql>DELETE FROM 大诊疗项目明细表 WHERE 项目编码= ? and 大诊疗项目id= ?</sql>
+    <Pa name="项目编码"/>
+    <Pa name="大诊疗项目id"/>
+  </Opt>
+  <!---操作员管理-->
+  <Opt id="FindCzyList" >
+    <sql>
+      select distinct a.UserID,a.Useraccount,a.Userpassword,a.Userpower,a.Name,a.所属科室,trim(a.性别) as 性别,a.cHosCode,
+      a.efficet,replace(a.Useraccount,a.cHosCode,'') Useraccount2,a.fixedflag ,a.mobilephone,c.名称 as 职务 from 用户表 a
+      left join 医生表 b on a.useraccount=b.useraccount left join 职务表 c on b.职务=c.id
+      where a.cHosCode like ? [Condition]
+    </sql>
+  </Opt>
+  <Opt id="FindCzyRoleList" >
+    <sql>
+      select a.roleid,a.rolename,a.rolekind from T_HIS_ROLEDICT a ,T_HIS_RELUSERRIGHT b
+      where a.roleid=b.roleid and b.userid=?
+    </sql>
+  </Opt>
+  <Opt id="SaveCzyInfo" key="UserID" table="用户表">
+    <Pa name="Name"/>
+    <Pa name="所属科室"/>
+    <Pa name="性别"/>
+    <Pa name="efficet"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="UserID" update="false"/>
+  </Opt>
+  <Opt id="CZCzyPwd" >
+    <sql>
+       UPDATE 用户表 SET Userpassword='123456' WHERE UserID= ? and cHosCode= ?
+    </sql>    
+    <Pa name="UserID"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="EditCzyPwd" >
+    <sql>
+      UPDATE 用户表 SET USERPASSWORD=?,mobilephone=? WHERE CHOSCODE= ? and USERID= ?
+    </sql>
+    <Pa name="USERPASSWORD"/>
+    <Pa name="mobilephone"/>
+    <Pa name="cHosCode"/>
+    <Pa name="UserID"/>
+  </Opt>
+  <Opt id="FindRoleSelList">
+    <sql>select roleid,rolename,rolekind from T_HIS_ROLEDICT t where rolekind=0 or rolekind like ?</sql>
+  </Opt>
+  <Opt id="FindRoleSelRightList">
+    <sql>
+      select a.roleid,a.rightid,b.rname,b.descript,b.rightkind
+      from T_HIS_ROLE_RIGHT a inner join T_HIS_RIGHT b on a.rightid=b.rightid where a.roleid=?
+    </sql>
+  </Opt>
+  <!---========================================================药库管理=======================-->
+  
+  <Opt id="YK_FindGHDWList">
+    <sql>select 名称,编号,信誉额度,法人代表,联系人,移动电话,五笔简码,拼音简码,联系地址,邮政编码,电话,传真,营业执照,税号,
+           开户银行,银行帐号,机构代码,证书编号,执行许可证,生产许可证,经营许可证,经营范围,备注,编码,应付金额,许可证有效期,
+           有效状态,期初应付,分类码,同步序号,cHosCode from 供货单位 where cHosCode=? and (编号 like ? or 名称 like ? or 拼音简码 like ?)  order by 编号</sql>
+  </Opt>
+  <Opt id="YK_FindGHDWTVList">
+    <sql>
+      select 编号,名称 from 供货单位 where cHosCode=?
+    </sql>
+  </Opt>
+  <Opt id="YK_FindYPSelList">
+    <sql>
+      select 药品编码 as 编号,药品名称 as 名称,药品规格 as 规格,生产厂家,零售价格 as 零售单价,辅助单位,计价单位,保内外,
+      (case when 基药ID>0 then '基药' else '' end) as 基药,换算关系,基药ID,计价单位 as 计价单位1,换算关系 as 换算关系1,药品分类,费用归类,最低库存,含量系数,
+      含量单位,剂型,农合编号,农合名称,存贮条件,性状,进口,贵重,毒麻,OTC,内服,适用对象,允许欠费,批准文号,备注,最近成本 as 入库单价,cHosCode,ID
+      from 药品字典表 where (禁用标志=0) and (辅助单位 is not null) and cHosCode=? and (药品编码 like ? or  拼音码 like ? or 药品名称 like ?)
+    </sql>
+  </Opt>
+  <Opt id="YK_SaveRuKuDan" key="单据编号" table="入库单">    
+    <Pa name="客商单位"/>
+    <Pa name="入库方式"/>
+    <Pa name="零售合计"/>
+    <Pa name="备注"/>
+    <Pa name="成本合计"/>
+    <Pa name="存放位置"/>
+    <Pa name="状态"/>
+    <Pa name="制单人"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+ </Opt>
+  <Opt id="YK_GetMacDJBH">
+    <sql>
+        <![CDATA[ select max(单据编号) as djh from  入库单 where cHosCode=? and 入库方式<>'0002']]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="YK_SaveRuKuDanMX" key="单据编号" table="入库数据">
+    <Pa name="单价"/>
+    <Pa name="零售金额"/>
+    <Pa name="金额"/>
+    <Pa name="有效期至"/>
+    <Pa name="生产单位"/>
+    <Pa name="零售单价"/>
+    <Pa name="编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="行序"/>
+    <Pa name="药品单位"/>
+    <Pa name="数量"/>
+    <Pa name="单项备注" bname="备注"/>
+    <Pa name="批准文号"/>
+    <Pa name="条码号"/>
+    <Pa name="原库存流水"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>    
+  </Opt>
+
+
+
+  <Opt id="FindDictGrounpList">
+    <sql>select dicgrpid ,remark from 字典组表</sql>
+  </Opt>
+  <Opt id="GetMaxDictGrounpId">
+    <sql>select max(dicgrpid) as bh  from 字典组表</sql>
+  </Opt>
+  <Opt id="SaveDictGrounp" key="dicgrpid" setKeyId="GetMaxDictGrounpId" table="字典组表">
+    <Pa name="remark"/>
+    <Pa name="dicgrpid"  update="false"/>
+  </Opt>
+  <Opt id="FindDictDataByGid">
+    <sql>select * from 字典表 t where t.dicgrpid=?</sql>
+  </Opt>
+  <Opt id="FindDictGrounpCount" eq="大于:0" faiMsg="当前组字典已经存在字典数据，不能删除！" type="S">
+    <sql>select count(*) from 字典表 t where t.dicgrpid=?</sql>
+    <Pa name="dicgrpid"/>
+  </Opt>
+  <Opt id="DelDictGrounp" qzac="FindDictGrounpCount" sucMsg="数据已删除！" >
+    <sql>delete  from 字典组表 where dicgrpid=?</sql>
+    <Pa name="dicgrpid"/>
+  </Opt>
+  <!--药品出库-->
+
+  <Opt id="RK_FindYfList" >
+    <sql>select ID,药房名称 from 药房表 where cHosCode = ?</sql>
+  </Opt>
+  <Opt id="RK_FindYfList2" >
+    <sql>select a.ID,a.药房名称 from 药房表 a,可操作库房 b where a.cHosCode=b.cHosCode and a.id=b.kfID and b.UserID=? and a.cHosCode = ?</sql>
+  </Opt>
+  <Opt id="RK_FindSelYaoPingList">
+    <sql>
+      <![CDATA[select a.生产批号,b.药品名称 as 名称,b.药品规格 as 规格,a.库存数量 as 库存余量,a.冻结数量, 
+      a.库存总额,a.库存成本 as 单价,a.零售单价,(case when b.基药ID>0 then '基药' else '' end) as 基药,b.换算关系,
+      a.药品编号 as 编号,a.生产单位 as 生产厂家,a.有效期至 as 有效期,a.库存流水,b.辅助单位 as 计量单位,
+      b.计价单位,b.辅助单位,b.换算关系 as 换算关系1,b.剂型,a.cHosCode , a.库存数量-a.冻结数量 as 可用数量
+      from 库存药品 a,药品字典表 b where a.药品编号=b.药品编码 and a.cHosCode=b.cHosCode and a.库存数量>0 and
+      a.cHosCode=? and 仓库编号 = ? and (b.拼音码 like ? or a.药品编号 like ? or b.药品名称 like ?)
+      ]]>
+      </sql>
+  </Opt>
+  <Opt id="CK_SaveRuKuDan" key="单据编号" table="出库单">    
+    <Pa name="客商单位"/>
+    <Pa name="出库方式"/>
+    <Pa name="零售合计"/>
+    <Pa name="备注"/>
+    <Pa name="成本合计"/>
+    <Pa name="存放位置"/>
+    <Pa name="状态"/>
+    <Pa name="制单人"/>
+    <Pa name="出库科室"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="CK_GetMacDJBH">
+    <sql>
+      <![CDATA[select max(单据编号) as djh from 出库单 where cHosCode=? and 出库方式<>'0002' and 出库方式<>'0006']]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="CK_GetYL">
+    <sql>
+      <![CDATA[select 库存数量-冻结数量 as kysl from 库存药品 where 库存流水=?]]>
+    </sql>
+    <Pa name="库存流水"/>
+  </Opt>   
+  
+  <Opt id="CK_SaveRuKuDanMX" key="单据编号" table="出库数据">
+    <Pa name="药品成本价" bname="单价"/>
+    <Pa name="单价"/>
+    <Pa name="金额"/>
+    <Pa name="有效期至"/>
+    <Pa name="生产单位" bname="生产厂家"/>
+    <Pa name="药品零售价" bname="零售单价"/>
+    <Pa name="编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="行序"/>
+    <Pa name="药品单位" bname="计量单位"/>
+    <Pa name="数量"/>
+    <Pa name="库存余量"/>
+    <Pa name="库存流水"/>
+    <Pa name="零售金额"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_FindRKD">
+    <sql>
+     <![CDATA[ 
+     select 单据编号,过单日期,入库方式,备注,状态,制单人,审核人,存放位置,客商单位,成本合计,零售合计,制单时间,cHosCode from 入库单 
+      where cHosCode=? and 过单日期 >= ? and 过单日期 <= ? and 状态 = ? order by 过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindRKD2">
+    <sql>
+      <![CDATA[ 
+     select a.单据编号,a.过单日期,a.入库方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置,a.客商单位,
+        a.成本合计,a.零售合计,a.制单时间,a.cHosCode from 入库单 a,可操作库房 x where a.choscode=x.choscode and a.存放位置=x.kfID 
+         and x.UserID=? and a.cHosCode=? and a.过单日期 >= ? and a.过单日期 <= ? and a.状态 = ? order by a.过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindCKD">
+    <sql>
+      <![CDATA[ 
+      select 单据编号,过单日期,出库方式,备注,状态,制单人,审核人,存放位置,客商单位,成本合计,零售合计,出库合计,cHosCode from 出库单 
+      where cHosCode=? and 过单日期 >= ? and 过单日期 <= ? and 状态 = ? order by 过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindCKD2">
+    <sql>
+      <![CDATA[ 
+        select a.单据编号,a.过单日期,a.出库方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置,a.客商单位,
+         a.成本合计,a.零售合计,a.出库合计,a.cHosCode from 出库单 a,可操作库房 x where a.choscode=x.choscode and a.存放位置=x.kfID 
+          and x.UserID=? and a.cHosCode=? and a.过单日期 >= ? and a.过单日期 <= ? and a.状态 = ? order by a.过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindCKData">
+    <sql>
+      <![CDATA[
+        select a.单据编号,a.编号,a.数量,a.金额,a.生产批号,a.单项备注,
+        a.单价,a.行序,a.药品成本价,a.药品零售价,a.库存流水,a.药品单位,
+        a.库存余量,a.生产单位,a.单位编码,a.有效期至,b.药品名称,
+        b.药品规格,b.辅助单位,b.剂型,b.批准文号,b.最近成本,b.计价单位,
+        b.换算关系,a.cHosCode 
+        from 出库数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode 
+        where a.cHosCode=? and  a.单据编号=? order by a.行序
+      ]]>
+    </sql>
+   
+  </Opt>
+  <Opt id="YK_FindDanJuRKData">
+    <sql>
+      select a.单据编号,a.过单日期,a.入库方式 as 方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置 as 位置,a.客商单位,a.成本合计,a.零售合计,a.制单时间,a.cHosCode
+      ,b.名称 as 客商单位名称
+      from 入库单 a left join 供货单位 b on a.客商单位=b.编号 and a.cHosCode=b.cHosCode
+      where a.cHosCode=? and a.单据编号=?
+    </sql>
+  </Opt>
+  <Opt id="YK_EditFindRkDanMX">
+    <sql>
+      select a.单据编号,a.编号,a.数量 as 入库数量,a.金额 as 入库金额,a.生产批号,a.有效期至 as 有效期 ,
+      a.单项备注 as 备注,a.单价 as 入库单价,a.行序, a.零售单价,a.生产单位,c.名称 as 生产厂家,
+      a.单位编码,a.药品单位 as 计量单位,a.零售金额,a.原库存流水,
+      b.药品名称 as 名称,b.药品规格,b.辅助单位,b.剂型,b.批准文号 as 批准文号1,b.最近成本,b.零售价格,b.ID,
+      b.换算关系,b.换算关系 as 换算关系1,b.计价单位 as 计价单位1,a.cHosCode,b.药品规格 as 规格,a.批准文号,a.条码号
+      from 入库数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode
+      left join 供货单位 c on a.生产单位=c.编号 and a.cHosCode=c.cHosCode
+      where a.cHosCode=? and a.单据编号=? order by a.行序
+    </sql>
+  </Opt>
+  <Opt id="YK_FindDanJuCKData">
+    <sql>
+      select a.单据编号,a.过单日期,a.出库方式 as 方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置 as 位置,
+             a.客商单位,a.成本合计,a.零售合计,a.cHosCode,b.名称 as 客商单位名称,a.出库科室
+      from 出库单 a left join 供货单位 b on a.客商单位=b.编号 and a.cHosCode=b.cHosCode
+      where a.cHosCode=? and a.单据编号=?
+    </sql>
+  </Opt>
+  <Opt id="YK_EditFindCkDanMX">
+    <sql>
+      select a.单据编号,a.编号,a.数量,a.金额,a.生产批号,
+      a.单项备注,a.单价,a.行序,a.药品成本价,c.编号 as 生产厂家,
+      a.药品零售价 as 零售单价 ,(a.数量*a.药品零售价) as 零售金额 ,a.库存流水,a.药品单位 as 计量单位,a.库存余量,a.生产单位,a.单位编码,
+      a.有效期至 as 有效期,b.药品名称 as  名称,b.药品规格 as 规格,b.辅助单位,b.剂型,b.批准文号,
+      b.最近成本,b.计价单位,b.换算关系,b.换算关系 as 换算关系1,a.cHosCode
+      from 出库数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode
+      left join 供货单位 c on a.生产单位=c.编号 and a.cHosCode=c.cHosCode
+      where a.cHosCode=? and  a.单据编号=? order by a.行序
+
+    </sql>
+    
+  </Opt>
+  <!--药品调价-->
+  <Opt id="TJ_FindSelYaoPingList">
+    <sql> <![CDATA[
+      select a.生产批号,b.药品名称 as 名称,b.药品规格 as 规格,b.计价单位,a.库存成本,a.零售单价,
+       (case when b.基药ID>0 then '基药' else '' end) as 基药,b.换算关系,a.冻结数量 ,a.库存数量-a.冻结数量 as 可用数量,
+      a.药品编号 as 编号,a.生产单位 as 生产厂家, a.有效期至 as 有效期,
+      a.库存成本 as 原单价,a.库存成本 as 现单价,(a.库存数量*a.库存成本) as 原总金额,
+      (a.库存数量*a.库存成本) as 现总金额 ,0 as 调后差额, a.库存数量 as 数量,
+      a.库存流水,b.辅助单位 as 计量单位, b.换算关系 as 换算关系1,b.剂型,a.库存总额,a.cHosCode
+      from 库存药品 a,药品字典表 b where a.冻结数量=0 and 
+      a.药品编号=b.药品编码 and a.cHosCode=b.cHosCode and a.cHosCode=? and 仓库编号 = ? and (b.拼音码 like ? or a.药品编号 like ? or b.药品名称 like ?)      
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="TJLS_FindSelYaoPingList">
+    <sql>
+      <![CDATA[select a.生产批号,b.药品名称 as 名称,b.药品规格 as 规格,b.计价单位,a.库存成本,a.零售单价,
+       (case when b.基药ID>0 then '基药' else '' end) as 基药,b.换算关系,a.冻结数量 , a.库存数量-a.冻结数量 as 可用数量,
+      a.药品编号 as 编号,a.生产单位 as 生产厂家, a.有效期至 as 有效期, a.零售单价 as 原单价,a.零售单价 as 现单价,(a.库存数量*a.零售单价) as 原总金额,
+      (a.库存数量*a.零售单价) as 现总金额 ,0 as 调后差额, a.库存数量 as 数量, a.库存流水,b.辅助单位 as 计量单位,
+      b.换算关系 as 换算关系1,b.剂型,a.库存总额,a.cHosCode from 库存药品 a,药品字典表 b where a.冻结数量=0 and
+      a.药品编号=b.药品编码 and a.cHosCode=b.cHosCode and a.cHosCode=? and 仓库编号 = ? and (b.拼音码 like ? or a.药品编号 like ? or b.药品名称  like ?)
+      ]]>
+    </sql>
+  </Opt>
+  <!--调价单-->
+  <Opt id="YK_SaveTJDan" key="单据编号" table="调价单">
+    <Pa name="过单日期"/>
+    <Pa name="客商单位"/>
+    <Pa name="调价原因"/>
+    <Pa name="合计金额"/>
+    <Pa name="备注"/>
+    <Pa name="合计数量"/>
+    <Pa name="存放位置"/>
+    <Pa name="状态"/>
+    <Pa name="制单人"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_GetMaxTJDJBH">
+    <sql>
+      <![CDATA[ select max(单据编号) as djh from  调价单 where cHosCode=?]]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="YK_SaveTJDanMX" key="单据编号" table="调价数据">
+    <Pa name="原单价"/>
+    <Pa name="库存流水"/>
+    <Pa name="有效期至"/>
+    <Pa name="生产单位" bname="单位编码"/>
+    <Pa name="现单价"/>
+    <Pa name="编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="行序"/>
+    <Pa name="单项备注" bname="备注"/>
+    <Pa name="数量"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+
+  </Opt>
+  <Opt id="YK_FindDanJuTJData">
+    <sql>
+      select a.单据编号,a.过单日期,a.调价原因 as 方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置 as 位置,a.客商单位,a.合计数量,a.合计金额,a.cHosCode
+      ,b.名称 as 客商单位名称
+      from 调价单 a left join 供货单位 b on a.客商单位=b.编号 and a.cHosCode=b.cHosCode
+      where a.cHosCode=? and a.单据编号=?
+    </sql>
+  </Opt>
+  <Opt id="YK_EditFindTJDanMX">
+    <sql>
+      select a.单据编号,a.编号,a.数量,a.生产批号,
+      a.单项备注 as 备注,
+      a.原单价,a.现单价,(a.数量*a.原单价) as 原总金额,(a.数量*a.现单价) as 现总金额, (a.数量*(a.现单价-a.原单价)) as 调后差额,
+      a.行序,c.名称 as 生产厂家,
+      a.库存流水,b.辅助单位 as 计量单位,a.单位编码,
+      a.有效期至 as 有效期,b.药品名称 as  名称,b.药品规格 as 规格,b.辅助单位,b.剂型,b.批准文号,
+      b.最近成本,b.计价单位,b.换算关系,b.换算关系 as 换算关系1,a.cHosCode
+      from 调价数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode
+      left join 供货单位 c on a.单位编码=c.编号 and a.cHosCode=c.cHosCode
+      where a.cHosCode=? and  a.单据编号=? order by a.行序
+
+    </sql>
+
+  </Opt>
+  <Opt id="YK_FindTJD">
+    <sql>
+      <![CDATA[ 
+      select 单据编号,过单日期,调价原因,备注,状态,制单人,审核人,存放位置,客商单位,合计数量,合计金额,cHosCode from 调价单 
+      where cHosCode=? and 过单日期 >= ? and 过单日期 <= ? and 状态 = ? order by 过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="YK_FindTJD2">
+    <sql>
+      <![CDATA[ 
+      select a.单据编号,a.过单日期,a.调价原因,a.备注,a.状态,a.制单人,a.审核人,a.存放位置,a.客商单位,
+       a.合计数量,a.合计金额,a.cHosCode from 调价单 a,可操作库房 x where a.choscode=x.choscode and a.存放位置=x.kfID 
+  and x.UserID=? and a.cHosCode=? and a.过单日期 >= ? and a.过单日期 <= ? and a.状态 = ? order by a.过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+
+
+
+  <Opt id="YK_SaveTJLSDan" key="单据编号" table="零售调价单">
+    <Pa name="过单日期"/>
+    <Pa name="客商单位"/>
+    <Pa name="调价原因"/>
+    <Pa name="合计金额"/>
+    <Pa name="备注"/>
+    <Pa name="合计数量"/>
+    <Pa name="存放位置"/>
+    <Pa name="状态"/>
+    <Pa name="制单人"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_GetMaxTJLSDJBH">
+    <sql>
+      <![CDATA[ select max(单据编号) as djh from  零售调价单 where cHosCode=?]]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="YK_SaveTJLSDanMX" key="单据编号" table="零售调价数据">
+    <Pa name="原单价"/>
+    <Pa name="库存流水"/>
+    <Pa name="有效期至"/>
+    <Pa name="生产单位" bname="单位编码"/>
+    <Pa name="现单价"/>
+    <Pa name="编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="行序"/>
+    <Pa name="单项备注" bname="备注"/>
+    <Pa name="数量"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+
+  </Opt>
+  <Opt id="YK_FindDanJuTJLSData">
+    <sql>
+      select a.单据编号,a.过单日期,a.调价原因 as 方式,a.备注,a.状态,a.制单人,a.审核人,a.存放位置 as 位置,a.客商单位,a.合计数量,a.合计金额,a.cHosCode
+      ,b.名称 as 客商单位名称
+      from 零售调价单 a left join 供货单位 b on a.客商单位=b.编号 and a.cHosCode=b.cHosCode
+      where a.cHosCode=? and a.单据编号=?
+    </sql>
+  </Opt>
+  <Opt id="YK_EditFindTJLSDanMX">
+    <sql>
+      select a.单据编号,a.编号,a.数量,a.生产批号,
+      a.单项备注 as 备注,
+      a.原单价,a.现单价,(a.数量*a.原单价) as 原总金额,(a.数量*a.现单价) as 现总金额, (a.数量*(a.现单价-a.原单价)) as 调后差额,
+      a.行序,c.名称 as 生产厂家,
+      a.库存流水,b.辅助单位 as 计量单位,a.单位编码,
+      a.有效期至 as 有效期,b.药品名称 as  名称,b.药品规格 as 规格,b.辅助单位,b.剂型,b.批准文号,
+      b.最近成本,b.计价单位,b.换算关系,b.换算关系 as 换算关系1,a.cHosCode
+      from 零售调价数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode
+      left join 供货单位 c on a.单位编码=c.编号 and a.cHosCode=c.cHosCode
+      where a.cHosCode=? and  a.单据编号=? order by a.行序
+
+    </sql>
+
+  </Opt>
+  <Opt id="YK_FindTJLSD">
+    <sql>
+      <![CDATA[ 
+      select 单据编号,过单日期,调价原因,备注,状态,制单人,审核人,存放位置,客商单位,合计数量,合计金额,cHosCode from 零售调价单 
+      where cHosCode=? and 过单日期 >= ? and 过单日期 <= ? and 状态 = ? order by 过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindTJLSD2">
+    <sql>
+      <![CDATA[ 
+      select a.单据编号,a.过单日期,a.调价原因,a.备注,a.状态,a.制单人,a.审核人,a.存放位置,a.客商单位,
+       a.合计数量,a.合计金额,a.cHosCode from 零售调价单 a,可操作库房 x where a.choscode=x.choscode and a.存放位置=x.kfID 
+       and x.UserID=? and a.cHosCode=? and a.过单日期 >= ? and a.过单日期 <= ? and a.状态 = ? order by a.过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  
+  <!---药品调拨-->
+  
+  <Opt id="YK_DBFindYK">
+    <sql>select ID,药房名称 from 药房表 where cHosCode = ? and 是否药库 = 1</sql>
+  </Opt>
+
+  <Opt id="YK_DBFindYK2">
+    <sql>
+      select a.ID,a.药房名称 from 药房表 a,可操作库房 b
+      where a.choscode=b.choscode and a.ID=b.kfID and a.是否药库=1 and a.cHosCode = ? and b.userid=?
+    </sql>
+  </Opt>
+   
+  <Opt id="TB_FindSelYaoPingList">
+    <sql>
+      select a.生产批号,b.药品名称 as 名称,b.药品规格,a.库存数量 as 库存余量,a.冻结数量 ,a.库存总额,
+      a.库存成本 as 单价,a.零售单价,(case when b.基药ID>0 then '基药' else '' end) as 基药,b.换算关系,b.换算关系 as 换算关系1,
+      a.药品编号 as 编号,a.生产单位 as 生产厂家,b.辅助单位, a.有效期至 as 有效期,a.库存流水,b.辅助单位 as 计量单位,b.计价单位,b.剂型,
+      a.cHosCode,a.库存数量-a.冻结数量 as 可用数量,a.条码号 from 库存药品 a,药品字典表 b where
+      a.药品编号=b.药品编码 and a.cHosCode=b.cHosCode and a.库存数量-a.冻结数量>0 and a.cHosCode=? and 仓库编号 = ? and
+      (b.拼音码 like ? or a.药品编号 like ? or b.药品名称 like ?)
+    </sql>
+  </Opt>
+  <Opt id="YK_SaveDBDan" key="单据编号" table="调拨单">
+    <Pa name="过单日期"/>
+    <Pa name="调出药库"/>
+    <Pa name="零售合计"/>
+    <Pa name="备注"/>
+    <Pa name="成本合计"/>
+    <Pa name="调往药房"/>
+    <Pa name="状态"/>
+    <Pa name="制单人"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_GetMaXDBDJBH">
+    <sql>
+      <![CDATA[select max(单据编号) as djh from 调拨单 where cHosCode=?]]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+
+  <Opt id="YK_SaveDBDanMX" key="单据编号" table="调拨数据">
+    <Pa name="药品成本价" bname="单价"/>
+    <Pa name="单价"/>
+    <Pa name="金额"/>
+    <Pa name="有效期至"/>
+    <Pa name="生产单位" bname="生产厂家"/>
+    <Pa name="药品零售价" bname="零售单价"/>
+    <Pa name="编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="行序"/>
+    <Pa name="药品单位" bname="计量单位"/>
+    <Pa name="数量"/>
+    <Pa name="库存余量"/>
+    <Pa name="库存流水"/>
+    <Pa name="条码号"/>
+    <Pa name="单据编号" update="false"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_FindDBData">
+    <sql>
+      <![CDATA[
+        select a.单据编号,a.编号,a.数量,a.金额,a.生产批号,a.单项备注,
+        a.单价,a.行序,a.药品成本价,a.药品零售价,a.库存流水,a.药品单位,
+        a.库存余量,a.生产单位,a.单位编码,a.有效期至,b.药品名称,
+        b.药品规格,b.辅助单位,b.剂型,b.批准文号,b.最近成本,b.计价单位,
+        b.换算关系,a.cHosCode 
+        from 调拨数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode 
+        where a.cHosCode=? and  a.单据编号=? order by a.行序
+      ]]>
+    </sql>
+
+  </Opt>
+  <Opt id="YK_FindDBD">
+    <sql>
+      <![CDATA[ 
+      select 单据编号,过单日期,调出药库,备注,状态,制单人,审核人,调往药房,客商单位,成本合计,零售合计,出库合计,cHosCode from 调拨单 
+      where cHosCode=? and 过单日期 >= ? and 过单日期 <= ? and 状态 = ? order by 过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_FindDBD2">
+    <sql>
+      <![CDATA[ 
+      select a.单据编号,a.过单日期,a.调出药库,a.备注,a.状态,a.制单人,a.审核人,a.调往药房,a.客商单位,a.成本合计,a.零售合计,
+       a.出库合计,a.cHosCode from 调拨单 a,可操作库房 x where a.choscode=x.choscode and a.调出药库=x.kfID 
+        and x.UserID=? and a.cHosCode=? and a.过单日期 >= ? and a.过单日期 <= ? and a.状态 = ? order by a.过单日期 desc
+     ]]>
+    </sql>
+  </Opt>
+  
+  <Opt id="YK_FindDanJuDBData">
+    <sql>
+      select a.单据编号,a.过单日期,a.调出药库 as 方式,a.备注,a.状态,a.制单人,a.审核人,a.调往药房 as 位置,a.客商单位,a.成本合计,a.零售合计,a.cHosCode
+      ,b.名称 as 客商单位名称
+      from 调拨单 a left join 供货单位 b on a.客商单位=b.编号 and a.cHosCode=b.cHosCode
+      where a.cHosCode=? and a.单据编号=?
+    </sql>
+  </Opt>
+  <Opt id="YK_EditFindDBDanMX">
+    <sql>
+      select a.单据编号,a.编号,a.数量,a.金额,a.生产批号,a.单项备注,a.单价,a.行序,a.药品成本价,c.名称 as 生产厂家,
+      a.药品零售价 as 零售单价 ,(a.数量*a.药品零售价) as 零售金额 ,a.库存流水,a.药品单位 as 计量单位,a.库存余量,
+      a.生产单位,a.单位编码,a.有效期至 as 有效期,b.药品名称 as  名称,b.药品规格 as 规格,b.辅助单位,b.剂型,b.批准文号,
+      b.最近成本,b.计价单位,b.换算关系,b.换算关系 as 换算关系1,a.cHosCode,a.条码号
+      from 调拨数据 a left join 药品字典表 b on  a.编号=b.药品编码 and a.cHosCode=b.cHosCode
+      left join 供货单位 c on a.生产单位=c.编号 and a.cHosCode=c.cHosCode
+      where a.cHosCode=? and  a.单据编号=? order by a.行序
+    </sql>
+
+  </Opt>
+  <!---审核操作-->
+  <Opt id="YK_AppRKD">
+    <sql>
+      update 入库单 set 状态='S' ,审核人=? where cHosCode=? and 单据编号=?
+    </sql>
+    <Pa name="审核人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="单据编号"/>
+  </Opt>
+  <Opt id="YK_AppCKD">
+    <sql>
+      update 出库单 set 状态='S' ,审核人=? where cHosCode=? and 单据编号=?
+    </sql>
+    <Pa name="审核人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="单据编号"/>
+  </Opt>
+  <Opt id="YK_AppCBTJD">
+    <sql>
+      update 调价单 set 状态='S' ,审核人=? where cHosCode=? and 单据编号=?
+    </sql>
+    <Pa name="审核人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="单据编号"/>
+  </Opt>
+  <Opt id="YK_AppLSTJD">
+    <sql>
+      update 零售调价单 set 状态='S' ,审核人=? where cHosCode=? and 单据编号=?
+    </sql>
+    <Pa name="审核人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="单据编号"/>
+  </Opt>
+  <Opt id="YK_AppDBD">
+    <sql>
+      update 调拨单 set 状态='S' ,审核人=? where cHosCode=? and 单据编号=?
+    </sql>
+    <Pa name="审核人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="单据编号"/>
+  </Opt>
+  <Opt id="YK_AppRKDSaveMx" key="库存流水" table="库存药品">
+    <Pa name="有效期至" bname="有效期"/>
+    <Pa name="生产单位"/>
+    <Pa name="药品编号" bname="编号"/>
+    <Pa name="供货单位"/>
+    <Pa name="库存数量"/>
+    <Pa name="生产批号"/>
+    <Pa name="入库单号"/>
+    <Pa name="仓库编号"/>
+    <Pa name="单项备注" bname="备注"/>
+    <Pa name="批准文号"/>
+    <Pa name="库存总额" bname="入库金额"/>
+    <Pa name="cHosCode"/>
+    <Pa name="库存成本" bname="入库单价"/>
+    <Pa name="零售单价"/>
+    <Pa name="条码号"/>
+    <Pa name="库存流水" insert="false" update="false"/>
+  </Opt>
+  <!--药品盘点-->
+  <Opt id="YK_YaoPingPdFind">
+    <sql>
+      <![CDATA[select 盘点序号,盘点表名称,建表时间,状态,建表人,合并批号,cHosCode from 盘点表列表 where cHosCode=? and 建表时间 >= ? and 建表时间 <= ?]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_YaoPingPdCount">
+    <sql>select count(*)  as  num  from 盘点表列表 where cHosCode=? and 盘点表名称 = ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点表名称"/>
+  </Opt>
+  <Opt id="YK_YaoPingSavePd"  key="盘点序号" table="盘点表列表">
+    <Pa name="建表人"/>
+    <Pa name="状态"/>
+    <Pa name="盘点表名称"/>
+    <Pa name="建表时间"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="盘点序号" insert="false" update="false"/>
+  </Opt>
+  <Opt id="YK_YaoPingUpdatePd">
+    <sql>UPDATE 盘点表列表 SET 盘点表名称=? WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="盘点表名称"/>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingGetPdSta">
+    <sql>select 状态 from 盘点表列表  WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingDelPd">
+    <sql>DELETE FROM 盘点表列表 WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingPdMx0List">
+    <sql>
+      select a.药品编号,c.药品名称,c.药品规格,d.名称 as 药品供应商,a.生产批号,b.盈亏数量,
+      a.库存成本,a.零售单价,a.库存数量,c.换算关系,c.换算关系 as 换算关系1,c.辅助单位,c.计价单位,b.盘点序号,a.库存流水
+      from 库存药品 a
+      left join 盘点明细表 b on a.库存流水 = b.库存流水 and a.cHosCode=b.cHosCode  and a.cHosCode=? and b.盘点序号 = ?
+      left join 药品字典表 c on a.药品编号=c.药品编码 and a.cHosCode=c.cHosCode
+      left join 供货单位 d on a.生产单位=d.编号 and a.cHosCode=d.cHosCode
+      [Condition]  order by a.药品编号 asc</sql>
+  </Opt>
+  <Opt id="YK_YaoPingPdMx1List">
+    <sql>
+      select a.药品编号,c.药品名称,c.药品规格,d.名称 as 药品供应商,a.生产批号,b.盈亏数量,
+      a.库存成本,a.零售单价,a.库存数量,c.换算关系,c.换算关系 as 换算关系1,c.辅助单位,c.计价单位,b.盘点序号,a.库存流水
+      from 盘点历史库存药品 a
+      left join 供货单位 d on a.生产单位=d.编号 and a.cHosCode=d.cHosCode
+      inner join 盘点明细表 b on a.库存流水 = b.库存流水 and a.cHosCode=b.cHosCode and a.cHosCode=? and a.盘点序号=b.盘点序号 and b.盘点序号 = ?
+      inner join 药品字典表 c on a.药品编号=c.药品编码 and a.cHosCode=c.cHosCode  [Condition]  order by a.药品编号 asc</sql>
+  </Opt>
+  <Opt id="YK_YaoPingSaveMxPd"  key="库存流水,cHosCode,盘点序号" table="盘点明细表">
+    <Pa name="生产批号"/>
+    <Pa name="仓库编号"/>
+    <Pa name="盈亏数量"/>
+    <Pa name="药品编号"/>
+    <Pa name="库存流水"  update="false" fkey="true"/>
+    <Pa name="cHosCode"  update="false" fkey="true"/>
+    <Pa name="盘点序号"  update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_YaoPingGetPanDianInfo">
+    <sql>select * FROM 盘点表列表 WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingGetYiPanDianInfo">
+    <sql><![CDATA[select count(*) FROM 盘点表列表 WHERE  cHosCode= ? and 状态= 1 and 建表时间>? ]]></sql>
+    <Pa name="cHosCode"/>
+    <Pa name="建表时间"/>
+  </Opt>
+  <Opt id="YK_YaoPingUpdateZTPd">
+    <sql>UPDATE 盘点表列表 SET 状态=1 , 建表时间=? WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="建表时间"/>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingUpdateWZPd">
+    <sql>UPDATE 盘点表列表 SET 合并批号=? WHERE cHosCode= ? and 盘点序号= ?</sql>
+    <Pa name="合并批号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingJZFindMXPd">
+    <sql>
+    select a.盘点序号,a.仓库编号,a.药品编号,a.生产批号,a.备注,a.盈亏数量,a.库存流水,
+    b.库存数量,b.零售单价,b.库存成本,b.生产单位,b.有效期至, c.计价单位,a.cHosCode 
+    from 盘点明细表 a inner join 库存药品 b on a.库存流水=b.库存流水 and a.cHosCode=b.cHosCode 
+    inner join 药品字典表 c on a.药品编号=c.药品编码 and a.cHosCode=c.cHosCode and a.cHosCode=? and a.盘点序号=?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="盘点序号"/>
+  </Opt>
+  <Opt id="YK_YaoPingSaveLsMxPd"  key="库存流水,cHosCode,盘点序号" table="盘点历史库存药品">
+    <Pa name="药品编号"/>
+    <Pa name="仓库编号"/>
+    <Pa name="生产批号"/>
+    <Pa name="库存数量"/>
+    <Pa name="零售单价"/>
+    <Pa name="库存成本"/>
+    <Pa name="生产单位"/>
+    <Pa name="库存流水"  update="false" fkey="true"/>
+    <Pa name="cHosCode"  update="false" fkey="true"/>
+    <Pa name="盘点序号"  update="false" fkey="true"/>
+  </Opt>
+  <Opt id="YK_YaoPingPDRKDMAX">
+    <sql><![CDATA[select max(单据编号) as djh from 入库单 where cHosCode=? and 入库方式='0002']]></sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="YK_YaoPingPDCKDMAX">
+    <sql><![CDATA[select max(单据编号) as djh from 出库单 where cHosCode=? and 出库方式='0002']]></sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <!---========================================================门诊收费=======================-->
+  <Opt id="MZ_GHFindYSList">
+    <sql>
+      <![CDATA[select trim(a.姓名) as 姓名, a.ID as ID,b.名称 as 科室,a.拼音码 as 拼音码,
+      b.ID as 科室ID from 医生表 a left outer join 科室表 b on a.科室=b.ID where a.cHosCode = ? and 
+      a.ifuse=1 and (a.拼音码 like ? or a.姓名 like ?) order by 姓名]]></sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GHFindKSList">
+    <sql><![CDATA[select ID,名称,代码,农合编码 from 科室表 where cHosCode=? order by 名称]]></sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GHFindGHLBList">
+    <sql><![CDATA[select 编号,名称,拼音简码,金额,备注 from 挂号类别 where cHosCode = ? or choscode='0']]></sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_SaveGuaHaoInfo" key="序号" table="挂号列表">
+    <Pa name="是否农合"/>
+    <Pa name="农合证号"/>
+    <Pa name="个人编码"/>
+    <Pa name="病人性别"/>
+    <Pa name="病人年龄"/>
+    <Pa name="家庭账户余额"/>
+    <Pa name="地址"/>
+    <Pa name="门诊类型"/>
+    <Pa name="过单时间"/>
+    <Pa name="病人姓名"/>
+    <Pa name="医生编号"/>
+    <Pa name="科室编号"/>
+    <Pa name="收费方式"/>
+    <Pa name="挂号类别"/>
+    <Pa name="收款人"/>
+    <Pa name="病人类型"/>
+    <Pa name="状态"/>
+    <Pa name="收费合计"/>
+    <Pa name="就诊否"/>
+    <Pa name="挂号金额"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="序号"  update="false"/>
+  </Opt>
+  <Opt id="MZ_HaveCKList">
+    <sql>
+      select 流水序号,员工编号,收款日期,累计持款额,累计交款额,挂号人数,门诊人数,cHosCode from 员工持款列表 where cHosCode=? and 员工编号=? And to_char(收款日期,'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD')
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="员工编号"/>
+  </Opt>
+  <Opt id="MZ_SaveYGCK" key="流水序号" table="员工持款列表">
+    <Pa name="员工编号"/>
+    <Pa name="收款日期"/>
+    <Pa name="累计持款额"/>
+    <Pa name="挂号人数"/>
+    <Pa name="cHosCode"/>
+    <Pa name="累计交款额"/>
+    <Pa name="门诊人数"/>
+    <Pa name="流水序号" insert="false"  update="false"/>
+  </Opt>
+  <Opt id="MZ_SaveYGZJL" key="序号" table="员工资金流表">
+    <Pa name="员工编号"/>
+    <Pa name="发生时间"/>
+    <Pa name="类型"/>
+    <Pa name="金额" bname="发生金额"/>
+    <Pa name="cHosCode"/>
+    <Pa name="就诊号"/>
+    <Pa name="序号" insert="false"  update="false"/>
+  </Opt>
+  <Opt id="MZ_GetMaxGHLSH">
+    <sql>
+      SELECT substr(trim(MAX(序号)),-4) + 1 AS Expr1
+      FROM 挂号列表
+      WHERE cHosCode = ? AND 序号 LIKE ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="序号" bname="日期"/>
+  </Opt>
+  <Opt id="MZ_UpdateYGCKINFO">
+    <sql>UPDATE 员工持款列表 SET 累计持款额=?,挂号人数=?,收款日期=?,员工编号=? WHERE 流水序号= ? and cHosCode= ?</sql>
+    <Pa name="累计持款额"/>
+    <Pa name="挂号人数"/>
+    <Pa name="收款日期"/>
+    <Pa name="员工编号"/>
+    <Pa name="流水序号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GuaHaoList">
+    <sql>
+      <![CDATA[
+      select g.过单时间,g.打印时间,g.病人姓名,g.医生编号,g.科室编号,g.收费方式,g.挂号类别,g.挂号金额,g.收款人,g.状态,g.收费合计,g.就诊否,g.序号,g.cHosCode,g.是否农合,g.农合证号,g.个人编码,g.病人性别,g.病人年龄,g.家庭账户余额,g.地址,g.门诊类型,t.姓名
+      ,g.病人类型
+      from 挂号列表 g, 医生表 t 
+      where t.id=g.医生编号 and g.收款人=? and g.cHosCode = ? And to_char(g.过单时间,'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD') and g.收费合计 >= 0 Order by g.过单时间 DESC
+      ]]>
+    </sql>
+    <Pa name="收款人" bname="员工编号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GuaHaoCount">
+    <sql>
+      <![CDATA[
+      select count(*) from 挂号列表 
+      where 收款人=? and cHosCode = ? And to_char(过单时间,'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD') and 收费合计 >= 0 Order by 过单时间 DESC
+      ]]>
+    </sql>
+    <Pa name="收款人" bname="员工编号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GuaHaoMax">
+    <sql>
+      <![CDATA[
+      select max(序号) as lsh from 挂号列表 where cHosCode = ?
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_GuaHaoHJ">
+    <sql>
+      <![CDATA[
+       select sum(金额) as je from 员工资金流表 where cHosCode=? and 员工编号=? and (类型=? or 类型=?) And to_char(发生时间,'YYYY-MM-DD')=to_char(sysdate,'YYYY-MM-DD')
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="员工编号"/>
+    <Pa name="类型"/>
+    <Pa name="类型1"/>
+  </Opt>
+  <Opt id="MZ_GuaHaoSelList">
+    <sql>
+      <![CDATA[
+      select g.过单时间,g.打印时间,g.病人姓名,g.医生编号,g.科室编号,g.收费方式,g.挂号类别,g.挂号金额,g.收款人,g.状态,g.收费合计,g.就诊否,
+  g.序号,g.cHosCode,t.姓名  from 挂号列表 g, 医生表 t   where t.id=g.医生编号 and  g.cHosCode=? and g.过单时间 >= ? and g.过单时间 <= ? Order by g.过单时间 DESC
+      ]]>
+    </sql>
+    
+  </Opt>
+  <Opt id="MZ_GetGuaHaoInfo">
+    <sql>select 收款人,科室编号,序号,挂号类别,收费方式,医生编号,状态,就诊否,cHosCode,病人姓名,挂号金额,收费合计,打印时间,过单时间 from 挂号列表 where 序号= ? and cHosCode= ?</sql>
+    <Pa name="序号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_DELUpdateGuaHaoInfo">
+    <sql>UPDATE 挂号列表 SET 状态=? WHERE 序号= ? and cHosCode= ?</sql>
+    <Pa name="状态"/>
+    <Pa name="序号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="MZ_DELGetGuaHaockInfo">
+    <sql>UPDATE 员工持款列表 SET 挂号人数=?,累计持款额=? WHERE 流水序号= ? and cHosCode= ?</sql>
+    <Pa name="挂号人数"/>
+    <Pa name="累计持款额"/>
+    <Pa name="流水序号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <!---========================================================门诊处方=======================-->
+  <Opt id="MZ_CFGetGHList">
+    <sql>
+      <![CDATA[
+      select 序号 as 挂号编号,病人姓名, 过单时间,z.dicdesc as 病人类型,挂号金额,打印时间,医生编号,科室编号,收费方式,挂号类别,
+      状态,收费合计,就诊否,cHosCode,是否农合,农合证号,个人编码,病人性别,
+      病人年龄,家庭账户余额,地址,门诊类型 from (
+select 病人类型, 过单时间,打印时间,病人姓名,医生编号,科室编号,收费方式,挂号类别,挂号金额,收款人,状态,收费合计,就诊否,序号,cHosCode,是否农合,农合证号,个人编码,病人性别,病人年龄,家庭账户余额,地址,门诊类型 
+from 挂号列表 where cHosCode = ?  and 过单时间>=to_date(?,'yyyy-mm-dd') and 状态='N' and 序号 like ? order by 过单时间  desc ) t
+left join 字典表 z on z.dicid= t.病人类型 and z.dicgrpid=6
+where rownum<=100
+      ]]>
+    </sql>
+  </Opt>
+ 
+  <Opt id="GetNhJbList">
+    <sql>
+      <![CDATA[select 农合名称 as 疾病名称,农合编码 as "ICD-10",农合简写 as 拼音码,rkey 
+      from 农合疾病表 where 农合编码 like ? or 农合名称 like ? or 农合简写 like ? order by orderid desc,农合简写]]>
+    </sql>
+  </Opt>
+  <Opt id="GetZlXmList">
+    <sql>
+      select 项目编码,项目名称,项目单位,项目价格,保内外,费用类别,备注,上级,项目级别,
+      农合编码, 农合名称,核算科室,拼音码,cHosCode,医保编码11,医保名称11,flag
+      from 项目表 where 有效标志='1' and cHosCode = ? and (拼音码 like ? or 项目名称 like ?)
+      union all
+      select a.项目编码,a.项目名称,a.项目单位,(case when ?=1 then a.县价 when ?=3 then a.村价 else a.乡价 end) 项目价格,
+      case when ?=1 then a.县级保内外 else a.保内外 end 保内外,a.费用类别,a.备注,a.上级,a.项目级别,
+      (case when ?=1 and a.县级农合编码 is not null then a.县级农合编码 else a.农合编码 end) as 农合编码,a.农合名称,
+      a.核算科室,a.拼音码,a.cHosCode,a.医保编码11,a.医保名称11,a.flag
+      from 项目表 a where a.有效标志='1' and a.cHoscode=? and (a.拼音码 like ? or a.项目名称 like ?)
+      order by flag,拼音码
+    </sql>
+  </Opt>
+  <Opt id="MZ_CFGetYF">
+    <sql>
+      select ID,药房名称,对应科室 from 药房表 where cHosCode = ? and 是否药库=0 order by id
+    </sql>
+  </Opt>
+  <Opt id="MZ_CFGetYFctl">
+    <sql>
+      select a.ID,a.药房名称,a.对应科室 from 药房表 a,可操作库房 b
+      where a.choscode=b.choscode and a.ID=b.kfID and a.是否药库=0 and a.cHosCode = ? and b.userid=? order by a.id
+    </sql>
+  </Opt>
+
+  <Opt id="FindOpControlKF">
+    <sql>
+      select a.ID,a.药房名称,b.kfid from 药房表 a left join 可操作库房 b
+      on a.choscode=b.choscode and a.ID=b.kfID and b.userid=? where a.cHosCode = ?  order by a.id
+    </sql>
+  </Opt>
+  
+  <Opt id="MZ_CFGetYaoPingList">
+    <sql>
+      <![CDATA[select a.药品编号,b.药品名称,b.药品规格,b.剂型,a.零售单价,b.计价单位,a.库存数量-a.冻结数量 as 可用数量,b.保内外,
+       (case when b.基药ID>0 then '基药' else '' end) as 基药,b.辅助单位 as 包装单位,a.生产批号, a.生产单位,a.库存流水,
+           b.费用归类,b.医保编码11,b.医保名称11,a.库存数量,a.仓库编号,b.辅助单位, b.拼音码,b.农合编号,b.农合名称,b.换算关系
+         from 库存药品 a,药品字典表 b where a.库存数量-a.冻结数量> 0 and a.药品编号=b.药品编码 and  
+   (a.cHosCode=b.cHosCode or b.cHosCode=?) and a.cHosCode=? and a.仓库编号=? and 
+   (b.拼音码 like ? or a.药品编号 like ? or b.药品名称 like ? or a.条码号 like ?) order by 药品名称 ]]></sql>
+  </Opt>
+  
+  <Opt id="MZ_CFGetFYLB">
+    <sql>
+      select ID,类别名称,农合编码,农合名称,cHosCode,flag from 费用类别表
+      where (cHosCode='0') or (cHosCode like ?) or (cHosCode=?) order by 类别名称
+    </sql>
+    
+  </Opt>
+  <Opt id="MZ_CFGetDbXmList">
+    <sql>
+      select 大诊疗项目名,rkey,pycode as 拼音码,recvdept,cHosCode from 大诊疗项目表 where (cHosCode=? or cHosCode=?) and (大诊疗项目名 like ? or pycode like ?)
+    </sql>
+  </Opt>
+  <Opt id="MZ_CFFindDbXmList">
+    <sql>
+      <![CDATA[select a.大诊疗项目id,a.项目编码,b.拼音码,b.项目名称,b.项目价格,a.数量,b.费用类别,
+			         b.核算科室 as 核算科室,b.项目单位,农合编码,农合名称,b.保内外,b.医保编码11,b.医保名称11
+			 from 大诊疗项目明细表 a,项目表 b  
+			 where a.大诊疗项目id=? and b.cHosCode=? and a.项目编码=b.项目编码 
+			 union 
+			 select a.大诊疗项目id,a.项目编码,b.拼音码,b.项目名称,(case when ?=1 then b.县价   
+			        when ?=3 then b.村价 else b.乡价 end) 项目价格,a.数量,b.费用类别, b.核算科室 as 核算科室,b.项目单位,
+			        (case when ?=1 and b.县级农合编码 is not null then b.县级农合编码 else b.农合编码 end) as 农合编码,b.农合名称,
+               case when ?=1 then b.县级保内外 else b.保内外 end 保内外,b.医保编码11,b.医保名称11
+			 from 大诊疗项目明细表 a,项目表 b
+			 where a.大诊疗项目id=? and a.项目编码=b.项目编码 and b.cHosCode=?]]>
+    </sql>
+  </Opt>
+  <Opt id="MZ_CFGetMaxMZBH">
+    <sql>
+      SELECT substr(trim(MAX(处方号)),-4)+1 AS Expr1 FROM 门诊处方表 WHERE cHosCode=? and 处方号 LIKE ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="日期"/>
+  </Opt>
+  <Opt id="MZ_CFSaveMzInfo" key="处方号" table="门诊处方表">
+    <Pa name="优惠减免"/>
+    <Pa name="病人姓名"/>
+    <Pa name="病人性别"/>
+    <Pa name="病人年龄"/>
+    <Pa name="处方科室"/>
+    <Pa name="处方医生"/>
+    <Pa name="处方日期"/>
+    <Pa name="总金额"/>
+    <Pa name="是否发药"/>
+    <Pa name="是否结算"/>
+    <Pa name="处方状态"/>
+    <Pa name="操作员"/>
+    <Pa name="冲红处方号"/>
+    <Pa name="退药标志"/>
+    <Pa name="农合医疗证号"/>
+    <Pa name="病人类型"/>
+    <Pa name="上传标志"/>
+    <Pa name="个人编码"/>
+    <Pa name="疾病编码"/>
+    <Pa name="疾病名称"/>
+    <Pa name="农合门诊编号"/>
+    <Pa name="药房"/>
+    <Pa name="药品处方号"/>
+    <Pa name="实收金额"/>
+    <Pa name="挂账金额"/>
+    <Pa name="执行金额"/>
+    <Pa name="农合报销"/>
+    <Pa name="接单医生"/>
+    <Pa name="接单科室"/>
+    <Pa name="账户支付"/>
+    <Pa name="基本统筹"/>
+    <Pa name="大额统筹"/>
+    <Pa name="其他报销"/>
+    <Pa name="公务员补助"/>
+    <Pa name="保内"/>
+    <Pa name="保外"/>
+    <Pa name="门诊号"/>
+    <Pa name="发票号"/>
+    <Pa name="就诊卡号"/>
+    <Pa name="是否提高"/>
+    <Pa name="是否输液"/>
+    <Pa name="下家庭账户"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="处方号"  update="false"/>
+ </Opt>
+  <Opt id="MZ_CFSaveMzMx" key="自动编码" table="门诊处方明细表">
+    <Pa name="执行单价"/>
+    <Pa name="农合名称"/>
+    <Pa name="处方医生"/>
+    <Pa name="操作员"/>
+    <Pa name="单位"/>
+    <Pa name="退药数量"/>
+    <Pa name="规格"/>
+    <Pa name="药品辅助编码"/>
+    <Pa name="处方科室"/>
+    <Pa name="名称"/>
+    <Pa name="农合编码"/>
+    <Pa name="处方时间"/>
+    <Pa name="费用类别"/>
+    <Pa name="剂型"/>
+    <Pa name="金额"/>
+    <Pa name="编码"/>
+    <Pa name="发药状态"/>
+    <Pa name="核算科室"  bname="接单科室"/>
+    <Pa name="价格"/>
+    <Pa name="数量"/>
+    <Pa name="标志"/>
+    <Pa name="处方号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="频次"/>
+    <Pa name="用法"/>
+    <Pa name="用量"/>
+    <Pa name="自动编码" insert="false" update="false"/>
+  </Opt>
+  <Opt id="MZ_CFSaveMzDFYP" key="药品编码,cHosCode,领药编号" table="待发药表">
+    <Pa name="领药数量" bname="数量"/>
+    <Pa name="领药编号" bname="处方号"/>
+    <Pa name="病人姓名"/>
+    <Pa name="业务类别"/>
+    <Pa name="cHosCode"/>
+    <Pa name="药品编码" bname="编码"/>
+  </Opt>
+  <Opt id="ZY_CFSaveMzDFYP" key="药品编码,cHosCode,领药编号" table="待发药表">
+    <Pa name="领药数量" bname="数量"/>
+    <Pa name="领药编号" bname="处方号"/>
+    <Pa name="病人姓名"/>
+    <Pa name="登记号"/>
+    <Pa name="业务类别"/>
+    <Pa name="cHosCode"/>
+    <Pa name="药品编码" bname="编码"/>
+  </Opt>
+  <Opt id="MZ_CFGetYPKCL">
+    <sql>
+      select 库存数量-冻结数量 as 可用数量 from 库存药品 where 库存流水=?
+    </sql>
+    <Pa name="库存流水"/>
+  </Opt>
+  <Opt id="MZ_CFGetYPCFList">
+    <sql>
+      select a.处方号,b.药房名称,a.过单时间,a.收款标志,b.ID,a.划价标志,a.cHosCode  from 药品处方表 a,药房表 b
+      where a.cHosCode=? and 住院标志=? and a.药房 = b.ID and (a.划价标志 != '1' or a.划价标志 is null) and 处方号 like ? order by 处方号 desc
+    </sql>
+  </Opt>
+
+  <Opt id="MZ_CFGetYPCFopKF">
+    <sql>
+      select a.处方号,b.药房名称,a.过单时间,a.收款标志,b.ID,a.划价标志,a.cHosCode from 药品处方表 a,药房表 b ,可操作库房 c
+      where a.cHosCode=? and 住院标志=? and a.药房 = b.ID and b.choscode=c.choscode and b.ID=c.kfID and c.userid=? and
+      (a.划价标志 != '1' or a.划价标志 is null) and 处方号 like ? order by 处方号 desc
+    </sql>
+  </Opt>  
+
+  <Opt id="MZ_CFGetYPCFListMX">
+    <sql>
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,
+      农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,频次,用法,用量,cHosCode from 药品处方明细表 where cHosCode=? and 处方号 =?
+    </sql>
+  </Opt>
+  <Opt id="MZ_CFCXMzCFList">
+    <sql>
+      <![CDATA[
+      select nvl(处方号,'('||冲红处方号||')') as 处方号,病人姓名,病人性别,病人年龄,
+      处方科室,处方医生,处方日期,总金额,是否发药,是否结算,处方状态,操作员,
+      冲红处方号,退药标志,农合医疗证号,病人类型,上传标志,个人编码,疾病编码,
+      疾病名称,农合门诊编号,药房,药品处方号,实收金额,实收金额-优惠减免 as 实收,挂账金额,执行金额,优惠减免,
+      cHosCode,农合报销,账户支付,基本统筹,大额统筹,其他报销,公务员补助,保内,保外,发票号,是否输液
+       from 门诊处方表 t where cHosCode = ?  and  处方日期 >= ?  and 处方日期 <= ? [Condition]  order by nvl(t.处方号,t.冲红处方号) desc,t.冲红处方号 desc
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="GetYSList">
+    <sql>
+      select ID,姓名,拼音码,性别,出生年月,科室,职务,IfOperator,UserAccount,cHosCode from 医生表 where cHosCode=? order by 科室
+    </sql>
+    
+  </Opt>
+  <Opt id="MZ_CFCXMzCFListMX">
+    <sql>
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,
+      药品辅助编码,农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,cHosCode from 门诊处方明细表 where cHosCode=? and 处方号 = ?
+    </sql>
+  </Opt>
+  <Opt id="MZ_CXGetCFInfo">
+    <sql>
+      select 病人姓名,病人性别,病人年龄,处方科室,处方医生,处方日期,总金额,是否发药,是否结算,处方状态,操作员,冲红处方号,退药标志,农合医疗证号,病人类型,上传标志,个人编码,疾病编码,疾病名称,农合门诊编号,药房,药品处方号,实收金额,挂账金额,执行金额,农合报销,优惠减免,
+      接单医生,接单科室,账户支付,基本统筹,大额统筹,其他报销,公务员补助,保内,保外,门诊号,处方号 from 门诊处方表
+      where  cHosCode=? and 处方号=?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+  </Opt>
+  <Opt id="MZ_CXGetCFInfoMX">
+    <sql>
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,
+      药品辅助编码,农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,cHosCode from 门诊处方明细表 where cHosCode=? and 处方号 = ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+  </Opt>
+  
+  <!--=====================================药房相关操作=============================================-->
+  <Opt id="YF_HJGetMaxHJBH">
+    <sql>
+      SELECT substr(trim(MAX(处方号)),-4) + 1 AS Expr1 FROM 药品处方表  WHERE  cHosCode =? and 处方号 LIKE ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="日期"/>
+  </Opt>
+  <Opt id="YF_HJSaveHJInfo" key="处方号" table="药品处方表">
+    <Pa name="过单时间"/>
+    <Pa name="药房"/>
+    <Pa name="cHosCode" fkey="true"/>
+    <Pa name="处方号"/>
+    <Pa name="住院标志"/>
+  </Opt>
+  <Opt id="YF_HJSaveHJInfoMX" key="处方号" table="药品处方明细表">
+    <Pa name="标志"/>
+    <Pa name="金额"/>
+    <Pa name="农合名称"/>
+    <Pa name="名称"/>
+    <Pa name="价格"/>
+    <Pa name="核算科室" bname="接单科室"/>
+    <Pa name="退药数量"/>
+    <Pa name="农合编码"/>
+    <Pa name="操作员"/>
+    <Pa name="编码"/>
+    <Pa name="规格"/>
+    <Pa name="执行单价"/>
+    <Pa name="发药状态"/>
+    <Pa name="剂型"/>
+    <Pa name="数量"/>
+    <Pa name="单位"/>
+    <Pa name="药品辅助编码"/>
+    <Pa name="费用类别"/>
+    <Pa name="cHosCode" fkey="true"/>
+    <Pa name="处方号"/>
+    <Pa name="频次"/>
+    <Pa name="用法"/>
+    <Pa name="用量"/>
+  </Opt>
+  <Opt id="YF_HJDanList">
+    <sql>
+      <![CDATA[
+      select 处方号,nvl(收款标志,0) as 收款标志,nvl(发药标志,0) as 发药标志,过单时间,药房,cHosCode,nvl(划价标志,0) as 划价标志,住院标志 from 药品处方表  where 
+      cHosCode=?   and 过单时间 >= ?  and 过单时间 <= ?  and 药房= ?   [Condition]  order by 过单时间  desc
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_HJDanListMX">
+    <sql>
+      <![CDATA[
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,cHosCode from 
+      药品处方明细表 where cHosCode=? and 处方号=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_HJDanInfo">
+    <sql>
+      <![CDATA[
+      select 处方号,nvl(收款标志,0) as 收款标志,nvl(发药标志,0) as 发药标志,过单时间,药房,cHosCode,nvl(划价标志,0) as 划价标志  from 药品处方表  where 
+      cHosCode=?   and 处方号=?
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+  </Opt>
+  <Opt id="YF_HJDanListMXInfo">
+    <sql>
+      <![CDATA[
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,cHosCode from 
+      药品处方明细表 where cHosCode=? and 处方号=?  and 自动编码 =?
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+    <Pa name="自动编码"/>
+  </Opt>
+  <Opt id="YF_HJDanListMXDel">
+    <sql>
+      <![CDATA[
+      select 自动编码,处方号,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,农合名称,农合编码,剂型,核算科室,执行单价,处方科室,处方医生,处方时间,cHosCode from 
+      药品处方明细表 where cHosCode=? and 处方号=?
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+  </Opt>
+
+  <Opt id="YF_FYCfList">
+    <sql>
+      <![CDATA[
+      select distinct a.业务类别,a.领药编号,b.病人姓名 ,b.药房,b.操作员,b.处方医生,b.处方科室,b.总金额,b.病人类型,b.处方日期
+      from 待发药表 a,门诊处方表 b 
+      where a.领药编号 = b.处方号 and b.是否结算='1' and b.处方状态='1' 
+      and b.是否发药='0' and a.业务类别='门诊' and a.cHosCode=b.cHosCode and a.cHosCode=? 
+       [Condition]
+      order by 领药编号 desc 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_FYCfListKK">
+    <sql>
+      <![CDATA[
+      select distinct a.业务类别 , a.领药编号 , a.病人姓名 ,b.药房,b.操作员,b.处方医生,b.处方科室,b.总金额,b.病人类型,b.处方日期
+      from 待发药表 a,门诊处方表 b,可操作库房 c where a.领药编号 = b.处方号 and b.是否结算=1 and b.处方状态=1 and b.是否发药=0 
+      and a.业务类别='门诊' and a.cHosCode=b.cHosCode and a.cHosCode=c.cHosCode and (b.药房=c.kfID or b.药房 is null) and c.UserID = ? and a.cHosCode=? [Condition] order by 领药编号 desc 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_FYCfListMx">
+    <sql>
+      <![CDATA[select 编码, 名称, 规格, 单位,sum(数量)-sum(退药数量) as 数量, 价格,sum(执行单价*(数量-退药数量)) as 金额,
+                       药品辅助编码, 发药状态,处方号,执行单价,sum(退药数量) as 退药数量
+             from 门诊处方明细表 where cHosCode=? and 处方号=? and 标志=0 
+             group by 编码,名称,规格,单位,价格,药品辅助编码,发药状态,处方号,执行单价  
+             order by min(自动编码)
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+  </Opt>
+
+  <Opt id="YF_FYZYCfList">
+    <sql>
+      <![CDATA[
+      select distinct a.业务类别,a.领药编号,a.病人姓名,b.药房,b.处方医生,b.处方科室,b.总金额,b.记录日期,
+              c.参合标志,c.病人类型,c.住院号,b.处方号,c.参合标志,a.cHosCode from 待发药表 a 
+      inner join 住院处方表 b on a.cHosCode=b.cHosCode and a.领药编号 = b.处方号 
+      inner join 住院登记表 c on a.cHosCode=c.cHosCode 
+      where a.cHosCode=? and b.住院号=c.住院号 and a.业务类别='住院' [Condition]
+      order by 领药编号 desc
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_FYZYCfListKK">
+    <sql>
+      <![CDATA[
+          select distinct a.业务类别,a.领药编号,a.病人姓名,b.药房,b.处方医生,b.处方科室,b.总金额,b.记录日期,
+                  c.参合标志,c.住院号,b.处方号,c.参合标志,a.cHosCode
+           from 待发药表 a inner join 住院处方表 b on a.cHosCode=b.cHosCode and a.领药编号 = b.处方号 inner join 住院登记表 c on  
+            a.cHosCode=c.cHosCode and b.住院号=c.住院号 inner join 可操作库房 d on a.cHosCode=d.cHosCode and (b.药房 = d.kfID or b.药房=0) and d.UserID = ?
+             where a.cHosCode=? and a.业务类别='住院' [Condition] 
+      ]]>
+    </sql>
+
+  </Opt>
+  <Opt id="YF_FYZYCWInfo">
+    <sql>select a.ID,a.床位名称,d.病房名称 as 所在病房,a.状态,a.住院号,a.cHosCode from 床位表 a, 病房表 d where d.cHosCode=a.cHosCode and d.ID=a.所在病房 and a.cHosCode=?  and a.住院号=?</sql>
+  </Opt>
+  <Opt id="YF_FYZYCfListMx">
+    <sql>
+      <![CDATA[select 编码, 名称, 规格,单位, sum(数量) as 数量,价格 as 价格,sum(金额) as 金额, 药品辅助编码,发药状态,sum(退药数量) as 退药数量,
+          处方号,执行单价,cHosCode from 住院处方明细表  where cHosCode=? and 住院号=? and 处方号=? and 发药状态=0 and 标志=0 
+             group by cHosCode,编码,名称,规格,单位,数量,价格,金额,药品辅助编码,处方号,执行单价,发药状态 ,退药数量  order by min(自动编码)
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="处方号"/>
+  </Opt>
+ 
+  <Opt id="YF_FYSaveFYInfo" key="处方号" table="发药信息表">
+    <Pa name="业务类别"/>
+    <Pa name="药品编码" bname="编码"/>
+    <Pa name="登记号"/>
+    <Pa name="药品名称" bname="名称"/>
+    <Pa name="药品规格" bname="规格"/>
+    <Pa name="药品单位" bname="单位"/>
+    <Pa name="发药数量" bname="数量"/>
+    <Pa name="零售价" bname="价格"/>
+    <Pa name="金额"/>
+    <Pa name="操作员"/>
+    <Pa name="操作时间"/>
+    <Pa name="库存流水" bname="药品辅助编码"/>
+    <Pa name="cHosCode" fkey="true"/>
+    <Pa name="处方号"/>
+  </Opt>
+  <Opt id="YF_FYGetYPNum">
+    <sql>select 库存数量,冻结数量,库存数量-冻结数量 as 可用数量 from 库存药品 where 库存流水 = ?</sql>    
+    <Pa name="库存流水" bname="药品辅助编码"/>
+  </Opt>
+  <Opt id="YF_MZTYCfhList">
+    <sql>
+      <![CDATA[
+      select 处方号,病人姓名,处方日期,总金额 from (select a.处方号,a.病人姓名,a.处方日期,a.总金额 
+         from 门诊处方表 a where a.退药标志=0 and (a.处方号 like ? or a.病人姓名 like ? or a.就诊卡号 like ?)
+        and exists(select * from 门诊处方明细表 b where b.处方号=a.处方号 and a.cHosCode=b.cHosCode) and 
+             是否发药=1 and cHosCode=? order by a.处方日期 desc ) t where rownum<=100
+      ]]>
+    </sql>
+  </Opt>
+  
+    <Opt id="YF_MZTYCfhList2">
+      <sql>
+        <![CDATA[
+          select 处方号,病人姓名,处方日期,总金额 from (select a.处方号,a.病人姓名,a.处方日期,a.总金额 
+             from 门诊处方表 a,可操作库房 x where a.choscode=x.choscode and a.药房=x.kfID and x.UserID=? 
+             and a.退药标志=0 and (a.处方号 like ? or a.病人姓名 like ? or a.就诊卡号 like ?)
+            and exists(select * from 门诊处方明细表 b where b.处方号=a.处方号 and a.cHosCode=b.cHosCode) and 
+                 a.是否发药=1 and a.cHosCode=? order by a.处方日期 desc ) t where rownum<=100
+      ]]>
+      </sql>
+    </Opt>
+  <Opt id="YF_MZTYBRInfoList">
+    <sql>
+      select 处方号,病人姓名,病人性别,病人年龄,处方科室,处方医生,处方日期,总金额,
+      是否发药,是否结算,处方状态,操作员,冲红处方号,退药标志,病人类型,cHosCode
+      from 门诊处方表 where 是否结算=1 and 是否发药=1 and 退药标志=0
+      and 处方状态=1 and cHosCode = ? and 处方号=?
+    </sql>
+  </Opt>
+  <Opt id="YF_MZTYCFMXList">
+    <sql>
+      select 自动编码, 编码, 名称, 规格, 单位, 数量, 价格 as 单价,金额,药品辅助编码,数量 as 退药数量,处方号,cHosCode
+      from 门诊处方明细表  where cHosCode=? and 处方号 = ? and 标志=0
+    </sql>
+  </Opt>
+
+
+  <Opt id="YF_MZTYINFOSave" key="处方号" table="退药信息表">
+    <Pa name="操作时间"/>
+    <Pa name="药品规格"/>
+    <Pa name="操作员"/>
+    <Pa name="零售价"/>
+    <Pa name="库存流水"/>
+    <Pa name="药品单位"/>
+    <Pa name="退药数量"/>
+    <Pa name="药品编码"/>
+    <Pa name="药品名称"/>
+    <Pa name="金额"/>
+    <Pa name="业务类型"/>
+    <Pa name="cHosCode" fkey="true"/>
+    <Pa name="处方号"/>
+  </Opt>
+  <Opt id="YF_MZTYUpdateTYSL">
+    <sql>
+      UPDATE 门诊处方明细表 SET 退药数量=? WHERE cHosCode= ? and 处方号= ? and 自动编码=?
+    </sql>
+    <Pa name="退药数量"/>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+    <Pa name="自动编码"/>
+  </Opt>
+  <Opt id="YF_ZYTYUpdateTYSL">
+    <sql>
+      UPDATE 住院处方明细表 SET 退药数量=?,发药状态=? WHERE cHosCode= ? and 处方号= ? and 自动编码=?
+    </sql>
+    <Pa name="退药数量"/>
+    <Pa name="发药状态"/>
+    <Pa name="cHosCode"/>
+    <Pa name="处方号"/>
+    <Pa name="自动编码"/>
+  </Opt>
+  <Opt id="YF_ZYTYBRInfoList">
+    <sql>
+      <![CDATA[select 处方号,住院号,病人姓名,处方日期,总金额,参合标志 from (select b.处方号,a.住院号,a.病人姓名,b.处方日期,b.总金额,a.参合标志 
+      from 住院登记表 a,住院处方表 b where a.cHosCode=b.cHosCode and a.住院号=b.住院号 and 
+      (b.处方号 like ? or a.病人姓名 like ? or a.住院号 like ? or a.就诊卡号 like ?) and exists(select * from 住院处方明细表 c where b.cHosCode=c.cHosCode and b.处方号=c.处方号 and 
+       标志=0 and 发药状态=1 and 数量>0 and 数量-已退药数量-退药数量>0 ) and a.是否结算<>1 and a.cHosCode=? order by b.处方日期 desc ) t where rownum<=100
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_ZYTYBRInfoList2">
+    <sql>
+      <![CDATA[select 处方号,住院号,病人姓名,处方日期,总金额,参合标志 from (select b.处方号,a.住院号,a.病人姓名,b.处方日期,b.总金额,a.参合标志 
+      from 住院登记表 a,住院处方表 b,可操作库房 x where a.choscode=x.choscode and b.药房=x.kfID and x.UserID=? and a.cHosCode=b.cHosCode and a.住院号=b.住院号 and 
+      (b.处方号 like ? or a.病人姓名 like ? or a.住院号 like ? or a.就诊卡号 like ?) and exists(select * from 住院处方明细表 c where b.cHosCode=c.cHosCode and b.处方号=c.处方号 and 
+       标志=0 and 发药状态=1 and 数量>0 and 数量-已退药数量-退药数量>0 ) and a.是否结算<>1 and a.cHosCode=? order by b.处方日期 desc ) t where rownum<=100
+      ]]>
+    </sql>
+  </Opt>
+  
+  <Opt id="YF_ZYTYCFMXList">
+    <sql>
+        <![CDATA[
+      select 自动编码, 编码, 名称, 规格, 单位, 数量, 价格,金额,退药数量,药品辅助编码,发药状态,已退药数量,住院号 ,cHosCode
+      from 住院处方明细表  where cHosCode=? and 处方号=? and 标志=0 and 发药状态=1 and 数量>0 and 数量-已退药数量-退药数量>0
+       ]]>
+      </sql>
+  </Opt>
+  
+
+  <!--=====================================住院相关操作=============================================-->
+  <Opt id="ZY_FindCwSelList">
+    <sql>
+      select a.床位名称,a.ID,b.病房名称 as 所在病房,a.状态,a.住院号,a.cHosCode
+      from 床位表 a,病房表 b where a.choscode=b.choscode and a.所在病房=b.ID and
+      a.状态='0' and a.cHosCode=? and b.所属科室=? and b.病房名称 like ? order by a.ID
+    </sql>
+    
+  </Opt>
+  
+  <Opt id="ZY_SaveZyInfo" key="住院号" table="住院登记表">
+    <Pa name="农合登记类型"/>
+    <Pa name="登记时间" update="false"/>
+    <Pa name="床号"/>
+    <Pa name="入院科室"/>
+    <Pa name="接诊医生"/>
+    <Pa name="病人姓名"/>
+    <Pa name="病人性别"/>
+    <Pa name="病人年龄"/>
+    <Pa name="病人住址"/>
+    <Pa name="工作单位"/>
+    <Pa name="联系人"/>
+    <Pa name="联系电话"/>
+    <Pa name="证件号码"/>
+    <Pa name="疾病"/>
+    <Pa name="金额" update="false"/>
+    <Pa name="是否在院" update="false"/>
+    <Pa name="出院时间" update="false"/>
+    <Pa name="出院诊断" update="false"/>
+    <Pa name="出院交纳" update="false"/>
+    <Pa name="是否结算" update="false"/>
+    <Pa name="个人编码" update="false"/>
+    <Pa name="参合标志" update="false"/>
+    <Pa name="医疗证号" update="false"/>
+    <Pa name="上传标志" update="false"/>
+    <Pa name="住院编码" update="false"/>
+    <Pa name="作废标志" update="false"/>
+    <Pa name="病人类型" update="false"/>
+    <Pa name="审核标志" update="false"/>
+    <Pa name="审核日期" update="false"/>
+    <Pa name="操作员" update="false"/>
+    <Pa name="审核人" update="false"/>
+    <Pa name="出院退款" update="false"/>
+    <Pa name="农合报销" update="false"/>
+    <Pa name="其他诊断"/>
+    <Pa name="入院状态" />
+    <Pa name="证件是否齐全" update="false"/>
+    <Pa name="出院状态" update="false"/>
+    <Pa name="手术代码"/>
+    <Pa name="手术名称"/>
+    <Pa name="入院诊断名称"/>
+    <Pa name="出院诊断名称"/>
+    <Pa name="门诊医生"/>
+    <Pa name="拼音码"/>
+    <Pa name="就诊卡号" update="false"/>
+    <Pa name="住院号" update="false"/> 
+    <Pa name="cHosCode" fkey="true" update="false"/>
+ </Opt>
+  <Opt id="ZY_UpDateBRhInfo">
+    <sql>
+      UPDATE 住院登记表 set 病人姓名=?,农合登记类型=?, 入院科室=? ,接诊医生=?,病人性别=?,
+      病人年龄=? ,病人住址=?,工作单位=?,联系人=? ,联系电话=?,证件号码=?,疾病=?,其他诊断=?,入院状态=?,
+      手术代码=?,证件是否齐全=? ,登记时间=?, 病人类型=?,手术名称=?,入院诊断名称=?,门诊医生=?,拼音码=?
+      where cHosCode=? and 住院号=?</sql>
+    <Pa name="病人姓名"/>
+    <Pa name="农合登记类型"/>
+    <Pa name="入院科室"/>
+    <Pa name="接诊医生"/>
+    <Pa name="病人性别"/>
+    <Pa name="病人年龄"/>
+    <Pa name="病人住址"/>
+    <Pa name="工作单位"/>
+    <Pa name="联系人"/>
+    <Pa name="联系电话"/>
+    <Pa name="证件号码"/>
+    <Pa name="疾病"/>
+    <Pa name="其他诊断"/>
+    <Pa name="入院状态"/>
+    <Pa name="手术代码"/>
+    <Pa name="证件是否齐全"/>
+    <Pa name="登记时间"/>
+    <Pa name="病人类型"/>
+    <Pa name="手术名称"/>
+    <Pa name="入院诊断名称"/>
+    <Pa name="门诊医生"/>
+    <Pa name="拼音码"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_UpDateNhInfo">
+    <sql>UPDATE 住院登记表 set 病人类型=1,参合标志=1,住院编码=?,医疗证号=? where cHosCode=? and 住院号=?</sql>
+    <Pa name="住院编码"/>
+    <Pa name="医疗证号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_UpDateNhInfoALL">
+    <sql>UPDATE 住院登记表 set 病人姓名=?,个人编码=?,病人年龄=?,病人性别=?,医疗证号=? ,病人类型=1,参合标志=1,住院编码=?,病人住址=?,证件号码=? where cHosCode=? and 住院号=?</sql>
+    <Pa name="病人姓名"/>
+    <Pa name="个人编码"/>
+    <Pa name="病人年龄"/>
+    <Pa name="病人性别"/>
+    <Pa name="医疗证号"/>
+    <Pa name="住院编码"/>
+    <Pa name="病人住址"/>
+    <Pa name="证件号码"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_GetDJHGZ">
+    <sql>
+      <![CDATA[select * from 住院号生成规则表 where choscode=?]]>
+    </sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+ <Opt id="ZY_GetMaxDJH">
+    <sql>
+      <![CDATA[select Expr1 from (SELECT 住院号 AS Expr1  FROM 住院登记表 WHERE cHosCode=? and   
+     住院号 LIKE ? and length(住院号) <=? order by  length(住院号) desc,住院号 desc) t where rownum=1]]>
+    </sql>
+   <Pa name="cHosCode"/>
+   <Pa name="住院号"/>
+   <Pa name="length"/>
+  </Opt>
+  <Opt id="ZY_SaveZyYJ" key="ID" table="押金表">   
+    <Pa name="住院号"/>
+    <Pa name="押金数额"/>
+    <Pa name="交付日期"/>
+    <Pa name="押金人" bname="病人姓名"/>
+    <Pa name="剩余金额"/>
+    <Pa name="发票号"/>
+    <Pa name="状态"/>
+    <Pa name="操作员" bname="Useraccount"/>
+    <Pa name="cHosCode"/>
+    <Pa name="ID" insert="false"/>
+  </Opt>
+  <Opt id="ZY_UpDateCwInfo">
+    <sql>UPDATE 床位表 SET 住院号=?,状态=? WHERE cHosCode= ? and ID= ?</sql>
+    <Pa name="住院号"/>
+    <Pa name="状态"/>
+    <Pa name="cHosCode"/>
+    <Pa name="ID" bname="床位ID"/>
+  </Opt>
+  <Opt id="ZY_FindZYBrListBriNFO">
+    <sql>
+      select a.接诊医生,y.姓名 as 医生姓名 from 住院登记表 a left join  医生表 y on y.cHosCode=a.cHosCode and y.id=a.接诊医生
+      where a.cHosCode=? and a.住院号 =?
+    </sql>    
+  </Opt>
+  <Opt id="ZY_FindZYBrList">
+    <sql>
+      <![CDATA[select a.cHosCode,a.是否在院,a.是否结算,a.审核标志,a.住院号,a.登记时间 as 入院日期,a.入院科室,a.病人姓名, a.病人性别, 
+   a.接诊医生,a.病人住址,a.出院科室, a.病人年龄,a.疾病,a.其他诊断,a.床号 as 床位,nvl(sum(b.押金数额),0) 押金金额, 
+   nvl(a.金额,0) as 未结算费用 ,nvl(sum(b.押金数额),0)-nvl(a.金额,0) as 押金余额,nvl(a.出院退款,0) 出院退款,
+   nvl(a.出院交纳,0) 出院交纳,a.出院时间,a.出院诊断,a.工作单位,a.住院编码,a.上传标志,a.个人编码,a.参合标志,
+   a.医疗证号 ,a.农合报销,a.病人类型 ,a.账户支付,a.基本统筹,a.大额统筹,a.其他报销,a.保内,a.保外,a.结算时间,a.结算人 ,
+   a.入院诊断名称 as 入院疾病名称,a.出院诊断名称 as 出院疾病名称 ,a.入院状态,a.证件是否齐全,a.联系人,a.联系电话,a.门诊医生,
+   a.手术代码,a.手术名称,a.操作员,a.优惠减免,a.农合登记类型,a.发票号,a.就诊卡号,a.证件号码,a.辅助类型,a.出院状态,a.结算编号
+   from 住院登记表 a left outer join 押金表 b on a.住院号=b.住院号 and a.choscode=b.choscode
+   where a.cHosCode=? [Condition] ]]>
+    </sql>    
+  </Opt>
+
+  <Opt id="ZY_CheckNHData">
+    <sql>
+      <![CDATA[select a.住院号,a.登记时间 as 入院日期,a.入院科室,a.病人姓名,a.病人性别,a.病人年龄,a.床号 as 床位,
+      a.金额,a.出院时间,a.住院编码,a.个人编码,a.医疗证号 ,a.农合报销,a.其他报销,a.优惠减免,a.结算时间
+      from 住院登记表 a where a.参合标志=1 and a.是否结算=1 and a.病人类型=? and a.结算时间>=? and a.结算时间<? and a.choscode=?]]>
+    </sql>
+  </Opt>      
+
+  <Opt id="ZY_FindBFList">
+    <sql>
+      select a.ID,床位名称,所在病房,状态,住院号,b.所属科室,a.cHosCode from 床位表 a
+      left join 病房表 b on a.所在病房 = b.ID where a.cHosCode=? and b.cHosCode=?
+      and 所在病房=? and a.状态 like ? order by 住院号 desc,a.ID
+    </sql>
+  </Opt>
+  <Opt id="ZY_GetHZBFInfo">
+      <sql>
+        select a.ID,a.床位名称,a.所在病房,a.状态,a.住院号,b.病房名称,a.cHosCode from 床位表 a left join 病房表 b on a.所在病房 = b.ID where a.cHosCode=? and b.cHosCode=? and a.住院号 = ?
+      </sql>
+      <Pa name="cHosCode"/>
+      <Pa name="cHosCode"/>
+      <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_CWBrTc">
+    <sql>update 床位表 set 状态=0,住院号='' where cHosCode=? and 住院号 = ?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_CWGETZT">
+    <sql>
+      select 床位名称  床位表 set 状态=1 where cHosCode=? and ID = ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="ID"/>
+  </Opt>
+  <Opt id="ZY_CWUPDATEZT">
+    <sql>
+      update 床位表 set 状态=1,住院号=? where cHosCode=? and ID = ?
+    </sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="ID"/>
+  </Opt>
+  <Opt id="ZY_CWUPDATEZYZT">
+    <sql>
+      update 住院登记表 set 是否在院=1,是否结算=0 ,床号=? where cHosCode=? and  住院号 = ?
+    </sql>
+    <Pa name="床号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_CWUPDATEZYZT_cw">
+    <sql>
+      update 住院登记表 set 床号=? where cHosCode=? and  住院号 = ?
+    </sql>
+    <Pa name="床号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_YJJFindList">
+    <sql>
+      select ID,住院号,押金数额,交付日期,押金人,剩余金额,操作员,发票号,状态,cHosCode from 押金表 where cHosCode=? and 住院号=? order by 交付日期 desc
+    </sql>
+  </Opt>
+  
+  <!--住院计费-->
+  <Opt id="ZY_JFMaxCFH">
+    <sql>select max(处方号) as cfh from 住院处方表 where cHosCode=?</sql>
+    <Pa name="cHosCode"/>
+  </Opt>
+ 
+  <Opt id="ZY_JFCFInfoSave" key="处方号" table="住院处方表">
+    <Pa name="处方日期"/>
+    <Pa name="住院号"/>
+    <Pa name="处方医生"/>
+    <Pa name="处方科室"/>
+    <Pa name="药房" update="false"/>
+    <Pa name="总金额"/>
+    <Pa name="接单医生"/>
+    <Pa name="接单科室"/>
+    <Pa name="cHosCode" update="false" fkey="true"/>
+    <Pa name="处方号"  update="false"/>
+  </Opt>
+  <Opt id="ZY_JFCFInfoSaveMx" key="自动编码" table="住院处方明细表">
+    <Pa name="执行单价"/>
+    <Pa name="农合名称"/>
+    <Pa name="处方医生"/>
+    <Pa name="操作员"/>
+    <Pa name="单位"/>
+    <Pa name="退药数量"/>
+    <Pa name="规格"/>
+    <Pa name="药品辅助编码"/>
+    <Pa name="处方科室"/>
+    <Pa name="名称"/>
+    <Pa name="农合编码"/>
+    <Pa name="处方时间"/>
+    <Pa name="费用类别"/>
+    <Pa name="剂型"/>
+    <Pa name="金额"/>
+    <Pa name="编码"/>
+    <Pa name="发药状态"/>
+    <Pa name="核算科室" bname="接单科室"/>
+    <Pa name="价格"/>
+    <Pa name="数量"/>
+    <Pa name="标志"/>
+    <Pa name="上传标志"/>
+    <Pa name="处方号"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="自动编码" insert="false" update="false"/>
+  </Opt>
+  <Opt id="ZY_JFUpdateYJXinfo">
+    <sql><![CDATA[update 押金表 t set 剩余金额=1 where cHosCode=? and 住院号=? and not 
+    exists(select * from 押金表 where cHosCode=t.cHosCode and 住院号=t.住院号 and 交付日期>t.交付日期)]]></sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_TFTuiYaoInfoList" >
+    <sql>
+      <![CDATA[select 自动编码,处方号,处方时间,处方医生,编码,名称,规格,单位,数量,价格,a.金额,退药数量,a.操作员,发药状态,a.执行单价,
+                 已退药数量,剂型,费用类别,药品辅助编码,农合条目编码,农合名称,农合编码,a.上传标志,a.住院号,标志,b.住院编码,
+                    a.cHosCode,a.核算科室,a.处方科室   from 住院处方明细表 a, 住院登记表 b  where a.cHosCode=? and 
+                    a.cHosCode=b.cHosCode and a.住院号=b.住院号 and a.住院号=? and a.标志=0 and (a.退药数量>0)
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+   </Opt>  
+  <Opt id="ZY_TFCZTuiYaoInfoList" >
+    <sql>
+      <![CDATA[
+        select 自动编码, 处方号,处方时间,处方医生,编码,名称,规格,单位,数量,价格,a.金额,退药数量,a.操作员,发药状态,a.执行单价,
+        已退药数量,剂型,费用类别,药品辅助编码,农合条目编码,农合名称,农合编码,a.上传标志,a.住院号,标志,b.住院编码,
+                    a.cHosCode,a.核算科室,a.处方科室   from 住院处方明细表 a, 住院登记表 b  where a.cHosCode=? and 
+                    a.cHosCode=b.cHosCode and a.住院号=b.住院号 and a.住院号=? and a.标志=0 and (a.退药数量>0)
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>  
+  
+  <Opt id="ZY_TFTuiYaoUpdate">
+    <sql>
+      UPDATE 住院处方明细表 SET 退药数量=?,发药状态=?,已退药数量=? WHERE cHosCode= ? and 住院号=? and 自动编码= ?
+    </sql>
+    <Pa name="退药数量"/>
+    <Pa name="发药状态"/>
+    <Pa name="已退药数量"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="自动编码"/>
+  </Opt>
+  <Opt id="ZY_TFXmCfhList">
+    <sql>
+      select 处方号,处方号 as 处方号1 from 住院处方表 where cHosCode=? and 住院号 = ? order by 处方号 desc
+    </sql>
+  </Opt>
+  <Opt id="ZY_TFXmCfMxList">
+    <sql>
+      <![CDATA[select 自动编码,住院号,处方号,处方时间,处方医生,标志,编码,名称,规格,单位,数量,价格,
+               金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,上传标志,农合条目编码,农合名称,
+               农合编码,剂型,已退药数量,核算科室,处方科室,执行单价,'' 住院编码,cHosCode from 住院处方明细表       
+           where cHosCode=? and 住院号=? and 处方号 like ? and 标志=1 and 数量>0
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="处方号"/>
+  </Opt>
+
+  <Opt id="ZY_TFXmCfMxList2">
+    <sql>
+      <![CDATA[
+        select 自动编码,住院号,处方号,处方时间,处方医生,标志,编码,名称,规格,单位,数量,价格,
+             金额,费用类别,发药状态,退药数量,操作员,药品辅助编码,上传标志,农合条目编码,农合名称,
+            农合编码,剂型,已退药数量,核算科室,处方科室,执行单价,'' 住院编码,cHosCode from 住院处方明细表 t      
+           where cHosCode=? and 住院号=? and 处方号 like ? and 标志=1 and 数量>0 and exists(
+           select * from 用户表 a where (a.所属科室=? or a.所属科室 is null) and t.操作员=a.useraccount )
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="处方号"/>
+    <Pa name="所属科室"/>
+  </Opt>
+  
+  <Opt id="ZY_SHNFYCFList">
+    <sql>
+      <![CDATA[select t1.处方号,t1.住院号 from 住院处方表 t1 where t1.cHosCode=? and t1.住院号 = ? and 
+            (select count(*) from 住院处方明细表 t2 where t2.发药状态='0' and t2.处方号=t1.处方号 and t2.标志=0 and t2.cHosCode=?)>0 
+            order by t1.处方号 desc
+      ]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="ZY_SHFindCfMxList">
+    <sql>
+      <![CDATA[select 自动编码,住院号,处方号,处方时间,处方医生,标志,编码,
+       名称,规格,单位,数量,价格,金额,费用类别,发药状态,退药数量,
+       操作员,药品辅助编码,上传标志,农合条目编码,农合名称,农合编码,
+       剂型,已退药数量,核算科室,处方科室,执行单价,cHosCode 
+       from 住院处方明细表  where cHosCode=? and 住院号=? and 处方号 like ? and 发药状态 = '0' and 标志=0 and 数量>0
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_SHZYBRInfo">
+    <sql>
+      update 住院登记表 set 登记时间=?, 住院编码=?,审核标志=?,审核日期=?,审核人=?,出院时间=?,出院诊断=?,出院诊断名称=?,
+      入院诊断名称=?, 上传标志=?,出院状态=?,出院科室=?,疾病=?,手术代码=?,手术名称=? where cHosCode=? and 住院号=?
+    </sql>
+    <Pa name="登记时间"/>
+    <Pa name="住院编码"/>
+    <Pa name="审核标志"/>
+    <Pa name="审核日期"/>
+    <Pa name="审核人"/>
+    <Pa name="出院时间"/>
+    <Pa name="出院诊断"/>
+    <Pa name="出院诊断名称"/>
+    <Pa name="入院诊断名称"/>
+    <Pa name="上传标志"/>
+    <Pa name="出院状态"/>
+    <Pa name="出院科室"/>
+    <Pa name="疾病"/>
+    <Pa name="手术代码"/>
+    <Pa name="手术名称"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_SHZYBRInfo1">
+    <sql>
+      update 住院登记表 set 审核标志=?,审核日期=?,审核人=?,上传标志=?
+      where cHosCode=? and 住院号=?
+    </sql>
+    <Pa name="审核标志"/>
+    <Pa name="审核日期"/>
+    <Pa name="审核人"/>
+    <Pa name="上传标志"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_JSFindCFHList">
+    <sql>
+      select 处方号,住院号,处方医生,处方时间, nvl(sum(金额),0) as 总金额
+      from 住院处方明细表  	where cHosCode=? and 住院号= ? group by 处方号,住院号,处方医生,处方时间
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_JSFindCFMxList">
+    <sql>
+      select 自动编码 as ID,case 标志 when 0 then '药品' when 1 then '项目'end as 分类 , 编码, 名称, 规格,单位, 数量,价格,
+      金额, 费用类别 from 住院处方明细表  where cHosCode=? and 住院号=? and 处方号=? and 处方医生 like ? order by 自动编码
+    </sql>
+  </Opt>
+  <Opt id="ZY_JSGetFYInfo">
+    <sql>
+      select nvl(a.住院号,b.住院号) as 住院号,nvl(押金,0) as 押金,nvl(金额,0) as 金额 from
+      ( select 住院号, sum(金额) as 金额 from 住院处方明细表
+      where cHosCode =? and 住院号= ? group by 住院号 ) a
+      full join
+      ( select 住院号,sum(押金数额) as 押金 from 押金表
+      where cHosCode=? and 住院号= ? group by 住院号 ) b on a.住院号=b.住院号
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_JSGetBrInfo">
+    <sql>
+      SELECT 住院号,登记时间,入院科室,接诊医生,病人姓名,病人性别,病人年龄,病人住址,工作单位,联系人,联系电话,疾病,
+      金额,是否在院,出院时间,出院诊断,出院交纳,是否结算,个人编码,参合标志,医疗证号,上传标志,住院编码,作废标志,病人类型,审核标志,
+      审核日期,操作员,审核人,出院退款,cHosCode,农合报销,其他诊断,入院状态,证件是否齐全,出院状态,出院科室,手术代码 ,
+      基本统筹, 大额统筹,其他报销,保内,保外,结算人,结算时间
+      FROM 住院登记表 where cHosCode=? and 住院号=?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_UpDateNhXMList">
+    <sql>UPDATE 住院处方明细表 set 上传标志=1 where cHosCode=? and 住院号=? and 处方号=?</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+    <Pa name="处方号"/>
+  </Opt>
+  <!--清除农合信息-->
+  <Opt id="ZY_ClearNhxx1">
+    <sql>update 住院登记表 set 上传标志='0',住院编码='' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="ZY_ClearNhxx2">
+    <sql>update 住院处方明细表 set 上传标志='0',农合条目编码='' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="ZY_hiszydjbyzyh">
+    <sql>
+      SELECT a.住院号,a.登记时间,a.入院科室,a.接诊医生,a.病人姓名,a.病人性别,a.病人年龄,a.病人住址,a.工作单位,a.联系人,
+      a.联系电话,a.疾病,a.金额,a.是否在院,a.出院时间,a.出院诊断,a.出院交纳,a.是否结算,a.个人编码,a.参合标志,a.医疗证号,a.上传标志,
+      a.住院编码,a.作废标志,a.病人类型,a.审核标志, a.审核日期,a.操作员,a.审核人,a.出院退款,a.cHosCode,a.农合报销,a.其他诊断,a.入院状态,
+      a.证件是否齐全,a.出院状态,a.出院科室,a.手术代码 , a.基本统筹, a.大额统筹,a.其他报销,a.保内,a.保外,a.结算人,a.结算时间,
+      y.姓名 as 医生姓名,c.床位名称,a.农合登记类型, nvl(a.出院诊断名称,a.入院诊断名称) as 疾病名称
+      FROM 住院登记表 a left join 医生表 y on y.ID=a.接诊医生 left join 床位表 c on c.住院号=a.住院号
+      where a.cHosCode=? and a.住院号 = ?
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+  <Opt id="ZY_zycfmxupload">
+    <sql>
+      <![CDATA[select a.自动编码,a.住院号,a.处方号,a.处方时间,a.处方医生,a.标志,a.编码,a.名称,a.规格,d.名称 as 单位,a.数量,a.价格,a.金额,a.费用类别,
+       a.发药状态,a.退药数量,a.操作员,a.药品辅助编码,a.上传标志,a.农合条目编码,t.农合名称,t.农合编码,z.dicdesc as 剂型,a.已退药数量,
+       a.核算科室,a.处方科室,a.执行单价,a.cHosCode,'' 住院编码 , f.农合编码 as 费用农合编码 from 住院处方明细表 a
+       left join (select ID, 农合编码 from 费用类别表 where (cHosCode='0') or (cHosCode like ?) or (cHosCode=?) ) f on f.ID = a.费用类别 
+       left join (select 药品编码 as 费用编码,农合编号 as 农合编码,农合名称,0 as 标志 from 药品字典表 where choscode=? or choscode=? 
+       union all
+       select 项目编码 as 费用编码,case when '1'=? and 县级农合编码 is not null then 县级农合编码 else 农合编码 end as 农合编码,
+       农合名称,1 as 标志 from 项目表 where choscode=? or choscode=? ) t on a.编码=t.费用编码 and a.标志=t.标志 
+       left join 项目单位表 d on d.编号=a.单位 left join 字典表 z on z.dicid=a.剂型 and z.DICGRPID = 1 where a.cHosCode=? and a.住院号=?]]>
+    </sql>
+    <Pa name="cHosCode1"/>
+    <Pa name="cHosCode"/>
+    <Pa name="cHosCode"/>
+    <Pa name="cHosCode1"/>
+    <Pa name="nhjb"/>
+    <Pa name="cHosCode"/>
+    <Pa name="cHosCode1"/>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+   
+  <Opt id="ZY_UpDateNhInfoMx">
+    <sql>UPDATE 住院处方明细表 set 上传标志='1' where cHosCode=? and 住院号=? and 上传标志='0'</sql>
+    <Pa name="cHosCode"/>
+    <Pa name="住院号"/>
+  </Opt>
+
+  <Opt id="ZY_UpDateNhToPt">
+    <sql>update 住院登记表 set 上传标志='0',住院编码='',医疗证号='',个人编码='',参合标志='0',病人类型='0' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+    
+  </Opt>
+  <Opt id="ZY_UpDateNhToPtMX">
+    <sql>update 住院处方明细表 set 上传标志='0',农合条目编码='' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+   </Opt>
+
+  <Opt id="ZY_UpDateNhCX">
+    <sql>update 住院登记表 set 上传标志='0',住院编码='' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+
+  </Opt>
+  <Opt id="ZY_UpDateNhCXMX">
+    <sql>update 住院处方明细表 set 上传标志='0',农合条目编码='' where 住院号=? and cHosCode=?</sql>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="ZY_UpDateNhBrInfoTB">
+    <sql>update 住院登记表 set 病人姓名=?,病人性别=?,病人年龄=? where 住院号=? and cHosCode=?</sql>
+    <Pa name="病人姓名"/>
+    <Pa name="病人性别"/>
+    <Pa name="病人年龄"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+
+  </Opt>
+  <Opt id="ZY_ZYJSuan">
+    <sql>
+      update 住院登记表 set 优惠减免=?, 金额=?,是否在院=?,农合报销=?,其他报销=?,结算人=?,结算时间=?,
+      出院退款=?,出院交纳=?,是否结算=?,备注=?,发票号=?,基本统筹=?,账户支付=?,结算编号=?
+      where 住院号=? and cHosCode=?</sql>
+    <Pa name="优惠减免"/>
+    <Pa name="金额"/>
+    <Pa name="是否在院"/>
+    <Pa name="农合报销"/>
+    <Pa name="其他报销"/>
+    <Pa name="结算人"/>
+    <Pa name="结算时间"/>
+    <Pa name="出院退款"/>
+    <Pa name="出院交纳"/>
+    <Pa name="是否结算"/>
+    <Pa name="备注"/>
+    <Pa name="发票号"/>
+    <Pa name="基本统筹"/>
+    <Pa name="账户支付"/>
+    <Pa name="结算编号"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <Opt id="ZY_ZYJSHuiTui">
+    <sql>
+      update 住院登记表 set 是否结算=2,审核标志='0',是否在院=1,上传标志=1,备注=?
+      where 住院号=? and cHosCode=?
+    </sql>
+    <Pa name="备注"/>
+    <Pa name="住院号"/>
+    <Pa name="cHosCode"/>
+  </Opt>
+  <!--财务管理-->
+  <Opt id="CW_SELYSList">
+    <sql>
+      <![CDATA[select UserID,Name from 用户表 where cHosCode=?]]>
+   </sql>
+  </Opt>
+  <Opt id="CW_YGCKSELList">
+    <sql>
+      <![CDATA[select 序号,cHosCode,类型,金额,发生时间,员工编号 from 员工资金流表 where cHosCode=?  and  发生时间 >= ? and 发生时间 <= ? [Condition] Order by 员工编号,发生时间 DESC]]>
+    </sql>
+  </Opt>
+  <Opt id="CW_YGCKHZList">
+  <sql><![CDATA[SELECT A.UserID, A.Name 姓名,(select B.名称 from 科室表 B where A.所属科室=B.ID) 科室,case when A.性别='1' then '男' else '女' end 性别,c.暂存款  From 用户表 A, (select 员工编号,sum(累计持款额-nvl(累计交款额,0)) 暂存款 from 员工持款列表  where cHosCode=? and 收款日期  >= ? and 收款日期 <= ? group by 员工编号) c where  c.员工编号=a.UserID and ((0=?) or (1=? and (c.暂存款>0 or c.暂存款<0)) or (2=? and c.暂存款=0))]]></sql>
+  </Opt>
+  <Opt id="CW_YGCKHZListMX">
+  <sql><![CDATA[select 收款日期,累计持款额,nvl(累计交款额,0) 累计交款额,累计持款额-nvl(累计交款额,0)  余额,员工编号,流水序号 from 员工持款列表 a where a.cHosCode=?  and 收款日期  >= ? and 收款日期 <= ? [Condition] order by 收款日期]]></sql>
+  </Opt>
+  <Opt id="CW_SaveYGJKLB" key="序号" table="员工交款列表">
+    <Pa name="持款日期"/>
+    <Pa name="收款金额"/>
+    <Pa name="备注"/>
+    <Pa name="交款时间"/>
+    <Pa name="cHosCode"/>
+    <Pa name="持款总额"/>
+    <Pa name="交款人"/>
+    <Pa name="收款人"/>
+    <Pa name="序号" insert="false"  update="false"/>
+  </Opt>
+  <Opt id="CW_YGJKList"> 
+    <sql><![CDATA[select a.序号,a.交款时间,a.交款人,b.所属科室,a.持款总额,a.收款金额,nvl(a.持款总额,0)-nvl(a.收款金额,0) as 持款余额,a.收款人,a.备注,a.持款日期 from 员工交款列表 a, 用户表 b where a.交款人=b.UserID and a.cHosCode=? and a.cHosCode=b.cHosCode and (交款时间  >= ? and 交款时间 <= ?) and (0=? or a.交款人=?) order by a.序号]]></sql>
+  </Opt>
+
+  <Opt id="CW_GETRJDATE">
+    <sql><![CDATA[select createtime from (select createtime from 日结表 where cHosCode=?  and operatorcode=? Order by serialno DESC) t where rownum=1]]></sql>
+    <Pa name="cHosCode"/>
+    <Pa name="operatorcode"/>
+  </Opt>
+  <Opt id="CW_GETRJDATECZ">
+    <sql>
+      <![CDATA[select min(t.结算时间)as 时间 from 住院登记表 t where t.是否结算=1 and  t.choscode=? and t.结算人=?
+               union all
+               select min(t.处方日期) as 时间 from 门诊处方表 t where t.是否结算=1 and t.choscode=? and t.操作员=?
+               union all
+               select min(t.交付日期) as 时间 from 押金表 t where t.choscode=? and t.操作员=?
+               order by 时间 asc]]></sql>
+    <Pa name="cHosCode"/>
+    <Pa name="结算人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="操作员"/>
+    <Pa name="cHosCode"/>
+    <Pa name="操作员"/>
+  </Opt>
+  <Opt id="CW_DayYJFYTJ">
+  <sql>
+    <![CDATA[select '住院' as kind,nvl(a.病人类型,b.病人类型) as 病人类型,
+	     nvl(a.人次,0) as 人次,nvl(a.结算金额,0) as 结算金额,nvl(a.结算金额-a.农合报销-a.降消报销-
+         a.结算退补-a.优惠减免,0) as 结算预交金,nvl(a.农合报销,0) 农合报销,nvl(a.降消报销,0) 降消报销,
+         nvl(a.降消人次,0) 降消人次,nvl(b.押金数额,0) as 押金数额,
+         nvl(a.结算退补,0) 结算退补,nvl(b.押金数额,0)+nvl(a.结算退补,0) as 应交合计,a.优惠减免 
+   from (
+   select 病人类型,count(*) 人次,sum(金额) 结算金额,sum(农合报销) as 农合报销,
+       nvl(sum(其他报销),0) as 降消报销, sum(nvl(出院交纳,0)-nvl(出院退款,0)) as 结算退补,
+       sum(case when nvl(其他报销,0)>0 then 1 else 0 end) 降消人次,nvl(sum(优惠减免),0) as 优惠减免
+   from 住院登记表 where 是否结算=1 and choscode=? and 结算人=? and 结算时间 between ? and ?
+   group by 病人类型 ) a full join
+   ( select y.病人类型,sum(x.押金数额) as 押金数额 from 押金表 x,住院登记表 y  
+     where x.住院号=y.住院号 and x.choscode=y.choscode and x.choscode=? and x.操作员=? and
+           x.交付日期 between ? and ? group by y.病人类型 ) b on a.病人类型=b.病人类型      
+   union all
+     select '门诊' as kind,病人类型,sum(case when 冲红处方号 is null then 1 else -1 end) 人次,
+            sum(总金额) 结算金额, 0 as 结算预交金,nvl(sum(农合报销),0) 农合报销, 
+            nvl(sum(其他报销),0) as 降消报销, sum(case when nvl(其他报销,0)>0 then 
+               (case when 处方状态='1' then 1 else -1 end) else 0 end) 降消人次,
+            0 as 押金数额,0 as 结算退补,( sum(实收金额) -sum(优惠减免)) as  应交合计,sum(优惠减免) as 优惠减免
+    from 门诊处方表 t where 是否结算=1 and choscode=? and 操作员=? and 处方日期 between ? and ? group by 病人类型  
+    order by kind desc,病人类型 ]]>
+  </sql>
+  </Opt>
+  <Opt id="CW_DayYJFYTJClass">
+  <sql>
+    <![CDATA[ select t.kind,y.类别名称,t.金额 from (      
+                select '住院' kind,nvl(b.费用类别,14) as 费用类别,sum(b.金额) as 金额
+                from 住院登记表 a,住院处方明细表 b 
+                where a.choscode=b.choscode and a.住院号=b.住院号 and 
+                      a.是否结算=1 and a.choscode=? and a.结算时间 between ? and ? and a.结算人=?
+                      group by nvl(b.费用类别,14)    
+                union all       
+                select '门诊' kind,费用类别,sum(金额) as 金额 from (
+                  select nvl(b.费用类别,14) as 费用类别,sum(金额) as 金额
+                  from 门诊处方表 a,门诊处方明细表 b where a.choscode=b.choscode and a.处方号=b.处方号 and
+                    a.是否结算=1 and a.choscode=? and a.处方日期 between ? and ? and a.操作员=?
+                   group by nvl(b.费用类别,14)  
+                  union all
+                   select nvl(b.费用类别,14) as 费用类别,-sum(金额) as 金额
+                   from 门诊处方表 a,门诊处方明细表 b where a.choscode=b.choscode and a.冲红处方号=b.处方号 and
+                                  a.是否结算=1 and a.choscode=? and a.处方日期 between ? and ? and a.操作员=?
+                   group by nvl(b.费用类别,14) ) x group by 费用类别 ) t 
+                   left join 费用类别表 y on t.费用类别=y.id ]]>
+  </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="结算时间S"/>
+    <Pa name="结算时间E"/>
+    <Pa name="结算人"/>
+    <Pa name="cHosCode"/>
+    <Pa name="结算时间S"/>
+    <Pa name="结算时间E"/>
+    <Pa name="操作员"/>
+    <Pa name="cHosCode"/>
+    <Pa name="结算时间S"/>
+    <Pa name="结算时间E"/>
+    <Pa name="操作员"/>
+  </Opt>
+  <Opt id="CW_GETCZYRJBList">
+    <sql>
+      <![CDATA[select serialno,totalfare,yjfare,createtime,upOptime,operatorcode,choscode,STATUS,SKOPERATOR,SKDATE from 日结表 
+	               where cHosCode=? and createtime between ? and ? and operatorcode like ? Order by serialno DESC]]></sql>
+  </Opt>
+
+  <Opt id="CW_SaveRJMXB" key="serialno" table="日结明细表">
+    <Pa name="病人类型" bname="病人类型_Text"/>
+    <Pa name="cHosCode"/>
+    <Pa name="农合报销" bname="统筹报销"/>
+    <Pa name="降消报销"/>
+    <Pa name="应交合计"/>
+    <Pa name="结算退补"/>
+    <Pa name="押金数额" bname="收费区间总预交金"/>
+    <Pa name="kind" bname="标志"/>
+    <Pa name="结算预交金"/>
+    <Pa name="降消人次"/>
+    <Pa name="结算金额"/>
+    <Pa name="人次" bname="结算人次"/>
+    <Pa name="serialno" insert="true"  update="false"/>
+  </Opt>
+  <Opt id="CW_SaveRJFLMXB" key="serialno" table="日结明细分类表">
+    <Pa name="Classname"/>
+    <Pa name="cHosCode"/>
+    <Pa name="kind" bname="KIND"/>
+    <Pa name="classfare"/>
+    <Pa name="serialno" insert="true"  update="false"/>
+  </Opt>
+  <Opt id="CW_SaveRJINFO" key="serialno" table="日结表">
+    <Pa name="upOptime" bname="结算时间S"/>
+    <Pa name="cHosCode"/>
+    <Pa name="yjfare"/>
+    <Pa name="operatorcode"/>
+    <Pa name="totalfare"/>
+    <Pa name="createtime" bname="结算时间E"/>
+    <Pa name="serialno" insert="true"  update="false"/>
+  </Opt>
+
+  <Opt id="CW_SaveRJINFO2" key="serialno" table="日结表">
+    <Pa name="upOptime" bname="结算时间S"/>
+    <Pa name="cHosCode"/>
+    <Pa name="yjfare"/>
+    <Pa name="operatorcode"/>
+    <Pa name="totalfare"/>
+    <Pa name="createtime" bname="结算时间E"/>
+    <Pa name="serialno" insert="true"  update="false"/>
+    <Pa name="mzpj"/>
+    <Pa name="mzzf"/>
+    <Pa name="mzok"/>
+    <Pa name="mznum"/>
+    <Pa name="zypj"/>
+    <Pa name="zyzf"/>
+    <Pa name="zyok"/>
+    <Pa name="zynum"/>
+    <Pa name="deppj"/>
+    <Pa name="depzf"/>
+    <Pa name="depok"/>
+    <Pa name="depnum"/>    
+  </Opt> 
+  
+  
+  
+  <!--统计查询相关SQL-->
+  
+    <Opt id="TJ_YPCXList">
+    <sql>
+      <![CDATA[select 药品名称,药品编码,拼音码,药品规格,农合编号,农合名称 ,保内外, (case when 基药ID>0 then '基药' else '' end) as 基药
+  from 药品字典表 where (禁用标志=0) and (辅助单位 is not null) and (cHosCode=? or cHosCode=?) and
+  (药品编码 like ? or  拼音码 like ? or 药品名称 like ?) ]]>
+      
+    </sql>
+  </Opt>
+  <Opt id="ZY_OneDayBrInfoList">
+    <sql>
+      <![CDATA[ select a.住院号, a.登记时间 as 入院日期,a.入院科室,a.病人姓名,a.病人性别,a.病人年龄,a.入院诊断名称 as 疾病,
+       a.床号 as 床位,y.押金金额, nvl(a.金额,0) as 未结算费用 ,y.押金金额-nvl(a.金额,0) as 押金余额,a.出院时间,
+       a.出院诊断名称 as 出院诊断 ,a.工作单位,a.参合标志,a.医疗证号,a.cHosCode,a.接诊医生,a.是否结算 		
+       from 住院登记表 a left outer join (select 住院号,nvl(sum(押金数额),0) as 押金金额
+       from 押金表 where cHosCode=? and 住院号=? group by 住院号) y on a.住院号=y.住院号
+       where a.cHosCode=? and a.住院号=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_OneDayTYPELIST">
+    <sql>
+      <![CDATA[select 住院号,to_char(处方时间,'YYYY-MM-DD') as 统计类型,sum(金额) as 金额,to_char(处方时间,'YYYY-MM-DD') as 时间
+                from 住院处方明细表 where cHosCode=? and 住院号=?
+                group by 住院号,to_char(处方时间,'YYYY-MM-DD') order by 统计类型 desc]]>
+    </sql>
+  </Opt>
+  
+  <Opt id="ZY_OneDayTYPELISTKS">
+    <sql>
+      <![CDATA[select sum(金额) as 金额,核算科室 as 统计类型,max(处方时间) as 时间 from 住院处方明细表 where cHosCode = ? and 住院号=? group by 核算科室]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_OneDaytypeCfh">
+    <sql>
+      <![CDATA[select sum(金额) as 金额,处方号 as 统计类型,max(处方时间) as 时间 from 住院处方明细表 where cHosCode = ? and 住院号=? group by 处方号]]>
+    </sql>
+  </Opt>
+  
+  <Opt id="ZY_OneDayTYPELISTMX">
+    <sql>
+      <![CDATA[select 处方号,自动编码 as ID,case 标志 when 0 then '药品' when 1 then '项目'end as 分类,编码,名称,规格,单位, 数量,价格, 金额, 
+                费用类别,药品辅助编码,执行单价,剂型,cHosCode,核算科室, 农合名称,农合编码,操作员,发药状态,已退药数量,退药数量,处方科室,处方医生
+         from 住院处方明细表 where cHosCode=? and 住院号=?  [Condition] ]]>
+    </sql>
+  </Opt>
+  <Opt id="USERINFOLIST_Useraccount">
+    <sql>
+      <![CDATA[ select Useraccount,Name,UserID from 用户表 where cHosCode=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="USERINFOLIST_UserID">
+    <sql>
+      <![CDATA[ select UserID,Name,UserID from 用户表 where cHosCode=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_GetFyXXZJE">
+    <sql>
+      <![CDATA[ select sum(金额) zje from 住院处方明细表 where cHoscode=? and 住院号=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="MZ_GetBRINFOLIST">
+    <sql>
+      <![CDATA[ select 处方号,病人姓名,病人性别,病人年龄,处方科室,处方医生,处方日期,总金额,是否发药,是否结算,
+      处方状态,操作员,冲红处方号,退药标志, 农合医疗证号,病人类型,上传标志,个人编码,疾病编码,疾病名称,农合门诊编号,
+      药房,药品处方号,实收金额,挂账金额,执行金额,cHosCode,农合报销,接单医生,接单科室 from 门诊处方表 where cHosCode=? and 处方号=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="MZ_GetFyXXZJE">
+    <sql>
+      <![CDATA[ select sum(金额)  zje from 门诊处方明细表 where cHosCode=? and 处方号=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_GetNHSSLIST">
+    <sql>
+      <![CDATA[ select name as 名称,code as 代码,pycode as 简写 from 农合手术表 where code like ? or name like ? or pycode like ? order by pycode ]]>
+    </sql>
+  </Opt>
+  <Opt id="SelDefYSList">
+    <sql>
+      select ID,姓名 from 医生表 where cHosCode=?
+    </sql>
+
+  </Opt>
+
+  <Opt id="YF_TuiYaoCxListZY">
+    <sql>
+      <sql><![CDATA[ select 自动编码,业务类型,登记号,a.处方号,药品编码,药品名称,药品规格,药品单位,
+      退药数量,零售价,金额,a.操作员,操作时间,库存流水,a.cHosCode,b.处方医生 
+      from 退药信息表  a left join 住院处方表 b on a.cHosCode = b.cHosCode and a.处方号=b.处方号  
+      where  a.业务类型='住院' and a.cHosCode = ?	and a.操作时间 >= ? and a.操作时间 <= ? order by a.处方号 desc]]></sql>
+    </sql>
+
+  </Opt>
+  <Opt id="YF_TuiYaoCxListMZ">
+   
+      <sql>
+        <![CDATA[ select 自动编码,业务类型,登记号,a.处方号,药品编码,药品名称,药品规格,药品单位,
+        退药数量,零售价,金额,a.操作员,操作时间,库存流水,a.cHosCode,b.处方医生
+        from 退药信息表  a left join 门诊处方表 b on a.cHosCode = b.cHosCode and a.处方号=b.处方号 
+        where  a.业务类型='门诊' and a.cHosCode = ?	and a.操作时间 >= ? and a.操作时间 <= ? order by a.处方号 desc]]>
+      </sql>
+   
+
+  </Opt>
+  <Opt id="YF_TuiYaoCxListAll">
+    <sql>
+      <![CDATA[ select 自动编码,业务类型,登记号,a.处方号,药品编码,药品名称,药品规格,药品单位,
+      退药数量,零售价,金额,a.操作员,操作时间,库存流水,a.cHosCode,b.处方医生 
+       from 退药信息表  a left join 门诊处方表 b on a.cHosCode = b.cHosCode and a.处方号=b.处方号  
+       where a.cHosCode = ?	and a.操作时间 >= ? and a.操作时间 <= ? order by a.处方号 desc ]]>
+    </sql>
+
+  </Opt>
+  <Opt id="ZY_SELCFZFList">
+  <sql>
+      <![CDATA[ select 处方号,处方日期,总金额 from 住院处方表 where cHosCode=? and 住院号=? order by 处方日期 desc ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_SELCFZFListMX">
+    <sql>
+      <![CDATA[ select 自动编码,住院号,处方号,处方时间,处方医生,标志,编码,名称,规格,单位,数量,价格,金额,费用类别,
+      发药状态,退药数量,操作员,药品辅助编码,上传标志,农合条目编码,农合名称,农合编码,剂型,已退药数量,核算科室,处方科室,
+      执行单价,cHosCode from 住院处方明细表 where cHosCode = ? and  处方号=? ]]>
+    </sql>
+  </Opt>
+  <Opt id="YF_YpDictSelList1">
+    <sql>
+      <![CDATA[select 药品名称,药品编码,拼音码,药品规格,辅助单位,计价单位,换算关系,药品分类,费用归类,最低库存,含量系数,
+      含量单位,剂型,农合编号,农合名称,存贮条件,性状,进口,贵重,毒麻,OTC,内服,适用对象,允许欠费,批准文号,有效期,
+      备注,零售价格,最近成本,cHosCode,生产厂家 ,保内外,基药ID, (case when 基药ID>0 then '基药' else '' end) as 基药
+      from 药品字典表 where (禁用标志=0) and (辅助单位 is not null) and (cHosCode=? or cHosCode=?) and
+      (药品编码 like ? or  拼音码 like ? or 药品名称 like ?)
+      ]]>
+    </sql>    
+  </Opt>   
+
+  <Opt id="ZY_GetMinZyCfDateTime">
+    <sql>
+      <![CDATA[
+        select min(t.处方日期) as 处方日期  from 住院处方表 t where  t.住院号=? and t.choscode=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_GetMaxZyCfDateTime">
+    <sql>
+      <![CDATA[
+        select max(t.处方日期) as 处方日期  from 住院处方表 t where  t.住院号=? and t.choscode=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_BrIsZY">
+    <sql>
+      <![CDATA[
+       select t.医疗证号,t.个人编码,t.住院号,t.登记时间,t.cHosCode,h.chosname from 住院登记表 t,sysdicthospital h where h.cHosCode=t.cHosCode and  t.医疗证号=? and t.个人编码=? and t.是否结算=0
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="ZY_IsatZY">
+    <sql>
+      <![CDATA[select t.住院号,t.登记时间 from 住院登记表 t where t.cHosCode=? and t.病人姓名=? and t.是否结算<>1]]>
+    </sql>
+  </Opt>
+
+
+
+  <!--库存分析-->  
+
+  <Opt id="YK_KCFX_SCQY">
+    <sql>
+      <![CDATA[select 名称,编号 from 供货单位  where cHosCode=? and (编号 like ? or 名称 like ? or 拼音简码 like ?) order by 编号]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_GHDW">
+    <sql>
+      <![CDATA[select 名称,编号 from 供货单位 where (cHosCode='0' or cHosCode=?) and (编号 like ? or 名称 like ? or 拼音简码 like ?)]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_SELECT">
+    <sql>
+      <![CDATA[
+           select a.药品编号,b.药品名称,b.药品规格,b.计价单位,a.库存数量,a.库存成本*b.换算关系  库存成本,
+           a.库存总额,a.生产单位 生产厂家,b.辅助单位,b.换算关系,a.库存流水,a.零售单价,a.生产批号,
+           a.有效期至,a.冻结数量,a.cHosCode,b.最低库存 ,a.仓库编号,a.库存数量*a.零售单价 as 零售总额,a.批准文号,a.单项备注 as 备注,a.条码号
+           from 库存药品 a left join 药品字典表 b on a.药品编号=b.药品编码 and (a.cHosCode=b.cHosCode or b.cHosCode=?) where a.cHosCode=?  
+            [Condition] order by a.生产单位,a.药品编号
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_SELECT2">
+    <sql>
+      <![CDATA[
+           select a.药品编号,b.药品名称,b.药品规格,b.计价单位,a.库存数量,a.库存成本*b.换算关系  库存成本,
+           a.库存总额,a.生产单位 生产厂家,b.辅助单位,b.换算关系,a.库存流水,a.零售单价,a.生产批号,
+           a.有效期至,a.冻结数量,a.cHosCode,b.最低库存,a.仓库编号,a.库存数量*a.零售单价 as 零售总额,a.批准文号,a.单项备注 as 备注,a.条码号
+           from 库存药品 a left join 药品字典表 b on a.药品编号=b.药品编码 and (a.cHosCode=b.cHosCode or b.cHosCode=?) 
+             inner join 可操作库房 x on a.choscode=x.choscode and a.仓库编号=x.kfID and x.UserID=? where a.cHosCode=?  
+            [Condition] order by a.生产单位,a.药品编号
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_rkd">
+    <sql>
+      <![CDATA[select 单据编号 from 入库数据 where cHosCode=? and 编号=? group by 单据编号 order by 单据编号]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_FYMX">
+    <sql>
+      <![CDATA[
+          select '门诊' 业务类别,b.处方号,编码 药品编码,药品辅助编码 库存流水,c.药品名称,
+           c.药品规格,计价单位 药品单位,数量 发药数量,b.操作员,b.处方日期 操作时间,b.处方医生 
+           from 门诊处方明细表 a inner join 门诊处方表 b on a.cHosCode = b.cHosCode and a.处方号=b.处方号 and b.是否发药='1'
+            and b.退药标志=0 and b.处方状态=1
+            inner join 药品字典表 c on a.cHosCode = c.cHosCode and a.编码=c.药品编码 
+                 where a.cHosCode=? and a.药品辅助编码=? and b.处方日期 >= ? and b.处方日期 <=? 
+           union all    select '住院' 业务类别,b.处方号,编码 药品编码,药品辅助编码 库存流水,c.药品名称,c.药品规格,计价单位 药品单位,
+             nvl(数量,0)-nvl(退药数量,0)  发药数量,a.操作员,b.处方日期 操作时间,b.处方医生
+             from 住院处方明细表 a   inner join 住院处方表 b on a.cHosCode = b.cHosCode and a.处方号=b.处方号  
+              inner join 药品字典表 c on a.cHosCode = c.cHosCode and a.编码=c.药品编码 
+                where a.发药状态=1 and a.cHosCode=? and a.药品辅助编码=?  and b.处方日期 >= ? and b.处方日期 <=?
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_CKMX">
+    <sql>
+      <![CDATA[select a.单据编号,编号,数量,金额,生产批号,单项备注,单价,行序,药品成本价,
+         药品零售价,库存流水,药品单位,库存余量,生产单位,单位编码,有效期至,过单日期,
+         出库方式,备注,状态,制单人,审核人,存放位置,客商单位,成本合计,零售合计,出库合计,a.cHosCode 
+          from  出库数据  a inner join 出库单 b on a.cHosCode = b.cHosCode and a.单据编号=b.单据编号 
+           and  b.状态='S' and a.cHosCode=? and 库存流水=? and 过单日期 >= ? and 过单日期 <=?]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_DJMX">
+    <sql>
+      <![CDATA[select '门诊未发药' 状态,'' 登记号,a.处方号,a.名称,a.药品辅助编码,规格,
+       数量,单位,a.操作员,b.处方日期,a.cHosCode,a.编码
+   from 门诊处方明细表 a inner join 门诊处方表 b on a.处方号=b.处方号 and a.cHosCode=b.cHosCode and b.是否发药 = 0 
+    and b.处方状态=1 where a.标志=0 and a.cHosCode=? and a.药品辅助编码=? and b.处方日期 >= ? and b.处方日期 <=?	
+   union all
+  select '住院未发药' 状态,a.住院号 登记号,a.处方号,a.名称,a.药品辅助编码,规格,数量,单位,a.操作员,a.处方时间 处方日期,a.cHosCode,a.编码 
+        from 住院处方明细表 a  where a.标志=0 and 发药状态=0 and a.cHosCode=? and a.药品辅助编码=? and a.处方时间 >= ? and a.处方时间 <=?
+   union all
+     select case when b.状态='T' then '出库未提交' else '出库未审核' end 状态,a.单据编号 登记号,'' 处方号,c.药品名称 名称,a.库存流水 药品辅助编码,c.药品规格 规格,数量,
+            a.药品单位 单位,b.制单人 操作员,b.过单日期 处方日期,a.cHosCode,a.编号 编码 from 出库数据 a 
+     inner join 出库单 b on a.cHosCode=b.cHosCode and a.单据编号=b.单据编号 and b.状态 !='S'
+     inner join 药品字典表 c on a.编号=c.药品编码 and a.cHosCode=c.cHosCode where a.cHosCode=? and a.库存流水=?	and b.过单日期 >= ? and b.过单日期 <=?	 
+  union all
+     select '划价未收费' 状态,'' 登记号,a.处方号,a.名称,a.药品辅助编码,规格,数量,单位,a.操作员,b.过单时间 处方日期,a.cHosCode,a.编码 from 药品处方明细表 a  
+      inner join 药品处方表 b on a.处方号=b.处方号 and a.cHosCode=b.cHosCode and (b.划价标志 != 1 or b.划价标志 is null) where a.cHosCode=? and 
+      a.药品辅助编码=?   and b.过单时间 >= ? and b.过单时间 <=?
+  union all
+   select case when b.状态='T' then '调拨未提交' else '调拨未审核' end 状态,a.单据编号 登记号,'' 处方号,c.药品名称 名称,a.库存流水 药品辅助编码,c.药品规格 规格,数量,
+          a.药品单位 单位,b.制单人 操作员,b.过单日期 处方日期,a.cHosCode,a.编号 编码 from 调拨数据 a 
+    inner join 调拨单 b on a.cHosCode=b.cHosCode and a.单据编号=b.单据编号 and b.状态 !='S'
+    inner join 药品字典表 c on a.编号=c.药品编码 and a.cHosCode=c.cHosCode where a.cHosCode=? and a.库存流水=?	and b.过单日期 >= ? and b.过单日期 <=?    
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="YK_KCFX_DJMXSL">
+    <sql>
+      <![CDATA[select  数量,单位 from 门诊处方明细表 a  inner join 门诊处方表 b on a.处方号=b.处方号 and a.cHosCode=b.cHosCode and b.是否发药= 0 and
+                b.处方状态=1 where a.标志=0 and a.cHosCode=? and a.药品辅助编码=?
+              union all
+                select 数量,单位 from 住院处方明细表 a  where a.标志=0 and 发药状态=0 and a.cHosCode=? and a.药品辅助编码=?
+              union all
+                select a.数量 数量,a.药品单位 单位 from 出库数据 a inner join 出库单 b
+                on a.cHosCode=b.cHosCode and a.单据编号=b.单据编号 and (b.状态 !='S' or b.状态 is null)
+                where a.cHosCode=? and a.库存流水=?
+              union all
+                select 数量,单位 from 药品处方明细表 a inner join 药品处方表 b on a.处方号=b.处方号 and a.cHosCode=b.cHosCode and
+                (b.划价标志 != 1 or b.划价标志 is null) where a.cHosCode=? and a.药品辅助编码=?]]>
+    </sql>
+    <Pa name="cHosCode"/>
+    <Pa name="lsh"/>
+    <Pa name="cHosCode"/>
+    <Pa name="lsh"/>
+    <Pa name="cHosCode"/>
+    <Pa name="lsh"/>
+    <Pa name="cHosCode"/>
+    <Pa name="lsh"/>
+  </Opt>
+
+  <Opt id="Get_SuperCode">     
+    <sql>
+      <![CDATA[
+        select a.code,a.note,a.nhperfix,b.* from (
+        select code,note,nhperfix from (
+         select rownum as rowno,choscode as code,note,nhperfix from SysDictHospital where iswsj='1'
+         start with choscode=? connect by prior parentHoscode=choscode order by choscode desc ) t where rowno=1
+        ) a left join 医保设置表 b on a.code=b.choscode
+      ]]>
+    </sql>
+  </Opt>
+</opts>

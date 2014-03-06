@@ -1,0 +1,1485 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YiTian</name>
+    </assembly>
+    <members>
+        <member name="T:YiTian.db.IDataBase">
+            <summary>
+            实现各种数据库的访问
+            </summary>
+        </member>
+        <member name="M:YiTian.db.IDataBase.getConn(System.String)">
+            <summary>
+            得到数据库连接
+            </summary>
+            <param name="connect">连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.CreateParameter(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            创建参数对象
+            </summary>
+            <param name="paramName">参数名称</param>
+            <param name="paramType">参数类型</param>
+            <param name="value">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.CreateParameter(System.String,System.Data.DbType)">
+            <summary>
+            创建参数对象
+            </summary>
+            <param name="paramName">参数名称</param>
+            <param name="paramType">参数类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.CreateParameter(System.String,System.Object)">
+            <summary>
+            无类型创建参数
+            </summary>
+            <param name="paramName"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.CreateCommand">
+            <summary>
+            创建参数对象
+            </summary>
+            <param name="paramName">参数名称</param>
+            <param name="paramType">参数类型</param>
+            <returns></returns>
+            <summary>
+            返回IDbCommand
+            </summary>
+            <param name="cmdText">查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.sqlAdjust(System.String)">
+            <summary>
+            对待执行的语句进行数据库间差异校正
+            </summary>
+            <param name="sql">校正语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.getReturnStr">
+            <summary>
+            获取插入数据返回主键的语句
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.getTpf">
+            <summary>
+            获取参数标记
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.isNameParam">
+            <summary>
+            是否是已名称作为参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.GetPageSql(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取分页的查询语句
+            </summary>
+            <param name="sql"></param>
+            <param name="startrow"></param>
+            <param name="endRow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.IDataBase.GetDataAdapter(System.Data.IDbCommand)">
+            <summary>
+            获取当前的数据适配器
+            </summary>
+            <param name="cmd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.action.IRunOperate">
+            <summary>
+            操作实现接口
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.install">
+            <summary>
+            初始化安装
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.start">
+            <summary>
+            启动
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.run(YiTian.action.Operate)">
+            <summary>
+            方法入口
+            </summary>
+            <param name="opt">操作参数</param>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.runEnd">
+            <summary>
+            运行结束
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.end">
+            <summary>
+            结束
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.excBack">
+            <summary>
+            出现错误后 处理
+            </summary>
+        </member>
+        <member name="M:YiTian.action.IRunOperate.unInstall">
+            <summary>
+            卸载安装
+            </summary>
+        </member>
+        <member name="T:YiTian.orm.ATable">
+            <summary>
+            关于类绑定的数据库说明 的摘要说明
+            </summary>
+             
+        </member>
+        <member name="F:YiTian.orm.ATable.key">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.ATable.isAdd">
+            <summary>
+            是否自动递增
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.ATable.unique">
+            <summary>
+            唯一字段描述
+            </summary>
+        </member>
+        <member name="M:YiTian.util.DUtil.GetRegStr(System.String,System.String)">
+            <summary>
+            按正则表达式获取
+            </summary>
+            <param name="reg"></param>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.util.DUtil.Encode(System.String)">
+            <summary>
+            简单加密函数
+            </summary>
+            <param name="str">要加密的字符串</param>
+            <returns>返回加密后的字符串</returns>
+            
+        </member>
+        <member name="M:YiTian.util.DUtil.Decode(System.String)">
+            <summary>
+            简单解密函数
+            </summary>
+            <param name="str">要解密的字符串</param>
+            <returns>返回解密后的字符串</returns>
+            
+        </member>
+        <member name="T:YiTian.db.DB2DB">
+            <summary>
+            实现对DB2数据库的访问
+            </summary>
+        </member>
+        <member name="T:YiTian.db.TableDao">
+            <summary>
+            封装对数据库表的处理
+            </summary>
+        </member>
+        <member name="F:YiTian.db.TableDao.Appkey">
+            <summary>
+            连接配置
+            </summary>
+        </member>
+        <member name="F:YiTian.db.TableDao.isTx">
+            <summary>
+            是否启用事务
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.clearParam">
+            <summary>
+            移除所有参数
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.clearList">
+            <summary>
+            移除所有查询列
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.setAppkey(System.String)">
+            <summary>
+            访问数据库的连接信息
+            </summary>
+            <param name="appkey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.addParam(System.String,System.Object)">
+            <summary>
+            添加参数
+            </summary>
+            <param name="key"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.initDao">
+            <summary>
+            初始化Dao
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.Begin">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.Submit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.Rollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:YiTian.db.TableDao.addList(System.String,System.String)">
+            <summary>
+            添加查询列
+            </summary>
+            <param name="m">列名</param>
+            <param name="bm">别名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.addList(System.String)">
+            <summary>
+            添加查询列
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.Value(System.String)">
+            <summary>
+            获取参数字典中的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.save">
+            <summary>
+            向数据库插入数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.update(System.String)">
+            <summary>
+            更新数据库的信息
+            </summary>
+            <param name="w"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.find(System.String)">
+            <summary>
+            查询数据返回信息
+            </summary>
+            <param name="sql">查询sql 可以是不完整的sql  如 from test </param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.find(System.String,System.Int32,System.Int32)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="sql">查询sql 可以是不完整的sql  如 from test</param>
+            <param name="start">开始行</param>
+            <param name="maxRow">最大行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.get(System.String)">
+            <summary>
+            查询指定表的指定条件是否存在 查询前先添加 Param
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.isHave">
+            <summary>
+            查询信息是否存在 查询条件用 addPram方法添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.isHave(System.String)">
+            <summary>
+            返回指定查询是否存在  判断依据是 查询结果大于0则返回 true 否则返回 false
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.getWheSql(System.String)">
+            <summary>
+            返回指定连接的条件语句 该条件使用 addPram方法添加
+            </summary>
+            <param name="w">比如 and</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.TableDao.getListSql(System.String)">
+            <summary>
+            返回指定查询列的sql
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YiTian.db.TableDao.TableName">
+            <summary>
+            表的名称
+            </summary>
+        </member>
+        <member name="P:YiTian.db.TableDao.Key">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:YiTian.db.TableDao.IsAdd">
+            <summary>
+            是否自动增加
+            </summary>
+        </member>
+        <member name="M:YiTian.orm.IGetValue.Contains(System.String)">
+            <summary>
+            是否包含指定的值
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.IGetValue.get(System.String)">
+            <summary>
+            通过指定的字符串获取指定的值
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.IGetValue.next">
+            <summary>
+            向下读取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.From.Db``1">
+            <summary>
+            重数据库查找信息
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.orm.AField">
+            <summary>
+            描述字段信息
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.AField.length">
+            =============================在注入时的各种检查========================
+            
+        </member>
+        <member name="P:YiTian.orm.AField.FieldName">
+            <summary>
+            描述对应的字段
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.Name">
+            <summary>
+            描述对应的中文名称
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.FindDisplay">
+            <summary>
+            描述在多个查询时是否显示的字段
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.IsUpdate">
+            <summary>
+            描述在更新时是否更新 设置为false为只在添加时保存新值 以后永远不更新
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.IsRepeat">
+            <summary>
+            描述在该字段在数据库中是否允许重复
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.Length">
+            <summary>
+            描述在该字段的最大长度
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.IsNull">
+            <summary>
+            描述在该字段是否允许为空
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.Reg">
+            <summary>
+            描述在该字段的正则表达式
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.RegMsg">
+            <summary>
+            描述在不复合时的提示信息
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.Min">
+            <summary>
+            描述在该字段的最小值
+            </summary>
+        </member>
+        <member name="P:YiTian.orm.AField.Max">
+            <summary>
+            描述在该字段的最大值
+            </summary>
+        </member>
+        <member name="T:YiTian.orm.get.GNameValueList">
+            <summary>
+            用于从NameValueCollection　中获取数据
+            </summary>
+        </member>
+        <member name="T:YiTian.db.ProParam">
+            <summary>
+            执行存储过程的参数对象
+            </summary>
+        </member>
+        <member name="M:YiTian.db.ProParam.#ctor(System.Object)">
+            <summary>
+            创建参数实例 默认Direction=Input
+            </summary>
+            <param name="v">参数的值</param>
+        </member>
+        <member name="M:YiTian.db.ProParam.#ctor(System.Object,YiTian.db.YtDbType)">
+            <summary>
+            创建参数实例 默认Direction=Input
+            </summary>
+            <param name="v">参数的值</param>
+            <param name="dbType">数据类型</param>
+        </member>
+        <member name="M:YiTian.db.ProParam.#ctor(System.Object,YiTian.db.YtDbType,System.Data.ParameterDirection)">
+            <summary>
+            创建参数实例 
+            </summary>
+            <param name="v">参数的值</param>
+            <param name="dbType">数据类型</param>
+            <param name="sdirection">查询类型</param>
+        </member>
+        <member name="M:YiTian.db.ProParam.#ctor(System.Object,System.Data.ParameterDirection)">
+            <summary>
+            创建参数实例 
+            </summary>
+            <param name="v">参数的值</param>
+            <param name="sdirection">查询类型</param>
+        </member>
+        <member name="P:YiTian.db.ProParam.Value">
+            <summary>
+            获取或设置参数的值
+            </summary>
+        </member>
+        <member name="P:YiTian.db.ProParam.DbType">
+            <summary>
+            参数类型
+            </summary>
+        </member>
+        <member name="P:YiTian.db.ProParam.Direction">
+            <summary>
+            查询内有关Dataset的类型
+            </summary>
+        </member>
+        <member name="T:YiTian.db.YtDbType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.Data">
+            <summary>
+            DataTable类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.Object">
+            <summary>
+            Object 类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.Number">
+            <summary>
+            数字类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.String">
+            <summary>
+            字符类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.LongString">
+            <summary>
+            长文本类型
+            </summary>
+        </member>
+        <member name="F:YiTian.db.YtDbType.Text">
+            <summary>
+            大文本类型
+            </summary>
+        </member>
+        <member name="T:YiTian.util.StringZip">
+            <summary>
+            对象的序列化 及其字符串、图片的解压及其压缩
+            </summary>
+        </member>
+        <member name="M:YiTian.util.StringZip.Serialize``1(``0)">
+            <summary>
+            序列化 对象到字符串
+            </summary>
+            <param name="obj">泛型对象</param>
+            <returns>序列化后的字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.Desrialize``1(``0,System.String)">
+            <summary>
+            反序列化 字符串到对象
+            </summary>
+            <param name="obj">泛型对象</param>
+            <param name="str">要转换为对象的字符串</param>
+            <returns>反序列化出来的对象</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.Comprees(System.Byte[])">
+            <summary>
+            压缩字节数组为字符串
+            </summary>
+            <param name="buffer">字节数组</param>
+            <returns>压缩后字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.Compress(System.String)">
+            <summary>
+            字符串压缩
+            </summary>
+            <param name="strSource">带压缩的字符串</param>
+            <returns>压缩后的字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.CompressByFile(System.String)">
+            <summary>
+            文件压缩
+            </summary>
+            <param name="path">文件路径</param>
+            <returns>压缩后字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.DecompressToImg(System.String)">
+            <summary>
+            解压生成图片
+            </summary>
+            <param name="s">解压字符串</param>
+            <returns>解压后的图片</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.DecompressToByte(System.String)">
+            <summary>
+            将字符串解压为字节数组
+            </summary>
+            <param name="strSource">带解压的字符串</param>
+            <returns>字节数组</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.Decompress(System.String)">
+            <summary>
+            解压字符串
+            </summary>
+            <param name="strSource">待解压的字符串</param>
+            <returns>解压后的字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.CompressImageStr(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            按一定的比例压缩图片并返回字符串
+            </summary>
+            <param name="iSource">带压缩的图片</param>
+            <param name="dHeight">高</param>
+            <param name="dWidth">宽</param>
+            <param name="flag">压缩质量</param>
+            <returns>压缩后的字符串</returns>
+        </member>
+        <member name="M:YiTian.util.StringZip.CompressImage(System.Drawing.Image,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            按一定的比例压缩图片
+            </summary>
+            <param name="iSource">带压缩的图片</param>
+            <param name="dHeight">高</param>
+            <param name="dWidth">宽</param>
+            <param name="flag">压缩质量</param>
+            <returns>Image图片对象</returns>
+        </member>
+        <member name="T:YiTian.action.Action">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="M:YiTian.action.Action.toString">
+            <summary>
+            返回调用XML数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.util.SymmetricMethod">
+            <summary>
+            对称加密类
+            </summary>
+        </member>
+        <member name="M:YiTian.util.SymmetricMethod.#ctor">
+            <summary>    
+            对称加密类的构造函数    
+            </summary>    
+        </member>
+        <member name="M:YiTian.util.SymmetricMethod.GetLegalKey">
+            <summary>    
+            获得密钥    
+            </summary>    
+            <returns>密钥</returns>    
+        </member>
+        <member name="M:YiTian.util.SymmetricMethod.GetLegalIV">
+            <summary>    
+            获得初始向量IV    
+            </summary>    
+            <returns>初试向量IV</returns>    
+        </member>
+        <member name="M:YiTian.util.SymmetricMethod.Encrypto(System.String)">
+            <summary>    
+            加密方法    
+            </summary>    
+            <param name="Source">待加密的串</param>    
+            <returns>经过加密的串</returns>    
+        </member>
+        <member name="M:YiTian.util.SymmetricMethod.Decrypto(System.String)">
+            <summary>    
+            解密方法    
+            </summary>    
+            <param name="Source">待解密的串</param>    
+            <returns>经过解密的串</returns>    
+        </member>
+        <member name="T:YiTian.orm.TableObjInfo">
+            <summary>
+            描述表和 数据库的对应关系
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.TableObjInfo.Table">
+            <summary>
+            对表信息的描述
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.TableObjInfo.ObjectType">
+            <summary>
+            对象类型
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.TableObjInfo.List">
+            <summary>
+            提供查询显示信息
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.TableObjInfo.RepeatIndex">
+            <summary>
+            不允许在数据库中重复的字段的索引
+            </summary>
+        </member>
+        <member name="T:YiTian.db.ObjItem">
+            <summary>
+            描基本数据的转化类型
+            </summary>
+        </member>
+        <member name="P:YiTian.db.ObjItem.IsNull">
+            <summary>
+            是否为空
+            </summary>
+        </member>
+        <!-- 对于成员“M:YiTian.action.ActionUtil.outObj(System.Object)”忽略有格式错误的 XML 注释 -->
+        <member name="M:YiTian.action.ActionUtil.CDataToXml(System.Data.DataTable)">
+            <summary>
+            将DataTable对象转换成XML字符串
+            </summary>
+            <param name="dt">DataTable对象</param>
+            <returns>XML字符串</returns>
+        </member>
+        <member name="M:YiTian.action.ActionUtil.msg(System.Boolean,System.String)">
+            <summary>
+            输出是否成功的XML
+            </summary>
+            <param name="isOk">是否成功</param>
+            <param name="msg">提示信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.action.ActionUtil.msg(System.Boolean,System.String,System.String)">
+            <summary>
+            输出包含数据的是否成功的XML
+            </summary>
+            <param name="isOk">是否成功</param>
+            <param name="msg">信息</param>
+            <param name="data">数据信息</param>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.orm.GetObj`1">
+            <summary>
+            通过IGetValue 接口 获取指定的对象
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:YiTian.orm.GetObj">
+            <summary>
+            通过IGetValue 接口 获取指定的对象
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:YiTian.orm.GetObj.#ctor(System.Type)">
+            <summary>
+            初始化对象信息
+            </summary>
+            <param name="T">Type</param>
+        </member>
+        <member name="M:YiTian.orm.GetObj.#ctor(System.String)">
+            <summary>
+            初始化对象信息
+            </summary>
+            <param name="T">Type的全名 包含程序集名,有效的名称格式为 【命名空间.类名,程序集名称】比如 【YiTian.orm.GetObj,YiTian】</param>
+        </member>
+        <member name="M:YiTian.orm.GetObjUtil.convert(System.Object,System.String,YiTian.orm.AField,System.String)">
+            <summary>
+            返回指定对象obj在对象中的实际类型
+            </summary>
+            <param name="o">对象</param>
+            <param name="t">类型名称</param>
+            <param name="af">属性配置</param>
+            <param name="Name">中文名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.GetObjUtil.getValueByPro(System.Object,System.String)">
+            <summary>
+            根据属性获取信息
+            </summary>
+            <param name="o"></param>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.GetObjUtil.setObjValue(YiTian.orm.TableObjInfo,YiTian.orm.IGetValue,System.Object)">
+            <summary>
+            通过 配置设置对象数据
+            </summary>
+            <param name="info">对象元信息</param>
+            <param name="ig">获取对象数据的接口</param>
+            <param name="obj">带设置的对象</param>
+        </member>
+        <member name="T:YiTian.db.YDataAdapter">
+            <summary>
+            实现重开始行到最大记录数的记录填充
+            </summary>
+        </member>
+        <member name="P:YiTian.action.OpUrl.OpType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:YiTian.action.OpUrl.OpParam">
+            <summary>
+            操作参数集合
+            </summary>
+        </member>
+        <member name="T:YiTian.db.Dao">
+            <summary>
+            完成数据库的统一访问层
+            由不同数据库访问实现
+            </summary>
+            <namespace>
+            <summary>数据库操作相关类</summary>
+            </namespace>
+        </member>
+        <member name="F:YiTian.db.Dao.db">
+            <summary>
+            统一访问接口
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.connStr">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.className">
+            <summary>
+            实现类，注意这里是 命名空间+程序集名称
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.conn">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.pas">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.cmd">
+            <summary>
+            查询命令
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.#ctor(YiTian.db.IDataBase,System.String)">
+            <summary>
+            创建新的实例
+            </summary>
+            <param name="db">接口</param>
+            <param name="connStr">连接字符串</param>
+        </member>
+        <member name="M:YiTian.db.Dao.#ctor(System.String,System.String)">
+            <summary>
+            创建新的实例
+            </summary>
+            <param name="className">实现类，注意这里是 命名空间+程序集名称</param>
+            <param name="connStr">连接字符串</param>
+            <code>g</code>
+        </member>
+        <member name="M:YiTian.db.Dao.#ctor(System.String)">
+            <summary>
+            通过配置创建新的实例
+            </summary>
+            <param name="appkey">在appconfig中对应的键 与连接字符串成对 【key】和【key_Conn】</param>
+        </member>
+        <member name="M:YiTian.db.Dao.#ctor">
+            <summary>
+            通过默认配置创建新的实例
+            </summary>
+        </member>
+        <member name="F:YiTian.db.Dao.tx">
+            <summary>
+            事务处理
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.Begin">
+            <summary>
+            开始事务
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.Submit">
+            <summary>
+            事务提交
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.Rollback">
+            <summary>
+            事务回滚
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.Open">
+            <summary>
+            打开数据库连接.
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.addParam(System.String,System.Object)">
+            <summary>
+            添加执行参数
+            </summary>
+            <param name="name">名称</param>
+            <param name="value">值</param>
+            <returns>Dao</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.addParam(System.String,System.Data.DbType,System.Object)">
+            <summary>
+            添加执行参数
+            </summary>
+            <param name="name">名称</param>
+            <param name="type">类型</param>
+            <param name="value">值</param>
+            <returns>Dao</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.ClearParam">
+            <summary>
+            清除参数集合
+            </summary>
+        </member>
+        <member name="M:YiTian.db.Dao.ExecuteScalar(System.String)">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="SelectStr">查询语句</param>
+            <returns>首行首列的值</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Es(System.String)">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="SelectStr">SQL语句</param>
+            <returns>首行首列的值</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Es(System.String,System.Object[])">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="SelectStr">SQL语句</param>
+            <param name="param">查询参数</param>
+            <returns>首行首列的值</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.ExecuteScalar(System.String,System.Object[])">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="SelectStr">SQL语句</param>
+            <param name="param">查询参数</param>
+            <returns>首行首列的值</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.GetCode(System.String,System.Int32,System.String,System.Object[])">
+            <summary>
+            获取最大编码加一
+            </summary>
+            <param name="sql">带MAX的sql语句</param>
+            <param name="l">编码的长度</param>
+            <param name="supcode">上级编码</param>
+            <param name="param"></param>
+            <returns>参数</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.ExecuteNonQuery(System.String)">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.En(System.String)">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.En(System.String,System.Object[])">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <param name="param">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.ExecuteNonQuery(System.String,System.Object[])">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.ExeProcedure(System.String,YiTian.db.ProParam[])">
+            <summary>
+            执行存储过程
+            </summary>
+            <param name="proName">存储过程名称</param>
+            <param name="param">参数</param>
+            <returns>受影响的行 -1 为执行失败</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.find(System.String)">
+             <summary>
+            执行查询返回DataTable
+             </summary>
+             <param name="SelectStr">查询语句</param>
+             <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Fd(System.String)">
+            <summary>
+            查询返回数据集
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Fd(System.String,System.Object[])">
+            <summary>
+            查询返回数据集
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <param name="param">参数</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Find(System.String)">
+            <summary>
+            查询返回数据集
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Find(System.String,System.Object[])">
+             <summary>
+            执行查询返回DataTable
+             </summary>
+             <param name="SelectStr">查询语句</param>
+             <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Find(System.String,System.Int32,System.Int32)">
+            <summary>
+            执行查询返回DataTable
+            </summary>
+            <param name="SelectStr">查询语句</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">记录数</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Find(System.String,System.Int32,System.Int32,System.Object[])">
+            <summary>
+            执行查询返回DataTable
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <param name="startRow">开行行</param>
+            <param name="maxRow">最大行</param>
+            <param name="param">参数</param>
+            <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.find(System.String,System.Object[])">
+             <summary>
+            执行查询返回DataTable
+             </summary>
+             <param name="SelectStr">查询语句</param>
+             <returns>DataTable</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.find(System.String,System.Int32,System.Int32)">
+            <summary>
+            执行查询返回DataTable
+            </summary>
+            <param name="SelectStr">查询语句</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">记录数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.find(System.String,System.Int32,System.Int32,System.Object[])">
+            <summary>
+            执行查询返回DataTable
+            </summary>
+            <param name="SelectStr">sql语句</param>
+            <param name="startRow">开行行</param>
+            <param name="maxRow">最大行</param>
+            <param name="param">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Update(System.String,System.String)">
+            <summary>
+            更新数据
+            </summary>
+            <param name="table">表名</param>
+            <param name="where">条件</param>
+            <returns>-1不成功,大于-1成功</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.Insert(System.String)">
+            <summary>
+            插入数据
+            </summary>
+            <param name="table">表名</param>
+            <returns>-1不成功,大于-1成功</returns>
+        </member>
+        <member name="M:YiTian.db.Dao.InsertId(System.String,System.String)">
+            <summary>
+            插入数据 返回ID
+            </summary>
+            <param name="table">表</param>
+            <param name="id">ID列名</param>
+            <returns>返回的值即是ID的值</returns>
+        </member>
+        <member name="T:YiTian.orm.AValue">
+            <summary>
+            关于类绑定的数据库说明 的摘要说明
+            </summary>
+             
+        </member>
+        <member name="T:YiTian.db.DataVisContrl">
+            <summary>
+            通过配置文件 配置 需要设置数据库表的版本变化 
+            当配置的表发生 delete update insert 时 更新表的数据版本信息
+            </summary>
+        </member>
+        <member name="T:YiTian.action.Operate">
+            <summary>
+            描述操作的相关信息
+            </summary>
+        </member>
+        <member name="F:YiTian.action.Operate.outObj">
+            <summary>
+            输出参数
+            </summary>
+        </member>
+        <member name="P:YiTian.action.Operate.Url">
+            <summary>
+            操作的url
+            </summary>
+        </member>
+        <member name="M:YiTian.util.UTool.MapPath(System.String)">
+            <summary>
+            获取当前的虚礼路径
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.orm.ObjDao">
+            <summary>
+            对实体的操作
+            </summary>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.#ctor(System.Type)">
+            <summary>
+            初始化Dao
+            </summary>
+            <param name="T">类型Type</param>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.#ctor(System.String)">
+            <summary>
+            初始化Dao
+            </summary>
+            <param name="TName">类型Type的全名 要包含程序集,有效的名称格式为 【命名空间.类名,程序集名称】比如 【YiTian.orm.GetObj,YiTian】</param>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.save(System.Object)">
+            <summary>
+            保存数据到数据库
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.update(System.Object)">
+            <summary>
+            更新数据到数据库
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.del(System.Int32)">
+            <summary>
+            删除指定ID的数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.del(System.Object)">
+            <summary>
+            删除指定的对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.find(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回Type对应的 满足一定条件的数据
+            </summary>
+            <param name="t">类型</param>
+            <param name="w">查询语句</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">最大行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.find">
+            <summary>
+            返回Type对应的表的所有数据
+            </summary>
+            <param name="t">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.find(System.String)">
+            <summary>
+            返回Type对应的 满足一定条件的数据
+            </summary>
+            <param name="t">类型</param>
+            <param name="w">查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.Find(System.String,System.Int32,System.Int32)">
+            <summary>
+            查询指定条件数据的对象集合
+            </summary>
+            <param name="w">条件</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">最大行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.Find(System.String)">
+            <summary>
+            查询指定条件数据的对象集合
+            </summary>
+            <param name="w">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.Find">
+            <summary>
+            返回所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.Get(System.Int32)">
+            <summary>
+            获取指定id的对象
+            </summary>
+            <param name="id">对象的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.Get(System.String)">
+            <summary>
+            获取满足条件的对象
+            </summary>
+            <param name="w"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao.getObj(System.Data.DataTable)">
+            <summary>
+            将内存中的数据转化成对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.orm.ObjDaoUtil">
+            <summary>
+            对数据库的基本操作
+            </summary>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.save(YiTian.db.TableDao,YiTian.orm.TableObjInfo,System.Object)">
+            <summary>
+            将对象保存到数据库
+            </summary>
+            <param name="dao">TableDao</param>
+            <param name="info">对象元信息</param>
+            <param name="obj">要保存的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.update(YiTian.db.TableDao,YiTian.orm.TableObjInfo,System.Object)">
+            <summary>
+            将对象更新到数据库
+            </summary>
+            <param name="dao">TableDao</param>
+            <param name="info">对象元信息</param>
+            <param name="obj">要更新的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.del(YiTian.db.TableDao,YiTian.orm.TableObjInfo,System.Int32)">
+            <summary>
+            删除最指定的对象
+            </summary>
+            <param name="dao">TableDao</param>
+            <param name="info">对象元信息</param>
+            <param name="id">对象主键ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.del(YiTian.db.TableDao,YiTian.orm.TableObjInfo,System.Object)">
+            <summary>
+            删除最指定的对象
+            </summary>
+            <param name="dao">TableDao</param>
+            <param name="info">对象元信息</param>
+            <param name="obj">要删除的对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.find(YiTian.db.TableDao,YiTian.orm.TableObjInfo,System.String,System.Int32,System.Int32)">
+            <summary>
+            返回满足查询条件的信息
+            </summary>
+            <param name="dao">TableDao</param>
+            <param name="info">对象元信息</param>
+            <param name="w">查询条件</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">最大行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDaoUtil.setObjValue(System.Data.DataRow,YiTian.orm.TableObjInfo,System.Data.DataColumnCollection,System.Object)">
+            <summary>
+            通过指定的DataRow 设置对象的信息
+            </summary>
+            <param name="r">DataRow</param>
+            <param name="info">对象元信息</param>
+            <param name="cs">DataColumnCollection 包含的行信息</param>
+            <param name="obj">要设置的对象</param>
+        </member>
+        <member name="T:YiTian.orm.ObjDao`1">
+            <summary>
+            泛型实现 对实体的操作
+            </summary>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.save(`0)">
+            <summary>
+            保存数据到数据库
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.update(`0)">
+            <summary>
+            更新数据到数据库
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.del(System.Int32)">
+            <summary>
+            删除指定ID的数据
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.del(`0)">
+            <summary>
+            删除指定的对象
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.find(System.String,System.Int32,System.Int32)">
+            <summary>
+            返回Type对应的 满足一定条件的数据
+            </summary>
+            <param name="t">类型</param>
+            <param name="w">查询语句</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">最大行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.find">
+            <summary>
+            返回Type对应的表的所有数据
+            </summary>
+            <param name="t">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.find(System.String)">
+            <summary>
+            返回Type对应的 满足一定条件的数据
+            </summary>
+            <param name="t">类型</param>
+            <param name="w">查询语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.Find(System.String,System.Int32,System.Int32)">
+            <summary>
+            查询指定条件数据的对象集合
+            </summary>
+            <param name="w">条件</param>
+            <param name="startRow">开始行</param>
+            <param name="maxRow">最大行</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.Find(System.String)">
+            <summary>
+            查询指定条件数据的对象集合
+            </summary>
+            <param name="w">条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.Find">
+            <summary>
+            返回所有数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.Get(System.Int32)">
+            <summary>
+            获取指定id的对象
+            </summary>
+            <param name="id">对象的ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.Get(System.String)">
+            <summary>
+            获取满足条件的对象
+            </summary>
+            <param name="w"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.ObjDao`1.getObj(System.Data.DataTable)">
+            <summary>
+            将内存中的数据转化成对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YiTian.util.SoftReg">
+            <summary>
+            获取机器码相关方法
+            </summary>
+        </member>
+        <member name="M:YiTian.util.SoftReg.GetDiskVolumeSerialNumber">
+            <summary>
+            获取硬盘序列号
+            </summary>
+            <returns>序列号</returns>
+        </member>
+        <member name="M:YiTian.util.SoftReg.getCpu">
+            <summary>
+            获得CPU的序列号
+            </summary>
+            <returns>序列号</returns>
+        </member>
+        <member name="M:YiTian.util.SoftReg.getMNum">
+            <summary>
+            生成机器码
+            </summary>
+            <returns>机器码</returns>
+        </member>
+        <member name="M:YiTian.util.SoftReg.EnText(System.String,System.String)">
+              <summary> 
+              加密数据 
+              </summary> 
+              <param   name= "Text ">加密的文本 </param> 
+              <param   name= "sKey ">密钥 </param> 
+              <returns>加密后的数据 </returns> 
+        </member>
+        <member name="M:YiTian.util.SoftReg.DeText(System.String,System.String)">
+              <summary> 
+              解密数据 
+              </summary> 
+              <param   name= "Text ">带解密文本 </param> 
+              <param   name= "sKey ">密钥 </param> 
+              <returns> 解密后文本</returns> 
+        </member>
+        <!-- 对于成员“M:YiTian.util.SoftReg.RunWhenStart(System.Boolean,System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="T:YiTian.orm.TabObjFactory">
+            <summary>
+            对象信息映射工厂
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.TabObjFactory.BufferedInfos">
+            <summary>
+            在内部缓存的映射信息列表，此处为了提高速度。
+            </summary>
+        </member>
+        <member name="M:YiTian.orm.TabObjFactory.getTableObjInfo(System.Type)">
+            <summary>
+            获取指定类型的映射信息
+            </summary>
+            <param name="objType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YiTian.orm.TabObjFactory.getTableObjInfo(System.String)">
+            <summary>
+            通过名称获取映射信息
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.IsKey">
+            <summary>
+            是否为主键
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.FieldName">
+            <summary>
+            表的字段名称
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.Name">
+            <summary>
+            显示的中文名称
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.IsDisPlay">
+            <summary>
+            描述在查询结果中是否显示
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.Field">
+            <summary>
+            字段的描述信息
+            </summary>
+        </member>
+        <member name="F:YiTian.orm.FieldInfo.Property">
+            <summary>
+            对象属性信息
+            </summary>
+        </member>
+        <member name="T:YiTian.db.DbFactory">
+            <summary>
+            缓存对数据库的访问接口
+            </summary>
+        </member>
+    </members>
+</doc>

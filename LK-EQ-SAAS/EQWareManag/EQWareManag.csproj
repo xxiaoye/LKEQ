@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59E82B9D-58D5-437B-9930-FFCBFC788182}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EQWareManag</RootNamespace>
+    <AssemblyName>EQWareManag</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\LK-WZ-SAAS\plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YiTian, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YiTian.dll</HintPath>
+    </Reference>
+    <Reference Include="YtClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtClient.dll</HintPath>
+    </Reference>
+    <Reference Include="YtPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="YtUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="YtWinContrl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtWinContrl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EQBulidCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQBulidCard.designer.cs">
+      <DependentUpon>EQBulidCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQDiaoBoManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQDiaoBoManag.designer.cs">
+      <DependentUpon>EQDiaoBoManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQLingUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQLingUse.designer.cs">
+      <DependentUpon>EQLingUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\AddEQBuildCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\AddEQBuildCard.designer.cs">
+      <DependentUpon>AddEQBuildCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQDiaoBoEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQDiaoBoEdit.designer.cs">
+      <DependentUpon>EQDiaoBoEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQIn_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQIn_Add.Designer.cs">
+      <DependentUpon>EQIn_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQLingYongEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQLingYongEdit.designer.cs">
+      <DependentUpon>EQLingYongEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQOut_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQOut_Add.Designer.cs">
+      <DependentUpon>EQOut_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQPanDian_DetailScan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQPanDian_DetailScan.designer.cs">
+      <DependentUpon>EQPanDian_DetailScan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQPanDian_Select.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQPanDian_Select.Designer.cs">
+      <DependentUpon>EQPanDian_Select.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EQIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQIn.Designer.cs">
+      <DependentUpon>EQIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="EQOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQOut.Designer.cs">
+      <DependentUpon>EQOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQPanDian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQPanDian.designer.cs">
+      <DependentUpon>EQPanDian.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EQBulidCard.resx">
+      <DependentUpon>EQBulidCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQDiaoBoManag.resx">
+      <DependentUpon>EQDiaoBoManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQIn.resx">
+      <DependentUpon>EQIn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQLingUse.resx">
+      <DependentUpon>EQLingUse.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\AddEQBuildCard.resx">
+      <DependentUpon>AddEQBuildCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQDiaoBoEdit.resx">
+      <DependentUpon>EQDiaoBoEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQIn_Add.resx">
+      <DependentUpon>EQIn_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQLingYongEdit.resx">
+      <DependentUpon>EQLingYongEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQOut_Add.resx">
+      <DependentUpon>EQOut_Add.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQPanDian_DetailScan.resx">
+      <DependentUpon>EQPanDian_DetailScan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQPanDian_Select.resx">
+      <DependentUpon>EQPanDian_Select.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQOut.resx">
+      <DependentUpon>EQOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQPanDian.resx">
+      <DependentUpon>EQPanDian.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChSys\ChSys.csproj">
+      <Project>{2B41A68B-2591-4363-885C-43BBF0542ABA}</Project>
+      <Name>ChSys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

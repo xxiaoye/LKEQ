@@ -1,0 +1,224 @@
+E:\net系统\n35\ChSys\bin\Debug\ChSys.dll
+E:\net系统\n35\ChSys\bin\Debug\ChSys.pdb
+E:\net系统\n35\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\net系统\n35\ChSys\obj\Debug\ChSys.dll
+E:\net系统\n35\ChSys\obj\Debug\ChSys.pdb
+E:\net系统\n35\ChSys\bin\Debug\YiTian.dll
+E:\net系统\n35\ChSys\bin\Debug\YtClient.dll
+E:\net系统\n35\ChSys\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+E:\net系统\n35\ChSys\bin\Debug\Oracle.DataAccess.dll
+E:\net系统\n35\ChSys\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\net系统\n35\ChSys\bin\Debug\YtUtil.dll
+E:\net系统\n35\ChSys\bin\Debug\office.dll
+E:\net系统\n35\ChSys\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\net系统\n35\ChSys\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\net系统\n35\ChSys\bin\Debug\YtClient.pdb
+E:\net系统\n35\ChSys\bin\Debug\YiTian.pdb
+E:\net系统\n35\ChSys\bin\Debug\YtUtil.pdb
+D:\netWin\n35\ChSys\bin\Debug\ChSys.dll
+D:\netWin\n35\ChSys\bin\Debug\ChSys.pdb
+D:\netWin\n35\ChSys\obj\Debug\ResolveAssemblyReference.cache
+D:\netWin\n35\ChSys\obj\Debug\ChSys.dll
+D:\netWin\n35\ChSys\obj\Debug\ChSys.pdb
+E:\net系统\netWin\n35\ChSys\bin\Debug\ChSys.dll
+E:\net系统\netWin\n35\ChSys\bin\Debug\ChSys.pdb
+E:\net系统\netWin\n35\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\net系统\netWin\n35\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\net系统\netWin\n35\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\net系统\netWin\n35\ChSys\obj\Debug\ChSys.dll
+E:\net系统\netWin\n35\ChSys\obj\Debug\ChSys.pdb
+E:\working\LKWZ\n35\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\working\LKWZ\n35\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\working\LKWZ\n35\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\working\LKWZ\n35\ChSys\obj\Debug\ChSys.dll
+E:\working\LKWZ\n35\ChSys\obj\Debug\ChSys.pdb
+E:\working\LKWZ\n35\ChSys\bin\Debug\ChSys.dll
+E:\working\LKWZ\n35\ChSys\bin\Debug\ChSys.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\ChSys.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\ChSys.pdb
+E:\proj\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\proj\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\proj\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\proj\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\proj\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\DevComponents.DotNetBar2.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YiTian.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtClient.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtPlugin.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtUtil.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtWinContrl.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtSys.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtDict.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\IBM.Data.DB2.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtSys.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtClient.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtClient.xml
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YiTian.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YiTian.xml
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtPlugin.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtDict.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtWinContrl.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtWinContrl.xml
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtUtil.pdb
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\YtUtil.xml
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\DevComponents.DotNetBar2.xml
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\office.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\proj\LK-WZ-SAAS\ChSys\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\proj\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\WZ\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\WZ\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\WZ\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\WZ\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\WZ\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\WZ\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\proj_new\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\proj_new\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\proj_new\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\proj_new\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\proj_new\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\proj_new\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\LKWZ_backUp617_1 - 副本\LKWZ_backUp617_1 - 副本\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\lkwz合并版\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\lkwz合并版\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\lkwz合并版\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\lkwz合并版\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\lkwz合并版\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\lkwz合并版\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\lkwz\lkwzCombine\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目\物料管理项目\722\lkwzCombine\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+G:\lkwz\lkwzCombine(7-23)\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目\lkwzCombin(8-2)\修改\LK-WZ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.dll
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\ChSys.pdb
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.WarrantInput.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.dll
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\ChSys\obj\Debug\ChSys.pdb

@@ -1,0 +1,1815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xfire.medicare.com" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" targetNamespace="http://xfire.medicare.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://xfire.medicare.com">
+      <xsd:element name="traceQueryTargetS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="traceQueryTargetRResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetY1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetY1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetQ">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetQResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetP">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetPResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetNResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfFloat">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="float" type="xsd:float" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="traceQueryTargetM">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in14" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in15" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in16" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in17" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in18" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in19" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in20" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in21" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in22" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in23" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetMResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryYF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryYFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetL">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in14" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in15" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in16" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in17" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in18" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in19" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetLResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetK">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetKResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetJ">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetJResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="tracegetmedicalNoQueryStringValue">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="tracegetmedicalNoQueryStringValueResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetI">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetIResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetH">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetHResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetE1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in14" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in15" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in16" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in17" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in18" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in19" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in20" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in21" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in22" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in23" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in24" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in25" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetE1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetG">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetGResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryE1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOfArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="traceQueryE1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in14" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in15" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetD">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetBResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceBResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetCResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetF1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="tns:ArrayOfFloat" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in14" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in15" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in16" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in17" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in18" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in19" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in20" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in21" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in22" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in23" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetF1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetH1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetH1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryCResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryD">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceYF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceYFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryI">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryIResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryJ">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryJResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetV1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetV1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryH">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryHResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceTargetB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceTargetBResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceTargetA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceTargetAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetX">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetXResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetBL">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in5" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in6" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in7" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in8" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in9" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in10" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in11" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in12" nillable="true" type="tns:ArrayOfString" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in13" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetBLResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetY">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetYResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetZ">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetZResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetTResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetU">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetUResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetV">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetVResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetW">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="in0" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in1" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in2" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in3" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="in4" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="traceQueryTargetWResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="out" nillable="true" type="tns:ArrayOfArrayOfString" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="traceQueryTargetLResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetLResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryDResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryDResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetURequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetU" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetYRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetY" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetXResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetXResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryFRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryF" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetEResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetEResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetKRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetK" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetFResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetFResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetTRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetT" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetRRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetR" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetHResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetHResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceYFResponse">
+    <wsdl:part name="parameters" element="tns:traceYFResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetDRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetD" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetBResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetBResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryIResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryIResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryE1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryE1" />
+  </wsdl:message>
+  <wsdl:message name="traceBResponse">
+    <wsdl:part name="parameters" element="tns:traceBResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetE1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetE1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetTResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetTResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetKResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetKResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetLRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetL" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetJRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetJ" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetGRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetG" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetHRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetH" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetMRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetM" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryIRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryI" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetYResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetYResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetJResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetJResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceTargetARequest">
+    <wsdl:part name="parameters" element="tns:traceTargetA" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetV1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetV1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetZResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetZResponse" />
+  </wsdl:message>
+  <wsdl:message name="tracegetmedicalNoQueryStringValueRequest">
+    <wsdl:part name="parameters" element="tns:tracegetmedicalNoQueryStringValue" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryYFResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryYFResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceYFRequest">
+    <wsdl:part name="parameters" element="tns:traceYF" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetF1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetF1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetQResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetQResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetWRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetW" />
+  </wsdl:message>
+  <wsdl:message name="traceTargetBResponse">
+    <wsdl:part name="parameters" element="tns:traceTargetBResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetRResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetRResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetE1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetE1" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryFResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryFResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryJResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryJResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryYFRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryYF" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetDResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetDResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetV1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetV1" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryJRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryJ" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetZRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetZ" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetF1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetF1" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetBRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetB" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetY1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetY1" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetCResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetCResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetPRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetP" />
+  </wsdl:message>
+  <wsdl:message name="traceTargetBRequest">
+    <wsdl:part name="parameters" element="tns:traceTargetB" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryHRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryH" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetH1Request">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetH1" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetUResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetUResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryCRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryC" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetNRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetN" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryERequest">
+    <wsdl:part name="parameters" element="tns:traceQueryE" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetH1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetH1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetQRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetQ" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetOResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetOResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryDRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryD" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryHResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryHResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetARequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetA" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetAResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetAResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetFRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetF" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetXRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetX" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetBLRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetBL" />
+  </wsdl:message>
+  <wsdl:message name="traceBRequest">
+    <wsdl:part name="parameters" element="tns:traceB" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetIResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetIResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetSResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetSResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetNResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetNResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetWResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetWResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetGResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetGResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetVResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetVResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetVRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetV" />
+  </wsdl:message>
+  <wsdl:message name="traceARequest">
+    <wsdl:part name="parameters" element="tns:traceA" />
+  </wsdl:message>
+  <wsdl:message name="traceAResponse">
+    <wsdl:part name="parameters" element="tns:traceAResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryEResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryEResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetPResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetPResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryCResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryCResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetY1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetY1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetERequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetE" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetORequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetO" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetIRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetI" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryE1Response">
+    <wsdl:part name="parameters" element="tns:traceQueryE1Response" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetBLResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetBLResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetCRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetC" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetMResponse">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetMResponse" />
+  </wsdl:message>
+  <wsdl:message name="tracegetmedicalNoQueryStringValueResponse">
+    <wsdl:part name="parameters" element="tns:tracegetmedicalNoQueryStringValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceTargetAResponse">
+    <wsdl:part name="parameters" element="tns:traceTargetAResponse" />
+  </wsdl:message>
+  <wsdl:message name="traceQueryTargetSRequest">
+    <wsdl:part name="parameters" element="tns:traceQueryTargetS" />
+  </wsdl:message>
+  <wsdl:portType name="HisInterfacePortType">
+    <wsdl:operation name="traceQueryTargetS">
+      <wsdl:input name="traceQueryTargetSRequest" message="tns:traceQueryTargetSRequest" />
+      <wsdl:output name="traceQueryTargetSResponse" message="tns:traceQueryTargetSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetR">
+      <wsdl:input name="traceQueryTargetRRequest" message="tns:traceQueryTargetRRequest" />
+      <wsdl:output name="traceQueryTargetRResponse" message="tns:traceQueryTargetRResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetY1">
+      <wsdl:input name="traceQueryTargetY1Request" message="tns:traceQueryTargetY1Request" />
+      <wsdl:output name="traceQueryTargetY1Response" message="tns:traceQueryTargetY1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetQ">
+      <wsdl:input name="traceQueryTargetQRequest" message="tns:traceQueryTargetQRequest" />
+      <wsdl:output name="traceQueryTargetQResponse" message="tns:traceQueryTargetQResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetP">
+      <wsdl:input name="traceQueryTargetPRequest" message="tns:traceQueryTargetPRequest" />
+      <wsdl:output name="traceQueryTargetPResponse" message="tns:traceQueryTargetPResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetO">
+      <wsdl:input name="traceQueryTargetORequest" message="tns:traceQueryTargetORequest" />
+      <wsdl:output name="traceQueryTargetOResponse" message="tns:traceQueryTargetOResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetN">
+      <wsdl:input name="traceQueryTargetNRequest" message="tns:traceQueryTargetNRequest" />
+      <wsdl:output name="traceQueryTargetNResponse" message="tns:traceQueryTargetNResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetM">
+      <wsdl:input name="traceQueryTargetMRequest" message="tns:traceQueryTargetMRequest" />
+      <wsdl:output name="traceQueryTargetMResponse" message="tns:traceQueryTargetMResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryYF">
+      <wsdl:input name="traceQueryYFRequest" message="tns:traceQueryYFRequest" />
+      <wsdl:output name="traceQueryYFResponse" message="tns:traceQueryYFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetL">
+      <wsdl:input name="traceQueryTargetLRequest" message="tns:traceQueryTargetLRequest" />
+      <wsdl:output name="traceQueryTargetLResponse" message="tns:traceQueryTargetLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetK">
+      <wsdl:input name="traceQueryTargetKRequest" message="tns:traceQueryTargetKRequest" />
+      <wsdl:output name="traceQueryTargetKResponse" message="tns:traceQueryTargetKResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetJ">
+      <wsdl:input name="traceQueryTargetJRequest" message="tns:traceQueryTargetJRequest" />
+      <wsdl:output name="traceQueryTargetJResponse" message="tns:traceQueryTargetJResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="tracegetmedicalNoQueryStringValue">
+      <wsdl:input name="tracegetmedicalNoQueryStringValueRequest" message="tns:tracegetmedicalNoQueryStringValueRequest" />
+      <wsdl:output name="tracegetmedicalNoQueryStringValueResponse" message="tns:tracegetmedicalNoQueryStringValueResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetI">
+      <wsdl:input name="traceQueryTargetIRequest" message="tns:traceQueryTargetIRequest" />
+      <wsdl:output name="traceQueryTargetIResponse" message="tns:traceQueryTargetIResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetH">
+      <wsdl:input name="traceQueryTargetHRequest" message="tns:traceQueryTargetHRequest" />
+      <wsdl:output name="traceQueryTargetHResponse" message="tns:traceQueryTargetHResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetE1">
+      <wsdl:input name="traceQueryTargetE1Request" message="tns:traceQueryTargetE1Request" />
+      <wsdl:output name="traceQueryTargetE1Response" message="tns:traceQueryTargetE1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetG">
+      <wsdl:input name="traceQueryTargetGRequest" message="tns:traceQueryTargetGRequest" />
+      <wsdl:output name="traceQueryTargetGResponse" message="tns:traceQueryTargetGResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryE1">
+      <wsdl:input name="traceQueryE1Request" message="tns:traceQueryE1Request" />
+      <wsdl:output name="traceQueryE1Response" message="tns:traceQueryE1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetF">
+      <wsdl:input name="traceQueryTargetFRequest" message="tns:traceQueryTargetFRequest" />
+      <wsdl:output name="traceQueryTargetFResponse" message="tns:traceQueryTargetFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetE">
+      <wsdl:input name="traceQueryTargetERequest" message="tns:traceQueryTargetERequest" />
+      <wsdl:output name="traceQueryTargetEResponse" message="tns:traceQueryTargetEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetD">
+      <wsdl:input name="traceQueryTargetDRequest" message="tns:traceQueryTargetDRequest" />
+      <wsdl:output name="traceQueryTargetDResponse" message="tns:traceQueryTargetDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetB">
+      <wsdl:input name="traceQueryTargetBRequest" message="tns:traceQueryTargetBRequest" />
+      <wsdl:output name="traceQueryTargetBResponse" message="tns:traceQueryTargetBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceA">
+      <wsdl:input name="traceARequest" message="tns:traceARequest" />
+      <wsdl:output name="traceAResponse" message="tns:traceAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceB">
+      <wsdl:input name="traceBRequest" message="tns:traceBRequest" />
+      <wsdl:output name="traceBResponse" message="tns:traceBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetC">
+      <wsdl:input name="traceQueryTargetCRequest" message="tns:traceQueryTargetCRequest" />
+      <wsdl:output name="traceQueryTargetCResponse" message="tns:traceQueryTargetCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetF1">
+      <wsdl:input name="traceQueryTargetF1Request" message="tns:traceQueryTargetF1Request" />
+      <wsdl:output name="traceQueryTargetF1Response" message="tns:traceQueryTargetF1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetA">
+      <wsdl:input name="traceQueryTargetARequest" message="tns:traceQueryTargetARequest" />
+      <wsdl:output name="traceQueryTargetAResponse" message="tns:traceQueryTargetAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetH1">
+      <wsdl:input name="traceQueryTargetH1Request" message="tns:traceQueryTargetH1Request" />
+      <wsdl:output name="traceQueryTargetH1Response" message="tns:traceQueryTargetH1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryE">
+      <wsdl:input name="traceQueryERequest" message="tns:traceQueryERequest" />
+      <wsdl:output name="traceQueryEResponse" message="tns:traceQueryEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryF">
+      <wsdl:input name="traceQueryFRequest" message="tns:traceQueryFRequest" />
+      <wsdl:output name="traceQueryFResponse" message="tns:traceQueryFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryC">
+      <wsdl:input name="traceQueryCRequest" message="tns:traceQueryCRequest" />
+      <wsdl:output name="traceQueryCResponse" message="tns:traceQueryCResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryD">
+      <wsdl:input name="traceQueryDRequest" message="tns:traceQueryDRequest" />
+      <wsdl:output name="traceQueryDResponse" message="tns:traceQueryDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceYF">
+      <wsdl:input name="traceYFRequest" message="tns:traceYFRequest" />
+      <wsdl:output name="traceYFResponse" message="tns:traceYFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryI">
+      <wsdl:input name="traceQueryIRequest" message="tns:traceQueryIRequest" />
+      <wsdl:output name="traceQueryIResponse" message="tns:traceQueryIResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryJ">
+      <wsdl:input name="traceQueryJRequest" message="tns:traceQueryJRequest" />
+      <wsdl:output name="traceQueryJResponse" message="tns:traceQueryJResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetV1">
+      <wsdl:input name="traceQueryTargetV1Request" message="tns:traceQueryTargetV1Request" />
+      <wsdl:output name="traceQueryTargetV1Response" message="tns:traceQueryTargetV1Response" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryH">
+      <wsdl:input name="traceQueryHRequest" message="tns:traceQueryHRequest" />
+      <wsdl:output name="traceQueryHResponse" message="tns:traceQueryHResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceTargetB">
+      <wsdl:input name="traceTargetBRequest" message="tns:traceTargetBRequest" />
+      <wsdl:output name="traceTargetBResponse" message="tns:traceTargetBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceTargetA">
+      <wsdl:input name="traceTargetARequest" message="tns:traceTargetARequest" />
+      <wsdl:output name="traceTargetAResponse" message="tns:traceTargetAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetX">
+      <wsdl:input name="traceQueryTargetXRequest" message="tns:traceQueryTargetXRequest" />
+      <wsdl:output name="traceQueryTargetXResponse" message="tns:traceQueryTargetXResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetBL">
+      <wsdl:input name="traceQueryTargetBLRequest" message="tns:traceQueryTargetBLRequest" />
+      <wsdl:output name="traceQueryTargetBLResponse" message="tns:traceQueryTargetBLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetY">
+      <wsdl:input name="traceQueryTargetYRequest" message="tns:traceQueryTargetYRequest" />
+      <wsdl:output name="traceQueryTargetYResponse" message="tns:traceQueryTargetYResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetZ">
+      <wsdl:input name="traceQueryTargetZRequest" message="tns:traceQueryTargetZRequest" />
+      <wsdl:output name="traceQueryTargetZResponse" message="tns:traceQueryTargetZResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetT">
+      <wsdl:input name="traceQueryTargetTRequest" message="tns:traceQueryTargetTRequest" />
+      <wsdl:output name="traceQueryTargetTResponse" message="tns:traceQueryTargetTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetU">
+      <wsdl:input name="traceQueryTargetURequest" message="tns:traceQueryTargetURequest" />
+      <wsdl:output name="traceQueryTargetUResponse" message="tns:traceQueryTargetUResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetV">
+      <wsdl:input name="traceQueryTargetVRequest" message="tns:traceQueryTargetVRequest" />
+      <wsdl:output name="traceQueryTargetVResponse" message="tns:traceQueryTargetVResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetW">
+      <wsdl:input name="traceQueryTargetWRequest" message="tns:traceQueryTargetWRequest" />
+      <wsdl:output name="traceQueryTargetWResponse" message="tns:traceQueryTargetWResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HisInterfaceHttpBinding" type="tns:HisInterfacePortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="traceQueryTargetS">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetSRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetSResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetR">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetRRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetRResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetY1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetY1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetY1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetQ">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetQRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetQResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetP">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetPRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetPResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetO">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetORequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetOResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetN">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetNRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetNResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetM">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetMRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetMResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryYF">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryYFRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryYFResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetLRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetLResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetK">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetKRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetKResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetJ">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetJRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetJResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tracegetmedicalNoQueryStringValue">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="tracegetmedicalNoQueryStringValueRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="tracegetmedicalNoQueryStringValueResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetI">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetIRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetIResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetH">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetHRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetHResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetE1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetE1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetE1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetG">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetGRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetGResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryE1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryE1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryE1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetF">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetFRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetFResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetE">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetERequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetEResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetD">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetDRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetDResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetB">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetBRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetBResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceB">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceBRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceBResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetC">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetCRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetCResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetF1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetF1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetF1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetH1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetH1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetH1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryE">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryERequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryEResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryF">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryFRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryFResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryC">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryCRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryCResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryD">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryDRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryDResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceYF">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceYFRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceYFResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryI">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryIRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryIResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryJ">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryJRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryJResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetV1">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetV1Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetV1Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryH">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryHRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryHResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceTargetB">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceTargetBRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceTargetBResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceTargetA">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceTargetARequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceTargetAResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetX">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetXRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetXResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetBL">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetBLRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetBLResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetY">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetYRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetYResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetZ">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetZRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetZResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetT">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetTRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetTResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetU">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetURequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetUResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetV">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetVRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetVResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="traceQueryTargetW">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="traceQueryTargetWRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="traceQueryTargetWResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HisInterface">
+    <wsdl:port name="HisInterfaceHttpPort" binding="tns:HisInterfaceHttpBinding">
+      <wsdlsoap:address location="http://jk.gzxnh.gov.cn/xxj/services/HisInterface" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

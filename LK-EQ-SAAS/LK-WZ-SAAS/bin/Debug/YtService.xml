@@ -1,0 +1,887 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YtService</name>
+    </assembly>
+    <members>
+        <member name="T:YtService.action.IEx">
+            <summary>
+            服务端对象必须实现该接口才能被客服端调用
+            </summary>
+        </member>
+        <member name="M:YtService.action.IEx.Run(YiTian.db.Dao,YtService.data.OptData,System.String@)">
+            <summary>
+            执行操作
+            </summary>
+            <param name="dao">数据源</param>
+            <param name="data"></param>
+            <returns>返回对象</returns>
+        </member>
+        <member name="T:YtService.web.YtPage">
+            <summary>
+            实现对模版也的入库处理
+            </summary>
+        </member>
+        <member name="M:YtService.web.YtPage.#ctor">
+            <summary>
+            实例化
+            </summary>
+        </member>
+        <member name="M:YtService.web.YtPage.Page_Load(System.Object,System.EventArgs)">
+            <summary>
+            初始化
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtService.web.WebUtil.LeftStr(System.String,System.Int32)">
+            <summary>
+            截取字符串,一个中文算两个字符
+            </summary>
+            <param name="str"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.WebUtil.GetIPAddress">
+            <summary>
+            获取IP地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.action.GetBlobs">
+            <summary>
+            批量获取大文本对应的值
+            </summary>
+        </member>
+        <member name="T:YtService.action.Do">
+            <summary>
+            执行一个配置操作 该操作可以在XML中配置
+            </summary>
+        </member>
+        <member name="T:YtService.util.DaoTool">
+            <summary>
+            服务端执行数据库的通用类
+            </summary>
+        </member>
+        <member name="M:YtService.util.DaoTool.FmtSql(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            格式化查询语句
+            </summary>
+            <param name="sql">查询</param>
+            <param name="Param">参数</param>
+            <returns>格式化后的语句</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.FmtSql(YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            格式化查询语句
+            </summary>
+            <param name="op">配置操作</param>
+            <param name="Param">参数</param>
+            <returns>格式化后的语句</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Seq(YiTian.db.Dao,System.String)">
+            <summary>
+            获取序列
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="s">序列名称</param>
+            <returns>序列的值</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Update(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            更新数据库
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数集</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Update(YiTian.db.Dao,System.String,YtService.data.OptData)">
+            <summary>
+            更新数据库
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="key">配置操作ID</param>
+            <param name="data">参数集</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Save(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            保存数据
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数集</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Save(YiTian.db.Dao,System.String,YtService.data.OptData)">
+            <summary>
+            保存数据
+            </summary>
+            <param name="dao">dao</param>
+            <param name="key">配置操作id</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Save(YiTian.db.Dao,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="dao">dao</param>
+            <param name="key">配置操作id</param>
+            <param name="param">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteScalar(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="dao">dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteScalar(YiTian.db.Dao,System.String,YtService.data.OptData)">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="dao">dao</param>
+            <param name="key">配置操作id</param>
+            <param name="data">参数</param>
+            <returns>ObjItem</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteNonQuery(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="dao">dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteNonQuery(YiTian.db.Dao,System.String,YtService.data.OptData)">
+            <summary>
+            执行返回受影响的行
+            </summary>
+            <param name="dao">dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Update(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新数据库
+            </summary>
+            <param name="dao">dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Update(YiTian.db.Dao,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新数据库
+            </summary>
+            <param name="dao">dao</param>
+            <param name="key">配置操作id</param>
+            <param name="param">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Save(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="dao">dao</param>
+            <param name="op">配置操作</param>
+            <param name="data">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteScalar(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.ExecuteNonQuery(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Get(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            获取查询的第一列的信息
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Get(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            获取查询的第一列的信息
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Find(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            获取查询的数据
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.Find(YiTian.db.Dao,YtService.config.Opt,YtService.data.OptData)">
+            <summary>
+            获取查询的数据
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.LshNYR(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            获取一天的流水号
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="param"></param>
+            <param name="length">流水号长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DaoTool.LshNY(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object},System.Int32,System.String)">
+            <summary>
+            获取一天的流水号
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="param"></param>
+            <param name="length">流水号长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.FileLocal.Copy(System.String,System.String)">
+            <summary>
+            文件夹复制
+            </summary>
+            <param name="sourceDirName">原始路径</param>
+            <param name="destDirName">目标路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.FileLocal.DeleteDir(System.String)">
+            <summary>
+            将整个文件夹删除。
+            </summary>
+            <param name="aimPath">目标文件夹</param>
+        </member>
+        <member name="M:YtService.web.FileLocal.FindDir(System.String)">
+            <summary>
+            扫描文件信息
+            </summary>
+            <param name="aimPath">目标文件夹</param>
+        </member>
+        <member name="M:YtService.web.FileLocal.ReadByte(System.String)">
+            <summary>
+            读取byte文件，多线程
+            </summary>
+            <param name="dir"></param>
+            <param name="FILE_NAME"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.FileLocal.ReadTextEx(System.String)">
+            <summary>
+            读取Txt文件内容，多线程
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.action.TableSave">
+            <summary>
+            对表的操作 sql对应服务端配置  参数GKAction add 新增 Edit 编辑 Del 删除
+            </summary>
+        </member>
+        <member name="M:YtService.action.TableSave.Add(YtService.config.Opt,YiTian.db.Dao,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            添加
+            </summary>
+            <param name="op"></param>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.action.TableSave.Edit(YtService.config.Opt,YiTian.db.Dao,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            编辑
+            </summary>
+            <param name="op"></param>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.action.TableSave.Edit(YtService.config.Opt,YiTian.db.Dao,System.Collections.Generic.Dictionary{System.String,System.Object},System.Boolean)">
+            <summary>
+            编辑
+            </summary>
+            <param name="op"></param>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.action.ExecteNonQuery">
+            <summary>
+             批量执行
+            </summary>
+        </member>
+        <member name="M:YtService.action.ExecteNonQuery.Run(YiTian.db.Dao,YtService.data.OptData,System.String@)">
+            <summary>
+            批量执行
+            </summary>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.check">
+            <summary>
+            $codebehindclassname$ 的摘要说明
+            </summary>
+        </member>
+        <member name="M:YtService.web.TempUtil.GetRegStr(System.String,System.String)">
+            <summary>
+            按正则表达式获取
+            </summary>
+            <param name="reg"></param>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.#ctor(System.Int32)">
+            构造函数
+            @param pageIndex 当前页
+            @param recordMun 页面导航数
+            @param page
+        </member>
+        <member name="M:YtService.web.PageDHT.initial">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="M:YtService.web.PageDHT.DataBind(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            绑定输出
+            </summary>
+            <param name="isHaveFirst">是否包含首页按钮</param>
+            <param name="ismiddle">是否包含中间页按钮</param>
+            <param name="issel">是否包含下拉选择按钮</param>
+            <param name="infahead">信息前置or后置</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.setData(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            绑定输出
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.getPageInf">
+            <summary>
+            获取分页信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.getEvent(System.Int32)">
+            <summary>
+            获取普通页
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.getEvent(System.Int32,System.Boolean)">
+            <summary>
+            获取上下页
+            </summary>
+            <param name="i">当前页</param>
+            <param name="iss">true 上一页 false 下一页</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.setEvent(System.Int32,System.Boolean)">
+            <summary>
+            设置事件
+            </summary>
+            <param name="i">页索引</param>
+            <param name="isAction">是否可用</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.isIndex(System.Int32)">
+            <summary>
+            是否当前页
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.isFirst(System.Int32)">
+            <summary>
+            是否第一页
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.isLast(System.Int32)">
+            <summary>
+            是否最后页
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.PageDHT.GetPageCount">
+            <summary>
+            计算总页数
+            </summary>
+            <param name="recordCount">记录总数</param>
+            <param name="pageSize">页面尺寸</param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.action.TableDo">
+            <summary>
+            执行一个对表的操作
+            </summary>
+        </member>
+        <member name="M:YtService.util.SysUtil.GetVerNext(System.String)">
+            <summary>
+            获取下一版本号
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.SysUtil.IsZs(System.String)">
+            <summary>
+            验证字符串是否只有整数
+            </summary>
+            <param name="argStr">需要验证的字符串</param>
+            <returns>true正常；fales失败</returns>
+        </member>
+        <member name="M:YtService.web.CreatHtml.Del(System.String)">
+            <summary>
+            删除指定ID的信息 用于删除文章信息
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:YtService.web.CreatHtml.GetOnePagePath(YtService.data.OptData,System.Data.DataRow)">
+            <summary>
+            获取生成单页时的路径
+            </summary>
+            <param name="opt"></param>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.CreatHtml.FormartSql(System.String)">
+            <summary>
+            通过参数格式化sql
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.web.CreatHtml.SetOptParam(YtService.data.OptData,System.String)">
+            <summary>
+            设置模版需要的参数
+            </summary>
+            <param name="opt"></param>
+            <param name="r"></param>
+            <param name="p"></param>
+        </member>
+        <member name="M:YtService.web.CreatHtml.SaveHtmlByTemp(YtService.data.OptData,System.String,YiTian.db.Dao)">
+            <summary>
+            通过模版生成静态页
+            </summary>
+            <param name="opt">参数集合</param>
+            <param name="path">静态页地址</param>
+        </member>
+        <member name="F:YtService.web.CreatType.OnPage">
+            <summary>
+            单页生成
+            </summary>
+        </member>
+        <member name="F:YtService.web.CreatType.MorePage">
+            <summary>
+            多页生成
+            </summary>
+        </member>
+        <member name="F:YtService.web.CreatType.MoreFPage">
+            <summary>
+            分页生成
+            </summary>
+        </member>
+        <member name="T:YtService.action.Finds">
+            <summary>
+            批量查询数据
+            </summary>
+        </member>
+        <member name="T:YtService.action.CopyTree">
+            <summary>
+            实现对树形数据的复制
+            </summary>
+        </member>
+        <member name="M:YtService.action.CopyTree.Run(YiTian.db.Dao,YtService.data.OptData,System.String@)">
+            <summary>
+            IEx 的接口
+            </summary>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.data.OptData">
+            <summary>
+            客服端的上下文对象 包含客服端的数据等等
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.Action">
+            <summary>
+            访问的接口
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.UserName">
+            <summary>
+            当前登陆的 用户名
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.UserID">
+            <summary>
+            当前登录的用户ID
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.PassWord">
+            <summary>
+            当前登录的密码
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.Sql">
+            <summary>
+            执行的服务端配置 也可做其他使用
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.Param">
+            <summary>
+            客服端的参数集合
+            </summary>
+        </member>
+        <member name="P:YtService.data.OptData.Params">
+            <summary>
+             客服端的查询参数集合
+            </summary>
+        </member>
+        <member name="T:YtService.data.ServiceMsg">
+            <summary>
+            服务端返回的信息对象
+            </summary>
+        </member>
+        <member name="M:YtService.data.ServiceMsg.#ctor">
+            <summary>
+            创建一个服务端信息对象
+            </summary>
+        </member>
+        <member name="M:YtService.data.ServiceMsg.addRev(System.Object)">
+            <summary>
+            添加一个值
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:YtService.data.ServiceMsg.addRev(System.Object[])">
+            <summary>
+            添加多个值
+            </summary>
+            <param name="vs"></param>
+        </member>
+        <member name="P:YtService.data.ServiceMsg.Success">
+            <summary>
+            执行是否成功
+            </summary>
+        </member>
+        <member name="P:YtService.data.ServiceMsg.Msg">
+            <summary>
+             返回的提示信息
+            </summary>
+        </member>
+        <member name="P:YtService.data.ServiceMsg.Rev">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="T:YtService.action.TableLastDate">
+            <summary>
+             获取满足条件的最后修改事件  需要的参数 LastFiled ,Table ,Where
+            </summary>
+        </member>
+        <member name="M:YtService.web.TempRun.IncludeChildTemp(System.String,System.String[])">
+            <summary>
+            子模版处理程序
+            </summary>
+            <param name="tempStr"></param>
+            <param name="clt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.uitl.PyWbCode.getCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取字符串的编码
+            </summary>
+            <param name="strName"></param>
+            <param name="t">t=1,拼音首字母 =2 全拼 = 3五笔</param>
+            <param name="l"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Uploader">
+            <summary>
+            UEditor编辑器通用上传类
+            </summary>
+        </member>
+        <member name="M:Uploader.upFile(System.Web.HttpContext,System.String,System.String[],System.Int32)">
+             上传文件的主处理方法
+             @param HttpContext
+             @param string
+             @param  string[]
+            @param int
+             @return Hashtable
+        </member>
+        <member name="M:Uploader.upScrawl(System.Web.HttpContext,System.String,System.String,System.String)">
+             * 上传涂鸦的主处理方法
+              * @param HttpContext
+              * @param string
+              * @param  string[]
+              *@param string
+              * @return Hashtable
+        </member>
+        <member name="M:Uploader.getOtherInfo(System.Web.HttpContext,System.String)">
+            获取文件信息
+            @param context
+            @param string
+            @return string
+        </member>
+        <member name="M:Uploader.getUploadInfo">
+            获取上传信息
+            @return Hashtable
+        </member>
+        <member name="M:Uploader.reName">
+            重命名文件
+            @return string
+        </member>
+        <member name="M:Uploader.checkType(System.String[])">
+            文件类型检测
+            @return bool
+        </member>
+        <member name="M:Uploader.checkSize(System.Int32)">
+            文件大小检测
+            @param int
+            @return bool
+        </member>
+        <member name="M:Uploader.getFileExt">
+            获取文件扩展名
+            @return string
+        </member>
+        <member name="M:Uploader.createFolder">
+            按照日期自动创建存储文件夹
+        </member>
+        <member name="M:Uploader.deleteFolder(System.String)">
+            删除存储文件夹
+            @param string
+        </member>
+        <member name="T:YtService.action.Find">
+            <summary>
+            查询数据
+            </summary>
+        </member>
+        <member name="M:YtService.action.ActionUtil.SavLog(YiTian.db.Dao,YtService.data.OptData,System.String,System.Int32,System.String)">
+            <summary>
+            记录日志操作类型1：登录2：退出3：创建4：浏览5：修改6：审阅病历文件7：签名8：挂起9：封存10：评分11：申请归档12：取消归档申请13：归档14：拒绝归档15：申请审阅16：取消审阅申请17：拒绝审阅
+            </summary>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <param name="type">操作类型1：登录2：退出3：创建4：浏览5：修改6：审阅病历文件7：签名8：挂起9：封存10：评分11：申请归档12：取消归档申请13：归档14：拒绝归档15：申请审阅16：取消审阅申请17：拒绝审阅</param>
+        </member>
+        <member name="M:YtService.action.ActionUtil.SavLog(YiTian.db.Dao,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Int32,System.String)">
+            <summary>
+            记录日志操作类型1：登录2：退出3：创建4：浏览5：修改6：审阅病历文件7：签名8：挂起9：封存10：评分11：申请归档12：取消归档申请13：归档14：拒绝归档15：申请审阅16：取消审阅申请17：拒绝审阅
+            </summary>
+            <param name="dao"></param>
+            <param name="data"></param>
+            <param name="type">操作类型1：登录2：退出3：创建4：浏览5：修改6：审阅病历文件7：签名8：挂起9：封存10：评分11：申请归档12：取消归档申请13：归档14：拒绝归档15：申请审阅16：取消审阅申请17：拒绝审阅</param>
+        </member>
+        <member name="M:YtService.action.ActionUtil.GetMax(System.Collections.Generic.Dictionary{System.String,System.Object},YiTian.db.Dao,YtService.config.Opt,System.String,System.String)">
+            <summary>
+            获取最大编码
+            </summary>
+            <param name="pa"></param>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.action.ActionUtil.InitValue(System.Collections.Generic.Dictionary{System.String,System.Object},YiTian.db.Dao,YtService.config.Opt,System.Boolean)">
+            <summary>
+            当为新增的时候会初始化设置的信息
+            </summary>
+            <param name="pa"></param>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="isAdd"></param>
+        </member>
+        <member name="M:YtService.action.ActionUtil.Bl(System.String,System.Int32)">
+            <summary>
+            补零
+            </summary>
+            <param name="str"></param>
+            <param name="l">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.action.ActionUtil.IsAdd(YiTian.db.Dao,YtService.config.Opt,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            判断指定的操作是否是新增
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="Param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtService.action.GetBlob">
+            <summary>
+            获取大文本对应的值
+            </summary>
+        </member>
+        <!-- 对于成员“M:YtService.util.ObjConvert.CDataToXml(System.Data.DataTable)”忽略有格式错误的 XML 注释 -->
+        <member name="P:YtService.config.Opt.Id">
+            <summary>
+            操作ID
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Sql">
+            <summary>
+            操作sql
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Table">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Pas">
+            <summary>
+            参数列表
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Key">
+            <summary>
+            表的主键
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.SucMsg">
+            <summary>
+            成功提升信息
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.FaiMsg">
+            <summary>
+            失败提示信息
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Qzac">
+            <summary>
+            前置执行ID
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Hzac">
+            <summary>
+            后置执行ID
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Eq">
+            <summary>
+            表达式
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.SetKeyId">
+            <summary>
+            设置Key的取值执行ID
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Log">
+            <summary>
+            日志操作
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.Seq">
+            <summary>
+            序列
+            </summary>
+        </member>
+        <member name="P:YtService.config.Opt.DelBz">
+            <summary>
+            删除标志
+            </summary>
+        </member>
+        <member name="T:YtService.action.Updates">
+            <summary>
+            批量更新  更新的数据有参数 ListXml 必须是xml数据
+            </summary>
+        </member>
+        <member name="T:YtService.action.Get">
+            <summary>
+            获取一个值
+            </summary>
+        </member>
+        <member name="M:YtService.util.DTo.Seq(System.String)">
+            <summary>
+            获取序列
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="s">序列名称</param>
+            <returns>序列的值</returns>
+        </member>
+        <member name="M:YtService.util.DTo.Update(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新数据库
+            </summary>
+            <param name="dao">Dao</param>
+            <param name="key">配置操作ID</param>
+            <param name="data">参数集</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DTo.Save(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            保存数据
+            </summary>
+            <param name="dao">dao</param>
+            <param name="key">配置操作id</param>
+            <param name="param">参数</param>
+            <returns>-1失败 其他成功</returns>
+        </member>
+        <member name="M:YtService.util.DTo.Es(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            返回首行首列
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtService.util.DTo.En(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            返回受影响的行数
+            </summary>
+            <param name="dao"></param>
+            <param name="op"></param>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

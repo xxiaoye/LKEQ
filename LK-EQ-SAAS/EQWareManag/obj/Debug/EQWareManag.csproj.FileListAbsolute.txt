@@ -1,0 +1,202 @@
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\bin\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\bin\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0815\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+F:\项目\项目3\项目3\LK-EQ-SAAS0819\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+F:\项目\项目3\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0909\LK-EQ-SAAS0907\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+F:\项目\项目3\LK-EQ-SAAS0913\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0915\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\LK-EQ-SAAS0924（新）\LK-EQ-SAAS0924\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+C:\Documents and Settings\Administrator\桌面\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\雄\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\0927\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+F:\项目\项目3\1213\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.dll
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\LK-WZ-SAAS\plugins\EQWareManag.pdb
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\ResolveAssemblyReference.cache
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQBulidCard.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQDiaoBoManag.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQIn.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQLingUse.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.AddEQBuildCard.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQDiaoBoEdit.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQIn_Add.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQLingYongEdit.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQOut_Add.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_DetailScan.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.form.EQPanDian_Select.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.Properties.Resources.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQOut.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.EQPanDian.resources
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.csproj.GenerateResource.Cache
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.dll
+E:\叶翔斌\项目3\1216\LK-EQ-SAAS0927合并版\LK-EQ-SAAS\EQWareManag\obj\Debug\EQWareManag.pdb

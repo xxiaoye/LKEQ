@@ -1,0 +1,973 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YtUtil</name>
+    </assembly>
+    <members>
+        <member name="T:YtUtil.tool.TaskbarNotifier">
+            <summary>
+            TaskbarNotifier allows to display MSN style/Skinned instant messaging popups
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.#ctor">
+            <summary>
+            The Constructor for TaskbarNotifier
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.Show(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Displays the popup for a certain amount of time
+            </summary>
+            <param name="strTitle">The string which will be shown as the title of the popup</param>
+            <param name="strContent">The string which will be shown as the content of the popup</param>
+            <param name="nTimeToShow">Duration of the showing animation (in milliseconds)</param>
+            <param name="nTimeToStay">Duration of the visible state before collapsing (in milliseconds)</param>
+            <param name="nTimeToHide">Duration of the hiding animation (in milliseconds)</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.Hide">
+            <summary>
+            Hides the popup
+            </summary>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.SetBackgroundBitmap(System.String,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="strFilename">Path of the Background Bitmap on the disk</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.SetBackgroundBitmap(System.Drawing.Image,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="image">Image/Bitmap object which represents the Background Bitmap</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.SetCloseBitmap(System.String,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="strFilename">Path of the 3-state Close button Bitmap on the disk (width must a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:YtUtil.tool.TaskbarNotifier.SetCloseBitmap(System.Drawing.Image,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="image">Image/Bitmap object which represents the 3-state Close button Bitmap (width must be a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            /// <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.TaskbarState">
+            <summary>
+            Get the current TaskbarState (hidden, showing, visible, hiding)
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.TitleText">
+            <summary>
+            Get/Set the popup Title Text
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.ContentText">
+            <summary>
+            Get/Set the popup Content Text
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.NormalTitleColor">
+            <summary>
+            Get/Set the Normal Title Color
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.HoverTitleColor">
+            <summary>
+            Get/Set the Hover Title Color
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.NormalContentColor">
+            <summary>
+            Get/Set the Normal Content Color
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.HoverContentColor">
+            <summary>
+            Get/Set the Hover Content Color
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.NormalTitleFont">
+            <summary>
+            Get/Set the Normal Title Font
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.HoverTitleFont">
+            <summary>
+            Get/Set the Hover Title Font
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.NormalContentFont">
+            <summary>
+            Get/Set the Normal Content Font
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.HoverContentFont">
+            <summary>
+            Get/Set the Hover Content Font
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.KeepVisibleOnMousOver">
+            <summary>
+            Indicates if the popup should remain visible when the mouse pointer is over it.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="P:YtUtil.tool.TaskbarNotifier.ReShowOnMouseOver">
+            <summary>
+            Indicates if the popup should appear again when mouse moves over it while it's disappearing.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="T:YtUtil.tool.TaskbarNotifier.TaskbarStates">
+            <summary>
+            List of the different popup animation status
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.KBCWait4IBE">
+            
+            等待键盘缓冲区为空
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.KeyDown(YtUtil.tool.WIOKey.VKey)">
+            
+            模拟键盘标按下
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.KeyUp(YtUtil.tool.WIOKey.VKey)">
+            
+            模拟键盘弹出
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.KeyDown(System.Int32)">
+            
+            模拟键盘标按下
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.KeyUp(System.Int32)">
+            
+            模拟键盘弹出
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.MyMouseDown(YtUtil.tool.WIOKey.VKey)">
+            Simulate mouse down
+        </member>
+        <member name="M:YtUtil.tool.WIOKey.MyMouseUp(YtUtil.tool.WIOKey.VKey)">
+            Simulate mouse up
+        </member>
+        <member name="M:YtUtil.tool.PyWbCode.getCode(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取字符串的编码
+            </summary>
+            <param name="strName"></param>
+            <param name="t">t=1,拼音首字母 =2 全拼 = 3五笔</param>
+            <param name="l"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtUtil.tool.ZipClass">
+            <summary>
+            文件压缩解压类
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.ZipClass.zip(System.String,System.String)">
+            <summary>
+            压缩文件
+            </summary>
+            <param name="path">地址</param>
+            <param name="hz">后缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.ZipClass.UnZip(System.String,System.String)">
+            <summary>
+            解压缩文件(压缩文件中含有子目录)
+            </summary>
+            <param name="zipfilepath">待解压缩的文件路径</param>
+            <param name="unzippath">解压缩到指定目录</param>
+        </member>
+        <member name="M:YtUtil.tool.ZipClass.UnZip(System.String)">
+            <summary>
+            解压缩文件(压缩文件中含有子目录)
+            </summary>
+            <param name="zipfilepath">待解压缩的文件路径</param>
+            <param name="unzippath">解压缩到指定目录</param>
+        </member>
+        <member name="T:YtUtil.tool.WJs">
+            <summary>
+            Msg 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsAbleOptSysData(System.Data.DataRow,System.String,System.String)">
+            <summary>
+            是否能够操作系统级数据
+            </summary>
+            <param name="row"></param>
+            <param name="depcodeFiled"></param>
+            <param name="depcode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_Task(System.String)">
+            <summary>
+            右下角弹出提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_Task(System.String,YtUtil.tool.AlertClick)">
+            <summary>
+            带事件的右下角弹出提示
+            </summary>
+            <param name="msg">提示信息</param>
+            <param name="c">点击事件</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_TaskSuc(System.String)">
+            <summary>
+            右下角弹出成功提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_TaskSuc(System.String,YtUtil.tool.AlertClick)">
+            <summary>
+            带事件的右下角弹出成功提示
+            </summary>
+            <param name="msg">提示信息</param>
+            <param name="c">点击事件</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_TaskErr(System.String)">
+            <summary>
+            右下角弹出错误提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert_TaskErr(System.String,YtUtil.tool.AlertClick)">
+            <summary>
+            带事件的右下角弹出错误提示
+            </summary>
+            <param name="msg">提示信息</param>
+            <param name="c">点击事件</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert(System.String)">
+            <summary>
+            一般提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert(System.Object)">
+            <summary>
+            一般提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert(System.Windows.Forms.Form,System.Object)">
+            <summary>
+            一般提示
+            </summary>
+            <param name="form">提示的窗体</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.alert(System.Int32)">
+            <summary>
+            一般提示
+            </summary>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.confirm(System.String)">
+            <summary>
+            询问式提示
+            </summary>
+            <param name="msg">提示信息</param>
+            <returns>true 点确定 false 点取消</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.confirmFb(System.String)">
+            <summary>
+            询问式提示 焦点在取消上
+            </summary>
+            <param name="msg">提示信息</param>
+            <returns>true 点确定 false 点取消</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.confirmQd(System.String)">
+            <summary>
+            询问式提示 焦点在确定上
+            </summary>
+            <param name="msg">提示信息</param>
+            <returns>true 点确定 false 点取消</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.confirmSave(System.String)">
+            <summary>
+            保存提示
+            </summary>
+            <param name="msg">提示信息</param>
+            <returns>1 yes 2 no -1 取消</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Random">
+            <summary>
+            获取随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.RandNum(System.Int32)">
+            <summary>
+            获取0到i的随机数
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.randNum(System.Int32)">
+            <summary>
+            获取0到i的随机数
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Log(System.String)">
+            <summary>
+            保存开发阶段保存日志信息
+            </summary>
+            <param name="txt"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getDGSelectID(System.Windows.Forms.DataGridView)">
+            <summary>
+            获取DataGridView选择的 第一列的值
+            </summary>
+            <param name="dataGridView1">DataGridView</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getDGSelectIDStr(System.Windows.Forms.DataGridView)">
+            <summary>
+            获取选择的id
+            </summary>
+            <param name="dataGridView1">DataGridView</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Md5(System.String)">
+            <summary>
+            得到MD5码
+            </summary>
+            <param name="userstr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getDGSelectValue(System.Windows.Forms.DataGridView,System.String)">
+            <summary>
+            获取选择列的值
+            </summary>
+            <param name="dataGridView1">DataGridView</param>
+            <param name="s">列名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.noOrder(System.Windows.Forms.DataGridView)">
+            <summary>
+            批量设置DataGridView不排序
+            </summary>
+            <param name="dataGridView1">DataGridView</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.splithh(System.String,System.String)">
+            <summary>
+            按换行符分割字符串
+            </summary>
+            <param name="str">要分割的字符串</param>
+            <param name="splitStr">标识符</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.splithh(System.String,System.Char)">
+            <summary>
+            按换行符分割字符串
+            </summary>
+            <param name="str">要分割的字符串</param>
+            <param name="splitStr">标识符</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.keyDown(System.String)">
+            <summary>
+            执行案件操作
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.key_Down(System.String,System.Boolean)">
+            <summary>
+            执行按键操作
+            </summary>
+            <param name="s">带按的键</param>
+            <param name="isDown">是否按下</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetColor(System.Int32,System.Int32)">
+            <summary>
+            获取坐标的颜色
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.isNull(System.Object)">
+            <summary>
+            判断对象是否为空
+            </summary>
+            <param name="obj"></param>
+            <returns>true NULL false unNull</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.jsBds(System.String)">
+            <summary>
+            计算简单表达式
+            </summary>
+            <param name="bds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsNum(System.String)">
+            <summary>
+            验证字符串是否只有数字
+            </summary>
+            <param name="argStr">需要验证的字符串</param>
+            <returns>true：正常；fales：失败</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsZs(System.String)">
+            <summary>
+            验证字符串是否只有整数
+            </summary>
+            <param name="argStr">需要验证的字符串</param>
+            <returns>true正常；fales失败</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsIDCard(System.String)">
+            <summary>
+            验证身份证号码
+            </summary>
+            <param name="Id">带验证的身份证码</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.CheckIDCard18(System.String)">
+            <summary>
+            验证18位身份证格式
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.CheckIDCard15(System.String)">
+            <summary>
+            验证15位身份证格式
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetBrithdayFromIdCard(System.String)">
+            <summary>
+            根据身份证号获取生日
+            </summary>
+            <param name="IdCard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetSexFromIdCard(System.String)">
+            <summary>
+            根据身份证获取性别
+            </summary>
+            <param name="IdCard"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsSJH(System.String)">
+            <summary>
+            判断是否是手机号
+            </summary>
+            <param name="argStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsReg(System.String,System.String)">
+            <summary>
+            检查字符串是否满足指定的正则表达式
+            </summary>
+            <param name="s">字符串</param>
+            <param name="reg">正则表达式</param>
+            <returns>true 满足 false 不满足</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsDate(System.String)">
+            <summary>
+            检查字符串是否为日期格式
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Len(System.String)">
+            <summary>
+            得到字符串的实际长度
+            </summary>
+            <param name="s">字符串</param>
+            <returns>长度</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsD0Zs(System.String)">
+            <summary>
+            验证字符串是否只有大于零整数
+            </summary>
+            <param name="argStr">需要验证的字符串</param>
+            <returns>true正常；fales失败</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsTelAndZip(System.String)">
+            <summary>
+            验证电话号码和邮政编码(只能输入数字和“-”)
+            </summary>
+            <param name="argStr">需要验证的字符串</param>
+            <returns>true正常；fales失败</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IsMenoy(System.String,System.Int32)">
+            <summary>
+            验证金额
+            </summary>
+            <param name="argStr">要验证的字符串</param>
+            <param name="argIndex">小数点后的数字数</param>
+            <returns>true正常；fales失败</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SerializeObject(System.Object,System.String)">
+            <summary>
+            序列化对象
+            </summary>
+            <param name="o"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.DeserializeObject(System.String)">
+            <summary>
+            反序列化对象
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.ToParam(System.String)">
+            <summary>
+            将如XXX:V;TTT:L的格式转化为K-V格式；
+            </summary>
+            <param name="pa"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.ToParam(System.String,System.String)">
+            <summary>
+            将如k{XXX:V;TTT:L}的格式转化为K-V格式；
+            </summary>
+            <param name="pa">字符串</param>
+            <param name="k">对象值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetPName(System.String)">
+            <summary>
+            获取参数名称
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SetDataGridViewColStyle(System.Windows.Forms.DataGridView,System.String)">
+            <summary>
+            设置DataGridView  按列名 的样式
+            </summary>
+            <param name="dg"></param>
+            <param name="style"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Excel(System.String,System.String)">
+            <summary>
+            Excel转DataTable
+            </summary>
+            <param name="ad">EXCEL地址</param>
+            <param name="x">工作簿</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.ExpExcelDg(System.Windows.Forms.DataGridView,System.String)">
+            <summary>
+            导出DataGridView的数据到Excel
+            </summary>
+            <param name="dg">DataGridView</param>
+            <param name="fname">保存的文件名</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.ExpExcelDg(System.Windows.Forms.DataGridView,System.String,System.Collections.Generic.List{System.String[]},System.String)">
+            <summary>
+             导出DataGridView的数据到Excel
+            </summary>
+            <param name="dg">DataGridView</param>
+            <param name="fname">保存的文件名</param>
+            <param name="sm">说明集合</param>
+            <param name="cname">说明的工作簿名称</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.PyCode(System.String,System.Int32)">
+            <summary>
+            获取拼音码
+            </summary>
+            <param name="s"></param>
+            <param name="len">-1，所有字符 </param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.WbCode(System.String,System.Int32)">
+            <summary>
+            获取五笔码
+            </summary>
+            <param name="s"></param>
+            <param name="len">-1，所有字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.RegDll(System.String)">
+            <summary>
+            REGSVR32注册 控件
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.UnRegDll(System.String)">
+            <summary>
+            REGSVR32反注册控件
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.MoveNode(System.Windows.Forms.TreeView,System.Boolean)">
+            <summary>
+            树型节点菜单移动
+            </summary>
+            <param name="treeView1"></param>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.CenterShow(System.Windows.Forms.Form,System.Windows.Forms.Control)">
+            <summary>
+            将指定的窗体放在控件 的位置
+            </summary>
+            <param name="f"></param>
+            <param name="c"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.CenterShow(System.Windows.Forms.Control,System.Windows.Forms.Control)">
+            <summary>
+            将指定的控件放在控件 的位置
+            </summary>
+            <param name="f"></param>
+            <param name="c"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.RunWhenStart(System.Boolean,System.String,System.String)">
+            <summary>
+            注册随系统启动
+            </summary>
+            <param name="Started"></param>
+            <param name="name"></param>
+            <param name="path"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.AppStr(System.String)">
+            <summary>
+            获取配置文件
+            </summary>
+            <param name="appkey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SaveApp(System.String,System.String)">
+            <summary>
+            保存配置文件的值
+            </summary>
+            <param name="appkey"></param>
+            <param name="v"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.RunExe(System.String)">
+            <summary>
+            启动外部EXE
+            </summary>
+            <param name="p"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.IntToDx(System.Int32)">
+            <summary>
+            数字转大写
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.DxToInt(System.String)">
+            <summary>
+            大写转数字
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.DecimalParse(System.String,System.Decimal)">
+            <summary>
+            字符串转decimal 转不成功则默认 defaultValue
+            </summary>
+            <param name="s">待转的字符串</param>
+            <param name="defaultValue">默认 defaultValue</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getFPCode(System.String)">
+            <summary>
+            获得门诊或住院发票号
+            </summary>
+            <param name="fpcode">发票号码</param>
+            <returns>返回下一个发票号</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.PDcodetype(System.String)">
+            <summary>
+            判断录入的号的类型
+            </summary>
+            <param name="code">录入的号码</param>
+            <returns>0:农合证号    1:医疗卡号    9:非法号码</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.ListToXML(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            将列表泛型转换为xml
+            </summary>
+            <param name="lt">要转换的列表</param>
+            <returns>返回xml数据</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getNumStr(System.String)">
+            <summary>
+            获得字符中的数字字符
+            </summary>
+            <param name="str">字符</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Bl(System.String,System.Int32)">
+            <summary>
+            补零
+            </summary>
+            <param name="str"></param>
+            <param name="l">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SetTimeOut(System.Int32,System.Int32)">
+            <summary>
+            设置与服务器通信的发送与接收超时时间
+            <param name="SendTime">发送超时时间(秒)</param>
+            <param name="RecTime">接收超时时间(秒)</param>
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SetDictTimeOut">
+            <summary>
+            设置与服务器通信的发送与接收超时时间(字典部分)
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.WJs.SetLocalCache(System.String,System.Object)">
+            <summary>
+            将数据保存到本地缓存
+            </summary>
+            <param name="k"></param>
+            <param name="v"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetLocalCache(System.String)">
+            <summary>
+            获取本地缓存的数据
+            </summary>
+            <param name="k"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Find(System.Data.DataTable,System.String)">
+            <summary>
+            通过DataTable查询满足条件的数据
+            </summary>
+            <param name="dt">带查询的表</param>
+            <param name="w">条件</param>
+            <returns>满足条件的数据</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.CallDll(System.String,System.String,System.Object,System.Object[])">
+            <summary>
+            动态调用动态库
+            </summary>
+            <param name="dllFile">调用的动态库</param>
+            <param name="functionName">执行的方法</param>
+            <param name="result">是否返回结果</param>
+            <param name="args">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.GetMiddleStr(System.String,System.String,System.String)">
+            <summary>
+            获取字符串中间的字符串
+            </summary>
+            <param name="s">源字符串</param>
+            <param name="a">开始字符</param>
+            <param name="e">结束字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Delay(System.EventHandler,System.Int32)">
+            <summary>
+            延时执行
+            </summary>
+            <param name="ev"></param>
+            <param name="dy"></param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Delay(YtUtil.tool.DelayHandler,System.Int32)">
+            <summary>
+            延时执行
+            </summary>
+            <param name="ev">执行方法</param>
+            <param name="dy">延迟事件</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Bstr(System.String,System.String,System.String)">
+            <summary>
+            格式化字符  为空或 为零 输出def 否则输出 fmt
+            </summary>
+            <param name="v">对比的值</param>
+            <param name="fmt">格式化字符串</param>
+            <param name="def">默认值</param>
+            <returns>格式化后的字符串</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Bstr(System.String,System.String)">
+            <summary>
+            格式化字符  为空或 为零 输出空文本 否则输出 fmt
+            </summary>
+            <param name="v">对比的值</param>
+            <param name="fmt">格式化字符串</param>
+            <param name="def">默认值</param>
+            <returns>格式化后的字符串</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.getDate(System.DateTime)">
+            <summary>
+            获得Web服务器的时间 格式方式: 0-无转换返回  1-yyyy-MM-dd   2-yyyy-MM-dd HH-mm-ss
+            </summary>
+            <param name="Webdt">时间</param>
+            <returns>DateTime</returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.WiterLog(System.String,System.String,System.String)">
+            <summary>
+            记录日志的方法
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.WJs.LookJKDAInfo(System.String,System.String)">
+            <summary>
+            健康档案信息查阅调用
+            </summary>
+            <param name="cardno">身份证号</param>
+            <param name="LUrl">连接字符</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.MaxNumOver(System.String,System.String)">
+            <summary>
+            输入的最大数字
+            </summary>
+            <param name="argStr">数字</param>
+            <param name="title">提示</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.WJs.UpdateDataRow(System.Data.DataRow,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            更新指定DataRow
+            </summary>
+            <param name="row">DataRow</param>
+            <param name="pa">Pa参数</param>
+        </member>
+        <member name="M:YtUtil.tool.WJs.Att(System.Xml.Linq.XElement,System.String)">
+            <summary>
+            获取XML的属性
+            </summary>
+            <param name="xml"></param>
+            <param name="att"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YtUtil.tool.WJs.IsClickOnceRun">
+            <summary>
+            判断系统是否是发布运行
+            </summary>
+        </member>
+        <member name="M:YtUtil.tool.User32.InputStr(System.IntPtr,System.String)">
+            <summary>
+            发送一个字符串
+            </summary>
+            <param name="myIntPtr">窗口句柄</param>
+            <param name="Input">字符串</param>
+        </member>
+        <member name="M:YtUtil.tool.User32.moveWindow(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            移动窗体到指定的位置；
+            </summary>
+            <param name="hWnd">窗体句柄</param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:YtUtil.tool.User32.moveWindow(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            移动窗体到指定的位置
+            </summary>
+            <param name="intPtrId">窗体句柄ID</param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:YtUtil.tool.User32.getWinowRect(System.String)">
+            <summary>
+            得到指定窗体标题的窗体位置属性
+            </summary>
+            <param name="name">标题</param>
+            <returns>int[]{x,y,w,h}</returns>
+        </member>
+        <member name="M:YtUtil.tool.User32.getWinowRect(System.IntPtr)">
+            <summary>
+            得到指定窗体句柄的窗体位置属性
+            </summary>
+            <param name="formHandle">窗体句柄</param>
+            <returns>int[]{x,y,w,h}</returns>
+        </member>
+        <!-- 对于成员“M:YtUtil.tool.User32.GetDC(System.IntPtr)”忽略有格式错误的 XML 注释 -->
+        <member name="M:YtUtil.tool.User32.ReleaseDC(System.IntPtr,System.IntPtr)">
+            <summary>
+            释放由调用GetDC函数获取的指定设备场景
+            </summary>
+            <param name="hwnd">要释放的设备场景相关的窗口句柄</param>
+            <param name="hdc">要释放的设备场景句柄</param>
+            <returns>执行成功为1，否则为0</returns>
+        </member>
+        <member name="M:YtUtil.tool.User32.GetPixel(System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            在指定的设备场景中取得一个像素的RGB值
+            </summary>
+            <param name="hdc">一个设备场景的句柄</param>
+            <param name="nXPos">逻辑坐标中要检查的横坐标</param>
+            <param name="nYPos">逻辑坐标中要检查的纵坐标</param>
+            <returns>指定点的颜色</returns>
+        </member>
+        <member name="M:YtUtil.tool.FileLocal.Copy(System.String,System.String)">
+            <summary>
+            文件夹复制
+            </summary>
+            <param name="sourceDirName">原始路径</param>
+            <param name="destDirName">目标路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.FileLocal.DeleteDir(System.String)">
+            <summary>
+            将整个文件夹删除。
+            </summary>
+            <param name="aimPath">目标文件夹</param>
+        </member>
+        <member name="M:YtUtil.tool.FileLocal.FindDir(System.String)">
+            <summary>
+            扫描文件信息
+            </summary>
+            <param name="aimPath">目标文件夹</param>
+        </member>
+        <member name="M:YtUtil.tool.FileLocal.ReadByte(System.String)">
+            <summary>
+            读取byte文件，多线程
+            </summary>
+            <param name="dir"></param>
+            <param name="FILE_NAME"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.FileLocal.ReadTextEx(System.String)">
+            <summary>
+            读取Txt文件内容，多线程
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtUtil.tool.SysTool.bindCombox(System.Windows.Forms.ComboBox,System.String)">
+            <summary>
+            用于绑定相关数据
+            </summary>
+            <param name="comboBox1"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:YtUtil.tool.DllCaller.#ctor(System.String,System.String,System.Object,System.Object[])">
+            <param name="dllFile">DLL文件的位置</param>
+            <param name="functionName">函数名，注意带字符串的函数分W版跟A版</param>
+            <param name="result">返回的数类型，如果返回void，使用typeof(void)</param>
+            <param name="args">参数列表</param>
+            <remarks>
+            注意:为了方便使用，返回类型跟参数类型都用一个实例表示，实例值没影响。
+            例如:用true,false表示bool; 0表示int; (byte)0表示byte, IntPtr.Zero表示指针等
+            </remarks>
+            <example>
+            int MessageBox(
+            HWND hWnd, 
+            LPCTSTR lpText, 
+            LPCTSTR lpCaption, 
+            UINT uType
+            ); 
+            DllCaller MessageBox = new DllCaller(
+            "user32.dll", "MessageBoxW", IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, (uint)0
+            );
+            </example>
+        </member>
+    </members>
+</doc>

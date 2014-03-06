@@ -1,0 +1,1842 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>YtWinContrl</name>
+    </assembly>
+    <members>
+        <member name="T:YtWinContrl.com.datagrid.SelBeforeEvent">
+            <summary>
+            选择前事件
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelContrl.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelContrl.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelContrl.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.Editer.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.Editer.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.Editer.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.CameraPht.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.CameraPht.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.CameraPht.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.CameraPht.#ctor">
+            <summary>
+            拍照及其上传图片相关
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.CameraPht.CapPhoto(System.IntPtr,System.String@)">
+            <summary>
+            对拍照的引用
+            </summary>
+            <param name="handle"></param>
+            <param name="PicStr"></param>
+            <returns></returns>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.CameraPht.AllowSize">
+            <summary>
+            允许的大小
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.CameraPht.KFiled">
+            <summary>
+            KFiled
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.Width">
+            <summary>
+            纸张宽度
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.Height">
+            <summary>
+            纸张长度
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.IfDefaultPage">
+            <summary>
+            是否使用默认纸张参数
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.PaperCode">
+            <summary>
+            纸张编码
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.PrintFX">
+            <summary>
+            打印方向
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginLeft">
+            <summary>
+            左边距
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginBottom">
+            <summary>
+            底边距
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginTop">
+            <summary>
+            顶边距
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginRight">
+            <summary>
+            右边距
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginHeader">
+            <summary>
+            页眉顶空白
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.MarginFooter">
+            <summary>
+            页脚底空白
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.HeaderID">
+            <summary>
+            页眉ID
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.orm.PrintPage.FooterID">
+            <summary>
+            页脚ID
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelTextInpt.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelTextInpt.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelTextInpt.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelTextInpt.IsToUpper">
+            <summary>
+            是否转换为大写
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelTextInpt.LoadLocalEvent">
+            <summary>
+            读取本地数据库
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelTextInpt.ShowWin">
+            <summary>
+            显示查询窗体
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelTextInpt.OneRowAutoSelect">
+            <summary>
+            当只有一条数据时是否直接提交选择
+            </summary>
+        </member>
+        <member name="E:YtWinContrl.com.contrl.SelTextInpt.TextChanged">
+            <summary>
+            单选择后改变事件
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.DateDuanSel.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.DateDuanSel.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.DateDuanSel.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.SelPageDgWin.OneRowAutoSelect">
+            <summary>
+            数据只有一行时自动选择
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SelPageDgWin.#ctor(System.String,System.Drawing.Point,System.Int32)">
+            <summary>
+            查询窗体
+            </summary>
+            <param name="sql">查询语句</param>
+            <param name="d">坐标</param>
+            <param name="h">控件高度</param>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.SelPageDgWin.LoadLocalEvent">
+            <summary>
+            读取本地数据库
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.SelPageDgWin.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SelPageDgWin.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SelPageDgWin.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.contrl.ListViewHelper">
+            <summary>
+            对ListView点击列标题自动排序功能
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewHelper.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.contrl.ListViewColumnSorter">
+            <summary>
+            继承自IComparer
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.ListViewColumnSorter.ColumnToSort">
+            <summary>
+            指定按照哪个列排序
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.ListViewColumnSorter.OrderOfSort">
+            <summary>
+            指定排序的方式
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.ListViewColumnSorter.ObjectCompare">
+            <summary>
+            声明CaseInsensitiveComparer类对象
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewColumnSorter.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewColumnSorter.Compare(System.Object,System.Object)">
+            <summary>
+            重写IComparer接口.
+            </summary>
+            <param name="x">要比较的第一个对象</param>
+            <param name="y">要比较的第二个对象</param>
+            <returns>比较的结果.如果相等返回0，如果x大于y返回1，如果x小于y返回-1</returns>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewColumnSorter.IsIP(System.String)">
+            <summary>
+            判断是否为正确的IP地址，IP范围（0.0.0.0～255.255.255）
+            </summary>
+            <param name="ip">需验证的IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewColumnSorter.CompareInt(System.Int32,System.Int32)">
+            <summary>
+            比较两个数字的大小
+            </summary>
+            <param name="ipx">要比较的第一个对象</param>
+            <param name="ipy">要比较的第二个对象</param>
+            <returns>比较的结果.如果相等返回0，如果x大于y返回1，如果x小于y返回-1</returns>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ListViewColumnSorter.CompareIp(System.String,System.String)">
+            <summary>
+            比较两个IP地址的大小
+            </summary>
+            <param name="ipx">要比较的第一个对象</param>
+            <param name="ipy">要比较的第二个对象</param>
+            <returns>比较的结果.如果相等返回0，如果x大于y返回1，如果x小于y返回-1</returns>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.ListViewColumnSorter.SortColumn">
+            <summary>
+            获取或设置按照哪一列排序.
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.ListViewColumnSorter.Order">
+            <summary>
+            获取或设置排序方式.
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.DateDuanSelHS.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.DateDuanSelHS.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.DateDuanSelHS.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.tree.TreeGridCell">
+            <summary>
+            Summary description for TreeGridCell.
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.SelSQL.AfterHandle">
+            <summary>
+            选择之后执行的方法
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SelSQL.IsAlert">
+            <summary>
+            是否提示
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.window.SelListForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.window.SelListForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.com.window.SelListForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.TvList">
+            <summary>
+            用于绑定值和键对应的控件
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.#ctor">
+            <summary>
+            创建一个 TvList 对象
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.newBind">
+            <summary>
+             获取一个 TvList 对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.SetDbConn(System.String)">
+            <summary>
+            设置TvList的数据连接
+            </summary>
+            <param name="dbconn">数据连接</param>
+            <returns>TvList</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.getValue(System.Windows.Forms.ComboBox)">
+            <summary>
+            获取通过TvList绑定的ComboBox选择的项的值
+            </summary>
+            <param name="co"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetText(System.String,System.Object,System.Object[])">
+            <summary>
+            获取指定查询对应一个值的文本 
+            </summary>
+            <param name="sql">服务端的配置查询</param>
+            <param name="v">值</param>
+            <param name="pa">参数</param>
+            <returns>相应的文本</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.getValue(System.Windows.Forms.ComboBox,System.String)">
+            <summary>
+            获取ComboBox 的值 无效时并提示
+            </summary>
+            <param name="co">ComboBox</param>
+            <param name="msg">提示值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetText(System.String)">
+            <summary>
+            获取值对应的文本
+            </summary>
+            <param name="v">值</param>
+            <returns>文本</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetTexts(System.String)">
+            <summary>
+            获取一组值对应的文本
+            </summary>
+            <param name="v">值多个按逗号分开</param>
+            <returns>对应的文本</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetTexts(System.String,System.String)">
+            <summary>
+            获取多个值的文本
+            </summary>
+            <param name="v">值多个按逗号分开</param>
+            <param name="fg">文本的分割符</param>
+            <returns>对应的文本</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetValue(System.String)">
+            <summary>
+            获取一个文本对应的值
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetValue(System.String,System.Boolean)">
+            <summary>
+            获取一个文本对应的值
+            </summary>
+            <param name="t">文本</param>
+            <param name="mf">是否模糊对应</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.setSelectIndex(System.Windows.Forms.ComboBox,System.Object)">
+            <summary>
+            设置TvList绑定的ComboBox 的选择项
+            </summary>
+            <param name="co">ComboBox</param>
+            <param name="v">值</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.setIndex(System.Windows.Forms.ComboBox,System.Int32)">
+            <summary>
+            通过索引设置ComboBox选项
+            </summary>
+            <param name="co">ComboBox</param>
+            <param name="v">索引</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.add(System.String,System.String)">
+            <summary>
+            添加对应的选项值
+            </summary>
+            <param name="t">文本</param>
+            <param name="v">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.add(System.String)">
+            <summary>
+            添加对应的选项值
+            </summary>
+            <param name="t">文本</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Fomart(System.String)">
+            <summary>
+            设置文本格式化的字符串
+            </summary>
+            <param name="f">格式化的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.TvList.FomartFun">
+            <summary>
+            格式化的函数
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.SetFomartFun(YtWinContrl.com.datagrid.TvList.FomartEvent)">
+            <summary>
+            格式化事件
+            </summary>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.SetCacheKey(System.String)">
+            <summary>
+            设置缓存属性
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Action(System.String)">
+            <summary>
+            设置查询处理接口
+            </summary>
+            <param name="ac"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Ld(System.String,System.Object[])">
+            <summary>
+            加载服务端查询对应的数据
+            </summary>
+            <param name="sql">服务端配置查询</param>
+            <param name="param">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Load(System.String,System.Object[])">
+            <summary>
+            加载服务端查询对应的数据
+            </summary>
+            <param name="sql">服务端配置查询</param>
+            <param name="param">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Bind">
+            <summary>
+            直接加载数据
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.RBind">
+            <summary>
+            绑定后返回
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Bind(System.Windows.Forms.DataGridViewComboBoxColumn)">
+            <summary>
+            绑定DataGridViewComboBoxColumn对象
+            </summary>
+            <param name="co">DataGridViewComboBoxColumn</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Bind(System.Windows.Forms.ListBox)">
+            <summary>
+            绑定ListBox
+            </summary>
+            <param name="co">ListBox</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Bind(System.Windows.Forms.ComboBox)">
+            <summary>
+            绑定 ComboBox
+            </summary>
+            <param name="co">ComboBox</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Bind(System.Windows.Forms.DataGridViewComboBoxCell)">
+            <summary>
+            绑定DataGridViewComboBoxCell
+            </summary>
+            <param name="co">DataGridViewComboBoxCell</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.setFilter(System.String[])">
+            <summary>
+            过滤掉指定的选项
+            </summary>
+            <param name="vs">需要过滤的值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.setFilterNull">
+            <summary>
+            清除过滤项
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetSelRow(System.Windows.Forms.ComboBox)">
+            <summary>
+            获取绑定在TvList的ComboBox选择的数据行
+            </summary>
+            <param name="bo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetSelRow(System.String)">
+            <summary>
+            获取选择的数据行
+            </summary>
+            <param name="v">值</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.ReMoveItem(System.Windows.Forms.ComboBox,System.String)">
+            <summary>
+            移除选择项
+            </summary>
+            <param name="com">ComboBox</param>
+            <param name="v">对应的值</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetItemIndexBySearchText(System.String,System.Boolean)">
+            <summary>
+            通过检索文本得到相似的选项索引
+            </summary>
+            <param name="x">检索字符串</param>
+            <param name="wqpp">是否完全匹配</param>
+            <returns>索引</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.GetItemIndexBySearchText(System.String)">
+            <summary>
+            通过检索文本得到相似的选项索引
+            </summary>
+            <param name="x">检索字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TvList.Find(YtWinContrl.com.datagrid.HaveIiem)">
+            <summary>
+            查找指定的项
+            </summary>
+            <param name="hit">查找方法</param>
+            <returns>TextValue[] </returns>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.TvList.Lis">
+            <summary>
+            获取绑定的TextValue集合
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.TvList.FomartEvent">
+            <summary>
+            格式化时 的事件
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.SqlStr">
+            <summary>
+            组合查询条件对象
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SqlStr.#ctor">
+            <summary>
+            创建一个SqlStr对象
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SqlStr.newSql">
+            <summary>
+            得到一个SqlStr对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SqlStr.Add(System.String)">
+            <summary>
+            添加查询条件
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SqlStr.Add(System.String,System.Object)">
+            <summary>
+            添加查询条件
+            </summary>
+            <param name="s">条件字符串</param>
+            <param name="pa">参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SqlStr.Add(System.String,System.Object[])">
+            <summary>
+            添加查询条件
+            </summary>
+            <param name="s">条件字符串</param>
+            <param name="args">参数</param>
+            <returns></returns>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.Table">
+            <summary>
+            附加查询的表
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.TableColumn">
+            <summary>
+            附加查询的表的列
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.Sql">
+            <summary>
+            获取组合后的条件
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.WSql">
+            <summary>
+            获取除掉首个 查询连接 or 或 and 的查询条件
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.Param">
+            <summary>
+            获取查询条件的参数
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.SqlStr.ParamStr">
+            <summary>
+            获取参数按【,】分割的字符串
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.SelDataGrid.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SelDataGrid.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.SelDataGrid.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.TreeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.TreeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.TreeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.GetSelContrl.GetSelContrl">
+            <summary>
+            获取选择控件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.GetSelContrl.GetSelData(System.Object@)">
+            <summary>
+            获取选择的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.GridPage.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.btnFirst_Click(System.Object,System.EventArgs)">
+            <summary>
+            第一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.btnFianl_Click(System.Object,System.EventArgs)">
+            <summary>
+            最后一页
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.btnSearch_Click(System.Object,System.EventArgs)">
+            <summary>
+            刷新
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.GridPage.Refresh">
+            <summary>
+            刷新当前页
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.WindowSelContrl.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.WindowSelContrl.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.WindowSelContrl.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.ImageUp.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ImageUp.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.ImageUp.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.window.InputKeyForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.window.InputKeyForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.com.window.InputKeyForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtListBox.getSelectRow">
+            <summary>
+            获取选择项的数据行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.SelForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.SelForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.SelForm.SearchAlert">
+            <summary>
+            显示搜索输入
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.TextValue">
+            <summary>
+            描述一个文本和值的对象
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.TextValue.#ctor(System.String,System.String)">
+            <summary>
+            创建一个TextValue 对象
+            </summary>
+            <param name="t">文本</param>
+            <param name="v">值</param>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.TextValue.Text">
+            <summary>
+            值对应的文本
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.TextValue.Value">
+            <summary>
+            文本对应的值
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.TreeComboBox.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.TreeComboBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.TreeComboBox.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.TreeComboBox.LazyLoad">
+            <summary>
+            是否只加载一次
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.TreeComboBox.AllowSelectParent">
+            <summary>
+            是否允许选择 父节点 默认为false;
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.TreeComboBox.SelectedItem">
+            <summary>
+            获取或设置选择项  获取 object 的类型 为  TextValue 设置可以是 object 或 TextValue
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.TreeComboBox.SelectedIndex">
+            <summary>
+            设置comBox的选择索引 一般只有 两个值 0，1
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.events.SelFun">
+            <summary>
+            选择代理
+            </summary>
+            <param name="row"></param>
+        </member>
+        <member name="T:YtWinContrl.com.events.LoadLocalDataHandle">
+            <summary>
+            读取本地数据库代理
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.Test.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.Test.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:YtWinContrl.Test.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.DataGView.EntHh">
+            <summary>
+            是否启用回车代Tab功能
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.SelBefore(YtWinContrl.com.datagrid.SelBeforeEvent)">
+            <summary>
+            弹出选择窗体前事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.#ctor">
+            <summary>
+            实例化一个DataGview 可以在工具箱 找到
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.RegMouseRightSel">
+            <summary>
+            注册鼠标右键点选
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetRowIndexAt(System.Int32)">
+            <summary>
+            获取鼠标处的行
+            </summary>
+            <param name="mouseLocation_Y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.addSql(System.String,System.String)">
+            <summary>
+            为列显示名添加一个查询
+            </summary>
+            <param name="sql">服务端的查询sql</param>
+            <param name="lname">列显示名</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.addSql(System.String,System.String,System.String)">
+            <summary>
+            为列显示名添加一个查询
+            </summary>
+            <param name="sql">服务端的查询sql</param>
+            <param name="lname">列显示名</param>
+            <param name="v">对应的值</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.addSql(System.String,System.String,System.String,System.String)">
+            <summary>
+            为列显示名添加一个查询
+            </summary>
+            <param name="sql">服务端的查询sql</param>
+            <param name="lname">列显示名</param>
+            <param name="v">对应的值</param>
+            <param name="ps">参数</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.addSql(YtWinContrl.com.datagrid.SelSQL)">
+            <summary>
+            为列显示名添加一个查询
+            </summary>
+            <param name="s">SelSQL</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.addSql(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            为列显示名添加一个查询
+            </summary>
+            <param name="sql">服务端的查询sql</param>
+            <param name="lname">列显示名</param>
+            <param name="v">值</param>
+            <param name="isAlert">是否提示</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.RemoveSql(System.String)">
+            <summary>
+            移除与列名绑定的SQL
+            </summary>
+            <param name="lname"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.editSql(System.String,System.String)">
+            <summary>
+            编辑指定列名的sql
+            </summary>
+            <param name="sql">服务端的查询sql</param>
+            <param name="lname">列显示名</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetSql(System.String)">
+            <summary>
+            获取与列名绑定的查询
+            </summary>
+            <param name="lname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getColIndex(System.String)">
+            <summary>
+            按列显示名获取列索引
+            </summary>
+            <param name="headText">列显示名</param>
+            <returns>索引</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setFocus(System.Int32,System.Int32)">
+            <summary>
+             设置焦点
+            </summary>
+            <param name="rowIndex">行索引</param>
+            <param name="colIndex">列索引</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setFocus(System.Int32,System.String)">
+            <summary>
+            设置焦点
+            </summary>
+            <param name="rowIndex">行索引</param>
+            <param name="headText">列显示名</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.editRowView(System.Windows.Forms.DataGridViewRow,System.Windows.Forms.DataGridViewRow)">
+            <summary>
+            将DataGridViewRow 的值按列的显示名称复制到选中的行
+            </summary>
+            <param name="row"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.editRowView(System.Windows.Forms.DataGridViewRow)">
+            <summary>
+            将DataGridViewRow 的值按列的显示名称复制到选中的行
+            </summary>
+            <param name="row"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.EditValue(System.Windows.Forms.DataGridViewRow,System.String,System.Object)">
+            <summary>
+            编辑指定行的指定列的值
+            </summary>
+            <param name="row"></param>
+            <param name="dataname"></param>
+            <param name="v"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.EditValue(System.String,System.Object)">
+            <summary>
+            编辑当前行指定列的值
+            </summary>
+            <param name="dataname"></param>
+            <param name="v"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetValue(System.Windows.Forms.DataGridViewRow,System.String)">
+            <summary>
+            获取指定行的指定列的数据
+            </summary>
+            <param name="row"></param>
+            <param name="dataname"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetValue(System.String)">
+            <summary>
+            获取指定列的数据
+            </summary>
+            <param name="dataname"></param>
+            <param name="v"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setRowValue(System.Windows.Forms.DataGridViewRow,System.String,System.Object)">
+            <summary>
+            按显示名称设置指定的行单元格的值
+            </summary>
+            <param name="r">DataGridViewRow</param>
+            <param name="headText">列的显示名称</param>
+            <param name="obj">值</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setRowValue(System.Windows.Forms.DataGridViewRow,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            设置指定行的值
+            </summary>
+            <param name="r">DataGridViewRow</param>
+            <param name="pa">参数</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setRowValue(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            设置当前行的值
+            </summary>
+            <param name="pa"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.AddNewRow">
+            <summary>
+            添加新行
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.setValue(System.String,System.Object)">
+            <summary>
+            按显示名称设置选中行单元格的值
+            </summary>
+            <param name="headText"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.jsBds(System.String)">
+            <summary>
+            按列的显示名计算当前行的表达式的值
+            </summary>
+            <param name="bds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.jsBds(System.String,System.Boolean)">
+            <summary>
+            按列的显示名计算表达式的值
+            </summary>
+            <param name="bds">是否计算所有行</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getRowValue(System.Windows.Forms.DataGridViewRow,System.String)">
+            <summary>
+            获取指定行列的值
+            </summary>
+            <param name="r">指定行</param>
+            <param name="headText">显示列名</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getRowValue(System.String)">
+            <summary>
+            获取当前行的列的值
+            </summary>
+            <param name="headText">显示列名</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.Sum(System.String)">
+            <summary>
+            对指定的列求和
+            </summary>
+            <param name="headText">求和的列的显示名</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.Sum(System.String,System.String,System.String)">
+            <summary>
+            按指定某列中的值求另外一列的和
+            </summary>
+            <param name="headText">待求和的列的值</param>
+            <param name="thHead">带比较的列的值</param>
+            <param name="tjv">比较的值</param>
+            <returns>decimal</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.isExist(System.String,System.String)">
+            <summary>
+            指定列的值是否已经存在；
+            </summary>
+            <param name="cn">列的显示名称</param>
+            <param name="v">值</param>
+            <returns>true 存在 false 不存在</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getRowData(System.Windows.Forms.DataGridViewRow)">
+            <summary>
+            得到指定行的数据
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getRowData">
+            <summary>
+            得到当前行的数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetDataTableHeadText">
+            <summary>
+            将数据按标题列转化为DataTable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetRowData">
+            <summary>
+            得到当前行的数据
+            </summary>
+            <returns>DataRow</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.BindData(System.Data.DataTable)">
+            <summary>
+            断开式绑定数据 绑定后与DataTable无关
+            </summary>
+            <param name="dt">DataTable</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.BindData(System.Data.DataTable,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            断开式绑定数据 绑定后与DataTable无关
+            </summary>
+            <param name="dt">DataTable</param>
+            <param name="defaults">默认的值</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.AddRow(System.Collections.Generic.Dictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            通过列的显示名称添加新行
+            </summary>
+            <param name="defaults">数据字典</param>
+            <param name="editIndex">默认选择的列的索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.AddRowByProName(System.Collections.Generic.Dictionary{System.String,System.Object},System.Int32)">
+            <summary>
+            通过属性添加一行
+            </summary>
+            <param name="defaults">数据字典</param>
+            <param name="editIndex">默认选择的列的索引</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.OnRowPostPaint(System.Windows.Forms.DataGridViewRowPostPaintEventArgs)">
+            <summary>
+            添加行号
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.ChangeRowBackColor(System.Windows.Forms.DataGridView,YtWinContrl.com.datagrid.ViewColorList)">
+            <summary>
+            通过表达式定义不同的显示颜色
+            </summary>
+            <param name="dg">DataGridView</param>
+            <param name="bds">ViewColorList</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.FormatBds(System.Windows.Forms.DataGridViewRow,System.String)">
+            <summary>
+            按列名计算表达式的值
+            </summary>
+            <param name="r">计算的行</param>
+            <param name="bds">表达式</param>
+            <returns>计算后的值</returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.getRowValueByHeadtext(System.Windows.Forms.DataGridViewRow,System.String)">
+            <summary>
+            按列名获取行的值
+            </summary>
+            <param name="r">待获取的行</param>
+            <param name="h">显示列名</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.EndEdit(System.Boolean)">
+            <summary>
+            结束编辑
+            </summary>
+            <param name="isSave">是否保存</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.reLoad(System.Object[])">
+            <summary>
+            加载服务端数据
+            </summary>
+            <param name="param">查询参数</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.reLoad(System.Object[],YtWinContrl.com.datagrid.SqlStr)">
+            <summary>
+            加载服务端数据
+            </summary>
+            <param name="param">查询参数</param>
+            <param name="sql">查询条件</param>
+        </member>
+        <member name="F:YtWinContrl.com.datagrid.DataGView.DbBind">
+            <summary>
+            是否D
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.BindingData(System.Data.DataTable)">
+            <summary>
+            绑定外部的DataTable数据
+            </summary>
+            <param name="BindDataTable"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetDataToXml">
+            <summary>
+            将grid数据转化为xml
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetDataToXmlByPro(System.String[])">
+            <summary>
+            按列的绑定属性名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetData">
+            <summary>
+            获取显示的全部数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.ExeTj">
+            <summary>
+            执行统计
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.RefreshSum">
+            <summary>
+            刷新求和数据
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.showHJRow(System.String)">
+            <summary>
+            显示合计行
+            </summary>
+            <param name="hname">待合计的显示列名多个用【,】分开</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.FilterData(System.String)">
+            <summary>
+            过滤数据
+            </summary>
+            <param name="exp">过滤条件</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.ClearData">
+            <summary>
+            清除当前数据
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.BindCheck(System.Windows.Forms.CheckBox,System.Int32)">
+            <summary>
+            绑定 全选全清按钮
+            </summary>
+            <param name="ck"></param>
+            <param name="columIndex"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.BindCheck(System.Windows.Forms.CheckBox)">
+            <summary>
+            绑定 全选全清按钮
+            </summary>
+            <param name="ck"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetCheckValue">
+            <summary>
+            获取选择的列的值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetCheckValue(System.Int32)">
+            <summary>
+            获取选择数据
+            </summary>
+            <param name="ColumnIndex">列索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.GetCheckValue(System.String)">
+            <summary>
+            获取选择数据
+            </summary>
+            <param name="Columnname">列名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.SetReadOnly(System.Windows.Forms.DataGridViewRow,System.Boolean,System.String[])">
+            <summary>
+            设置指定的行不可编辑
+            </summary>
+            <param name="row"></param>
+            <param name="readOnly"></param>
+            <param name="headText"></param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.DataGView.SetReadOnly(System.Boolean,System.String[])">
+            <summary>
+            设置指定列的只读属性
+            </summary>
+            <param name="readOnly"></param>
+            <param name="headText"></param>
+        </member>
+        <member name="E:YtWinContrl.com.datagrid.DataGView.addRowSel">
+            <summary>
+            添加选择行的事件
+            </summary>
+        </member>
+        <member name="E:YtWinContrl.com.datagrid.DataGView.LoadComplete">
+            <summary>
+            数据加载完成的事件
+            </summary>
+        </member>
+        <member name="E:YtWinContrl.com.datagrid.DataGView.selBefore">
+            <summary>
+            弹出选择窗体前事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="E:YtWinContrl.com.datagrid.DataGView.RowToXml">
+            <summary>
+            将数据转换为Xml时的事件
+            </summary>
+        </member>
+        <member name="E:YtWinContrl.com.datagrid.DataGView.AddRowToXml">
+            <summary>
+            添加新行的事件
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.TjFmtStr">
+            <summary>
+            统计字段
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.TjFormat">
+            <summary>
+            用于统计数据信息的格式化字符串 如 入院日期:
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.IsFillForm">
+            <summary>
+            判断是否把DG中的最后一行FILL整个窗体。默认值为True;
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.IsEditOnEnter">
+            <summary>
+            是否将DataGridView的编辑模式设为EditOnEnter。默认值为True
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.ChangeDataColumName">
+            <summary>
+            改变数据的列名
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.DataGView.IsPage">
+            <summary>
+            获取或设置是否分页
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtButton.GetSelRow">
+            <summary>
+            获取当前选中项的相关数据行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.YtButton.FomartFun">
+            <summary>
+            显示格式化事件
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtButton.reLoad(System.Object[])">
+            <summary>
+            加载选项数据
+            </summary>
+            <param name="param">查询参数</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtButton.SetSelectIndexBySearchText(System.String)">
+            <summary>
+            通过模糊检索指定的字符串来设置选择项
+            </summary>
+            <param name="s">搜索的字符串</param>
+            <returns>检索到则返回true 否则返回false</returns>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtButton.EnableEmpty">
+            <summary>
+            是否允许按DEL键清空已选择的选项 默认为 true;
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtButton.Value">
+            <summary>
+            获取或设置选项值
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.contrl.YtItemGroup">
+            <summary>
+            选项组 可以是 CheckBox 或者是 RadioButton
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtItemGroup.#ctor">
+            <summary>
+            实例
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtItemGroup.Value">
+            <summary>
+            获取或设置控件的值
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtItemGroup.ItemStr">
+            <summary>
+            选项字符串
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.Properties.Resources.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.tree.TreeGridView">
+            <summary>
+            Summary description for TreeGridView.
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.tree.TreeGridView.SelectedNode">
+            <summary>
+            获取当前选择的节点
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.YtTreeView.NodeGroup">
+            <summary>
+            分组条件
+            </summary>
+        </member>
+        <member name="F:YtWinContrl.com.YtTreeView.LoadLocalDb">
+            <summary>
+            读取本地数据库
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.YtTreeView.getSelectRow">
+            <summary>
+             获取选择的数据的行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.YtTreeView.addNewNode(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            新增一个节点 并按字典数据新增一行
+            </summary>
+            <param name="id"></param>
+            <param name="t"></param>
+            <param name="param"></param>
+        </member>
+        <member name="P:YtWinContrl.com.YtTreeView.NoNodeTag">
+            <summary>
+            底层节点标志 这段名称,值
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.RowToXmlEvent.IsValid">
+            <summary>
+            验证成功！
+            </summary>
+        </member>
+        <member name="T:YtWinContrl.com.text.SplitWord">
+            实现的原理就是先将汉字转化成为内码，然后通过内码和拼音的对照来查找。 
+        </member>
+        <member name="M:YtWinContrl.com.text.SplitWord.GetChineseSpell(System.String)">
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.panel.LabelTree.Find(System.String)">
+            <summary>
+            通过标题查找指定的节点
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.ViewColorList">
+            <summary>
+            用于定义不同数据的不同显示颜色
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColorList.Create">
+            <summary>
+            创建一个颜色显示对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColorList.addColor(System.String,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            添加颜色
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+            <param name="f">不成立的颜色</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColorList.addColor(System.String,System.Drawing.Color)">
+            <summary>
+            添加颜色
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColorList.addColor(YtWinContrl.com.datagrid.ViewColor)">
+            <summary>
+            添加颜色
+            </summary>
+            <param name="c">ViewColor</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColorList.addColor(System.String,System.Drawing.Color,System.String)">
+            <summary>
+            添加颜色
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+            <param name="msg">不成立时的提示</param>
+            <returns></returns>
+        </member>
+        <member name="T:YtWinContrl.com.datagrid.ViewColor">
+            <summary>
+            定义数据行的显示颜色
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColor.#ctor(System.String,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            实例一个ViewColor对象
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+            <param name="f">不成立的颜色</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColor.#ctor(System.String,System.Drawing.Color)">
+            <summary>
+            实例一个ViewColor对象
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+        </member>
+        <member name="M:YtWinContrl.com.datagrid.ViewColor.#ctor(System.String,System.Drawing.Color,System.String)">
+            <summary>
+            实例一个ViewColor对象
+            </summary>
+            <param name="bds">表达式 通过列名来定义 比如 状态=1</param>
+            <param name="t">成立的颜色</param>
+            <param name="msg">提示信息</param>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.TjFiled">
+            <summary>
+            统计字段
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.TrueValue">
+            <summary>
+            成立的值
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.FalseValue">
+            <summary>
+            不成立的值
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.TrueNum">
+            <summary>
+            处理的行数
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.FalseNum">
+            <summary>
+            不成立的行数
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.Msg">
+            <summary>
+            不成立时的提示信息
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.Bds">
+            <summary>
+            计算表达式
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.Alert">
+            <summary>
+            提示信息
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.TrueColor">
+            <summary>
+            返回为真时显示的颜色
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.datagrid.ViewColor.FalseColor">
+            <summary>
+            返回false显示的颜色 一般设成 null
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtListView.GetSelectRow">
+            <summary>
+            获取选择的行的信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:YtWinContrl.com.contrl.YtListView.FormatData">
+            <summary>
+            数据格式事件
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtListView.AllowSort">
+            <summary>
+            是否允许排序
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.FormUtil.DyLen(System.Windows.Forms.Control,System.String,System.Int32)">
+            <summary>
+            长度判断
+            </summary>
+            <param name="control"></param>
+            <param name="msg"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.FormUtil.SetCheck(System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>
+            设置选择项
+            </summary>
+            <param name="c">包含选择项的容器</param>
+            <param name="v">设置的选项值</param>
+            <param name="isRidao">true 为RadioButton false 为CheckBox</param>
+        </member>
+        <member name="M:YtWinContrl.com.FormUtil.GetCheck(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            获取选择项的值
+            </summary>
+            <param name="c">包含选择项的容器</param>
+            <param name="isRidao">true 为RadioButton false 为CheckBox</param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.FormUtil.GetAgeByHz(System.String)">
+            <summary>
+            年龄转换
+            </summary>
+            <param name="age"></param>
+            <returns></returns>
+        </member>
+        <member name="T:YtWinContrl.com.ControlUtil">
+            <summary>
+            对form控件的一些操作
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.ReadOnly(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            设置指定控件下的所有控件的ReadOnly属性 当控件没有ReadOnly属性时 设置 Enabled属性
+            </summary>
+            <param name="control"></param>
+            <param name="readobly"></param>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.Clear(System.Windows.Forms.Control,System.String[])">
+            <summary>
+            清除指定控件下的所有控件的文本值
+            </summary>
+            <param name="superontrol"></param>
+            <param name="ids">排除项</param>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.GetSelectRadioValue(System.Windows.Forms.Control)">
+            <summary>
+            获取容器下的Radio的值
+            </summary>
+            <param name="superontrol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.RegKeyEnter(System.Windows.Forms.Form)">
+            <summary>
+            注册界面回车代替Tab事件
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.UnKeyEnter(System.Windows.Forms.Form)">
+            <summary>
+            注销界面回车代替Tab事件
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:YtWinContrl.com.ControlUtil.RegTreeRightSelNode(System.Windows.Forms.TreeView)">
+            <summary>
+            注册treeView 的鼠标右键选择节点功能
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtComboBox.GetSelRow">
+            <summary>
+            获取当前选中项的相关数据行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:YtWinContrl.com.contrl.YtComboBox.FomartFun">
+            <summary>
+            显示格式化事件
+            </summary>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtComboBox.reLoad(System.Object[])">
+            <summary>
+            加载选项数据
+            </summary>
+            <param name="param">查询参数</param>
+        </member>
+        <member name="M:YtWinContrl.com.contrl.YtComboBox.SetSelectIndexBySearchText(System.String)">
+            <summary>
+            通过模糊检索指定的字符串来设置选择项
+            </summary>
+            <param name="s">搜索的字符串</param>
+            <returns>检索到则返回true 否则返回false</returns>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtComboBox.EnableEmpty">
+            <summary>
+            是否允许按DEL键清空已选择的选项 默认为 true;
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtComboBox.Value">
+            <summary>
+            获取或设置选项值
+            </summary>
+        </member>
+        <member name="P:YtWinContrl.com.contrl.YtComboBox.ItemStr">
+            <summary>
+            选项字符串 例如 1,男;2,女
+            </summary>
+        </member>
+    </members>
+</doc>

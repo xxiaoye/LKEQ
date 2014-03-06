@@ -1,0 +1,18 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>http://hiscs.gzwsxxh.com:82/lkhis/|http://192.168.0.188/lkhis/|http://192.168.210.40/install/|http://192.168.210.40/lkhis/|http://hiscs.gzwsxxh.com:82/install/</PublishUrlHistory>
+    <InstallUrlHistory>
+    </InstallUrlHistory>
+    <SupportUrlHistory>http://hiscs.gzwsxxh.com:82/install|http://192.168.0.188/lkhis/|http://192.168.210.40/install/|http://199.199.199.4:82/his/install|http://192.168.0.12/install</SupportUrlHistory>
+    <UpdateUrlHistory>
+    </UpdateUrlHistory>
+    <BootstrapperUrlHistory>
+    </BootstrapperUrlHistory>
+    <FallbackCulture>zh-CN</FallbackCulture>
+    <VerifyUploadedFiles>true</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
+    <ErrorReportUrlHistory>
+    </ErrorReportUrlHistory>
+    <EnableSecurityDebugging>false</EnableSecurityDebugging>
+  </PropertyGroup>
+</Project>

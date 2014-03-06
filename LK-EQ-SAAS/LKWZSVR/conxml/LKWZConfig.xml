@@ -1,0 +1,1922 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<opts>
+    <!--物质类别起-->
+  <Opt id="ScanWZKind">
+    <!--<sql>select KINDCODE,SUPERCODE,KINDNAME,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? [Condition] </sql>-->
+    <sql>
+      <![CDATA[
+      select KINDCODE,SUPERCODE,KINDNAME,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="choscode"/>
+  </Opt>
+
+  <Opt id="CopyWZKindInfo">
+    <!--<sql>select KINDCODE,SUPERCODE,KINDNAME,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? [Condition] </sql>-->
+    <sql>
+      select KINDCODE,SUPERCODE,KINDNAME,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE=0
+    </sql>
+  </Opt>
+
+  <Opt id="FindWZKind">
+    <sql>
+      select KINDCODE,SUPERCODE,KINDNAME,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? [Condition] order by KINDCODE 
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FindWZKind_Code">
+    <sql>
+      <![CDATA[
+      select KINDCODE  from LKWZ.DICTWZKIND where SUPERCODE = ? order by KINDCODE desc]]>
+    </sql>
+    <Pa name="SUPERCODE"/>
+  </Opt>
+
+  <Opt id="WZKind_DelScan" sucMsg="使用过不能删除！" >
+    <sql>select KINDCODE FROM LKWZ.DICTWZ WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="WZKinddel_Find" sucMsg="使用过不能删除！" >
+    <sql>select IFUSE FROM LKWZ.DICTWZKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="CompareWZKindCode" sucMsg="编码重复！" >
+    <sql>select USERNAME FROM LKWZ.DICTWZKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="CompareWZKindName" sucMsg="名称重复！" >
+    <sql>select KINDNAME FROM LKWZ.DICTWZKIND WHERE  KINDNAME= ? and CHOSCODE=? </sql>
+    <Pa name="KINDNAME"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="UpdataCompareWZKindName" sucMsg="名称重复！" >
+    <sql>select KINDNAME FROM LKWZ.DICTWZKIND WHERE  KINDNAME= ? and CHOSCODE=? and KINDCODE !=?  </sql>
+    <Pa name="KINDNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SELECTCODE"/>
+  </Opt>
+  <Opt id="CompareWZKindUpCode" sucMsg="上级编码错误！" >
+    <sql>select SUPERCODE FROM LKWZ.DICTWZKIND WHERE  SUPERCODE= ? and CHOSCODE=? </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="CanStopWZKindInfo" >
+    <sql>select IFEND FROM LKWZ.DICTWZKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="StartorStopWZKindInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZKIND SET IFUSE=? WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>   
+
+  <Opt id="changeUpCodesIfEnd" >
+    <sql>
+      UPDATE  LKWZ.DICTWZKIND SET IFEND=0 WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="ifhavechildren" >
+    <sql>select KINDCODE FROM LKWZ.DICTWZKIND WHERE  SUPERCODE= ? and CHOSCODE=? </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="changeUpCodesIsEnd" >
+    <sql>
+      UPDATE  LKWZ.DICTWZKIND SET IFEND=1 WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="WZKindUpdata" >
+    <sql>
+      UPDATE  LKWZ.DICTWZKIND SET IFUSE=? ,KINDNAME=? ,PYCODE=? ,USERNAME=? ,RECDATE=? ,USERID=? ,MEMO=? ,WBCODE=?  ,IFEND=? ,SUPERCODE=? ,KINDCODE=? WHERE CHOSCODE = ? and KINDCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="KINDNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="USERID"/>
+    <Pa name="MEMO"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFEND"/>
+    <Pa name="SUPERCODE"/>  
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SELECTCODE"/>
+  </Opt>
+  <Opt id="WZKinddel" sucMsg="成功删除物资信息！" >
+    <sql>DELETE FROM LKWZ.DICTWZKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>  
+
+  <Opt id="WZKindSave" key="KINDNAME,CHOSCODE" table="LKWZ.DICTWZKIND">
+    <Pa name="KINDNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="USERNAME"/>
+    <Pa name="IFUSE"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE" fkey="true"/>
+    <Pa name="USERID"/>
+    <Pa name="MEMO"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFEND"/>
+    <Pa name="SUPERCODE"/>
+    <Pa name="KINDCODE"/>
+  </Opt>
+     <!--物质类别止-->
+    <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+      
+    <!--厂商管理始-->
+  <Opt id="WZSupply_Scan">
+    <sql>
+      <![CDATA[
+      select SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZSUPPLY where CHOSCODE=0 or CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindHisInfoDict">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =302 
+    </sql>
+  </Opt>
+
+  <Opt id="SaveChangShangInfo" key="SUPPLYID" table="LKWZ.DICTWZSUPPLY">
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="QYDM"/>
+    <Pa name="FRDB" />
+    <Pa name="UNITPROPERTY"/>
+    <Pa name="UNITBANK"/>
+    <Pa name="BANKACCOUNT"/>
+    <Pa name="ADDRESS"/>
+    <Pa name="RELMAN"/>
+    <Pa name="RELPHONE"/>
+    <Pa name="POST"/>
+    <Pa name="FAX"/>
+    <Pa name="JYXKZ"/>
+    <Pa name="YYZZ"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  
+  <Opt id="UpdataChangShangInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZSUPPLY SET SUPPLYNAME=? ,PYCODE=? ,WBCODE=? ,QYDM=? ,FRDB=? ,UNITPROPERTY=? ,UNITBANK=?  ,BANKACCOUNT=? ,ADDRESS=? ,RELMAN=? ,RELPHONE=? ,POST=? ,FAX=? ,JYXKZ=?,YYZZ=? ,IFFACTORY=? ,IFSUPPLY=? ,IFUSE=? ,MEMO=? ,USERID=? ,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and SUPPLYID= ? 
+    </sql>
+                                                                                                                                                                                                                                              
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="QYDM"/>
+    <Pa name="FRDB" />
+    <Pa name="UNITPROPERTY"/>
+    <Pa name="UNITBANK"/>
+    <Pa name="BANKACCOUNT"/>
+    <Pa name="ADDRESS"/>
+    <Pa name="RELMAN"/>
+    <Pa name="RELPHONE"/>
+    <Pa name="POST"/>
+    <Pa name="FAX"/>
+    <Pa name="JYXKZ"/>
+    <Pa name="YYZZ"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="SaveChangShangInfo_Name" sucMsg="名称重复！" >
+    <sql>select SUPPLYNAME FROM LKWZ.DICTWZSUPPLY WHERE  SUPPLYNAME= ? and CHOSCODE=?  </sql>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="UpdataChangShangInfo_Name" sucMsg="名称重复！" >
+    <sql>select SUPPLYNAME FROM LKWZ.DICTWZSUPPLY WHERE  SUPPLYNAME= ? and CHOSCODE=? and SUPPLYID !=?  </sql>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="DelChangShangInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKWZ.WZINMAIN WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelChangShangInfo_Use2" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKWZ.WZINDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelChangShangInfo_Use3" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKWZ.DICTWZDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelChangShangInfo_Use4" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKWZ.WZSTOCKDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  
+  
+  
+  <Opt id="IfChoscodeIsZero">
+    <sql>select SUPPLYID FROM LKWZ.DICTWZSUPPLY WHERE  SUPPLYID= ? and CHOSCODE=0 </sql>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="DelChangShangInfo" sucMsg="成功删除厂商信息！" >
+    <sql>DELETE FROM LKWZ.DICTWZSUPPLY WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindChangShangInfo">
+    <sql>
+      select SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZSUPPLY  where CHOSCODE = 0 or CHOSCODE=? [Condition] order by SUPPLYID
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="StartOrStopChangShangInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZSUPPLY SET IFUSE=? WHERE  SUPPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FilterWZSupplyInfo">
+    <sql>
+      <![CDATA[
+      select SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZSUPPLY where CHOSCODE=0 or CHOSCODE = ? and IFFACTORY=? and IFSUPPLY=? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+  </Opt>
+  
+  <!--厂商管理止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--物资字典管理始-->
+
+  
+  <Opt id="ScanWZDict">
+    <sql>
+      <![CDATA[
+      select a.WZID, a.WZNAME ,a.KINDCODE ,a.COUNTCODE ,a.UNITCODE ,a.LSUNITCODE ,a.PRICE  ,a.CHANGERATE,a.LOWNUM ,a.HIGHNUM ,a.RATE ,a.IFNY ,a.IFUSE ,a.USERID,a.USERNAME ,a.RECDATE ,a.FARECODE ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.GG ,a.VALIDE,a.TXM ,a.MEMO,a.CHOSCODE,b.KINDNAME FROM  LKWZ.DICTWZ  a  left join  LKWZ.DICTWZKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE=? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FistScanWZDict">
+    <sql>
+      <![CDATA[
+    select a.WZID, a.WZNAME ,a.KINDCODE ,a.COUNTCODE ,a.UNITCODE ,a.LSUNITCODE ,a.PRICE  ,a.CHANGERATE,a.LOWNUM ,a.HIGHNUM ,a.RATE ,a.IFNY ,a.IFUSE ,a.USERID,a.USERNAME ,a.RECDATE ,a.FARECODE ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.GG ,a.VALIDE,a.TXM ,a.MEMO,a.CHOSCODE,b.KINDNAME FROM  LKWZ.DICTWZ  a  left join  LKWZ.DICTWZKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE = ? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FindWZDict">
+    <sql>
+      select a.WZID, a.WZNAME ,a.KINDCODE ,a.COUNTCODE ,a.UNITCODE ,a.LSUNITCODE ,a.PRICE  ,a.CHANGERATE,a.LOWNUM ,a.HIGHNUM ,a.RATE ,a.IFNY ,a.IFUSE ,a.USERID,a.USERNAME ,a.RECDATE ,a.FARECODE ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.GG ,a.VALIDE,a.TXM ,a.MEMO,a.CHOSCODE,b.KINDNAME FROM  LKWZ.DICTWZ  a  left join  LKWZ.DICTWZKIND b on a.KINDCODE=b.KINDCODE WHERE b.CHOSCODE = ? [Condition] order by a.WZID
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindHisInfoDict">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =302
+    </sql>
+  </Opt>
+  <Opt id="WZDict_KindCode">
+    <sql>
+      select KindCode,KINDNAME from LKWZ.DiCTWZKIND where IFEND=1 and CHOSCODE=?
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+  <Opt id="WZDict_CountCode">
+    <sql>
+      select COUNTCODE,COUNTNAME from LKWZ.DICTWZCOUNTKIND where  CHOSCODE=?
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+  <Opt id="WZDict_SingerCode">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =301
+    </sql>
+  </Opt>
+  <Opt id="WZDict_SmallestCode">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =301
+    </sql>
+  </Opt>
+
+  <Opt id="WZDict_SFXMBM">
+    <sql>
+      <![CDATA[
+      select 项目编码,项目名称,拼音码 from  his.项目表 where (项目编码 like ? or 项目名称 like ? or 拼音码 like ? ) and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="WZDict_SFXMBM_Valid">
+    <sql>
+      select 项目编码 from  his.项目表 where 项目编码= ? and CHOSCODE = ?
+    </sql>
+    <Pa name="SFXMBM"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveDictWzInfo" key="WZID" table="LKWZ.DICTWZ">
+    <Pa name="WZID"/>
+    <Pa name="WZNAME"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="COUNTCODE"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="LSUNITCODE" />
+    <Pa name="PRICE"/>
+    <Pa name="CHANGERATE"/>
+    <Pa name="LOWNUM"/>
+    <Pa name="HIGHNUM"/>
+    <Pa name="RATE"/>
+    <Pa name="IFNY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="FARECODE"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="SHORTNAME"/>
+    <Pa name="SHORTCODE"/>
+    <Pa name="ALIASNAME"/>
+    <Pa name="ALIASCODE"/>
+    <Pa name="GG"/>
+    <Pa name="VALIDE"/>
+    <Pa name="TXM"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="UpdataDictWzInfoInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZ SET WZNAME=? ,KINDCODE=? ,COUNTCODE=? ,UNITCODE=? ,LSUNITCODE=? ,PRICE=?  ,CHANGERATE=? ,LOWNUM=? ,HIGHNUM=? ,RATE=? ,IFNY=? ,IFUSE=? ,USERID=?,USERNAME=? ,RECDATE=? ,FARECODE=? ,PYCODE=? ,WBCODE=? ,SHORTNAME=? ,SHORTCODE=? ,ALIASNAME=?,ALIASCODE=? ,GG=? ,VALIDE=? ,TXM=? ,MEMO=?,CHOSCODE = ? WHERE CHOSCODE = ? and WZID= ?
+    </sql>   
+    <Pa name="WZNAME"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="COUNTCODE"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="LSUNITCODE" />
+    <Pa name="PRICE"/>
+    <Pa name="CHANGERATE"/>
+    <Pa name="LOWNUM"/>
+    <Pa name="HIGHNUM"/>
+    <Pa name="RATE"/>
+    <Pa name="IFNY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="FARECODE"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="SHORTNAME"/>
+    <Pa name="SHORTCODE"/>
+    <Pa name="ALIASNAME"/>
+    <Pa name="ALIASCODE"/>
+    <Pa name="GG"/>
+    <Pa name="VALIDE"/>
+    <Pa name="TXM"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WZID"/>
+  </Opt>
+
+  <Opt id="SaveDictWzInfo_Name" sucMsg="名称重复！" >
+    <sql>select WZNAME FROM LKWZ.DICTWZ WHERE  WZNAME= ? and CHOSCODE=?  </sql>
+    <Pa name="WZNAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="UpdataDictWzInfoInfo_Name" sucMsg="名称重复！" >
+    <sql>select WZNAME FROM LKWZ.DICTWZ WHERE  WZNAME= ? and CHOSCODE=? and WZID !=?  </sql>
+    <Pa name="WZNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WZID"/>
+  </Opt>
+
+  
+  <Opt id="DelWZDictInfo" sucMsg="成功删除物资信息！" >
+  <sql>DELETE FROM LKWZ.DICTWZ WHERE  WZID= ? and CHOSCODE=? </sql>
+  <Pa name="WZID"/>
+  <Pa name="CHOSCODE"/>
+</Opt>
+
+  <Opt id="DelWZDictDetailInfo" sucMsg="成功删除详细物资信息！" >
+    <sql>DELETE FROM LKWZ.DICTWZDETAIL WHERE  WZID= ? and CHOSCODE=? </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelWZDictInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select WZID FROM LKWZ.WZINDETAIL   WHERE  WZID= ? and CHOSCODE=? </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+    <Opt id="DelWZDictInfo_Use2" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZOUTDETAIL   WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use3" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZPDDETAIL    WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use4" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZPLANDETAIL   WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use5" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZSTOCK  WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use6" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZSTOCKDETAIL  WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use7" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZTJDETAIL   WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+    
+    <Opt id="DelWZDictInfo_Use8" sucMsg="已使用过，只能停用不能删除！" >
+      <sql>select WZID FROM LKWZ.WZUSEREC WHERE  WZID= ? and CHOSCODE=? </sql>
+      <Pa name="WZID"/>
+      <Pa name="CHOSCODE"/>
+    </Opt>
+ 
+  <Opt id="StartOrStopWZDictInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZ SET IFUSE=? WHERE  WZID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FilterWZDictInfo">
+    <sql>
+      <![CDATA[
+        select a.WZID, a.WZNAME ,a.KINDCODE ,a.COUNTCODE ,a.UNITCODE ,a.LSUNITCODE ,a.PRICE  ,a.CHANGERATE,a.LOWNUM ,a.HIGHNUM ,a.RATE ,a.IFNY ,a.IFUSE ,a.USERID,a.USERNAME ,a.RECDATE ,a.FARECODE ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.GG ,a.VALIDE,a.TXM ,a.MEMO,a.CHOSCODE,b.KINDNAME FROM  LKWZ.DICTWZ  a  left join  LKWZ.DICTWZKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE like ? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <!--物资字典管理细表-->
+
+
+  <Opt id="SaveWZDictDetailInfo" key="WZID" table="LKWZ.DICTWZDETAIL">
+    <Pa name="WZID"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="IFSUPPLY"/>
+  </Opt>
+  <Opt id="UpdataWZDictDetailInfo" >
+    <sql>
+      UPDATE  LKWZ.DICTWZDETAIL SET SUPPLYID=? ,SUPPLYNAME=? ,IFFACTORY=? ,IFSUPPLY=?   WHERE CHOSCODE = ? and WZID= ?
+    </sql>
+    
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WZID"/>
+  </Opt>
+
+  <Opt id="WZDictDetailInfo">
+    <sql>
+      <![CDATA[
+      select WZID, SUPPLYID ,SUPPLYNAME ,IFFACTORY ,IFSUPPLY ,CHOSCODE  FROM  LKWZ.DICTWZDETAIL WHERE WZID=? and CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="WZDictDetial_MakeID">
+    <sql>
+      select SUPPLYID,SUPPLYID  from LKWZ.DICTWZSUPPLY where CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="WZDictDetial_IfMake">
+    <sql>
+      select IFFACTORY  from LKWZ.DICTWZSUPPLY where CHOSCODE =?  and SUPPLYID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+  <Opt id="WZDictDetial_MakeName">
+    <sql>
+      select SUPPLYNAME  from LKWZ.DICTWZSUPPLY where CHOSCODE =?  and SUPPLYID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+  <Opt id="WZDictDetial_IfAfford">
+    <sql>
+      select IFSUPPLY  from LKWZ.DICTWZSUPPLY where CHOSCODE =?  and SUPPLYID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+  <Opt id="DelWZDictDetailInfo" sucMsg="成功删除详细物资信息！" >
+    <sql>DELETE FROM LKWZ.DICTWZDETAIL WHERE  WZID= ? and CHOSCODE=? </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="WZDict_SupplyID">
+    <sql>
+      <![CDATA[
+         select SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,CHOSCODE from LKWZ.DICTWZSUPPLY where (SUPPLYID like ? or SUPPLYNAME like ? or PYCODE like ? or WBCODE like ?)  and ( CHOSCODE=? or CHOSCODE=0)
+     
+      ]]>
+    </sql>
+   
+  </Opt>
+  <Opt id="WZDict_SupplyID_Vlid">
+    <sql>
+      select SUPPLYID from LKWZ.DICTWZSUPPLY where SUPPLYID = ?  and ( CHOSCODE=? or CHOSCODE=0)
+    </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <!--物资字典管理止-->
+  <!-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+  <!--业务管理-->
+  <!-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+  <!--物资盘点管理始-->
+  <Opt id="WZPanDian_WareCode">
+    <sql>
+      select WARECODE,WARENAME from LKWZ.DICTWZWARE where  CHOSCODE=?
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+
+  <Opt id="SaveWZPanDianInfo" key="PDID" table="LKWZ.WZPDMAIN">
+    <Pa name="PDID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="PDDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID" />
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="UpdataWZPanDianInfo" >
+    
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET WARECODE=?  ,MEMO=? ,USERID=? ,USERNAME=?   WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+   
+    <Pa name="WARECODE"/>  
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+  </Opt>
+  
+  <Opt id="ScanBusinessManag_WZPanDicanZ">
+    <sql>
+      <![CDATA[
+      select PDID, WARECODE ,PDDATE ,STATUS ,MEMO ,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,JZDATE ,JZUSERID ,JZUSERNAME,CHOSCODE ,INID ,OUTID FROM  LKWZ.WZPDMAIN WHERE  CHOSCODE = ?  order by PDID  desc ]]>
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelWZPanDianInfo" sucMsg="成功删除盘点信息！" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET STATUS=0  WHERE  PDID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelWZPanDianDetailInfo" sucMsg="成功删除盘点详细信息！" >
+    <sql>DELETE FROM LKWZ.WZPDDETAIL WHERE  PDID= ? and STOCKFLOWNO=? and CHOSCODE=? </sql>
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  
+  <!--<Opt id="IfSaveOrUpdataWZPanDianDetailInfo">
+    <sql>
+      select PDID from LKWZ.WZPDDETAIL where  PDID=? and STOCKFLOWNO=? and CHOSCODE=?
+  </sql>
+      <Pa name="PDID"/>
+      <Pa name="STOCKFLOWNO"/>
+      <Pa name="CHOSCODE"/>
+    
+  </Opt>-->
+
+
+  <Opt id="IfSaveOrUpdataWZPanDianDetailInfo">
+    <sql>
+      select YKNUM from LKWZ.WZPDDETAIL where  PDID=? and WZID=? and CHOSCODE=?
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="IfWZPanDianDetailHaveData">
+    <sql>
+      select PDID from LKWZ.WZPDDETAIL where  PDID=? and  CHOSCODE=?
+      <Pa name="PDID"/>
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+  
+<Opt id="WZPZ_FindWZStockDetailInfo">
+  <sql>
+
+
+    select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+    a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+    a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+    a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+    left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.WZSTOCK c on a.STOCKID=c.STOCKID  left join    LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+    where  a.FLOWNO=? and a.CHOSCODE=?
+  </sql>
+  <Pa name="STOCKFLOWNO"/>
+  <Pa name="CHOSCODE"/>
+</Opt>
+
+
+  <Opt id="WZPD_ScanStockDetail">
+    <sql>
+
+
+      <!--select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,c.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+      where a.WARECODE=? and a.CHOSCODE = ?  order by a.FLOWNO desc-->
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.FACTNUM,e.YKNUM  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZPDDETAIL e
+      on  (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)
+      where  a.FLOWNO in    ( select FLOWNO from LKWZ.WZSTOCKDETAIL a left join LKWZ.WZPDDETAIL e on
+      (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)  where
+      e.YKNUM is not null  and  a.CHOSCODE=? and a.WARECODE=?)
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+
+  </Opt>
+  <Opt id="WZPD_SearchStockDetail">
+    <sql>
+
+      
+      <!--select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      where a.WARECODE=? and a.CHOSCODE = ?  [Condition]  order by a.FLOWNO desc-->
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE 
+    where a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.WARECODE=? and a.CHOSCODE=? group by a.WZID)
+      [Condition]  order by   a.FLOWNO desc
+
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+   
+  </Opt>
+
+
+  <Opt id="WZPD_EditStockDetail">
+    <sql>
+      <!--select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.FACTNUM,e.YKNUM  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZPDDETAIL e on  (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)
+      where ( a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.WARECODE=? and a.CHOSCODE=? group by a.WZID)  or e.YKNUM is not null )
+      [Condition]  order by   a.FLOWNO desc-->
+
+      <!--where ( a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where a.CHOSCODE=?  and  a.WARECODE=?
+      and a.WZID not in (  select  a.WZID from   LKWZ.WZSTOCKDETAIL a left join LKWZ.WZPDDETAIL e on
+      (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)  where e.YKNUM is not null) group by a.WZID)  or
+      a.FLOWNO in( select  STOCKFLOWNO from LKWZ.WZPDDETAIL where  WZID in ( select  WZID from   LKWZ.WZPDDETAIL-->
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.FACTNUM,e.YKNUM  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZPDDETAIL e
+      on  (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)
+
+      where  ( a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where a.CHOSCODE=?  and a.WARECODE=?
+      and a.WZID not in (  select  a.WZID from   LKWZ.WZSTOCKDETAIL a left join LKWZ.WZPDDETAIL e on
+      (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)  where e.YKNUM is not null) group by a.WZID)  or
+      a.FLOWNO in   ( select a.FLOWNO from LKWZ.WZSTOCKDETAIL a left join LKWZ.WZPDDETAIL e on
+      (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)  where
+      e.YKNUM is not null  and  a.CHOSCODE=? and a.WARECODE=?))
+
+      [Condition] order by  a.FLOWNO desc
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="PDID"/>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+
+  </Opt>
+  <Opt id="SaveWZPanDianDetailInfo" key="PDID, STOCKFLOWNO" table="LKWZ.WZPDDETAIL">
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="STOCKID"/>
+    <Pa name="WZID"/>
+    <Pa name="STOCKNUM"/>
+    <Pa name="FACTNUM" />
+    <Pa name="YKNUM"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="PRICE"/>
+    
+    <Pa name="LSPRICE"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+
+    <Pa name="INDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID2" />
+    <Pa name="SUPPLYNAME2"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="WYWZPanDianDetailInfo">
+    <sql>
+      select PDID FROM  LKWZ.WZPDDETAIL WHERE PDID=? and STOCKFLOWNO=? and CHOSCODE = ?
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  
+  <Opt id="FindWZPandianMainInfo">
+    <sql>
+      select PDID, WARECODE ,PDDATE ,STATUS ,MEMO ,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,JZDATE ,JZUSERID ,JZUSERNAME,CHOSCODE ,INID ,OUTID FROM  LKWZ.WZPDMAIN WHERE CHOSCODE = ?  [Condition] order by PDID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="WZPanDianDetailInfo">
+    <sql>
+      select PDID, STOCKFLOWNO ,STOCKID ,WZID ,STOCKNUM ,FACTNUM ,YKNUM  ,LSUNITCODE,PRICE ,LSPRICE ,PH ,PZWH ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,WSXKZH,INDATE,MEMO,TXM,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKWZ.WZPDDETAIL WHERE PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="ShenHeWZPanDianInfo" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+ 
+    <Pa name="STATUS"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+
+  </Opt>
+  <Opt id="UpdataeWZPanDicanDetailInfo" >
+    <sql>
+      UPDATE  LKWZ.WZPDDETAIL SET FACTNUM=?  ,YKNUM=?   WHERE CHOSCODE = ? and PDID= ? and STOCKFLOWNO=?
+    </sql>
+
+    <Pa name="FACTNUM"/>
+    <Pa name="YKNUM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+    <Opt id="CancelShenHeWZPanDianInfo" >
+      <sql>
+        UPDATE  LKWZ.WZPDMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and PDID= ?
+      </sql>
+
+      <Pa name="STATUS"/>
+      <Pa name="SHUSERID"/>
+      <Pa name="SHUSERNAME"/>
+      <Pa name="SHDATE"/>
+      <Pa name="CHOSCODE" />
+      <Pa name="PDID"/>
+
+    </Opt>
+  <Opt id="JieZhuangWZPanDianInfo" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET STATUS=?  ,JZUSERID=?  ,JZUSERNAME=? ,JZDATE=? WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="JZUSERID"/>
+    <Pa name="JZUSERNAME"/>
+    <Pa name="JZDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+  
+  <Opt id="UpdataInDetailWZPanDianInfo_In" >
+    <sql>
+      UPDATE  LKWZ.WZPDDETAIL SET INDETAILNO=?  WHERE STOCKFLOWNO=? and CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="DETAILNO"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+  <Opt id="UpdataInDetailWZPanDianInfo_Out" >
+    <sql>
+      UPDATE  LKWZ.WZPDDETAIL SET OUTDETAILNO=?  WHERE STOCKFLOWNO=? and CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="DETAILNO"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+  <Opt id="UpdataInWZPanDianInfo_In" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET INID=?  WHERE  CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="INID"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="UpdataInWZPanDianInfo_Out" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET OUTID=?  WHERE  CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="OUTID"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+  
+  
+  
+  <Opt id="IfHavePriceOrLsPrice">
+    <sql>
+      select STOCKFLOWNO,LSUNITCODE,PRICE  FROM  LKWZ.WZSTOCKDETAIL WHERE PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  
+
+
+  <Opt id="GetIOIDWZPanDianInfoStockIn">
+    <sql>
+      select SYSVALUE FROM his.系统参数 WHERE ID=2105 
+    </sql>
+  </Opt>
+  <Opt id="GetPDIDWZPanDianInfoStockIn">
+    <sql>
+      <![CDATA[
+     select PDID, STOCKFLOWNO ,STOCKID ,WZID ,STOCKNUM ,FACTNUM ,YKNUM  ,LSUNITCODE,PRICE ,LSPRICE ,PH ,PZWH ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,WSXKZH,INDATE,MEMO,TXM,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKWZ.WZPDDETAIL WHERE YKNUM > 0 and  PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+        ]]>
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  
+  <Opt id="SaveWzInMainWZPanDianIn" key="INID" table="LKWZ.WZINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    
+    <Pa name="TOTALMONEY"/>
+    <Pa name="LSTOTALMONEY"/>
+    <Pa name="INDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveWzInDetailWZPanDianIn" key="DETAILNO" table="LKWZ.WZINDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="WZID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="LSMONEY"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+  <Opt id="iflsunitcodeInStockWZPanDianIn">
+    <sql>
+      select NUM FROM LKWZ.WZSTOCK WHERE WZID=? and CHOSCODE=? and WARECODE=?
+    </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+  <Opt id="iflsunitcodeInWZDictWZPanDianIn">
+    <sql>
+      select LSUNITCODE FROM LKWZ.DICTWZ WHERE WZID=? 
+    </sql>
+    <Pa name="WZID"/>
+  </Opt>
+  <Opt id="HsxsInWZDictWZPanDianIn">
+    <sql>
+      select CHANGERATE FROM LKWZ.DICTWZ WHERE WZID=?
+    </sql>
+    <Pa name="WZID"/>
+  </Opt>
+  <Opt id="IfExistInStockWZPanDianIn">
+    <sql>
+      select STOCKID FROM LKWZ.WZSTOCK WHERE WZID=? and CHOSCODE=? and WARECODE=?
+    </sql>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+  <Opt id="SaveInStockWZPanDianIn" key="STOCKID" table="LKWZ.WZSTOCK">
+    <Pa name="STOCKID" update="false"/>
+    <Pa name="WARECODE" />
+    <Pa name="WZID"/>
+    <Pa name="NUM"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+  
+  </Opt>
+  <Opt id="UpdataInStockWZPanDianIn" >
+    <sql>
+      UPDATE  LKWZ.WZSTOCK SET NUM=?  WHERE CHOSCODE = ? and STOCKID= ?
+    </sql>
+    <Pa name="NUM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+  </Opt>
+  <Opt id="SaveInStockDetailWZPanDianIn" key="FLOWNO" table="LKWZ.WZSTOCKDETAIL">
+      <Pa name="FLOWNO"/>
+      <Pa name="INID"/>
+      <Pa name="STOCKID"/>
+      <Pa name="WZID"/>
+      <Pa name="NUM"/>
+      <Pa name="WARECODE"/>
+
+      <Pa name="BEFORENUM" />
+      <Pa name="CHANGERATE"/>
+      <Pa name="OUTNUM"/>
+      <Pa name="LSUNITCODE"/>
+      <Pa name="PRICE"/>
+      <Pa name="LSPRICE"/>
+      <Pa name="PH"/>
+      <Pa name="PZWH"/>
+      <Pa name="SUPPLYID"/>
+      <Pa name="SUPPLYNAME" />
+      <Pa name="PRODUCTDATE"/>
+      <Pa name="VALIDDATE"/>
+      <Pa name="WSXKZH"/>
+      <Pa name="INDATE"/>
+      <Pa name="MEMO"/>
+      <Pa name="TXM"/>
+      <Pa name="RECIPECODE"/>
+      <Pa name="SHDH"/>
+      <Pa name="SUPPLYID2" />
+      <Pa name="SUPPLYNAME2"/>
+      <Pa name="CHOSCODE"/>
+
+
+    </Opt>
+  <Opt id="GetIOIDWZPanDianInfoStockOut">
+    <sql>
+      select SYSVALUE FROM his.系统参数 WHERE ID=2106
+    </sql>
+  </Opt>
+  <Opt id="GetPDIDWZPanDianInfoOut">
+    <sql>
+       <![CDATA[
+     select PDID, STOCKFLOWNO ,STOCKID ,WZID ,STOCKNUM ,FACTNUM ,YKNUM  ,LSUNITCODE,PRICE ,LSPRICE ,PH ,PZWH ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,WSXKZH,INDATE,MEMO,TXM,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKWZ.WZPDDETAIL WHERE YKNUM < 0 and  PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+        ]]>
+    
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="StockDetailInfoWZPanDianOut">
+    <sql>
+
+      select FLOWNO, INID ,WARECODE ,WZID ,STOCKID ,NUM ,BEFORENUM  ,LSUNITCODE,CHANGERATE,OUTNUM,PRICE ,LSPRICE ,PH ,PZWH ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,WSXKZH,INDATE,MEMO,TXM,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE FROM  LKWZ.WZSTOCKDETAIL WHERE   WARECODE=? and CHOSCODE = ?  and STOCKID = ?  and WZID = ?
+
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+    <Pa name="WZID"/>
+
+  </Opt>
+
+  <Opt id="SaveWzOutMainWZPanDianOut" key="OUTID" table="LKWZ.WZOUTMAIN">
+    <Pa name="OUTID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="LSTOTALMONEY"/>  
+    <Pa name="OUTDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveWzOutDetailWZPanDianOut" key="DETAILNO" table="LKWZ.WZOUTDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="OUTID" />
+    <Pa name="WZID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="INPRICE"/>
+    <Pa name="INMONEY"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+
+  <!--物资盘点管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  
+  <!--物资使用登记始-->
+
+
+
+  <Opt id="WZUseRec_Stock">
+    <sql>
+      select WARECODE,WARENAME  from LKWZ.DICTWZWARE where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="WZUseRec2_Stock">
+    <sql>
+      select WARECODE,WARENAME  from LKWZ.DICTWZWARE where IFRDWARE=1 and CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="ScanWZUseRec">
+    <sql>
+      <![CDATA[
+      select USENO, STOCKFLOWNO ,STOCKID ,WZID ,WZNAME ,WARECODE ,SICKCODE  ,SICKNAME,USENUM ,LSUNITCODE ,USEDATE ,SENDDEPTID ,RECVDEPTID ,PRICE,LSPRICE ,PH ,PZWH,SUPPLYID,SUPPLYNAME ,PRODUCTDATE ,VALIDDATE ,WSXKZH ,INDATE ,MEMO 
+      ,TXM ,RECIPECODE ,SHDH ,SUPPLYID2 ,SUPPLYNAME2 ,CHOSCODE  ,STATUS ,USERID ,USERNAME ,RECDATE FROM  LKWZ.WZUSEREC WHERE  CHOSCODE = ?  order by USENO desc ]]>
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="WZUseRec_ScanStockDetail">
+    <sql>
+
+      <!--select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,c.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+      where  a.cHosCode = ?  [Condition] order by a.FLOWNO desc-->
+
+        select a.FLOWNO,e.USENO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+        a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+        a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+        a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+        left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZUSEREC e
+        on  (a.FLOWNO= e.STOCKFLOWNO and e.SICKCODE=? )
+
+        where a.FLOWNO in( select  STOCKFLOWNO from   LKWZ.WZUSEREC  where CHOSCODE=? and WARECODE=?  ) 
+        order by  a.FLOWNO desc
+      </sql>
+      <Pa name="SICKCODE"/>
+      <Pa name="CHOSCODE"/>
+      <Pa name="WARECODE"/>
+
+    </Opt>
+  <Opt id="WZUseRec_SearchStockDetail">
+    <sql>
+
+      <!--select a.FLOWNO,a.WZID,b.WZNAME, c.NUM  ,a.WARECODE,a.STOCKID,a.BEFORENUM,a.STOCKID,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      where  a.cHosCode = ? and c.WARECODE=?  [Condition] order by a.FLOWNO desc-->
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      where a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.CHOSCODE=?  and  a.WARECODE=? group by a.WZID)
+      [Condition]  order by   a.FLOWNO desc
+    </sql>
+    
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+
+  </Opt>
+
+  <Opt id="WZUseRec_EditStockDetail">
+    <sql>
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.USENO,e.USENUM,e.SENDDEPTID,e.RECVDEPTID,e.USEDATE,f.名称 as SendName,g.名称
+      as ReciName from LKWZ.WZSTOCKDETAIL a left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      left join LKWZ.WZUSEREC e  on  (a.FLOWNO= e.STOCKFLOWNO and e.SICKCODE=? and e.STATUS='1' )  left join HIS.科室表 f on f.ID=e.SENDDEPTID
+      left join  HIS.科室表 g on g.ID=e.RECVDEPTID
+
+      where ( a.FLOWNO in ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where a.CHOSCODE=? and a.WARECODE=?
+      and a.WZID not in (  select  WZID from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?  ) group by a.WZID ) or a.FLOWNO in( select  STOCKFLOWNO from LKWZ.WZUSEREC
+      where  WZID in ( select  WZID from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?) and CHOSCODE=? and WARECODE=?   ) )
+      order by e.USENO desc
+
+
+
+      <!--where ( a.FLOWNO in ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where a.CHOSCODE=?  and a.WARECODE=?
+      and a.WZID not in (  select  WZID from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?  ) group by a.WZID ) or a.FLOWNO in( select  STOCKFLOWNO from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?  ) ) and e.STATUS=1
+      order by e.USENO desc-->
+    </sql>
+    <Pa name="SICKCODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+  
+  <Opt id="WZUseRec_KDKS">
+    <sql>
+      <![CDATA[
+      select 名称 as 开单科室 ,ID as 开单科室ID  from his.科室表 where (ID like ? or 名称 like ? or 类别 like ? ) and CHOSCODE = ?
+     ]]>
+    </sql> 
+  </Opt>
+
+
+  <Opt id="WZUseRec_JDKS">
+    <sql>
+      <![CDATA[
+      select 名称 as 接单科室 ,ID as 接单科室ID  from his.科室表 where ( ID like ? or 名称 like ? or 类别 like ? )  and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="WZUseRec_KDKS_Valid">
+    <sql>
+    select 名称,ID  from his.科室表 where ID = ?  and CHOSCODE = ?
+    </sql>
+    <Pa name="ID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="WZUseRec_KDKS_Valid1">
+    <sql>
+      select 名称,ID  from his.科室表 where 名称 = ?  and CHOSCODE = ?
+    </sql>
+    <Pa name="名称"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveWZUseRecInfo" key="USENO" table="LKWZ.WZUSEREC">
+    <Pa name="USENO"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="STOCKID"/>
+    <Pa name="WZID"/>
+    <Pa name="WZNAME"/>
+    <Pa name="WARECODE"/>
+    <Pa name="SICKCODE" />
+    <Pa name="SICKNAME"/>
+    <Pa name="USENUM"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="USEDATE"/>
+    <Pa name="SENDDEPTID"/>
+    <Pa name="RECVDEPTID"/>    
+    <Pa name="PRICE"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="INDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID2" />
+    <Pa name="SUPPLYNAME2"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STATUS"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+
+  </Opt>
+  
+  <Opt id="WZUseRec_ZYNum">
+    <sql>
+
+      select 病人姓名  from his.住院登记表 where CHOSCODE =?  and 住院号=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="住院号"/>
+  </Opt>
+  
+  <Opt id="UpdataWZUseRecInfo" >
+    <sql>
+      UPDATE  LKWZ.WZUSEREC SET USENUM=?, USEDATE=?  WHERE CHOSCODE = ? and USENO= ?
+    </sql>
+
+
+
+    <Pa name="USENUM"/>
+    <Pa name="USEDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="USENO"/>
+  </Opt>
+
+  <Opt id="updataInfo_Use_SeachNum" >
+    <sql>
+      SELECT  USENUM from  LKWZ.WZUSEREC  WHERE CHOSCODE = ? and USENO= ?
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+    <Pa name="USENO"/>
+  </Opt>
+
+
+
+
+  <Opt id="ScanSelectWZUseRec">
+    <sql>
+      <![CDATA[
+      select USENO, STOCKFLOWNO ,STOCKID ,WZID ,WZNAME ,WARECODE ,SICKCODE  ,SICKNAME,USENUM ,LSUNITCODE ,USEDATE ,SENDDEPTID ,RECVDEPTID ,PRICE,LSPRICE ,PH ,PZWH,SUPPLYID,SUPPLYNAME ,PRODUCTDATE ,VALIDDATE ,WSXKZH ,INDATE ,MEMO 
+      ,TXM ,RECIPECODE ,SHDH ,SUPPLYID2 ,SUPPLYNAME2 ,CHOSCODE  ,STATUS ,USERID ,USERNAME ,RECDATE FROM  LKWZ.WZUSEREC WHERE USENO=? and CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="USENO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DeleteWZUseRecInfo" >
+    <sql>
+      UPDATE  LKWZ.WZUSEREC SET STATUS=0  WHERE CHOSCODE = ? and USENO= ?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="USENO"/>
+  </Opt>
+  
+  <Opt id="FindWZUseRecInfo">
+    <sql>
+      select USENO, STOCKFLOWNO ,STOCKID ,WZID ,WZNAME ,WARECODE ,SICKCODE  ,SICKNAME,USENUM ,LSUNITCODE ,USEDATE ,SENDDEPTID ,RECVDEPTID ,PRICE,LSPRICE ,PH ,PZWH,SUPPLYID,SUPPLYNAME ,PRODUCTDATE ,VALIDDATE ,WSXKZH ,INDATE ,MEMO
+      ,TXM ,RECIPECODE ,SHDH ,SUPPLYID2 ,SUPPLYNAME2 ,CHOSCODE  ,STATUS ,USERID ,USERNAME ,RECDATE FROM  LKWZ.WZUSEREC WHERE CHOSCODE = ?  [Condition] order by USENO desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="WZStockDetail_Add_Ye" key="FLOWNO" table="LKWZ.WZSTOCKDETAIL">
+    <Pa name="FLOWNO"/>
+    <Pa name="INID"/>
+    <Pa name="STOCKID"/>
+    <Pa name="WZID"/>
+    <Pa name="NUM"/>
+    <Pa name="WARECODE"/>
+    
+    <Pa name="BEFORENUM" />
+    <Pa name="CHANGERATE"/>
+    <Pa name="OUTNUM"/>
+    <Pa name="LSUNITCODE"/>
+    <Pa name="PRICE"/>
+    <Pa name="LSPRICE"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="INDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID2" />
+    <Pa name="SUPPLYNAME2"/>
+    <Pa name="CHOSCODE"/>
+    
+
+  </Opt>
+  <Opt id="WZStock_Updata_Ye" >
+    <sql>
+      UPDATE  LKWZ.WZSTOCK  set NUM=?  where   CHOSCODE = ? and STOCKID= ? 
+    </sql>
+    <Pa name="NUM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+  </Opt>
+  <Opt id="FindNewNumofWZStockDetail" >
+    <sql>
+      SELECT  OUTNUM  FROM  LKWZ.WZSTOCKDETAIL  where   CHOSCODE = ? and STOCKID= ? order by OUTNUM desc
+    </sql>
+    
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+
+  </Opt>
+  <Opt id="findWZUseOutNumInfo" >
+    <sql>
+      SELECT  OUTNUM  FROM  LKWZ.WZSTOCKDETAIL  where   CHOSCODE = ? and WARECODE= ? and WZID=? order by FLOWNO desc
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="WZID"/>
+  </Opt>
+  
+  
+  <Opt id="findWZUseNumInfo" >
+    <sql>
+      SELECT  STOCKFLOWNO  FROM  LKWZ.WZUSEREC  where   CHOSCODE = ? and STOCKID= ?  order by STOCKFLOWNO desc
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+
+  </Opt>
+  <Opt id="findWZUseInNumInfo" >
+    <sql>
+      SELECT  NUM  FROM  LKWZ.WZSTOCK  where   CHOSCODE = ? and STOCKID= ? 
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+
+  </Opt>
+
+  
+  <Opt id="findWZUse_IfCanOut" >
+    <sql>
+      SELECT  SYSVALUE  FROM  HIS.系统参数  where  ID=2103 and  CHOSCODE = ? 
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="IfSaveOrUpdataWZUseDetailInfo">
+    <sql>
+      select NEWPRICE from LKWZ.WZTJDETAIL where  TJID=? and WZID=? and CHOSCODE=?
+    </sql>
+    <Pa name="TJID"/>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <!--物资使用登记止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--物资调价管理始-->
+
+  <Opt id="FindWZTiaoJiaMainInfo">
+    <sql>
+      select TJID, WARECODE ,TJDATE ,STATUS ,TJREASON,MEMO,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,SHINDATE ,SHINUSERID ,SHINUSERNAME,CHOSCODE FROM  LKWZ.WZTJMAIN WHERE CHOSCODE = ?  [Condition] order by TJID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  
+
+  <Opt id="SaveWZTiaoJiaMainInfo" key="TJID" table="LKWZ.WZTJMAIN">
+    <Pa name="TJID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="TJDATE"/>
+    <Pa name="TJREASON"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID" />
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="UpdataWZTiaoJiaInfo" >
+    <sql>
+      UPDATE  LKWZ.WZTJMAIN SET WARECODE=? ,TJREASON=?  ,MEMO=?  WHERE CHOSCODE = ? and TJID= ?
+    </sql>
+
+    <Pa name="WARECODE"/>
+    <Pa name="TJREASON"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="TJID"/>
+  </Opt>
+  <Opt id="DelWZTiaoJiaInfo" sucMsg="成功删除调价信息！" >
+    <sql>
+      UPDATE  LKWZ.WZTJMAIN SET STATUS=?  WHERE CHOSCODE = ? and TJID= ?
+    </sql>
+    <Pa name="STATUS"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="TJID"/>
+   
+  </Opt>
+
+  <Opt id="DelWZTiaoJiaDetailInfo" sucMsg="成功删除调价详细信息！" >
+    <sql>DELETE FROM LKWZ.WZTJDETAIL WHERE  TJID= ? and STOCKFLOWNO=? and CHOSCODE=? </sql>
+    <Pa name="TJID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="ShenHeWZTiaoJiaInfo" >
+    <sql>
+      UPDATE  LKWZ.WZTJMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and TJID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="TJID"/>
+
+  </Opt>
+  <Opt id="CancelShenHeWZTiaoJianInfo" >
+    <sql>
+      UPDATE  LKWZ.WZTJMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and TJID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="TJID"/>
+
+  </Opt>
+  <Opt id="SHInWZPanDianInfo" >
+    <sql>
+      UPDATE  LKWZ.WZTJMAIN SET STATUS=?  ,SHINUSERID=?  ,SHINUSERNAME=? ,SHINDATE=? WHERE CHOSCODE = ? and TJID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="SHINUSERID"/>
+    <Pa name="SHINUSERNAME"/>
+    <Pa name="SHINDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="TJID"/>
+
+  </Opt>
+  <Opt id="WZTiaoJia_ScanStockDetail">
+    <sql>
+
+      <!--select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+      where a.WARECODE=? and a.CHOSCODE = ?  order by a.FLOWNO desc-->
+
+
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.NEWPRICE  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZTJDETAIL e
+      on  (a.FLOWNO= e.STOCKFLOWNO and e.TJID=?)
+      where  a.FLOWNO in( select  STOCKFLOWNO from LKWZ.WZTJDETAIL
+      where  WZID in ( select  WZID from   LKWZ.WZTJDETAIL
+      where CHOSCODE=? and WARECODE=?) and CHOSCODE=? and WARECODE=?   ) 
+
+      [Condition] order by  a.FLOWNO desc
+
+    </sql>
+    <Pa name="TJID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+
+  <Opt id="WZTiaoJia_EditStockDetail">
+    <sql>
+      <!--select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.FACTNUM,e.YKNUM  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZPDDETAIL e on  (a.FLOWNO= e.STOCKFLOWNO and e.PDID=?)
+      where ( a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.WARECODE=? and a.CHOSCODE=? group by a.WZID)  or e.YKNUM is not null )
+      [Condition]  order by   a.FLOWNO desc-->
+      <!--where ( a.FLOWNO in ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where a.CHOSCODE=? and a.WARECODE=?
+      and a.WZID not in (  select  WZID from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?  ) group by a.WZID ) or a.FLOWNO in( select  STOCKFLOWNO from LKWZ.WZUSEREC
+      where  WZID in ( select  WZID from   LKWZ.WZUSEREC
+      where CHOSCODE=? and WARECODE=?) and CHOSCODE=? and WARECODE=?   ) )
+      order by e.USENO desc-->
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.NEWPRICE  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE left join LKWZ.WZTJDETAIL e
+      on  (a.FLOWNO= e.STOCKFLOWNO and e.TJID=?)
+
+      where ( a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.CHOSCODE=?  and a.WARECODE=?
+      and a.WZID not in (  select  a.WZID from   LKWZ.WZSTOCKDETAIL a left join LKWZ.WZTJDETAIL e on
+      (a.FLOWNO= e.STOCKFLOWNO and e.TJID=?)  where e.NEWPRICE is not null) group by a.WZID)  or
+       a.FLOWNO in( select  STOCKFLOWNO from LKWZ.WZTJDETAIL
+      where  WZID in ( select  WZID from   LKWZ.WZTJDETAIL
+      where CHOSCODE=? and WARECODE=?) and CHOSCODE=? and WARECODE=?   ) )
+
+      [Condition] order by  a.FLOWNO desc
+
+    </sql>
+    <Pa name="TJID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="TJID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+
+
+  <Opt id="ScanWZTiaoJiaInfo">
+    <sql>
+      select TJID, WARECODE ,TJDATE ,TJREASON,STATUS ,MEMO ,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,SHINDATE ,SHINUSERID ,SHINUSERNAME,CHOSCODE FROM  LKWZ.WZTJMAIN WHERE CHOSCODE = ? and  WARECODE=? order by TJID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+  <Opt id="ScanWZTiaoJiaDetailInfo">
+    <sql>
+      select TJID, STOCKFLOWNO ,WZID ,STOCKID,NUM ,UNITCODE ,NEWPRICE ,OLDPRICE  ,PH,PZWH ,SUPPLYID ,SUPPLYNAME ,PRODUCTDATE ,VALIDDATE ,WSXKZH,MEMO,TXM,INDATE,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE FROM  LKWZ.WZTJDETAIL WHERE TJID = ? and  CHOSCODE=? order by TJID desc
+
+    </sql>
+    <Pa name="TJID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveWZTiaoJiaDetailInfo" key="TJID, STOCKFLOWNO" table="LKWZ.WZTJDETAIL">
+    <Pa name="TJID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="WZID"/>
+    <Pa name="STOCKID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NEWPRICE" />
+    <Pa name="OLDPRICE"/>
+    <Pa name="PH"/>
+    <Pa name="PZWH"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="WSXKZH"/>
+    <Pa name="INDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID2" />
+    <Pa name="SUPPLYNAME2"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="UpdataeWZTiaoJiaDetailInfo" >
+    <sql>
+      UPDATE  LKWZ.WZTJDETAIL SET NEWPRICE=? WHERE STOCKFLOWNO=? and CHOSCODE = ? and TJID= ?
+    </sql>
+
+    <Pa name="NEWPRICE"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="TJID"/>
+  </Opt>
+  <Opt id="ChangPriceInWZStockDetailInfo" >
+    <sql>
+      UPDATE  LKWZ.WZSTOCKDETAIL SET LSPRICE=? WHERE FLOWNO=? and CHOSCODE = ? 
+    </sql>
+
+    <Pa name="NEWPRICE"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="GetWZNameInWZTiaoJiaDetail" >
+    <sql>
+      SELECT  WZNAME  FROM  LKWZ.DICTWZ  where   WZID = ? and CHOSCODE= ?
+    </sql>
+
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <!--物资调价管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--统计查询-->
+  
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--物资效期查询始-->
+  <Opt id="FindWZKindWZXiaoQi">
+    <sql>
+      <![CDATA[
+      select KINDNAME,KINDCODE,SUPERCODE,IFUSE  from LKWZ.DICTWZKIND where( KINDCODE like ? or KINDNAME like ? ) and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="FindWZDictWZXiaoQi">
+    <sql>
+      <![CDATA[
+      select WZNAME,WZID,SHORTNAME,ALIASNAME  from LKWZ.DICTWZ where (WZID like ? or WZNAME like ? or SHORTNAME like ? or ALIASNAME like ?  )and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="WZXiaoQi_SearchStockDetail">
+    <sql>
+
+      select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,c.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME,e.KINDCODE from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+      left join LKWZ.DICTWZ e on a.WZID=e.WZID
+      where a.WARECODE=? and a.CHOSCODE = ?  [Condition]  order by a.FLOWNO desc
+
+
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+
+
+  </Opt>
+  <!--物资效期查询止-->
+  
+  <!--物资库存预警始-->
+
+  <Opt id="SetWZStockAlarmStockInfo" >
+    <sql>
+      UPDATE  LKWZ.WZSTOCK SET NUMSX=?, NUMXX=?  WHERE STOCKID=? and CHOSCODE = ?
+    </sql>
+
+    <Pa name="NUMSX"/>
+    <Pa name="NUMXX"/>
+    <Pa name="STOCKID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <!--<Opt id="WZStockAlarmStockDetailInfo">
+    <sql>
+
+      select FLOWNO, INID ,WARECODE ,WZID ,STOCKID ,NUM ,BEFORENUM  ,LSUNITCODE,CHANGERATE,OUTNUM,PRICE ,LSPRICE ,PH ,PZWH ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,WSXKZH,INDATE,MEMO,TXM,RECIPECODE,SHDH,SUPPLYID2,SUPPLYNAME2,CHOSCODE FROM  LKWZ.WZSTOCKDETAIL WHERE  STOCKID = ?   and  CHOSCODE = ?
+
+    </sql>
+    <Pa name="STOCKID"/>-->
+    <!--<Pa name="CHOSCODE"/>-->
+    <Opt id="WZStockAlarmStockDetailInfo">
+      <sql>
+
+        select c.STOCKID,c.WARECODE,c.WZID,b.WZNAME,c.FLOWNO,c.INID,c.MEMO,c.BEFORENUM,c.LSUNITCODE,c.CHANGERATE,c.OUTNUM,c.LSPRICE,c.PRICE,c.PH,c.PZWH,c.SUPPLYID,c.SUPPLYNAME,c.PRODUCTDATE,c.VALIDDATE,c.WSXKZH,c.INDATE,c.TXM,c.RECIPECODE,c.SHDH,c.SUPPLYID2,c.SUPPLYNAME2,
+        c.CHOSCODE,c.NUM,d.WARENAME,e.KINDCODE from   LKWZ.WZSTOCKDETAIL c  left join LKWZ.DICTWZ b on c.WZID=b.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+        left join LKWZ.DICTWZ e on c.WZID=e.WZID
+        where c.STOCKID=? and c.CHOSCODE = ?  order by c.STOCKID desc
+      </sql>
+      <Pa name="STOCKID"/>
+      <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="ScanWZStockAlarmStockInfo">
+    <sql>
+
+      select a.STOCKID,  a.WARECODE , a.WZID , a.NUM , a.LSUNITCODE , a.NUMSX , a.NUMXX  , a.MEMO, a.CHOSCODE,b.WZNAME FROM  LKWZ.WZSTOCK a left join LKWZ.DICTWZ  b on a.WZID=b.WZID   WHERE  a.WARECODE = ?   and a.CHOSCODE = ?
+
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FindWZStockAlarmStockInfo">
+    <sql>
+    <![CDATA[
+    
+     
+ select a.STOCKID,  a.WARECODE , a.WZID , a.NUM , a.LSUNITCODE , a.NUMSX , a.NUMXX  , a.MEMO, a.CHOSCODE,b.WZNAME FROM  LKWZ.WZSTOCK a left join LKWZ.DICTWZ  b on a.WZID=b.WZID   WHERE    a.WARECODE = ?    and  a.CHOSCODE = ? and  [Condition] 
+       ]]>
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <!--物资库存预警止-->
+
+  <!--物资库存查询始-->
+
+
+  <Opt id="WZStockQuery_SearchStock">
+    <sql>
+
+      <!--select a.FLOWNO,a.WZID,b.WZNAME,c.NUM,a.WARECODE,a.STOCKID,a.BEFORENUM,a.STOCKID,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID left join LKWZ.WZSTOCK c on a.WZID=c.WZID
+      where  a.CHOSCODE = ? [Condition]-->
+
+      select c.STOCKID,c.WARECODE,c.WZID,b.WZNAME,c.NUMSX,c.NUMXX,c.MEMO,c.LSUNITCODE,
+      c.CHOSCODE,c.NUM,d.WARENAME,e.KINDCODE from   LKWZ.WZSTOCK c  left join LKWZ.DICTWZ b on c.WZID=b.WZID left join LKWZ.DICTWZWARE d on c.WARECODE=d.WARECODE
+      left join LKWZ.DICTWZ e on c.WZID=e.WZID
+      where c.WARECODE=? and c.CHOSCODE = ?  [Condition]  order by c.STOCKID desc
+
+
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+
+
+  </Opt>
+
+  <!--物资库存查询止-->
+
+
+
+
+  <!--显示字段转换-->
+
+
+  <Opt id="Chang_LSDanWeiBianMa">
+    <sql>
+      select DICID,DICDESC from 字典表 where Dicgrpid=301
+    </sql>
+  </Opt>
+
+  <Opt id="Chang_KaiJiedankeshi">
+    <sql>
+      select ID,名称 from 科室表 where CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <!--显示字段转换-->
+  
+  
+</opts>

@@ -1,0 +1,3071 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<opts>
+
+
+  <Opt id="ScanWZKind">
+    <!--<sql>select KINDCODE,SUPERCODE,KINDNAME,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? [Condition] </sql>-->
+    <sql>
+      <![CDATA[
+      select KINDCODE,SUPERCODE,KINDNAME,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKWZ.DICTWZKIND where CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="choscode"/>
+  </Opt>
+
+
+
+  <!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!--设备类别起-->
+  <Opt id="CopyEQKindInfo">
+    <!--<sql>select KINDCODE,SUPERCODE,KINDNAME,CHOSCODE from LKEQ.DICTWZKIND where CHOSCODE = ? [Condition] </sql>-->
+    <sql>
+      select KINDCODE,SUPERCODE,KINDNAME,PREFIX,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQKIND where CHOSCODE=0
+    </sql>
+  </Opt>
+
+  <Opt id="EQKindSave" key="KINDNAME,CHOSCODE" table="LKEQ.DICTEQKIND">
+    <Pa name="KINDNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="USERNAME"/>
+    <Pa name="IFUSE"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE" fkey="true"/>
+    <Pa name="USERID"/>
+    <Pa name="MEMO"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFEND"/>
+    <Pa name="SUPERCODE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="PREFIX"/>
+  </Opt>
+
+  <Opt id="ScanEQKind">
+
+    <sql>
+      <![CDATA[
+      select KINDCODE,SUPERCODE,KINDNAME,PREFIX,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQKIND where CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="choscode"/>
+  </Opt>
+
+  <Opt id="FindEQKind">
+    <sql>
+      select KINDNAME from LKEQ.DICTEQKIND where CHOSCODE = ? and ( KINDCODE like ? or KINDNAME like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by KINDCODE
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="KINDNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+  </Opt> 
+  
+  <Opt id="EQKind_DelScan" sucMsg="使用过不能删除！" >
+    <sql>select KINDCODE FROM LKEQ.DICTEQ WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQKinddel" sucMsg="成功删除物资信息！" >
+    <sql>DELETE FROM LKEQ.DICTEQKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQKinddel_Find" sucMsg="使用过不能删除！" >
+    <sql>select IFUSE FROM LKEQ.DICTEQKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="ifhavechildren" >
+    <sql>select KINDCODE FROM LKEQ.DICTEQKIND WHERE  SUPERCODE= ? and CHOSCODE=? </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="changeUpCodesIsEnd" >
+    <sql>
+      UPDATE  LKEQ.DICTEQKIND SET IFEND=1 WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="StartorStopEQKindInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQKIND SET IFUSE=? WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="CanStopEQKindInfo" >
+    <sql>select IFEND FROM LKEQ.DICTEQKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <!--<Opt id="FindEQKind">
+    <sql>
+      select KINDCODE,SUPERCODE,KINDNAME,PREFIX,PYCODE,WBCODE,IFEND,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQKIND where CHOSCODE = ? [Condition] order by KINDCODE
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>-->
+
+  <Opt id="CompareEQKindName" sucMsg="名称重复！" >
+    <sql>select KINDNAME FROM LKEQ.DICTEQKIND WHERE  KINDNAME= ? and CHOSCODE=? </sql>
+    <Pa name="KINDNAME"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="UpdataCompareEQKindName" sucMsg="名称重复！" >
+    <sql>select KINDNAME FROM LKEQ.DICTEQKIND WHERE  KINDNAME= ? and CHOSCODE=? and KINDCODE !=?  </sql>
+    <Pa name="KINDNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SELECTCODE"/>
+  </Opt>
+
+  <Opt id="CompareEQKindUpCode" sucMsg="上级编码错误！" >
+    <sql>select SUPERCODE FROM LKEQ.DICTEQKIND WHERE  SUPERCODE= ? and CHOSCODE=? </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="CompareEQKindCode" sucMsg="编码重复！" >
+    <sql>select USERNAME FROM LKEQ.DICTEQKIND WHERE  KINDCODE= ? and CHOSCODE=? </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQKindUpdata" >
+    <sql>
+      UPDATE  LKEQ.DICTEQKIND SET PREFIX=?,IFUSE=? ,KINDNAME=? ,PYCODE=? ,USERNAME=? ,RECDATE=? ,USERID=? ,MEMO=? ,WBCODE=?  ,IFEND=? ,SUPERCODE=? ,KINDCODE=? WHERE CHOSCODE = ? and KINDCODE=?
+    </sql>
+    <Pa name="PREFIX"/>
+    <Pa name="IFUSE"/>
+    <Pa name="KINDNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="USERID"/>
+    <Pa name="MEMO"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFEND"/>
+    <Pa name="SUPERCODE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SELECTCODE"/>
+  </Opt>
+
+  <Opt id="changeUpCodesIfEnd" >
+    <sql>
+      UPDATE  LKEQ.DICTEQKIND SET IFEND=0 WHERE  KINDCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindEQKind_Code">
+    <sql>
+      <![CDATA[
+      select KINDCODE  from LKEQ.DICTEQKIND where SUPERCODE = ? and CHOSCODE=? order by KINDCODE desc]]>
+    </sql>
+    <Pa name="SUPERCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <!--设备类别止-->
+
+
+  <!--厂商管理始-->
+  <Opt id="EQSupply_Scan">
+    <sql>
+      <![CDATA[
+      select TAXCODE, SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQSUPPLY where CHOSCODE=0 or CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQFindHisInfoDict">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =302
+    </sql>
+  </Opt>
+
+  <Opt id="EQSaveChangShangInfo" key="SUPPLYID" table="LKEQ.DICTEQSUPPLY">
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="QYDM"/>
+    <Pa name="FRDB" />
+    <Pa name="UNITPROPERTY"/>
+    <Pa name="UNITBANK"/>
+    <Pa name="BANKACCOUNT"/>
+    <Pa name="ADDRESS"/>
+    <Pa name="RELMAN"/>
+    <Pa name="RELPHONE"/>
+    <Pa name="POST"/>
+    <Pa name="FAX"/>
+    <Pa name="JYXKZ"/>
+    <Pa name="YYZZ"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="TAXCODE"/>
+  </Opt>
+
+
+  <Opt id="EQUpdataChangShangInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQSUPPLY SET TAXCODE=?, SUPPLYNAME=? ,PYCODE=? ,WBCODE=? ,QYDM=? ,FRDB=? ,UNITPROPERTY=? ,UNITBANK=?  ,BANKACCOUNT=? ,ADDRESS=? ,RELMAN=? ,RELPHONE=? ,POST=? ,FAX=? ,JYXKZ=?,YYZZ=? ,IFFACTORY=? ,IFSUPPLY=? ,IFUSE=? ,MEMO=? ,USERID=? ,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and SUPPLYID= ?
+    </sql>
+    <Pa name="TAXCODE"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="QYDM"/>
+    <Pa name="FRDB" />
+    <Pa name="UNITPROPERTY"/>
+    <Pa name="UNITBANK"/>
+    <Pa name="BANKACCOUNT"/>
+    <Pa name="ADDRESS"/>
+    <Pa name="RELMAN"/>
+    <Pa name="RELPHONE"/>
+    <Pa name="POST"/>
+    <Pa name="FAX"/>
+    <Pa name="JYXKZ"/>
+    <Pa name="YYZZ"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="EQSaveChangShangInfo_Name" sucMsg="名称重复！" >
+    <sql>select SUPPLYNAME FROM LKEQ.DICTEQSUPPLY WHERE  SUPPLYNAME= ? and CHOSCODE=?  </sql>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQUpdataChangShangInfo_Name" sucMsg="名称重复！" >
+    <sql>select SUPPLYNAME FROM LKEQ.DICTEQSUPPLY WHERE  SUPPLYNAME= ? and CHOSCODE=? and SUPPLYID !=?  </sql>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="EQDelChangShangInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKEQ.EQINMAIN WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQDelChangShangInfo_Use2" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKEQ.EQINDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQDelChangShangInfo_Use3" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKEQ.DICTEQDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQDelChangShangInfo_Use4" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select SUPPLYID FROM LKEQ.EQSTOCKDETAIL WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+  <Opt id="EQIfChoscodeIsZero">
+    <sql>select SUPPLYID FROM LKEQ.DICTEQSUPPLY WHERE  SUPPLYID= ? and CHOSCODE=0 </sql>
+    <Pa name="SUPPLYID"/>
+  </Opt>
+
+  <Opt id="EQDelChangShangInfo" sucMsg="成功删除厂商信息！" >
+    <sql>DELETE FROM LKEQ.DICTEQSUPPLY WHERE  SUPPLYID= ? and CHOSCODE=? </sql>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+
+
+
+  <Opt id="EQFindChangShangInfo">
+    <sql>
+      select TAXCODE,SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQSUPPLY  where CHOSCODE = 0 or CHOSCODE=? [Condition] order by SUPPLYID
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQStartOrStopChangShangInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQSUPPLY SET IFUSE=? WHERE  SUPPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FilterEQSupplyInfo">
+    <sql>
+      <![CDATA[
+      select  TAXCODE,SUPPLYID,SUPPLYNAME,PYCODE,WBCODE,QYDM,FRDB,UNITPROPERTY,UNITBANK,BANKACCOUNT,ADDRESS,RELMAN,RELPHONE,POST,FAX,JYXKZ,YYZZ,IFFACTORY,IFSUPPLY,IFUSE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQSUPPLY where CHOSCODE=0 or CHOSCODE = ? and IFFACTORY=? and IFSUPPLY=? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="IFFACTORY"/>
+    <Pa name="IFSUPPLY"/>
+  </Opt>
+
+  <!--厂商管理止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--物资单位管理启-->
+  <Opt id="FindEQUnit">
+    <sql>
+      <![CDATA[
+        select * from HIS.字典表 where DICGRPID=450 [Condition] order by DICID 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="FindEQUnits">
+    <sql>
+      <![CDATA[
+        select * from HIS.字典表 where DICGRPID=450 order by DICID 
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="SaveEQUnitInfo" key="DICGRPID,DICID" table="HIS.字典表">
+    <Pa name="DICGRPID" update="false" />
+    <Pa name="DICID" update="false"/>
+    <Pa name="DICDESC"/>
+    <Pa name="PYCODE"/>
+    <Pa name="FIXED"/>
+    <Pa name="DEFVALUE"/>
+  </Opt>
+  <Opt id="ModifyEQUnitIsRepeat">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DICDESC =? and DICID !=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICDESC"/>
+    <Pa name="DICID"/>
+  </Opt>
+  <Opt id="AddEQUnitIsRepeat">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DICDESC =? </sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICDESC"/>
+  </Opt>
+  <Opt id="SaveEQUnitInfo_seq">
+    <sql>select max(to_number(DICID)) from HIS.字典表 where DICGRPID=450 </sql>
+  </Opt>
+  <!--<Opt id="WZUnitIsUse">
+    <sql>select FIXED from HIS.字典表 where DICGRPID=? and DICID=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICID"/>
+  </Opt>
+  -->
+  <Opt id="EQUnitIsUse2">
+    <sql>select count(*) from LKEQ.DICTEQ where UNITCODE=? or LSUNITCODE=?</sql>
+    <Pa name="UNITCODE"/>
+    <Pa name="LSUNITCODE"/>
+  </Opt>
+  <Opt id="DelEQUnitInfo">
+    <sql>delete from HIS.字典表 where DICGRPID=? and DICID=?</sql>
+    <Pa name="DICGRPID"/>
+    <Pa name="DICID"/>
+  </Opt>
+  <Opt id="DefaultEQUnit">
+    <sql>select count(*) from HIS.字典表 where DICGRPID=? and DEFVALUE=1</sql>
+    <Pa name="DICGRPID"/>
+  </Opt>
+
+  <Opt id="SetDefaultEQUnit" >
+    <sql>UPDATE HIS.字典表 set DEFVALUE=0 where DICGRPID=? and DICID!=?</sql>
+  </Opt>
+  <!--物资单位管理止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--物资字典管理始-->
+
+
+  <Opt id="ScanEQDict">
+    <sql>
+      <![CDATA[
+      select a.EQID, a.EQNAME  ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.KINDCODE ,a.COUNTCODE,a.PRODUCTPLACE,a.GG ,a.XH ,a.UNITCODE ,a.WORKUNITCODE  ,a.IFJL,a.ZJTYPE ,a.ZJRATE  ,a.TXM ,a.IFUSE  ,a.MEMO,a.USERID,a.USERNAME ,a.RECDATE ,a.CHOSCODE,b.KINDNAME FROM  LKEQ.DICTEQ  a  left join  LKEQ.DICTEQKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE=? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FistScanEQDict">
+    <sql>
+      <![CDATA[
+    select a.EQID, a.EQNAME  ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.KINDCODE ,a.COUNTCODE,a.PRODUCTPLACE,a.GG ,a.XH ,a.UNITCODE ,a.WORKUNITCODE  ,a.IFJL,a.ZJTYPE ,a.ZJRATE  ,a.TXM ,a.IFUSE  ,a.MEMO,a.USERID,a.USERNAME ,a.RECDATE ,a.CHOSCODE,b.KINDNAME FROM  LKEQ.DICTEQ  a  left join  LKEQ.DICTEQKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE = ? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FindEQDict">
+    <sql>
+      select a.EQID, a.EQNAME  ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.KINDCODE ,a.COUNTCODE,a.PRODUCTPLACE,a.GG ,a.XH ,a.UNITCODE ,a.WORKUNITCODE  ,a.IFJL,a.ZJTYPE ,a.ZJRATE  ,a.TXM ,a.IFUSE  ,a.MEMO,a.USERID,a.USERNAME ,a.RECDATE ,a.CHOSCODE,b.KINDNAME FROM  LKEQ.DICTEQ  a  left join  LKEQ.DICTEQKIND b on a.KINDCODE=b.KINDCODE WHERE b.CHOSCODE = ? [Condition] order by a.EQID
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindHisInfoDict">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =302
+    </sql>
+  </Opt>
+  <Opt id="EQDict_KindCode">
+    <sql>
+      select KINDCODE,KINDNAME from LKEQ.DICTEQKIND where IFEND=1 and CHOSCODE=?
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+  <Opt id="EQDict_CountCode">
+    <sql>
+      select COUNTCODE,COUNTNAME from LKEQ.DICTEQCOUNTKIND where  CHOSCODE=?
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+  <Opt id="EQDict_SingerCode">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =450
+    </sql>
+  </Opt>
+  <Opt id="EQDict_WORKUNITCODE">
+    <sql>
+      select DICID,DICDESC from his.字典表 where DICGRPID =450
+    </sql>
+  </Opt>
+
+  <Opt id="EQDict_PRODUCTPLAC">
+    <sql>
+      <![CDATA[
+      select ADDRESS,SUPPLYNAME,PYCODE from  LKEQ.DICTEQSUPPLY where (SUPPLYNAME like ? or upper(WBCODE) like upper(?) or upper(PYCODE) like upper(?) ) and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="SaveDictEQInfo" key="EQID" table="LKEQ.DICTEQ">
+    <Pa name="EQID"/>
+    <Pa name="EQNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="SHORTNAME"/>
+    <Pa name="SHORTCODE"/>
+    <Pa name="ALIASNAME"/>
+    <Pa name="ALIASCODE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="COUNTCODE"/>
+    <Pa name="PRODUCTPLACE" />
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="WORKUNITCODE"/>
+    <Pa name="IFJL"/>
+    <Pa name="ZJTYPE"/>
+    <Pa name="ZJRATE"/>
+    <Pa name="TXM"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="UpdataDictEQInfoInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQ SET EQNAME=? ,PYCODE=? ,WBCODE=? ,SHORTNAME=? ,SHORTCODE=? ,ALIASNAME=?,ALIASCODE=?  ,KINDCODE=?,COUNTCODE=?  ,PRODUCTPLACE=? ,GG=? ,XH=?,UNITCODE=? ,WORKUNITCODE=? ,IFJL=?  ,ZJTYPE=? ,ZJRATE=?  ,TXM=? ,IFUSE=? ,MEMO=? ,USERID=?,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and EQID= ?
+    </sql>
+    <Pa name="EQNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="SHORTNAME"/>
+    <Pa name="SHORTCODE"/>
+    <Pa name="ALIASNAME"/>
+    <Pa name="ALIASCODE"/>
+    <Pa name="KINDCODE"/>
+    <Pa name="COUNTCODE"/>
+    <Pa name="PRODUCTPLACE" />
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="WORKUNITCODE"/>
+    <Pa name="IFJL"/>
+    <Pa name="ZJTYPE"/>
+    <Pa name="ZJRATE"/>
+    <Pa name="TXM"/>
+    <Pa name="IFUSE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="EQID"/>
+  </Opt>
+
+  <Opt id="SaveDictEQInfo_Name" sucMsg="名称重复！" >
+    <sql>select EQNAME FROM LKEQ.DICTEQ WHERE  EQNAME= ? and CHOSCODE=?  </sql>
+    <Pa name="EQNAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="UpdataDictEQInfoInfo_Name" sucMsg="名称重复！" >
+    <sql>select EQNAME FROM LKEQ.DICTEQ WHERE  EQNAME= ? and CHOSCODE=? and EQID !=?  </sql>
+    <Pa name="EQNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="EQID"/>
+  </Opt>
+
+
+  <Opt id="DelEQDictInfo" sucMsg="成功删除物资信息！" >
+    <sql>DELETE FROM LKEQ.DICTEQ WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQINDETAIL   WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use2" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQOUTDETAIL   WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use3" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQPDDETAIL    WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use4" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQPLANDETAIL   WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use5" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQSTOCK  WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use6" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQSTOCKDETAIL  WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use7" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQTJDETAIL   WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="DelEQDictInfo_Use8" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select EQID FROM LKEQ.EQUSEREC WHERE  EQID= ? and CHOSCODE=? </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="StartOrStopEQDictInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQ SET IFUSE=? WHERE  EQID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="FilterEQDictInfo">
+    <sql>
+      <![CDATA[
+        select a.EQID, a.EQNAME  ,a.PYCODE ,a.WBCODE ,a.SHORTNAME ,a.SHORTCODE ,a.ALIASNAME,a.ALIASCODE,a.KINDCODE ,a.COUNTCODE,a.PRODUCTPLACE,a.GG ,a.XH ,a.UNITCODE ,a.WORKUNITCODE  ,a.IFJL,a.ZJTYPE ,a.ZJRATE  ,a.TXM ,a.IFUSE  ,a.MEMO,a.USERID,a.USERNAME ,a.RECDATE ,a.CHOSCODE,b.KINDNAME FROM  LKEQ.DICTEQ  a  left join  LKEQ.DICTEQKIND b on a.KINDCODE=b.KINDCODE WHERE a.KINDCODE like ? and b.CHOSCODE = ?  ]]>
+    </sql>
+    <Pa name="KINDCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <!--物资字典管理止-->
+  <!--//////////////////////////////////////////////////////////////////////////////////////////////////////-->
+  <!--系统设置启-->
+
+  <Opt id="EQFindSysValue">
+    <sql>
+      select * from his.系统参数  where ID>=2200   and CHOSCODE=?  order by ID
+    </sql>
+  </Opt>
+  <Opt id="EQSaveSysValue" key="ID,CHOSCODE" table="his.系统参数">
+    <Pa name="SYSNAME"/>
+    <Pa name="SYSVALUE"/>
+    <Pa name="SYSEXPLAIN"/>
+    <Pa name="ID" insert="true" update="false"/>
+    <Pa name="CHOSCODE" insert="true" update="false"/>
+  </Opt>
+  <Opt id="EQInsertSysValue" >
+    <sql>
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?);
+      insert into his.系统参数 values ( ?,?,?,?,?)
+    </sql>
+  </Opt>
+  <Opt id="EQUpdateSysValue" >
+    <sql>
+      <![CDATA[
+      Update  his.系统参数 set SYSVALUE=? where ID=2200 and CHOSCODE=? ;
+      Update  his.系统参数 set SYSVALUE=? where ID=2201 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2202 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2203 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2204 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2205 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2206 and CHOSCODE=?;
+      Update  his.系统参数 set SYSVALUE=? where ID=2207 and CHOSCODE=?
+      ]]>
+    </sql>
+  </Opt>
+  <!--系统设置止-->
+
+  <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--维修类别始-->
+  <Opt id="EQFixKind_Scan">
+    <sql>
+      <![CDATA[
+      select REPAIRCODE, REPAIRNAME,PYCODE,WBCODE,IFUSE,IFDEFAULT,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQREPAIR where  CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQSaveFixKindInfo" key="REPAIRCODE, CHOSCODE" table="LKEQ.DICTEQREPAIR">
+    <Pa name="REPAIRCODE"/>
+    <Pa name="REPAIRNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFUSE"/>
+    <Pa name="IFDEFAULT"/>
+    <Pa name="MEMO" />
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="EQUpdataFixKindInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQREPAIR SET REPAIRNAME=? ,PYCODE=? ,WBCODE=? ,IFUSE=? ,IFDEFAULT=? ,MEMO=? ,USERID=?  ,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and REPAIRCODE= ?
+    </sql>
+
+    <Pa name="REPAIRNAME"/>
+    <Pa name="PYCODE"/>
+    <Pa name="WBCODE"/>
+    <Pa name="IFUSE"/>
+    <Pa name="IFDEFAULT"/>
+    <Pa name="MEMO" />
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="REPAIRCODE"/>
+  </Opt>
+
+
+  <Opt id="EQSaveFixKindInfo_REPAIRCODE"  >
+    <sql>select  REPAIRCODE FROM LKEQ.DICTEQREPAIR WHERE   CHOSCODE=?  order by REPAIRCODE desc</sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="EQSaveFixKindInfo_Name" sucMsg="名称重复！" >
+    <sql>select REPAIRNAME FROM LKEQ.DICTEQREPAIR WHERE  REPAIRNAME= ? and CHOSCODE=?  </sql>
+    <Pa name="REPAIRNAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQUpdataFixKindInfo_Name" sucMsg="名称重复！" >
+    <sql>select REPAIRNAME FROM LKEQ.DICTEQREPAIR WHERE  REPAIRNAME= ? and CHOSCODE=? and REPAIRCODE !=?  </sql>
+    <Pa name="REPAIRNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="REPAIRCODE"/>
+  </Opt>
+
+
+
+  <Opt id="EQDelFixKindInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select REPAIRCODE FROM LKEQ.EQCARDREPAIRREC WHERE  REPAIRCODE= ? and CHOSCODE=? </sql>
+    <Pa name="REPAIRCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelFixKindInfo" sucMsg="成功删除厂商信息！" >
+    <sql>DELETE FROM LKEQ.DICTEQREPAIR WHERE  REPAIRCODE= ? and CHOSCODE=? </sql>
+    <Pa name="REPAIRCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQFindFixKindInfo">
+    <sql>
+      select REPAIRCODE, REPAIRNAME,PYCODE,WBCODE,IFUSE,IFDEFAULT,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQREPAIR
+      where  CHOSCODE=? [Condition] order by REPAIRCODE
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQStartOrStopFixKindInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQREPAIR SET IFUSE=? WHERE  REPAIRCODE= ? and CHOSCODE=?
+    </sql>
+    <Pa name="IFUSE"/>
+    <Pa name="REPAIRCODE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQMostLarge_REPAIRCODE">
+    <sql>select REPAIRCODE FROM LKEQ.EQCARDREPAIRREC WHERE   CHOSCODE=?  order by REPAIRCODE desc</sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="EQIfOnlyOne_FixKindInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQREPAIR SET IFDEFAULT=0 WHERE  IFDEFAULT=1 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="EQIfHaveValue_FixKindInfo" >
+    <sql>
+      select * from  LKEQ.DICTEQREPAIR  WHERE  IFDEFAULT=1 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <!--维修类别止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--期间划分始-->
+  <Opt id="EQDateDivide_Scan">
+    <sql>
+      <![CDATA[
+      select DATEID, DATENAME,BEGINDATE,ENDDATE,MEMO,USERID,USERNAME,RECDATE,CHOSCODE from LKEQ.DICTEQDATE where  CHOSCODE = ? ]]>
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQSaveDateDivideInfo" key="DATEID, CHOSCODE" table="LKEQ.DICTEQDATE">
+    <Pa name="DATEID"/>
+    <Pa name="DATENAME"/>
+    <Pa name="BEGINDATE"/>
+    <Pa name="ENDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="EQUpdataDateDivideInfo" >
+    <sql>
+      UPDATE  LKEQ.DICTEQDATE SET DATENAME=? ,BEGINDATE=? ,ENDDATE=? ,MEMO=? ,USERID=? ,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and DATEID= ?
+    </sql>
+
+
+    <Pa name="DATENAME"/>
+    <Pa name="BEGINDATE"/>
+    <Pa name="ENDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DATEID"/>
+  </Opt>
+
+
+
+
+
+  <Opt id="EQSaveDateDivideInfo_ID"  >
+    <sql>select  DATEID FROM LKEQ.DICTEQDATE WHERE   CHOSCODE=?  order by DATEID desc</sql>
+    <Pa name="CHOSCODE"/>
+
+
+
+
+
+  </Opt>
+  <Opt id="EQSaveDateDivideInfo_Name" sucMsg="名称重复！" >
+    <sql>select DATENAME FROM LKEQ.DICTEQDATE WHERE  DATENAME= ? and CHOSCODE=?  </sql>
+    <Pa name="DATENAME"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQUpdataDateDivideInfo_Name" sucMsg="名称重复！" >
+    <sql>select DATENAME FROM LKEQ.DICTEQDATE WHERE  DATENAME= ? and CHOSCODE=? and DATEID !=?  </sql>
+    <Pa name="DATENAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DATEID"/>
+  </Opt>
+
+
+
+  <Opt id="EQDelDateDivideInfo_Use1" sucMsg="已使用过，只能停用不能删除！" >
+    <sql>select DATEID FROM LKEQ.EQCARDDEPREREC WHERE  DATEID= ? and CHOSCODE=? </sql>
+    <Pa name="DATEID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelDateDivideInfo" sucMsg="成功删除厂商信息！" >
+    <sql>DELETE FROM LKEQ.DICTEQDATE WHERE  DATEID= ? and CHOSCODE=? </sql>
+    <Pa name="DATEID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQIfIsTheDate_DateDivide_Add" >
+    <sql>select ENDDATE FROM LKEQ.DICTEQDATE WHERE  CHOSCODE=? order by DATEID desc  </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQIfIsTheDate_DateDivide_Add1" >
+    <sql>select ENDDATE FROM LKEQ.DICTEQDATE WHERE  CHOSCODE=?  and DATEID not in ? order by DATEID desc  </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <!--期间划分止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--设备请购始-->
+
+
+
+  <Opt id="SaveEQAskBuyInfo" key="APPLYID" table="LKEQ.EQAPPLYREC">
+    <Pa name="APPLYID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="EQID"/>
+    <Pa name="EQNAME"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="COUNTRY"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="APPLYNUM"/>
+    <Pa name="YJPRICE"/>
+    <Pa name="YJMONEY"/>
+    <Pa name="REASON"/>
+    <Pa name="XYFX"/>
+    <Pa name="PTTJ"/>
+    <Pa name="PLANDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="UpdataEQAskBuyInfo" >
+    <sql>
+      UPDATE  LKEQ.EQAPPLYREC SET DEPTID=? ,EQID=? ,EQNAME=? ,GG=? ,XH=? ,COUNTRY=?   ,UNITCODE=? ,APPLYNUM=? ,YJPRICE=? ,YJMONEY=? ,REASON=? ,XYFX=?,PTTJ=? ,PLANDATE=? ,STATUS=? ,MEMO=?,USERID=?  ,USERNAME=? ,RECDATE=?  WHERE CHOSCODE = ? and APPLYID= ?
+    </sql>
+
+    <Pa name="DEPTID"/>
+    <Pa name="EQID"/>
+    <Pa name="EQNAME"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="COUNTRY"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="APPLYNUM"/>
+    <Pa name="YJPRICE"/>
+    <Pa name="YJMONEY"/>
+    <Pa name="REASON"/>
+    <Pa name="XYFX"/>
+    <Pa name="PTTJ"/>
+    <Pa name="PLANDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="APPLYID"/>
+  </Opt>
+
+  <Opt id="DelEQAskBuyInfo" sucMsg="成功删除请购信息！" >
+    <sql>
+      UPDATE  LKEQ.EQAPPLYREC SET STATUS=?  WHERE  APPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="STATUS"/>
+    <Pa name="APPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQAskBuyInfo_SHCG"  >
+    <sql>
+      UPDATE  LKEQ.EQAPPLYREC SET SHNUM=? , RECDATE=?, SHDATE=?,SHUSERID=?,SHUSERNAME=?,STATUS=?  WHERE  APPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="SHNUM"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="STATUS"/>
+    <Pa name="APPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="EQAskBuyInfo_SHSB" >
+    <sql>
+      UPDATE  LKEQ.EQAPPLYREC SET STATUS=?  WHERE  APPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="STATUS"/>
+    <Pa name="APPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="Submit_EQAskBuyInfo"  >
+    <sql>
+      UPDATE  LKEQ.EQAPPLYREC SET STATUS=?  WHERE  APPLYID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="STATUS"/>
+    <Pa name="APPLYID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQUnitCodeAskBuy_Add">
+    <sql>
+      select DICID , DICDESC from His.字典表 where DICGRPID=450
+    </sql>
+  </Opt>
+
+  <Opt id="AskBuy_FindKSID">
+    <sql>select 名称,ID,类别,上级科室,代码 as 拼音码,农合名称 from HIS.科室表 where choscode= ? and (ID like ? or 名称 like ? or 代码 like ? )  </sql>
+  </Opt>
+
+  <Opt id="AskBuy_FindKSName">
+    <sql>select ID,名称 from HIS.科室表 where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQAskBuy_ConditionScan">
+    <sql>
+
+
+      select APPLYID, DEPTID, EQID, EQNAME, GG, XH, COUNTRY, UNITCODE, APPLYNUM, SHNUM, YJPRICE, YJMONEY, REASON, XYFX,
+      PTTJ, PLANDATE, STATUS, MEMO, USERID, USERNAME, RECDATE, SHDATE,
+      SHUSERID, SHUSERNAME, CHOSCODE, PLANID  from LKEQ.EQAPPLYREC  where   CHOSCODE=?
+      [Condition]  order by   APPLYID desc
+
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQAskBuy_Scan">
+    <sql>
+
+
+      select APPLYID,DEPTID,EQID,EQNAME,GG,XH,COUNTRY, UNITCODE,APPLYNUM,SHNUM,YJPRICE,YJMONEY,REASON,XYFX,
+      PTTJ,PLANDATE,STATUS,MEMO,USERID,USERNAME,RECDATE,SHDATE,
+      SHUSERID,SHUSERNAME,CHOSCODE,PLANID  from LKEQ.EQAPPLYREC where   CHOSCODE=? order by   APPLYID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQIDAskBuy_Add">
+    <sql>
+      select EQID, EQNAME ,PYCODE ,SHORTCODE from LKEQ.DICTEQ where choscode= ? and (EQID like ? or EQNAME like ? or upper(PYCODE) like upper(?) or SHORTCODE like ?)
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="CountryAskBuy_Add">
+    <sql>
+      select  DICDESC as 国别,DICID, PYCODE  from His.字典表 where DICGRPID=51 and (DICID like ? or DICDESC like ? or  upper(PYCODE) like upper(?))
+
+    </sql>
+
+
+  </Opt>
+  <Opt id="GetEQAskBuy_EQCountry">
+    <sql>
+      select DICID  from His.字典表 where DICGRPID=51 and DICDESC =?
+
+    </sql>
+    <Pa name="COUNTRY"/>
+
+  </Opt>
+
+  <Opt id="GetEQAskBuy_KSName">
+    <sql>
+      select  名称 from  HIS.科室表  where choscode= ? and ID=?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DEPTID"/>
+  </Opt>
+
+  <Opt id="EQIDOtherAskBuy_Add">
+    <sql>
+      select EQNAME ,GG ,XH,UNITCODE from LKEQ.DICTEQ where choscode= ? and EQID =?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="EQID"/>
+  </Opt>
+
+  <Opt id="EQFindPrice_AskBuy_Add">
+    <sql>
+      select YJPRICE from LKEQ.EQAPPLYREC where choscode= ? and EQID =?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="EQID"/>
+  </Opt>
+
+  <!--设备请购止-->
+
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--采购计划始-->
+
+
+  <Opt id="EQAskBuy_ConditionScan1">
+    <sql>
+
+
+      select distinct a.APPLYID, a.DEPTID, a.EQID, a.EQNAME, a.GG, a.XH, a.COUNTRY, a.UNITCODE, a.APPLYNUM, a.SHNUM, a.YJPRICE, a.YJMONEY, a.REASON, a.XYFX,
+      a.PTTJ, a.PLANDATE, a.STATUS, a.MEMO, a.USERID, a.USERNAME, a.RECDATE, a.SHDATE,
+      a.SHUSERID, a.SHUSERNAME, a.CHOSCODE, a.PLANID,b.TXM, (select c.NUM
+      from LKEQ.EQSTOCK c where c.WARECODE=? and a.EQID=c.EQID and c.CHOSCODE=? ) as NUM from LKEQ.EQAPPLYREC a left join LKEQ.DICTEQ b on a.EQID=b.EQID left join LKEQ.EQSTOCK c on a.EQID=c.EQID where   a.CHOSCODE=?
+      [Condition]  order by   a.APPLYID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQGetInWare_PurchasePlan">
+    <sql>
+      select WARENAME as 入库库房,WARECODE as 入库库房编码 ,PYCODE as 拼音码 from LKEQ.DICTEQWARE where IFUSE=1  and CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?) )order by WARENAME
+    </sql>
+  </Opt>
+
+
+  <Opt id="EQPurchasePlan_MainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKEQ.EQPLANMAIN where  cHosCode=? and WARECODE=? and PLANDATE >= ? and PLANDATE <= ? order by PLANID
+      ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="EQPurchasePlan_MainSearch1">
+    <sql>
+      <![CDATA[
+        select * from LKEQ.EQPLANMAIN where  cHosCode=? and WARECODE=?  order by PLANID
+      ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="EQWareIfall">
+    <sql>
+      select IFALL from LKEQ.DICTEQWARE where WARECODE=?
+    </sql>
+  </Opt>
+
+
+  <Opt id="EQPurchasePlan_GetInEQ0">
+    <sql>
+
+      <!--select a.EQNAME as 设备名称 ,a.EQID as 设备ID,a.UNITCODE as 单位编码,a.TXM as 条形码,(select c.NUM from LKEQ.EQSTOCK c where c.WARECODE=b.WARECODE and c.EQID=a.EQID ) as 当前库存数量    from LKEQ.DICTEQ a,LKWZ.DICTWZWARE b
+        where a.CHOSCODE=? and (a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and b.IFALL=1)  and (a.EQNAME like ? or a.EQID like ?  or a.PYCODE like ? or a.WBCODE like ?)-->
+      <![CDATA[
+        select a.EQNAME as 设备名称 ,a.EQID as 设备ID,a.UNITCODE as 单位编码,a.TXM as 条形码,a.GG as 规格,a.XH as 型号,(select c.NUM 
+  from LKEQ.EQSTOCK c where c.WARECODE=? and c.EQID=a.EQID and c.CHOSCODE=? ) as 当前库存数量  from LKEQ.DICTEQ a
+   where a.CHOSCODE=? and   (a.EQNAME like ? or a.EQID like ?  or  upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+     ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="EQPurchasePlan_GetInEQ">
+    <sql>
+      <!--select distinct a.WZNAME as 物资 ,a.WZID as 物资ID,a.UNITCODE as 单位编码,c.DICDESC as 单位0,a.PRICE as 采购单价0,a.LSUNITCODE as 最小单位编码,a.CHANGERATE as 换算系数,a.LOWNUM as 最低库存量,a.HIGHNUM as 最高库存量,a.VALIDE as 有效期0,a.RATE as 加价率,a.TXM as 条形码 from LKWZ.DICTWZ a,LKWZ.DICTWZWAREDETAIL b,HIS.字典表 c
+        where a.CHOSCODE=? and a.KINDCODE like concat(b.kindcode,'%') and a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and (a.WZNAME like ? or a.WZID like ?  or a.PYCODE like ? or a.WBCODE like ?) and (c.DICGRPID=301 and c.DICID=a.UNITCODE )-->
+
+      <![CDATA[
+        select distinct a.EQNAME as 设备名称 ,a.EQID as 设备ID,a.UNITCODE as 单位编码,a.TXM as 条形码,(select c.NUM 
+  from LKEQ.EQSTOCK c where c.WARECODE=? and c.EQID=a.EQID and c.CHOSCODE=? ) as 当前库存数量   from LKEQ.DICTEQ a , 
+  LKWZ.DICTWZWAREDETAIL b where a.CHOSCODE=?  and a.KINDCODE like concat(b.kindcode,'%')  and 
+  a.CHOSCODE=b.CHOSCODE  and   (a.EQNAME like ? or a.EQID like ?  or  upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="EQPurchasePlan_GetCompany">
+    <sql>
+      select SUPPLYNAME as 生产商 ,SUPPLYID ,PYCODE  from LKEQ.DICTEQSUPPLY  where CHOSCODE=?  and (SUPPLYID like ? or SUPPLYNAME like ? or upper(PYCODE) like upper(?) )
+    </sql>
+  </Opt>
+
+  <Opt id="EQPurchasePlan_GetCompany1">
+    <sql>
+      select SUPPLYNAME as 供应商 ,SUPPLYID ,PYCODE  from LKEQ.DICTEQSUPPLY  where CHOSCODE=?  and (SUPPLYID like ? or SUPPLYNAME like ? or upper(PYCODE) like upper(?))
+    </sql>
+  </Opt>
+
+  <Opt id="EQPurchasePlanDetailSearch">
+    <sql>
+
+      <!--select a.*,eq.EQNAME,eq.PRICE as wzPRICE,eq.UNITCODE as wzUNITCODE,eq.LSUNITCODE,eq.CHANGERATE,eq.RATE,
+      eq.LOWNUM,eq.HIGHNUM,eq.VALIDE,zd.DICDESC from LKWZ.WZPLANDETAIL a, LKWZ.DICTEQ eq where
+      a.planid=? and a.choscode=? and (a.wzid=wz.wzid) and order by rowno-->
+      <![CDATA[
+       select PLANID,ROWNO,APPLYID,EQID,EQNAME,GG,XH,COUNTRY,UNITCODE,NOWNUM,NUM,PRICE,MONEY,SCS,GYS,
+       MEMO,TXM,CHOSCODE,STOCKFLOWNO  from LKEQ.EQPLANDETAIL where PLANID=? and CHOSCODE=? order by ROWNO
+      ]]>
+    </sql>
+
+  </Opt>
+
+
+
+  <Opt id="SaveEQPlanMainInfo" key="PLANID" table="LKEQ.EQPLANMAIN">
+    <Pa name="PLANID" update="false"/>
+    <Pa name="WARECODE"/>
+    <Pa name="PLANTYPE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="PLANDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="SHINDATE"/>
+    <Pa name="SHINUSERID"/>
+    <Pa name="SHINUSERNAME"/>
+    <Pa name="INID"/>
+  </Opt>
+
+
+
+
+
+
+  <Opt id="EQGetROWNO">
+    <sql>
+      select ROWNO from LKEQ.EQPLANDETAIL where PLANID=? order by ROWNO desc
+    </sql>
+  </Opt>
+
+  <Opt id="SaveEQPlanDetailInfo" key="PLANID,ROWNO" table="LKEQ.EQPLANDETAIL">
+    <Pa name="PLANID" update="false"/>
+    <Pa name="ROWNO" update="false"/>
+    <Pa name="APPLYID"/>
+    <Pa name="EQID"/>
+    <Pa name="EQNAME"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="COUNTRY"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NOWNUM"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="SCS"/>
+    <Pa name="GYS"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+
+  <Opt id="DeleteEQPlanDetailInfo">
+    <sql>
+      delete from LKEQ.EQPLANDETAIL  where PLANID=? and ROWNO=?
+    </sql>
+    <Pa name="PLANID"/>
+    <Pa name="ROWNO" />
+  </Opt>
+
+
+  <!--采购计划止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--设备入库始-->
+
+  <Opt id="SaveEQInMainInfo" key="INID" table="LKEQ.EQINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="INVOICECODE"/>
+    <Pa name="INVOICEDATE"/>
+    <Pa name="INVOICEMONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="INDATE"/>
+    <Pa name="BUYUSER"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="CXDATE"/>
+    <Pa name="CXUSERID"/>
+    <Pa name="CXUSERNAME"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="EQSystemValue_2203">
+    <sql>
+      select SYSVALUE from his.系统参数 where id=2203 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQSystemValue_2204">
+    <sql>
+      select SYSVALUE from  his.系统参数 where id=2204 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+  <Opt id="EQIn_SearchEQStockNum">
+    <sql>
+      select STOCKID,NUM from LKEQ.EQSTOCK where  EQID=?
+    </sql>
+    <Pa name="EQID"/>
+  </Opt>
+
+  <Opt id="EQInMainInfo_CX">
+    <sql>
+      select *  from LKEQ.EQINMAIN where  CHOSCODE =? and INID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INID"/>
+  </Opt>
+
+  <Opt id="EQInDetailInfo_CX">
+    <sql>
+      select *  from LKEQ.EQINDETAIL where  CHOSCODE =? and INID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INID"/>
+  </Opt>
+
+  <Opt id="EQPurchasePlanDetailSearch_EQIn">
+    <sql>
+
+      <!--select a.*,eq.EQNAME,eq.PRICE as wzPRICE,eq.UNITCODE as wzUNITCODE,eq.LSUNITCODE,eq.CHANGERATE,eq.RATE,
+      eq.LOWNUM,eq.HIGHNUM,eq.VALIDE,zd.DICDESC from LKWZ.WZPLANDETAIL a, LKWZ.DICTEQ eq where
+      a.planid=? and a.choscode=? and (a.wzid=wz.wzid) and order by rowno-->
+
+      <!--select a.PLANID, a.ROWNO, a.APPLYID, a.EQID, a.EQNAME, a.GG, a.XH, a.COUNTRY, a.UNITCODE, a.NOWNUM, a.NUM, a.PRICE, a.MONEY, a.SCS, a.GYS,
+        a.MEMO, a.TXM, a.CHOSCODE, a.STOCKFLOWNO,b.WARECODE  from LKEQ.EQPLANDETAIL a left join  LKEQ.EQPLANMAIN b on a.PLANID=b.PLANID  where  b.WARECODE=? and b.STATUS=6 and  a.CHOSCODE=? order by  a.ROWNO-->
+      <![CDATA[
+      select a.PLANID, a.ROWNO, a.APPLYID, a.EQID, a.EQNAME, a.GG, a.XH, a.COUNTRY, a.UNITCODE, 
+ a.NOWNUM, a.NUM, a.PRICE, a.MONEY, a.SCS as SUPPLYNAME, a.GYS,
+        a.MEMO, a.TXM, a.CHOSCODE, a.STOCKFLOWNO,b.WARECODE,c.PRODUCTPLACE,d.SUPPLYID  from LKEQ.EQPLANDETAIL a left join 
+         LKEQ.EQPLANMAIN b on a.PLANID=b.PLANID left join  LKEQ.DICTEQ c on a.EQID=C.EQID left join LKEQ.DICTEQSUPPLY d on a.SCS=d.SUPPLYNAME  where  b.WARECODE=? and b.STATUS=6 and  a.CHOSCODE=? 
+         order by  a.ROWNO
+     ]]>
+    </sql>
+
+  </Opt>
+  <Opt id="EQIn_Ware">
+    <sql>
+      select WARECODE,WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQIn_IONAME">
+    <sql>
+      select  IOID ,IONAME from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=0  and OPFLAG=0 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQIn_DanWeiBianMa">
+    <sql>
+      select DICID,DICDESC from 字典表 where Dicgrpid=450
+    </sql>
+  </Opt>
+
+  <Opt id="EQInMainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKEQ.EQINMAIN where OPFLAG=0 and cHosCode=? and STATUS =?  and WARECODE =? and INDATE >= ? and INDATE <= ? order by INID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="EQInDetailSearch">
+    <sql>
+      select distinct a.*,eq.EQNAME,eq.UNITCODE,zd.DICDESC from LKEQ.EQINDETAIL a,LKEQ.DICTEQ eq,HIS.字典表 zd where a.INID=? and a.CHOSCODE=? and a.EQID=eq.EQID and (a.UNITCODE=zd.DICID and zd.DICGRPID=450) order by INID
+    </sql>
+    <Pa name="INID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQGetInWareWay">
+    <sql>
+      select IONAME as 入库方式,IOID as 入库方式编码 from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=0  and OPFLAG=0 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetInWare">
+    <sql>
+      select WARENAME as 入库库房,WARECODE as 入库库房编码 from LKEQ.DICTEQWARE where IFUSE=1   and CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?) )order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetInWareWayName">
+    <sql>
+      select IONAME,IOID from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=0  and OPFLAG=0 and CHOSCODE=? and IOID=? order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetInWareName">
+    <sql>
+      select WARENAME,WARECODE from LKEQ.DICTEQWARE where IFUSE=1  and CHOSCODE=? and  WARECODE=? order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetGYS">
+    <sql>
+      select SUPPLYNAME,SUPPLYID from LKEQ.DICTEQSUPPLY where IFUSE=1 and (SUPPLYNAME like ? or SUPPLYID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?)) order by SUPPLYNAME
+    </sql>
+  </Opt>
+
+  <!--<Opt id="UpdateWZInMain" key="INID" table="LKWZ.WZINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="TOTALMONEY" update="true"/>
+    <Pa name="LSTOTALMONEY" update="true"/>
+  </Opt>
+  <Opt id="IsHaveInDetail">
+    <sql>
+      select count(*) n from LKWZ.WZINDETAIL where INID=?
+    </sql>
+  </Opt>
+  <Opt id="GetOpFlag">
+    <sql>
+      select OPFLAG from LKWZ.DICTWZINOUT where IOID=?
+    </sql>
+  </Opt>-->
+
+
+
+
+  <Opt id="EQSearchDicEQInOut">
+    <sql>
+      select * from LKEQ.DICTEQINOUT where IOID=?
+    </sql>
+  </Opt>
+  <Opt id="EQGetRecipeNo">
+    <sql>
+      select count(RECIPECODE) from LKEQ.EQINMAIN where RECIPECODE like ?
+    </sql>
+  </Opt>
+  <Opt id="EQGetOutRecipeNo">
+    <sql>
+      select count(RECIPECODE) from LKEQ.EQOUTMAIN where RECIPECODE like ?
+    </sql>
+  </Opt>
+  <Opt id="EQWareIfall">
+    <sql>
+      select IFALL from LKEQ.DICTEQWARE where WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetInEQ0">
+    <sql>
+      <![CDATA[
+        select distinct a.EQNAME as 设备 ,a.EQID as 设备ID,a.TXM as 条形码,a.UNITCODE as 单位编码, a.CHOSCODE as 医疗机构编码  from LKEQ.DICTEQ a,LKEQ.DICTEQWARE b,HIS.字典表 c
+        where a.CHOSCODE=? and (a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and b.IFALL=1)  and (a.EQNAME like ? or a.EQID like ?  or  upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) and (c.DICGRPID=450 and c.DICID=a.UNITCODE )
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetInEQ">
+    <sql>
+      <![CDATA[
+        select distinct a.EQNAME as 设备 ,a.EQID as 设备ID,a.UNITCODE as 单位编码,c.DICDESC as 单位0,a.TXM as 条形码, a.CHOSCODE as 医疗机构编码 from LKEQ.DICTEQ a,LKEQ.DICTEQWAREDETAIL b,HIS.字典表 c
+        where a.CHOSCODE=? and a.KINDCODE like concat(b.kindcode,'%') and a.CHOSCODE=b.CHOSCODE and b.WARECODE=? and (a.EQNAME like ? or a.EQID like ?  or a.PYCODE like ? or a.WBCODE like ?) and (c.DICGRPID=450 and c.DICID=a.UNITCODE )
+      ]]>
+
+    </sql>
+  </Opt>
+
+
+
+
+  <Opt id="EQInDetailInfo_SupplyName">
+    <sql>
+      select SUPPLYNAME  from LKEQ.DICTEQSUPPLY where IFFACTORY=1 and  SUPPLYID=?
+    </sql>
+    <Pa name="SUPPLYID" />
+  </Opt>
+
+  <Opt id="EQGetSupply">
+    <sql>
+      select SUPPLYNAME as 生产厂家,SUPPLYID as 生产厂家ID from LKEQ.DICTEQSUPPLY where IFFACTORY=1 and  (CHOSCODE = 0 or CHOSCODE = ?) and (SUPPLYNAME like ? or SUPPLYID like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))
+    </sql>
+  </Opt>
+  <Opt id="SaveEQInDetailInfo" key="DETAILNO" table="LKEQ.EQINDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="EQID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+  <Opt id="DeleteEQInDetailInfo">
+    <sql>
+      delete from LKEQ.EQINDETAIL  where DETAILNO=?
+    </sql>
+    <Pa name ="DETAILNO"/>
+  </Opt>
+  <Opt id="EQGetInWareId">
+    <sql>
+      select INID from LKEQ.EQINDETAIL  where DETAILNO=?
+    </sql>
+  </Opt>
+
+
+  <Opt id="SaveEQStockInfo" key="STOCKID" table="LKEQ.EQSTOCK">
+    <Pa name="STOCKID" update="false"/>
+    <Pa name="WARECODE" />
+    <Pa name="DEPTID"/>
+    <Pa name="EQID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQIn_GetSTOCKTable">
+    <sql>
+      select * from LKEQ.EQSTOCK where CHOSCODE=? and EQID=? and WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="EQGetSTOCKId">
+    <sql>
+      select STOCKID from LKEQ.EQSTOCK where CHOSCODE=? and EQID=? and WARECODE=?
+    </sql>
+  </Opt>
+
+
+  <Opt id="SaveEQStockDetailInfo" key="FLOWNO" table="LKEQ.EQSTOCKDETAIL">
+    <Pa name="FLOWNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="WARECODE"/>
+    <Pa name="EQID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="STOCKID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="BEFORENUM"/>
+    <Pa name="OUTNUM"/>
+    <Pa name="CARDNUM"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="GHSUPPLYID"/>
+    <Pa name="GHSUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INDATE"/>
+  </Opt>
+  <!--设备入库止-->
+
+  <!--`````````````````````````````````````````````````````````````````````````````````````````````-->
+
+  <!--设备出库始-->
+
+  <Opt id="EQGetOutWareWayName">
+    <sql>
+      select IONAME,IOID from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=1  and OPFLAG=0 and CHOSCODE=? and IOID=? order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetOutWareName">
+    <sql>
+      select WARENAME,WARECODE from LKEQ.DICTEQWARE where IFUSE=1  and CHOSCODE=? and  WARECODE=? order by WARENAME
+    </sql>
+  </Opt>
+
+  <Opt id="findEQUse_IfCanOut" >
+    <sql>
+      SELECT  SYSVALUE  FROM  HIS.系统参数  where  ID=2207 and  CHOSCODE = ?
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+
+  <Opt id="EQOutGetFlowNum">
+    <sql>
+      <![CDATA[
+      (select s.FLOWNO as 库存流水号,(s.NUM-s.OUTNUM) as 数量,(s.NUM-s.OUTNUM) as 流水表数量,s.CHANGERATE as 换算系数,s.LSUNITCODE as 单位,(s.NUM-s.OUTNUM)*s.PRICE as 入库金额,(s.NUM-s.OUTNUM)*s.LSPRICE as 出库金额, s.PRICE as 入库单价,s.PRICE as 入库单价0,s.LSPRICE as 出库单价,s.LSPRICE as 出库单价0,s.PH as 生产批号,
+      s.PZWH as 批准文号,s.SUPPLYID as 生产厂家ID,s.SUPPLYNAME as 生产厂家名称,s.PRODUCTDATE as 生产日期,s.VALIDDATE as 有效期,s.WSXKZH as 卫生许可证号,
+      s.MEMO as 备注,s.TXM as 条形码
+      from LKWZ.WZSTOCKDETAIL s where s.WZID=? and s.WARECODE=? and (s.NUM-s.OUTNUM)>0 ) minus
+      (select s.FLOWNO as 库存流水号,(s.NUM-s.OUTNUM) as 数量,(s.NUM-s.OUTNUM) as 流水表数量,s.CHANGERATE as 换算系数,s.LSUNITCODE as 单位,(s.NUM-s.OUTNUM)*s.PRICE as 入库金额,(s.NUM-s.OUTNUM)*s.LSPRICE as 出库金额, s.PRICE as 入库单价,s.PRICE as 入库单价0,s.LSPRICE as 出库单价,s.LSPRICE as 出库单价0,s.PH as 生产批号,
+      s.PZWH as 批准文号,s.SUPPLYID as 生产厂家ID,s.SUPPLYNAME as 生产厂家名称,s.PRODUCTDATE as 生产日期,s.VALIDDATE as 有效期,s.WSXKZH as 卫生许可证号,
+      s.MEMO as 备注,s.TXM as 条形码
+      from LKWZ.WZSTOCKDETAIL s,LKWZ.WZOUTMAIN t,LKWZ.WZOUTDETAIL z where s.WZID=? and s.WARECODE=? and (s.NUM-s.OUTNUM)>0 and (t.OUTID=z.OUTID and (t.STATUS=1 or t.STATUS=2) and z.STOCKFLOWNO=s.FLOWNO))
+      ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="SaveEQOutMainInfo" key="OUTID" table="LKEQ.EQOUTMAIN">
+    <Pa name="OUTID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="TARGETWARECODE"/>
+    <Pa name="TARGETDEPTID"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="OUTDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="CXDATE"/>
+    <Pa name="CXUSERID"/>
+    <Pa name="CXUSERNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INID"/>
+
+  </Opt>
+
+
+  <Opt id="EQOut_SearchEQStockNum1">
+    <sql>
+      select STOCKID  ,NUM from LKEQ.EQSTOCK where  EQID=?
+    </sql>
+    <Pa name="EQID"/>
+  </Opt>
+
+  <Opt id="EQOut_SearchEQStockOutNum">
+    <sql>
+      select OUTNUM from LKEQ.EQSTOCKDETAIL where  FLOWNO=?
+    </sql>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+
+
+  <Opt id="EQOutMainInfo_CX">
+    <sql>
+      select *  from LKEQ.EQOUTMAIN where  CHOSCODE =? and OUTID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="OUTID"/>
+  </Opt>
+
+  <Opt id="EQOutDetailInfo_CX">
+    <sql>
+      select *  from LKEQ.EQOUTDETAIL where  CHOSCODE =? and OUTID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="OUTID"/>
+  </Opt>
+
+  <Opt id="EQPurchasePlanDetailSearch_EQIn">
+    <sql>
+
+      <!--select a.*,eq.EQNAME,eq.PRICE as wzPRICE,eq.UNITCODE as wzUNITCODE,eq.LSUNITCODE,eq.CHANGERATE,eq.RATE,
+      eq.LOWNUM,eq.HIGHNUM,eq.VALIDE,zd.DICDESC from LKWZ.WZPLANDETAIL a, LKWZ.DICTEQ eq where
+      a.planid=? and a.choscode=? and (a.wzid=wz.wzid) and order by rowno-->
+
+      <!--select a.PLANID, a.ROWNO, a.APPLYID, a.EQID, a.EQNAME, a.GG, a.XH, a.COUNTRY, a.UNITCODE, a.NOWNUM, a.NUM, a.PRICE, a.MONEY, a.SCS, a.GYS,
+        a.MEMO, a.TXM, a.CHOSCODE, a.STOCKFLOWNO,b.WARECODE  from LKEQ.EQPLANDETAIL a left join  LKEQ.EQPLANMAIN b on a.PLANID=b.PLANID  where  b.WARECODE=? and b.STATUS=6 and  a.CHOSCODE=? order by  a.ROWNO-->
+      <![CDATA[
+      select a.PLANID, a.ROWNO, a.APPLYID, a.EQID, a.EQNAME, a.GG, a.XH, a.COUNTRY, a.UNITCODE, 
+ a.NOWNUM, a.NUM, a.PRICE, a.MONEY, a.SCS as SUPPLYNAME, a.GYS,
+        a.MEMO, a.TXM, a.CHOSCODE, a.STOCKFLOWNO,b.WARECODE,c.PRODUCTPLACE,d.SUPPLYID  from LKEQ.EQPLANDETAIL a left join 
+         LKEQ.EQPLANMAIN b on a.PLANID=b.PLANID left join  LKEQ.DICTEQ c on a.EQID=C.EQID left join LKEQ.DICTEQSUPPLY d on a.SCS=d.SUPPLYNAME  where  b.WARECODE=? and b.STATUS=6 and  a.CHOSCODE=? 
+         order by  a.ROWNO
+     ]]>
+    </sql>
+
+  </Opt>
+  <Opt id="EQOut_Ware">
+    <sql>
+      select WARECODE,WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQOut_IONAME">
+    <sql>
+      select  IOID ,IONAME from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=1  and OPFLAG=0 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQIn_DanWeiBianMa">
+    <sql>
+      select DICID,DICDESC from 字典表 where Dicgrpid=450
+    </sql>
+  </Opt>
+
+  <Opt id="EQOutMainSearch">
+    <sql>
+      <![CDATA[
+        select * from LKEQ.EQOUTMAIN where OPFLAG=0 and cHosCode=? and STATUS =?  and WARECODE =? and OUTDATE >= ? and OUTDATE <= ? order by OUTID desc
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="EQOutDetailSearch">
+    <sql>
+      select distinct a.*,eq.EQNAME,eq.UNITCODE,zd.DICDESC from LKEQ.EQOUTDETAIL a,LKEQ.DICTEQ eq,HIS.字典表 zd where a.OUTID=? and a.CHOSCODE=? and a.EQID=eq.EQID and (a.UNITCODE=zd.DICID and zd.DICGRPID=450) order by OUTID
+    </sql>
+    <Pa name="OUTID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQGetOutWareWay">
+    <sql>
+      select IONAME as 出库方式,IOID as 出库方式编码 from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=1  and OPFLAG=0 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetOutWare">
+    <sql>
+      select WARENAME as 出库库房,WARECODE as 出库库房编码 from LKEQ.DICTEQWARE where IFUSE=1   and CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?) )order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetOutWareWayName">
+    <sql>
+      select IONAME,IOID from LKEQ.DICTEQINOUT where IFUSE=1 and IOFLAG=1  and OPFLAG=0 and CHOSCODE=? and IOID=? order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetOutWareName">
+    <sql>
+      select WARENAME,WARECODE from LKEQ.DICTEQWARE where IFUSE=1  and CHOSCODE=? and  WARECODE=? order by WARENAME
+    </sql>
+  </Opt>
+  <Opt id="EQGetGYS">
+    <sql>
+      select SUPPLYNAME,SUPPLYID from LKEQ.DICTEQSUPPLY where IFUSE=1 and (SUPPLYNAME like ? or SUPPLYID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?)) order by SUPPLYNAME
+    </sql>
+  </Opt>
+
+  <!--<Opt id="UpdateWZInMain" key="INID" table="LKWZ.WZINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="TOTALMONEY" update="true"/>
+    <Pa name="LSTOTALMONEY" update="true"/>
+  </Opt>
+  <Opt id="IsHaveInDetail">
+    <sql>
+      select count(*) n from LKWZ.WZINDETAIL where INID=?
+    </sql>
+  </Opt>
+  <Opt id="GetOpFlag">
+    <sql>
+      select OPFLAG from LKWZ.DICTWZINOUT where IOID=?
+    </sql>
+  </Opt>-->
+
+
+
+
+  <Opt id="EQSearchDicEQInOut">
+    <sql>
+      select * from LKEQ.DICTEQINOUT where IOID=?
+    </sql>
+  </Opt>
+
+  <Opt id="EQGetOutRecipeNo1">
+    <sql>
+      select count(RECIPECODE) from LKEQ.EQOUTMAIN where RECIPECODE like ?
+    </sql>
+  </Opt>
+  <Opt id="EQWareIfall">
+    <sql>
+      select IFALL from LKEQ.DICTEQWARE where WARECODE=?
+    </sql>
+  </Opt>
+  <Opt id="GetOutEQ0">
+    <sql>
+      <![CDATA[
+        select distinct a.EQNAME as 设备 ,a.EQID as 设备ID,a.UNITCODE as 单位编码 , b.GG as 规格 , b.FLOWNO as 库存流水号 ,c.NUM as 现有库存量,b.SUPPLYNAME as 生产厂家名称,b.VALIDDATE as 有效期,b.MEMO as 备注,b.TXM as 条形码,b.NUM as 入库数, b.OUTNUM as 出库数,b.PRICE as 单价,b.OTHERMONEY as 原运杂费, b.PRODUCTDATE as 生产日期 ,b.XH as 型号 , b.CD as 产地 , b.SUPPLYID as 生产厂家ID
+        from LKEQ.DICTEQ a left join LKEQ.EQSTOCKDETAIL b on a.eqid=b.eqid left join LKEQ.EQSTOCK c on a.EQID=c.EQID
+        left join  LKEQ.DICTEQWARE d on b.WARECODE=d.WARECODE where b.FLOWNO in  ( select Max(a.flowno)  from LKEQ.EQSTOCKDETAIL a where  a.CHOSCODE=? and a.WARECODE=?  group by a.EQID)
+        and c.NUM>0
+        and (a.CHOSCODE=b.CHOSCODE  and d.IFALL=1)  and (a.EQNAME like ? or a.EQID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetOutEQ01">
+    <sql>
+      <![CDATA[
+        select distinct a.EQNAME as 设备 ,a.EQID as 设备ID,a.UNITCODE as 单位编码 , b.GG as 规格 ,b.FLOWNO as 库存流水号 ,c.NUM as 现有库存量 ,b.SUPPLYNAME as 生产厂家名称,b.VALIDDATE as 有效期,b.MEMO as 备注,b.TXM as 条形码,b.NUM as 入库数,b.OUTNUM as 出库数,b.PRICE as 单价,b.OTHERMONEY as 原运杂费,b.PRODUCTDATE as 生产日期 , b.XH as 型号 , b.CD as 产地 , b.SUPPLYID as 生产厂家ID
+          from LKEQ.DICTEQ a left join LKEQ.EQSTOCKDETAIL b on a.eqid=b.eqid left join  LKEQ.EQSTOCK c on a.EQID=c.EQID
+       left join  LKEQ.DICTEQWARE d on b.WARECODE=d.WARECODE   where b.FLOWNO in  ( select Max(a.flowno)  from LKEQ.EQSTOCKDETAIL a where  a.CHOSCODE=? and a.WARECODE=?  group by a.EQID)
+         
+         and (a.CHOSCODE=d.CHOSCODE  and d.IFALL=1)  and (a.EQNAME like ? or a.EQID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetOutEQ1">
+    <sql>
+      <![CDATA[
+        select distinct a.EQNAME as 设备 ,a.EQID as 设备ID,a.UNITCODE as 单位编码 , b.GG as 规格 ,b.FLOWNO as 库存流水号 ,c.NUM as 现有库存量 ,b.SUPPLYNAME as 生产厂家名称,b.VALIDDATE as 有效期,b.MEMO as 备注,b.TXM as 条形码,b.NUM as 入库数,b.OUTNUM as 出库数,b.PRICE as 单价,b.OTHERMONEY as 原运杂费,b.PRODUCTDATE as 生产日期 , b.XH as 型号 , b.CD as 产地 , b.SUPPLYID as 生产厂家ID
+          from LKEQ.DICTEQ a left join LKEQ.EQSTOCKDETAIL b on a.eqid=b.eqid left join  LKEQ.EQSTOCK c on a.EQID=c.EQID
+        left join  LKEQ.DICTEQWAREDETAIL d on b.WARECODE=d.WARECODE where b.FLOWNO in  ( select Max(a.flowno)  from LKEQ.EQSTOCKDETAIL a where  a.CHOSCODE=? and a.WARECODE=?  group by a.EQID)
+       and c.NUM>0   and a.KINDCODE like concat(d.kindcode,'%')
+      and (a.EQNAME like ? or a.EQID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+      ]]>
+
+    </sql>
+  </Opt>
+  <Opt id="GetOutEQ11">
+    <sql>
+      <![CDATA[
+        select distinct  a.EQNAME as 设备 ,a.EQID as 设备ID,a.UNITCODE as 单位编码 , b.GG as 规格 ,b.FLOWNO as 库存流水号 ,c.NUM as 现有库存量 ,b.SUPPLYNAME as 生产厂家名称,b.VALIDDATE as 有效期,b.MEMO as 备注,b.TXM as 条形码,b.NUM as 入库数,b.OUTNUM as 出库数,b.PRICE as 单价,b.OTHERMONEY as 原运杂费,  b.PRODUCTDATE as 生产日期 , b.XH as 型号 , b.CD as 产地 , b.SUPPLYID as 生产厂家ID
+          from LKEQ.DICTEQ a left join LKEQ.EQSTOCKDETAIL b on a.eqid=b.eqid left join LKEQ.EQSTOCK c on a.EQID=c.EQID
+       left join  LKEQ.DICTEQWAREDETAIL d on b.WARECODE=d.WARECODE where b.FLOWNO in  ( select Max(a.flowno)  from LKEQ.EQSTOCKDETAIL a where  a.CHOSCODE=? and a.WARECODE=?  group by a.EQID)
+       and a.KINDCODE like concat(d.kindcode,'%')
+        and (a.EQNAME like ? or a.EQID like ?  or upper(a.PYCODE) like upper(?) or upper(a.WBCODE) like upper(?)) 
+      ]]>
+
+    </sql>
+  </Opt>
+
+  <Opt id="GetOutEQ_StockFlow">
+    <sql>
+      <![CDATA[
+        select distinct   b.flowno as 库存流水号 ,c.NUM as 现有库存量,b.PRICE as 单价,b.SUPPLYNAME as 生产厂家名称,b.VALIDDATE as 有效期,b.MEMO as 备注,b.TXM as 条形码,b.OTHERMONEY as 原运杂费, b.GG as 规格 , b.PRODUCTDATE as 生产日期 , b.XH as 型号 , b.CD as 产地 , b.SUPPLYID as 生产厂家ID
+         ,b.NUM as 入库数,b.OUTNUM as 出库数  from  LKEQ.EQSTOCKDETAIL b  left join  LKEQ.EQSTOCK c on b.eqid=c.eqid
+        where  b.EQID=? and b.WARECODE=? and b.CHOSCODE=? order by b.FLOWNO desc      
+      ]]>
+    </sql>
+  </Opt>
+
+
+  <Opt id="GetOutEQ_StockNum">
+    <sql>
+      select NUM  from LKEQ.EQSTOCK where EQID=? and WARECODE=? and CHOSCODE=?
+    </sql>
+    <Pa name="EQID" />
+    <Pa name="WARECODE" />
+    <Pa name="CHOSCODE" />
+  </Opt>
+
+  <Opt id="EQInDetailInfo_SupplyName">
+    <sql>
+      select SUPPLYNAME  from LKEQ.DICTEQSUPPLY where IFFACTORY=1 and  SUPPLYID=?
+    </sql>
+    <Pa name="SUPPLYID" />
+  </Opt>
+
+  <Opt id="EQGetSupply">
+    <sql>
+      select SUPPLYNAME as 生产厂家,SUPPLYID as 生产厂家ID from LKEQ.DICTEQSUPPLY where IFFACTORY=1 and  (CHOSCODE = 0 or CHOSCODE = ?) and (SUPPLYNAME like ? or SUPPLYID like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))
+    </sql>
+  </Opt>
+  <Opt id="SaveEQOutDetailInfo" key="DETAILNO" table="LKEQ.EQOUTDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="OUTID" />
+    <Pa name="EQID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+
+
+  </Opt>
+  <Opt id="DeleteEQOutDetailInfo">
+    <sql>
+      delete from LKEQ.EQOUTDETAIL  where DETAILNO=?
+    </sql>
+    <Pa name ="DETAILNO"/>
+  </Opt>
+  <Opt id="EQGetInWareId">
+    <sql>
+      select INID from LKEQ.EQINDETAIL  where DETAILNO=?
+    </sql>
+  </Opt>
+
+
+  <Opt id="SaveEQStockInfo1" key="STOCKID" table="LKEQ.EQSTOCK">
+    <Pa name="STOCKID" update="false"/>
+    <Pa name="WARECODE" />
+    <Pa name="DEPTID"/>
+    <Pa name="EQID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQOut_GetSTOCKTable">
+    <sql>
+      select * from LKEQ.EQSTOCK where CHOSCODE=? and EQID=? and WARECODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="EQID"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+  <Opt id="EQGetOutNum">
+    <sql>
+      select OUTNUM from LKEQ.EQSTOCKDETAIL where  FLOWNO=?
+    </sql>
+    <Pa name="FLOWNO"/>
+  </Opt>
+
+
+  <Opt id="SaveEQStockDetailInfo1" key="FLOWNO" table="LKEQ.EQSTOCKDETAIL">
+    <Pa name="FLOWNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="WARECODE"/>
+    <Pa name="EQID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="STOCKID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="BEFORENUM"/>
+    <Pa name="OUTNUM"/>
+    <Pa name="CARDNUM"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="GHSUPPLYID"/>
+    <Pa name="GHSUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INDATE"/>
+  </Opt>
+  <!-->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+  <!--设备盘点管理始-->
+
+  <Opt id="EQPDDetailInfo_CX">
+    <sql>
+      select *  from LKEQ.EQPDDETAIL where  CHOSCODE =? and PDID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="EQPDMainInfo_CX">
+    <sql>
+      select *  from LKEQ.EQPDMAIN where  CHOSCODE =? and PDID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="ChongXiaoSucEQPanDianInfo" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET STATUS=?  ,CXUSERID=?  ,CXUSERNAME=? ,CXDATE=? WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="CXUSERID"/>
+    <Pa name="CXUSERNAME"/>
+    <Pa name="CXDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="EQPD_updataIndetailStockflow" >
+    <sql>
+      UPDATE  LKEQ.EQINDETAIL SET STOCKFLOWNO=?  WHERE DETAILNO=? and CHOSCODE = ? and EQID= ?
+    </sql>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="DETAILNO"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="EQID"/>
+  </Opt>
+
+  <Opt id="EQPDFind_WARE">
+    <sql>
+      select WARECODE,WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  
+  <Opt id="LKEQ_GetWare_ye">
+    <sql>
+      select WARENAME as 出库库房,WARECODE as 出库库房编码,PYCODE as 拼音码,WBCODE as 五笔码 from LKEQ.DICTEQWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+  
+  <Opt id="EQPDFind_WARENAME">
+    <sql>
+      select WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =? and WARECODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+  <Opt id="WZPanDian_WareCode">
+    <sql>
+      select WARECODE,WARENAME from LKWZ.DICTWZWARE where  CHOSCODE=?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="EQPanDian_GetStockDetailInfo">
+    <sql>
+      select * from LKEQ.EQSTOCKDETAIL where FLOWNO=? and CHOSCODE=?
+
+    </sql>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveEQPanDianInfo" key="PDID" table="LKEQ.EQPDMAIN">
+    <Pa name="PDID"/>
+    <Pa name="PDNAME"/>
+    <Pa name="WARECODE"/>
+    <Pa name="PDDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID" />
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="SaveEQPanDianInfo_CX" key="PDID" table="LKEQ.EQPDMAIN">
+    <Pa name="PDID"/>
+    <Pa name="PDNAME"/>
+    <Pa name="WARECODE"/>
+    <Pa name="PDDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID" />
+    <Pa name="USERNAME"/>
+    <Pa name="SHDATE" />
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME" />
+    <Pa name="CXDATE"/>
+    <Pa name="CXUSERID"/>
+    <Pa name="CXUSERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="UpdataEQPanDianInfo" >
+
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET WARECODE=?,PDNAME=?  ,MEMO=? ,USERID=? ,USERNAME=?   WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="WARECODE"/>
+    <Pa name="PDNAME"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+  </Opt>
+
+  <Opt id="ScanBusinessManag_WZPanDicanZ">
+    <sql>
+      <![CDATA[
+      select PDID, WARECODE ,PDDATE ,STATUS ,MEMO ,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,JZDATE ,JZUSERID ,JZUSERNAME,CHOSCODE ,INID ,OUTID FROM  LKWZ.WZPDMAIN WHERE  CHOSCODE = ?  order by PDID  desc ]]>
+    </sql>
+
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelEQPanDianInfo" sucMsg="成功删除盘点信息！" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET STATUS=0  WHERE  PDID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SubmitEQPanDianInfo" sucMsg="成功提交盘点信息！" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET STATUS=? WHERE  PDID= ? and CHOSCODE=?
+    </sql>
+    <Pa name="STATUS"/>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="DelEQPanDianDetailInfo" sucMsg="成功删除盘点详细信息！" >
+    <sql>DELETE FROM LKEQ.EQPDDETAIL WHERE  PDID= ? and ROWNO=? and CHOSCODE=? </sql>
+    <Pa name="PDID"/>
+    <Pa name="ROWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <!--<Opt id="IfSaveOrUpdataWZPanDianDetailInfo">
+    <sql>
+      select PDID from LKWZ.WZPDDETAIL where  PDID=? and STOCKFLOWNO=? and CHOSCODE=?
+  </sql>
+      <Pa name="PDID"/>
+      <Pa name="STOCKFLOWNO"/>
+      <Pa name="CHOSCODE"/>
+    
+  </Opt>-->
+
+
+  <Opt id="IfSaveOrUpdataWZPanDianDetailInfo">
+    <sql>
+      select YKNUM from LKWZ.WZPDDETAIL where  PDID=? and WZID=? and CHOSCODE=?
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="WZID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="IfWZPanDianDetailHaveData">
+    <sql>
+      select PDID from LKWZ.WZPDDETAIL where  PDID=? and  CHOSCODE=?
+      <Pa name="PDID"/>
+      <Pa name="CHOSCODE"/>
+    </sql>
+  </Opt>
+
+  <Opt id="EQPZ_FindEQStockDetailInfo">
+    <sql>
+
+
+      select a.FLOWNO, a.EQID,a.DEPTID,a.INID,b.EQNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.UNITCODE,
+      a.CARDNUM,a.OUTNUM,a.PRICE,a.MONEY,a.GG,a.XH,a.CD,a.NUM,a.OTHERMONEY,a.TOTALPRICE,a.TOTALMONEY,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.GHSUPPLYID,a.GHSUPPLYNAME,a.INDATE,a.CHOSCODE,d.WARENAME  from LKEQ.EQSTOCKDETAIL a
+      left join LKEQ.DICTEQ b on a.EQID=b.EQID  left join LKEQ.EQSTOCK c on a.STOCKID=c.STOCKID  left join    LKEQ.DICTEQWARE d on a.WARECODE=d.WARECODE
+      where  a.FLOWNO=? and a.CHOSCODE=?
+    </sql>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="EQPD_EditAndScanStockDetail">
+    <sql>
+
+      select distinct a.PDID, a.ROWNO,a.STOCKFLOWNO as FLOWNO ,a.STOCKID ,a.EQID ,a.STOCKNUM ,a.FACTNUM ,a.YKNUM  ,a.UNITCODE,
+      a.PRICE ,a.GG
+      ,a.XH ,a.CD ,a.SUPPLYID ,a.SUPPLYNAME,a.PRODUCTDATE ,a.VALIDDATE ,a.INDATE,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.GHSUPPLYID,b.EQNAME ,a.GHSUPPLYNAME,a.CHOSCODE, b.EQNAME FROM  LKEQ.EQPDDETAIL a left join LKEQ.DICTEQ b
+      on a.EQID=b.EQID   left join LKEQ.EQPDMAIN c on a.PDID=c.PDID
+
+      WHERE a.PDID=? and c.WARECODE=? and a.CHOSCODE = ?  order by a.STOCKFLOWNO desc
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+
+
+  </Opt>
+  <Opt id="WZPD_SearchStockDetail">
+    <sql>
+
+
+      <!--select a.FLOWNO,a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME  from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      where a.WARECODE=? and a.CHOSCODE = ?  [Condition]  order by a.FLOWNO desc-->
+
+
+      select a.FLOWNO, a.WZID,a.INID,b.WZNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.LSUNITCODE,
+      a.CHANGERATE,a.OUTNUM,a.PRICE,a.LSPRICE,a.PH,a.PZWH,a.NUM,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.WSXKZH,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.SUPPLYID2,a.SUPPLYNAME2,a.INDATE,a.CHOSCODE,d.WARENAME from LKWZ.WZSTOCKDETAIL a
+      left join LKWZ.DICTWZ b on a.WZID=b.WZID  left join LKWZ.DICTWZWARE d on a.WARECODE=d.WARECODE
+      where a.FLOWNO in  ( select Max(a.flowno)  from LKWZ.WZSTOCKDETAIL a where  a.WARECODE=? and a.CHOSCODE=? group by a.WZID)
+      [Condition]  order by   a.FLOWNO desc
+
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="EQPD_NewStockDetail">
+    <sql>
+      select distinct a.FLOWNO, a.EQID,a.DEPTID,a.INID,b.EQNAME,a.WARECODE,a.STOCKID,a.BEFORENUM,a.UNITCODE,
+      a.OUTNUM,a.CARDNUM,a.GG,a.XH,a.CD,a.NUM,a.PRICE,a.MONEY,a.OTHERMONEY,a.TOTALPRICE,a.TOTALMONEY,
+      a.SUPPLYID,a.SUPPLYNAME,a.PRODUCTDATE,a.VALIDDATE,a.MEMO,a.TXM,a.RECIPECODE,
+      a.SHDH,a.GHSUPPLYID,a.GHSUPPLYNAME,a.INDATE,a.CHOSCODE,d.WARENAME from LKEQ.EQSTOCKDETAIL a
+      left join LKEQ.DICTEQ b on a.EQID=b.EQID  left join LKEQ.DICTEQWARE d on a.WARECODE=d.WARECODE
+      left join LKEQ.DICTEQKIND e on e.KINDCODE=b.KINDCODE
+      where a.WARECODE=? and a.CHOSCODE=?
+      [Condition]  order by   a.FLOWNO desc
+
+
+    </sql>
+
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+    <!-- a.FLOWNO in  ( select Max(a.flowno)  from LKEQ.EQSTOCKDETAIL a where  a.WARECODE=? and a.CHOSCODE=? group by a.EQID)-->
+
+  </Opt>
+  <Opt id="SaveEQPanDianDetailInfo" key="PDID, ROWNO" table="LKEQ.EQPDDETAIL">
+    <Pa name="PDID"/>
+    <Pa name="ROWNO"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="STOCKID"/>
+    <Pa name="EQID"/>
+    <Pa name="STOCKNUM"/>
+    <Pa name="FACTNUM" />
+    <Pa name="YKNUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="PRICE"/>
+
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+
+
+    <Pa name="INDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="GHSUPPLYID" />
+    <Pa name="GHSUPPLYNAME"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="INDETAILNO"/>
+    <Pa name="OUTDETAILNO"/>
+  </Opt>
+
+  <Opt id="WYWZPanDianDetailInfo">
+    <sql>
+      select PDID FROM  LKWZ.WZPDDETAIL WHERE PDID=? and STOCKFLOWNO=? and CHOSCODE = ?
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="FindEQPandianMainInfo">
+    <sql>
+      select PDID,PDNAME, WARECODE ,PDDATE ,STATUS ,MEMO ,USERID ,USERNAME  ,RECDATE,SHDATE ,SHUSERID ,SHUSERNAME ,CXDATE ,CXUSERID ,CXUSERNAME,CHOSCODE ,INID ,OUTID FROM  LKEQ.EQPDMAIN WHERE CHOSCODE = ?  [Condition] order by PDID desc
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="EQPanDianDetailInfo">
+    <sql>
+      select PDID, ROWNO,STOCKFLOWNO ,STOCKID ,EQID ,STOCKNUM ,FACTNUM ,YKNUM  ,UNITCODE,PRICE ,GG ,XH ,CD ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,INDATE,MEMO,TXM,RECIPECODE,SHDH,GHSUPPLYID,GHSUPPLYNAME,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKEQ.EQPDDETAIL WHERE PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="ShenHeLostEQPanDianInfo" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET STATUS=?   WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+
+  </Opt>
+  <Opt id="UpdataeEQPanDicanDetailInfo" >
+    <sql>
+      UPDATE  LKEQ.EQPDDETAIL SET FACTNUM=?  ,YKNUM=?   WHERE CHOSCODE = ? and PDID= ? and STOCKFLOWNO=?
+    </sql>
+
+    <Pa name="FACTNUM"/>
+    <Pa name="YKNUM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+  <Opt id="CancelShenHeWZPanDianInfo" >
+    <sql>
+      UPDATE  LKWZ.WZPDMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+
+  </Opt>
+  <Opt id="ShenHeSucEQPanDianInfo" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET STATUS=?  ,SHUSERID=?  ,SHUSERNAME=? ,SHDATE=? WHERE CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="STATUS"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+  <Opt id="UpdataInDetailEQPanDianInfo_In" >
+    <sql>
+      UPDATE  LKEQ.EQPDDETAIL SET INDETAILNO=?  WHERE ROWNO=? and CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="DETAILNO"/>
+    <Pa name="ROWNO"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="UpdataInDetailDEQPanDianInfo_Out" >
+    <sql>
+      UPDATE  LKEQ.EQPDDETAIL SET OUTDETAILNO=?  WHERE ROWNO=? and CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="DETAILNO"/>
+    <Pa name="ROWNO"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+  <Opt id="UpdataInEQPanDianInfo_In" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET INID=?  WHERE  CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="INID"/>
+    <Pa name="CHOSCODE" />
+    <Pa name="PDID"/>
+  </Opt>
+
+
+  <Opt id="UpdataInEQPanDianInfo_Out" >
+    <sql>
+      UPDATE  LKEQ.EQPDMAIN SET OUTID=?  WHERE  CHOSCODE = ? and PDID= ?
+    </sql>
+
+    <Pa name="OUTID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="PDID"/>
+  </Opt>
+
+
+
+  <Opt id="IfHavePriceOrLsPrice">
+    <sql>
+      select STOCKFLOWNO,LSUNITCODE,PRICE  FROM  LKWZ.WZSTOCKDETAIL WHERE PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+
+  <Opt id="GetIOIDEQPanDianInfoStockIn">
+    <sql>
+      select IOID FROM LKEQ.DictEQInOut WHERE OPFlag=3 and IOFlag=0 and IfUse=1 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="GetPDIDEQPanDianInfoStockIn">
+    <sql>
+      <![CDATA[
+     select PDID,ROWNO, STOCKFLOWNO ,STOCKID ,EQID ,STOCKNUM ,FACTNUM ,YKNUM  ,UNITCODE,PRICE ,GG ,XH ,CD ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,INDATE,MEMO,TXM,RECIPECODE,SHDH,GHSUPPLYID,GHSUPPLYNAME,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKEQ.EQPDDETAIL WHERE YKNUM > 0 and  PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+        ]]>
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="SaveEQInMain_EQPanDianIn" key="INID" table="LKEQ.EQINMAIN">
+    <Pa name="INID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="DEPTID"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="INVOICEDATE"/>
+    <Pa name="INVOICEMONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="INDATE"/>
+    <Pa name="BUYUSER"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="CXDATE"/>
+    <Pa name="CXUSERID"/>
+    <Pa name="CXUSERNAME"/>
+  </Opt>
+  <Opt id="SaveEQInDetailEQPanDianIn" key="DETAILNO" table="LKEQ.EQINDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="INID" />
+    <Pa name="EQID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+
+
+  </Opt>
+  <Opt id="GetNumInStock_EQPanDianIn">
+    <sql>
+      select NUM FROM LKEQ.EQSTOCK WHERE EQID=? and CHOSCODE=? and WARECODE=?
+    </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+  <Opt id="iflsunitcodeInWZDictWZPanDianIn">
+    <sql>
+      select LSUNITCODE FROM LKWZ.DICTWZ WHERE WZID=?
+    </sql>
+    <Pa name="WZID"/>
+  </Opt>
+  <Opt id="HsxsInWZDictWZPanDianIn">
+    <sql>
+      select CHANGERATE FROM LKWZ.DICTWZ WHERE WZID=?
+    </sql>
+    <Pa name="WZID"/>
+  </Opt>
+  <Opt id="IfExistInStockEQPanDianIn">
+    <sql>
+      select STOCKID FROM LKEQ.EQSTOCK WHERE EQID=? and CHOSCODE=? and WARECODE=?
+    </sql>
+    <Pa name="EQID"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="WARECODE"/>
+  </Opt>
+
+  <Opt id="SaveInStockEQPanDianIn" key="STOCKID" table="LKEQ.EQSTOCK">
+    <Pa name="STOCKID" update="false"/>
+    <Pa name="WARECODE" />
+    <Pa name="DEPTID"/>
+    <Pa name="EQID"/>
+    <Pa name="NUM"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="MEMO"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="UpdataInStockNum_EQPanDianIn" >
+    <sql>
+      UPDATE  LKEQ.EQSTOCK SET NUM=?  WHERE CHOSCODE = ? and STOCKID= ?
+    </sql>
+    <Pa name="NUM"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKID"/>
+  </Opt>
+  <Opt id="SaveInStockDetailEQPanDianIn" key="FLOWNO" table="LKEQ.EQSTOCKDETAIL">
+    <Pa name="FLOWNO"/>
+    <Pa name="INID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="STOCKID"/>
+    <Pa name="EQID"/>
+    <Pa name="NUM"/>
+    <Pa name="BEFORENUM" />
+    <Pa name="UNITCODE"/>
+    <Pa name="OUTNUM"/>
+    <Pa name="CARDNUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="SUPPLYNAME" />
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="SHDH"/>
+    <Pa name="GHSUPPLYID"/>
+    <Pa name="GHSUPPLYNAME"/>
+    <Pa name="INDATE" />
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="GetIOIDEQPanDianInfoStockOut">
+    <sql>
+      select IOID FROM LKEQ.DictEQInOut WHERE OPFlag=3 and IOFlag=1 and IfUse=1 and CHOSCODE=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="GetPDIDEQPanDianInfoOut">
+    <sql>
+      <![CDATA[
+     select PDID,ROWNO, STOCKFLOWNO ,STOCKID ,EQID ,STOCKNUM ,FACTNUM ,YKNUM  ,UNITCODE,PRICE ,GG ,XH ,CD ,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,INDATE,MEMO,TXM,RECIPECODE,SHDH,GHSUPPLYID,GHSUPPLYNAME,CHOSCODE,INDETAILNO,OUTDETAILNO FROM  LKEQ.EQPDDETAIL WHERE YKNUM < 0 and  PDID=? and CHOSCODE = ?  order by STOCKFLOWNO desc
+        ]]>
+    </sql>
+    <Pa name="PDID"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="StockDetailInfoEQPanDianOut">
+    <sql>
+
+      select FLOWNO, INID ,WARECODE,DEPTID ,EQID ,STOCKID ,NUM ,BEFORENUM  ,UNITCODE,OUTNUM,CARDNUM,GG,XH,CD,PRICE ,MONEY ,OTHERMONEY ,TOTALPRICE ,TOTALMONEY,SUPPLYID ,SUPPLYNAME,PRODUCTDATE ,VALIDDATE ,MEMO,TXM,RECIPECODE,SHDH,GHSUPPLYID,GHSUPPLYNAME,INDATE,CHOSCODE FROM  LKEQ.EQSTOCKDETAIL WHERE   EQID = ? and STOCKID = ? and FLOWNO=?  and CHOSCODE = ?
+
+    </sql>
+    <Pa name="EQID"/>
+    <Pa name="STOCKID"/>
+    <Pa name="STOCKFLOWNO"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="SaveEQOutMainEQPanDianOut" key="OUTID" table="LKEQ.EQOUTMAIN">
+    <Pa name="OUTID" update="false"/>
+    <Pa name="IOID"/>
+    <Pa name="WARECODE"/>
+    <Pa name="RECIPECODE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="OUTDATE"/>
+    <Pa name="STATUS"/>
+    <Pa name="OPFLAG"/>
+    <Pa name="MEMO"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHUSERNAME"/>
+    <Pa name="SHDATE"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="SaveEQOutDetailEQPanDianOut" key="DETAILNO" table="LKEQ.EQOUTDETAIL">
+    <Pa name="DETAILNO" update="false"/>
+    <Pa name="OUTID" />
+    <Pa name="EQID"/>
+    <Pa name="UNITCODE"/>
+    <Pa name="NUM"/>
+    <Pa name="PRICE"/>
+    <Pa name="MONEY"/>
+    <Pa name="GG"/>
+    <Pa name="XH"/>
+    <Pa name="CD"/>
+    <Pa name="OTHERMONEY"/>
+    <Pa name="TOTALPRICE"/>
+    <Pa name="TOTALMONEY"/>
+    <Pa name="MEMO"/>
+    <Pa name="TXM"/>
+    <Pa name="SUPPLYNAME"/>
+    <Pa name="SUPPLYID"/>
+    <Pa name="PRODUCTDATE"/>
+    <Pa name="VALIDDATE"/>
+    <Pa name="CHOSCODE"/>
+    <Pa name="STOCKFLOWNO"/>
+  </Opt>
+
+  <!--设备盘点管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备保养管理始-->
+
+  <Opt id="LoadXiBiaoInfoSelect_EQFixManag">
+    <sql>
+      SELECT DISTINCT a.*,b.Repairname,c.名称
+      FROM  LKEQ.EQCARDREPAIRREC a, LKEQ.DICTEQREPAIR b,HIS.科室表 c
+      WHERE  a.DEPTID=c.ID AND a.REPAIRCODE=b.REPAIRCODE AND a.Cardid=? AND a.CHOSCODE=?
+
+      <!--SELECT DISTINCT a.*,b.Repairname,c.名称  FROM  LKEQ.EQCARDREPAIRREC a, LKEQ.DICTEQREPAIR b,HIS.科室表 c
+      WHERE  a.DEPTID=c.ID AND a.REPAIRCODE=b.REPAIRCODE AND a.Cardid=? AND a.CHOSCODE=?(SELECT 名称 FROM HIS.科室表 WHERE ID=a.Repairdeptid) AS 维修科室名称-->
+    </sql>
+  </Opt>
+  <Opt id="EQKeep_FindKSID">
+    <sql>SELECT 名称,ID,级别,CHOSCODE AS 医疗机构编码, 代码 as 拼音码 FROM HIS.科室表 WHERE CHOSCODE=? AND (ID LIKE ? OR 名称 LIKE ? OR 代码 like ?)</sql>
+  </Opt>
+
+  <Opt id="LoadZhuBiaoInfoSelect_EQKeepFit">
+    <sql>select * from LKEQ.EQCARDREC WHERE  CHOSCODE =? AND DEPTID=? AND RECDATE &gt;? AND RECDATE &lt;?  [Condition] </sql>
+  </Opt>
+
+
+  <Opt id="LoadXiBiaoInfoSelect_EQKeepFit">
+    <sql>
+      SELECT DISTINCT a.*,c.名称,(SELECT 名称 FROM HIS.科室表 WHERE ID=a.REPAIRDEPTID) AS 维修科室
+      FROM  LKEQ.EQCardMaintainRec a,HIS.科室表 c
+      WHERE  a.DEPTID=c.ID  AND a.Cardid=? AND a.CHOSCODE=?
+    </sql>
+    <Pa name="Cardid"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="SaveEQMaintainInfo_EQKeepFitManag" key="MAINTAINID" table="LKEQ.EQCARDMAINTAINREC">
+    <Pa name="MAINTAINID" update="false"  />
+    <Pa name="CARDID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="MAINTAINTYPE"/>
+    <Pa name="MAINTAINMAN"/>
+    <Pa name="MAINTAINTHING"/>
+    <Pa name="CHANGETHING"/>
+    <Pa name="MAINTAINFARE"/>
+    <Pa name="CLFARE"/>
+    <Pa name="OTHERFARE"/>
+    <Pa name="MAINTAINDATE"/>
+    <Pa name="REPAIRMAN"/>
+    <Pa name="REPAIRDEPTID"/>
+    <Pa name="MEMO"/>
+    <Pa name="STATUS"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+  <Opt id="UpdateStatus_EQKeepFitManag">
+    <sql>UPDATE LKEQ.EQCARDMAINTAINREC SET STATUS=0 WHERE MAINTAINID=?  AND  CHOSCODE=? </sql>
+  </Opt>
+
+
+  <Opt id="FindKSName_EQKeepFit">
+    <sql>select ID,名称 from HIS.科室表 where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="GetEQAskBuy_KSName_KeepFit">
+    <sql>
+      select  名称 from  HIS.科室表  where choscode= ? and ID=?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DEPTID"/>
+  </Opt>
+
+  <Opt id="GetMainTainCode_KeepFit">
+    <sql>
+      select DICDESC,DICID,PYCODE as  拼音码 from  HIS.字典表  where Dicgrpid=451
+
+    </sql>
+  </Opt>
+
+  <Opt id="GetEQMaintainName_KeepFit">
+    <sql>
+      select DICDESC from  HIS.字典表  where Dicgrpid=451 and DICID= ?
+
+    </sql>
+    <Pa name="DICID"/>
+  </Opt>
+
+  <Opt id="GetEQMaintainName_KeepFit1">
+    <sql>
+      select DICID, DICDESC  from  HIS.字典表  where Dicgrpid=451
+
+    </sql>
+    <Pa name="DICID"/>
+  </Opt>
+
+  <Opt id="FindUseStatusInCard_EQKeepFit">
+    <sql>SELECT STATUSCODE,STATUSNAME FROM LKEQ.DICTEQSTATUS  WHERE  CHOSCODE=?</sql>
+  </Opt>
+  <Opt id="IfTheJiLiang_EQKeepFit">
+    <sql>SELECT  IFJL FROM LKEQ.DICTEQ  WHERE EQNAME=? and  CHOSCODE=?</sql>
+  </Opt>
+
+  <!--设备保养管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备检查管理始-->
+  <Opt id="LoadXiBiaoInfoSelect_EQCheck">
+    <sql>
+      SELECT DISTINCT a.*,c.名称
+      FROM  LKEQ.EQCARDCHECKREC a,HIS.科室表 c
+      WHERE  a.DEPTID=c.ID  AND a.Cardid=? AND a.CHOSCODE=?
+    </sql>
+    <Pa name="Cardid"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="LoadZhuBiaoInfoSelect_EQCheck">
+    <sql>select * from LKEQ.EQCARDREC WHERE  CHOSCODE =? AND DEPTID=? AND RECDATE &gt;? AND RECDATE &lt;?  [Condition] </sql>
+  </Opt>
+
+
+  <Opt id="SaveEQMaintainInfo_EQCheck" key="CHECKID" table="LKEQ.EQCARDCHECKREC">
+    <Pa name="CHECKID" update="false"  />
+    <Pa name="CARDID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="CHECKUNIT"/>
+    <Pa name="CHECKDATE"/>
+    <Pa name="CHECKMAN"/>
+    <Pa name="CHECKTHING"/>
+    <Pa name="CHECKRESULT"/>
+    <Pa name="NEXTCHECKDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="STATUS"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+  <Opt id="UpdateStatus_EQCheckManag">
+    <sql>UPDATE LKEQ.EQCARDCHECKREC SET STATUS=0 WHERE CHECKID=?  AND  CHOSCODE=? </sql>
+  </Opt>
+  <!--设备检查管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备下账管理始-->
+
+  <Opt id="LoadXiBiaoInfoSelect_EQAccount">
+    <sql>
+      SELECT DISTINCT a.*,c.名称
+      FROM  LKEQ.EQCARDNOREC a,HIS.科室表 c
+      WHERE  a.DEPTID=c.ID  AND a.Cardid=? AND a.CHOSCODE=?
+    </sql>
+    <Pa name="Cardid"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="UpdateStatus_EQKeepAccountsManag">
+    <sql>UPDATE LKEQ.EQCARDNOREC SET STATUS=0 WHERE NOID=?  AND  CHOSCODE=? </sql>
+  </Opt>
+  <Opt id="UpdateStatus1_EQKeepAccountsManag">
+    <sql>UPDATE LKEQ.EQCARDNOREC SET STATUS=1 WHERE NOID=?  AND  CHOSCODE=? </sql>
+  </Opt>
+  <Opt id="YongHuMingInfo_EQAccount">
+    <sql>SELECT NAME AS 用户名,USERID AS 用户ID,所属科室 FROM HIS.用户表 WHERE CHOSCODE=?</sql>
+  </Opt>
+
+  <Opt id="GetKind_EQAccount">
+    <sql>
+      select IONAME, IOID ,PYCODE as  拼音码 from  LKEQ.DICTEQINOUT  where IOFlag=1 and IfUse=1 and OPFlag=0 and CHOSCode=?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+  <Opt id="GetEQMaintainName_EQKeepAccount">
+    <sql>
+      select  IONAME from  LKEQ.DICTEQINOUT  where IOFlag=1 and IfUse=1 and  OPFlag=0 and CHOSCode=? and IOID=?
+    </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DICID"/>
+  </Opt>
+
+  <Opt id="SaveEQAccount" key="NOID" table="LKEQ.EQCARDNOREC">
+    <Pa name="NOID" update="false"  />
+    <Pa name="CARDID"/>
+    <Pa name="DEPTID"/>
+    <Pa name="IOID"/>
+    <Pa name="QLFARE"/>
+    <Pa name="CVALUE"/>
+    <Pa name="NOREASON"/>
+    <Pa name="REPORTUSERID"/>
+    <Pa name="REPORTMAN"/>
+    <Pa name="REPORTDATE"/>
+    <Pa name="JDADVICE"/>
+    <Pa name="JDUSERID"/>
+    <Pa name="JDMAN"/>
+    <Pa name="JDDATE"/>
+    <Pa name="SHADVICE"/>
+    <Pa name="SHUSERID"/>
+    <Pa name="SHMAN"/>
+    <Pa name="SHDATE"/>
+    <Pa name="MEMO"/>
+    <Pa name="STATUS"/>
+    <Pa name="USERID"/>
+    <Pa name="USERNAME"/>
+    <Pa name="RECDATE"/>
+    <Pa name="CHOSCODE"/>
+
+  </Opt>
+
+
+  <Opt id="GetKindName_EQAccount">
+    <sql>
+      select IOID ,IONAME   from  LKEQ.DICTEQINOUT  where IOFlag=1 and IfUse=1 and OPFlag=0 and CHOSCode=?
+
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+  <Opt id="ChangTheStatus_EQAccount">
+    <sql>UPDATE LKEQ.EQCARDREC SET STATUS=6 WHERE CARDID=? </sql>
+    <Pa name="CARDID"/>
+  </Opt>
+
+
+  <Opt id="LoadZhuBiaoInfoSelect_EQAccount">
+    <sql>select * from LKEQ.EQCARDREC WHERE  CHOSCODE =? AND DEPTID=? AND RECDATE &gt;? AND RECDATE &lt;?  [Condition] </sql>
+  </Opt>
+
+  <!--设备下账管理止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备入库查询始-->
+
+
+  <Opt id="StatQuery_EQInQueryKS">
+    <sql>select 名称,ID,代码 as 拼音码 from HIS.科室表 where choscode= ? and (ID like ? or 名称 like ?  or 代码 like ? )</sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="StatistQuery_EQInMainSearch">
+    <sql>
+      <![CDATA[
+        select distinct a.*,b.IONAME,c.WARENAME from LKEQ.EQINMAIN a,LKEQ.DICTEQINOUT b,LKEQ.DICTEQWARE c where (a.cHosCode=?   and a.INDATE >= ? and a.INDATE <= ? )  and a.IOID=b.IOID and a.WARECODE=c.WARECODE [Condition] order by INID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="StatistQuery_EQInDetailSearch">
+    <sql>
+      <![CDATA[
+        select distinct  a.* ,eq.EQNAME,zd.DICDESC from LKEQ.EQINDETAIL a, LKEQ.DICTEQ eq, HIS.字典表 zd where a.INID=? and a.cHosCode=? and a.EQID=eq.EQID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by INID
+      ]]>
+    </sql>
+  </Opt>
+  <Opt id="StatistQuery_EQGetInWareWay">
+    <sql>
+      select IONAME as 入库方式,IOID 入库方式ID from LKEQ.DICTEQINOUT where IFUSE=1 and IOFlag=0 and CHOSCODE=? and (IONAME like ? or IOID like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+  <Opt id="StaticQuery_EQInWare">
+    <sql>
+      select WARENAME as 库房名称,WARECODE as 库房编码 from LKEQ.DICTEQWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ?  or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+
+  <!--设备入库查询止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备出库查询始-->
+
+  <Opt id="StatQuery_EQOutQueryKS">
+    <sql>select 名称,ID,代码 as 拼音码 from HIS.科室表 where choscode= ? and (ID like ? or 名称 like ?  or 代码 like ? )</sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="StatistQuery_EQOutMainSearch">
+    <sql>
+      <![CDATA[  
+     select distinct a.* ,b.IONAME,c.WARENAME from LKEQ.EQOUTMAIN a ,LKEQ.DICTEQINOUT b,LKEQ.DICTEQWARE c where (a.cHosCode=?  and a.OUTDATE >= ? and a.OUTDATE <= ? ) and a.IOID=b.IOID and a.WARECODE=c.WARECODE  [Condition] order by OUTID   
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="StatistQuery_EQOutDetailSearch">
+    <sql>
+      <![CDATA[
+         select distinct a.* ,eq.EQNAME,zd.DICDESC from LKEQ.EQOUTDETAIL a , LKEQ.DICTEQ eq, HIS.字典表 zd where a.OUTID=? and a.cHosCode=? and a.EQID=eq.EQID and (a.UNITCODE=zd.DICID and zd.DICGRPID=301) order by OUTID
+   
+    ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="StatistQuery_EQGetOutWareWay">
+    <sql>
+      select IONAME as 出库方式,IOID as 出库方式编码 from LKEQ.DICTEQINOUT where IFUSE=1 and IOFlag=1 and CHOSCODE=? and (IONAME like ? or IOID like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by IONAME
+    </sql>
+  </Opt>
+
+  <Opt id="StaticQuery_EQOutWare">
+    <sql>
+      select WARENAME as 出库库房,WARECODE as 出库库房编码 from LKEQ.DICTEQWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+
+  <Opt id="FindKSName_EQOutQuery">
+    <sql>select ID,名称 from HIS.科室表 where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindWareName_EQOutQuery">
+    <sql>
+      select WARECODE,WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <!--设备出库查询止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备库存查询始-->
+
+  <Opt id="FindWare_EQStockQuery">
+    <sql>
+      select WARECODE,WARENAME  from LKEQ.DICTEQWARE where  CHOSCODE =?
+    </sql>
+  </Opt>
+
+  <Opt id="FindEQKind_EQStockQuery">
+    <sql>
+      <![CDATA[
+      select KINDNAME,KINDCODE,SUPERCODE,IFUSE  from LKEQ.DICTEQKIND where( KINDCODE like ? or KINDNAME like ? ) and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+
+  <Opt id="FindEQDict_EQStockQuery">
+    <sql>
+      <![CDATA[
+      select EQNAME,EQID,SHORTNAME,ALIASNAME  from LKEQ.DICTEQ where (EQID like ? or EQNAME like ? or SHORTNAME like ? or ALIASNAME like ?  )and CHOSCODE = ?
+     ]]>
+    </sql>
+  </Opt>
+  <Opt id="EQStockQuery_EQOutWare">
+    <sql>
+      select WARENAME as 库房,WARECODE as 库房编码 from LKEQ.DICTEQWARE where  CHOSCODE=? and (WARENAME like ? or WARECODE like ? or upper(PYCODE) like upper(?) or upper(WBCODE) like upper(?))order by WARENAME
+    </sql>
+  </Opt>
+
+  <Opt id="EQStockQuery_EQSearchMainStock">
+    <sql>
+
+      select c.STOCKID,c.WARECODE,c.EQID,b.EQNAME,c.NUM,c.MEMO,c.UNITCODE,
+      c.CHOSCODE,d.WARENAME,e.KINDCODE from   LKEQ.EQSTOCK c  left join LKEQ.DICTEQ b on c.EQID=b.EQID left join LKEQ.DICTEQWARE d on c.WARECODE=d.WARECODE
+      left join LKEQ.DICTEQ e on c.EQID=e.EQID
+      where  c.CHOSCODE = ?  [Condition]  order by c.STOCKID desc
+
+
+    </sql>
+    <Pa name="WARECODE"/>
+    <Pa name="CHOSCODE"/>
+
+
+  </Opt>
+
+  <Opt id="EQStockQuery_EQStockDetailInfo">
+    <sql>
+
+      select c.STOCKID,c.DEPTID,c.WARECODE,c.EQID,b.EQNAME,c.FLOWNO,c.INID,c.MEMO,c.BEFORENUM,c.UNITCODE,c.NUM,c.OUTNUM,c.CARDNUM,c.GG,c.XH,c.CD,c.PRICE,c.MONEY,c.OTHERMONEY,c.TOTALPRICE,c.TOTALMONEY,c.SUPPLYID,c.SUPPLYNAME,c.PRODUCTDATE,c.VALIDDATE,c.INDATE,c.TXM,c.RECIPECODE,c.SHDH,c.GHSUPPLYID,c.GHSUPPLYNAME,
+      c.CHOSCODE,d.WARENAME,e.KINDCODE from   LKEQ.EQSTOCKDETAIL c  left join LKEQ.DICTEQ b on c.EQID=b.EQID left join LKEQ.DICTEQWARE d on c.WARECODE=d.WARECODE
+      left join LKEQ.DICTEQ e on c.EQID=e.EQID
+      where c.STOCKID=? and c.CHOSCODE = ?  order by c.FLOWNO desc
+    </sql>
+    <Pa name="STOCKID"/>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="StatisticQuery_EQStockQueryKS">
+    <sql>select 名称,ID,代码 as 拼音码 from HIS.科室表 where choscode= ? and (ID like ? or 名称 like ?  or 代码 like ? )</sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+  <Opt id="EQStatisticQuery_DanWeiBianMa">
+    <sql>
+      select DICID,DICDESC from 字典表 where Dicgrpid=450
+    </sql>
+  </Opt>
+
+  <Opt id="StatisticQuery_EQStockQueryKSName">
+    <sql>select ID,  名称 from HIS.科室表 where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+    <Pa name="DEPTID"/>
+  </Opt>
+
+  <Opt id="StatisticQuery_EQStockQueryKindName">
+    <sql>select KINDCODE, KINDNAME from LKEQ.DICTEQKIND where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+  <!--设备库存查询止-->
+
+  <!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+  <!--设备卡片查询始DEPTID=? AND-->
+
+
+  <Opt id="LoadCardInfo_EQCardQuery">
+    <sql>      
+      SELECT * FROM LKEQ.EQCARDREC WHERE  CHOSCODE=? AND RECDATE &gt;? AND  RECDATE &lt;?  [Condition]
+    </sql>
+  </Opt>
+
+  <Opt id="FindSTATUNAME_EQCardQuery">
+    <sql>
+      select STATUSCODE,STATUSNAME  from LKEQ.DICTEQSTATUS where  CHOSCODE =?
+    </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+  <Opt id="FindKSName_EQCardQuery">
+    <sql>select ID,名称 from HIS.科室表 where choscode= ? </sql>
+    <Pa name="CHOSCODE"/>
+  </Opt>
+
+
+
+
+<!--设备卡片查询止-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--打印开始-->
+
+
+
+<Opt id="EQInMainDaYinQuery">
+  <sql>
+    <![CDATA[
+   select distinct CHOSNAME,USERNAME,SHUSERNAME,INDATE,RECDATE,SHDATE,RECIPECODE,TOTALMONEY,
+   MEMO,SUPPLYNAME,IOID,WARECODE,DEPTID from lkEQ.EQinmain,his.sysdicthospital where INID=? and lkeq.eqinmain.CHOSCODE=his.sysdicthospital.CHOSCODE
+      ]]>
+  </sql>
+</Opt>
+<Opt id="EQOutMainDaYinQuery">
+  <sql>
+    <![CDATA[
+     select distinct CHOSNAME,USERNAME,SHUSERNAME,OUTDATE,RECDATE,SHDATE,RECIPECODE,TOTALMONEY,
+     LKEQ.EQoutmain.MEMO from lkEQ.EQoutmain,his.sysdicthospital where OUTID=?
+   and lkEQ.EQoutmain.CHOSCODE=his.sysdicthospital.CHOSCODE
+  ]]>
+  </sql>
+</Opt>
+
+<!--打印结束-->
+
+</opts>

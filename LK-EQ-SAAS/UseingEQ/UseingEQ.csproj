@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E1009BA-A061-49AA-8221-8434DEE73F63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UseingEQ</RootNamespace>
+    <AssemblyName>UseingEQ</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\LK-WZ-SAAS\plugins\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YiTian, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YiTian.dll</HintPath>
+    </Reference>
+    <Reference Include="YtClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtClient.dll</HintPath>
+    </Reference>
+    <Reference Include="YtPlugin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="YtUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="YtWinContrl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LIB\YtWinContrl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EQChangeManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQChangeManag.designer.cs">
+      <DependentUpon>EQChangeManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQDepreciationManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQDepreciationManag.designer.cs">
+      <DependentUpon>EQDepreciationManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQFixManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQFixManag.designer.cs">
+      <DependentUpon>EQFixManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQMonthAccountsManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQMonthAccountsManag.designer.cs">
+      <DependentUpon>EQMonthAccountsManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQUseManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQUseManag.designer.cs">
+      <DependentUpon>EQUseManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQChangeManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQChangeManagEdit.designer.cs">
+      <DependentUpon>EQChangeManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQDepreciationEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQDepreciationEdit.designer.cs">
+      <DependentUpon>EQDepreciationEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQFixManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQFixManagEdit.designer.cs">
+      <DependentUpon>EQFixManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQKeepFitManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQKeepFitManagEdit.designer.cs">
+      <DependentUpon>EQKeepFitManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQCheckManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQCheckManagEdit.designer.cs">
+      <DependentUpon>EQCheckManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQKeepAccountsManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQKeepAccountsManagEdit.designer.cs">
+      <DependentUpon>EQKeepAccountsManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQMonthAccountEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQMonthAccountEdit.designer.cs">
+      <DependentUpon>EQMonthAccountEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\EQUseManagEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\EQUseManagEdit.designer.cs">
+      <DependentUpon>EQUseManagEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EQKeepFitManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQKeepFitManag.designer.cs">
+      <DependentUpon>EQKeepFitManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQCheckManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQCheckManag.designer.cs">
+      <DependentUpon>EQCheckManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQKeepAccountsManag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EQKeepAccountsManag.designer.cs">
+      <DependentUpon>EQKeepAccountsManag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EQChangeManag.resx">
+      <DependentUpon>EQChangeManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQDepreciationManag.resx">
+      <DependentUpon>EQDepreciationManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQFixManag.resx">
+      <DependentUpon>EQFixManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQMonthAccountsManag.resx">
+      <DependentUpon>EQMonthAccountsManag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQUseManag.resx">
+      <DependentUpon>EQUseManag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQChangeManagEdit.resx">
+      <DependentUpon>EQChangeManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQDepreciationEdit.resx">
+      <DependentUpon>EQDepreciationEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQFixManagEdit.resx">
+      <DependentUpon>EQFixManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQKeepFitManagEdit.resx">
+      <DependentUpon>EQKeepFitManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQKeepFitManag.resx">
+      <DependentUpon>EQKeepFitManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQCheckManagEdit.resx">
+      <DependentUpon>EQCheckManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQCheckManag.resx">
+      <DependentUpon>EQCheckManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EQKeepAccountsManag.resx">
+      <DependentUpon>EQKeepAccountsManag.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQKeepAccountsManagEdit.resx">
+      <DependentUpon>EQKeepAccountsManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQMonthAccountEdit.resx">
+      <DependentUpon>EQMonthAccountEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\EQUseManagEdit.resx">
+      <DependentUpon>EQUseManagEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChSys\ChSys.csproj">
+      <Project>{2B41A68B-2591-4363-885C-43BBF0542ABA}</Project>
+      <Name>ChSys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
